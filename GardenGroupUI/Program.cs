@@ -18,7 +18,6 @@ namespace GardenGroupUI
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new gardenGroupUI());
 
-
         }
     }
 }
