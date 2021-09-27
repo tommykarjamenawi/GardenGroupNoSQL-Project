@@ -8,5 +8,9 @@ namespace GardenGroupUI
 {
     class Enums
     {
+        public enum TypeOfUser { Software = 0, Hardware, Service };
+        public enum TypeOfIncident { EndUser, ServiceDeskEmployee };
     }
+
+
 }
