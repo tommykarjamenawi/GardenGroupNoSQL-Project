@@ -19,7 +19,7 @@ namespace GardenGroupUI
         public string Branch { get; set; }
         public string Phone { get; set; }
         public string Password { get; set; }
-        public Enums.TypeOfUser TypeOfUser{get; set;}
+        public Enums.TypeOfUser TypeOfUser { get; set; }
 
 
         [BsonConstructor]
