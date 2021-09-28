@@ -10,6 +10,8 @@ namespace GardenGroupUI
     {
         public enum TypeOfUser { Software = 0, Hardware, Service };
         public enum TypeOfIncident { EndUser, ServiceDeskEmployee };
+
+        public enum TypeOfPriority { Low = 0, Normal, High };
     }
 
 
