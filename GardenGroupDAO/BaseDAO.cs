@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace GardenGroupDAO
 {
-    class BaseDAO
+    public abstract class BaseDAO
     {
+        protected readonly MongoDB db;
+
+        public BaseDAO()
+        {
+            db = MongoDB.GetInstance();
+        }
     }
 }
