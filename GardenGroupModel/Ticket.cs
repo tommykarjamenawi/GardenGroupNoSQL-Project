@@ -12,7 +12,6 @@ namespace GardenGroupModel
     {
         [BsonId]
         public ObjectId Id { get; set; }
-        public List<Ticket> TicketList { get; set; }
         [BsonElement("Subject of indicent")]
         public string Subject { get; set; }
         [BsonElement("Description")]

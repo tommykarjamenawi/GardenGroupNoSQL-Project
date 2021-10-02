@@ -14,9 +14,9 @@ namespace GardenGroupUI
 {
     public partial class TicketOverviewForm : Form
     {
+        private List<Ticket> tickets;
+        private TicketService ticketService;
 
-        Ticket Ticket;
-        User User;
         public TicketOverviewForm()
         {
             InitializeComponent();
@@ -29,24 +29,39 @@ namespace GardenGroupUI
 
         private void listViewItems_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (listViewItems.SelectedItems.Count <= 0)
+            if (listViewTickets.SelectedItems.Count <= 0)
                 return;
-
         }
 
         private void LoadDetails()
         {
-            foreach (Ticket ticket in Ticket.TicketList) 
+            DisplayAllTickets();
+        }
+
+        public void DisplayAllTickets()
+        {
+            listViewTickets.Items.Clear();
+
+            foreach (Ticket ticketItems in tickets)
             {
-                ListViewItem item = new ListViewItem(Ticket.Id.ToString());
-                item.SubItems.Add(Ticket.Subject);
-                item.SubItems.Add(Ticket.ReportedBy.ToString());
-                item.SubItems.Add(Ticket.ReportedDate.ToString());
-                item.SubItems.Add(Ticket.IsSolved.ToString());
-                listViewItems.Items.Add(item);
+                   ListViewItem item = new ListViewItem(ticketItems.Id.ToString());
+                   item.SubItems.Add(ticketItems.Subject);
+                   item.SubItems.Add(ticketItems.ReportedBy.ToString());
+                   item.SubItems.Add(ticketItems.ReportedDate.ToString("dd-MM-yyyy"));
+                   item.SubItems.Add(ticketItems.IsSolved.ToString());
+                   listViewTickets.Items.Add(item);
+
+                //this.Subject = Subject;
+                //this.Description = Description;
+                //this.ReportedDate = ReportedDate;
+                //this.ReportedBy = ReportedBy;
+                //this.Deadline = Deadline;
+                //this.TypeOfIncident = TypeOfIncident;
+                //this.TypeOfPriority = TypeOfPriority;
+                //IsSolved = false;
             }
         }
 
-        
+
     }
 }
