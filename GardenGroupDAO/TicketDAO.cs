@@ -12,10 +12,10 @@ namespace GardenGroupDAO
 {
     public class TicketDAO
     {
-
+        private IMongoCollection<Ticket> collection;
         public TicketDAO()
         {
-
+            MongoClient connection = BaseDAO.GetInstance();
         }
 
     }
