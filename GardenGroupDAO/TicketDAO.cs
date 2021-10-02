@@ -15,9 +15,9 @@ namespace GardenGroupDAO
         private IMongoCollection<Ticket> collection;
         public TicketDAO()
         {
-            MongoClient connection = BaseDAO.GetInstance();
-            IMongoDatabase db = connection.GetDatabase("GardenGroup");
-            collection = db.GetCollection<Ticket>("Tickets");
+            //MongoClient connection = MongoDB.GetInstance();
+            //IMongoDatabase db = connection.GetDatabase("GardenGroup");
+            //collection = db.GetCollection<Ticket>("Tickets");
         }
 
         public List<Ticket> GetTickets()
