@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace GardenGroupModel
 {
-    class User
+    public class User
     {
         
         [BsonId]

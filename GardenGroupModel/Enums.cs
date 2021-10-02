@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GardenGroupModel
 {
-    class Enums
+    public class Enums
     {
         public enum TypeOfUser { EndUser, ServiceDeskEmployee };
         public enum TypeOfIncident { Software = 0, Hardware, Service };
