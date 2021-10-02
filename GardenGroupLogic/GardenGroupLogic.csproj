@@ -125,6 +125,16 @@
     <Content Include="Core\Compression\Zstandard\lib\win\libzstd.dll" />
     <Content Include="mongocrypt.dll" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GardenGroupDAO\GardenGroupDAO.csproj">
+      <Project>{b2624e97-70dd-41c6-adab-acb0fdb7693e}</Project>
+      <Name>GardenGroupDAO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GardenGroupModel\GardenGroupModel.csproj">
+      <Project>{65e86b0e-8b37-44a5-bec3-be775dfbd97d}</Project>
+      <Name>GardenGroupModel</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MongoDB.Libmongocrypt.1.2.2\build\MongoDB.Libmongocrypt.targets" Condition="Exists('..\packages\MongoDB.Libmongocrypt.1.2.2\build\MongoDB.Libmongocrypt.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

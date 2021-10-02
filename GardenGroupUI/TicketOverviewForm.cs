@@ -44,12 +44,17 @@ namespace GardenGroupUI
 
             foreach (Ticket ticketItems in tickets)
             {
-                   ListViewItem item = new ListViewItem(ticketItems.Id.ToString());
-                   item.SubItems.Add(ticketItems.Subject);
-                   item.SubItems.Add(ticketItems.ReportedBy.ToString());
-                   item.SubItems.Add(ticketItems.ReportedDate.ToString("dd-MM-yyyy"));
-                   item.SubItems.Add(ticketItems.IsSolved.ToString());
-                   listViewTickets.Items.Add(item);
+                ListViewItem item = new ListViewItem(ticketItems.Id.ToString());
+                item.SubItems.Add(ticketItems.ReportedBy.ToString());
+                item.SubItems.Add(ticketItems.Subject);
+                item.SubItems.Add(ticketItems.TypeOfIncident.ToString());
+                item.SubItems.Add(ticketItems.TypeOfPriority.ToString());
+                item.SubItems.Add(ticketItems.ReportedDate.ToString("dd-MM-yyyy"));
+                item.SubItems.Add(ticketItems.Deadline.ToString());
+                item.SubItems.Add(ticketItems.Description.ToString());
+                item.SubItems.Add(ticketItems.IsSolved.ToString());
+                listViewTickets.Items.Add(item);
+
 
                 //this.Subject = Subject;
                 //this.Description = Description;
