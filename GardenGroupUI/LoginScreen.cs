@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GardenGroupLogic;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Conventions;
 
 namespace GardenGroupUI
 {
@@ -26,6 +28,13 @@ namespace GardenGroupUI
             MinimizeBox = false;
             // error message hidden on default
             //lblError.Visible = false;
+            // Set up MongoDB conventions
+            var pack = new ConventionPack
+            {
+              new EnumRepresentationConvention(BsonType.String)
+            };
+
+            ConventionRegistry.Register("EnumStringConvention", pack, t => true);
         }
 
         private void btnLogin_Click(object sender, EventArgs e)

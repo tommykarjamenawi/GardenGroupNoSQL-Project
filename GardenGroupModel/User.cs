@@ -26,11 +26,11 @@ namespace GardenGroupModel
         [BsonElement("Password")]
         public string Password { get; set; }
         [BsonElement("TypeOfUser")]
-        //public Enums.TypeOfUser TypeOfUser { get; set; }
-        public string TypeOfUser { get; set; }
+        public Enums.TypeOfUser TypeOfUser { get; set; }
+        //public string TypeOfUser { get; set; }
 
         [BsonConstructor]
-        public User(string FirstName, string LastName, string Email, string Branch, string Phone, string Password, string TypeOfUser)
+        public User(string FirstName, string LastName, string Email, string Branch, string Phone, string Password, Enums.TypeOfUser TypeOfUser)
         {
             this.FirstName = FirstName;
             this.LastName = LastName;
