@@ -27,6 +27,54 @@ namespace GardenGroupDAO
             db = client.GetDatabase("GardenGroup");
         }
 
+        // inserting a document
+        public void InsertDocument<T>(string table, T record)
+        {
+            var collection = db.GetCollection<T>(table);
+            collection.InsertOne(record);
+        }
+
+        // getting a document
+        public List<T> GetDocuments<T>(string table)
+        {
+            var collection = db.GetCollection<T>(table);
+            return collection.Find<T>(new BsonDocument()).ToList();
+        }
+
+        // updating document
+        public void UpdateDocument<T>(string id, string table, T updatedRecord)
+        {
+            var collection = db.GetCollection<T>(table);
+            var filter = Builders<T>.Filter.Eq("Id", id);
+            collection.ReplaceOne(filter, updatedRecord, new ReplaceOptions() { IsUpsert = true });
+        }
+
+        // deleting document
+        public void DeleteDocument<T>(string table, string id)
+        {
+            var collection = db.GetCollection<T>(table);
+            var filter = Builders<T>.Filter.Eq("Id", id);
+            collection.DeleteOne(filter);
+        }
+
+        public List<T> GetSortedIDDocuments<T>(string table)
+        {
+            var collection = db.GetCollection<T>(table);
+            var sort = Builders<T>.Sort.Descending("Id");
+
+            return collection.Find<T>(new BsonDocument()).Sort(sort).ToList();
+        }
+
+        public List<T> GetSortedPriorityDocuments<T>(string table)
+        {
+            var collection = db.GetCollection<T>(table);
+            var prioritySort = Builders<T>.Sort.Descending("Priority");
+            var reportedDateSort = Builders<T>.Sort.Descending("ReportedDate");
+
+            return collection.Find<T>(new BsonDocument()).Sort(reportedDateSort).Sort(prioritySort).ToList();
+        }
+
+
         public bool GetUsersCollection(string LastName)
         {
             IMongoCollection<User> userCollection = db.GetCollection<User>("Users");

@@ -10,17 +10,21 @@ namespace GardenGroupLogic
 {
     public class TicketService
     {
-        private TicketDAO db;
         private List<Ticket> tickets;
+        private TicketDAO ticketDAO;
 
         public TicketService()
         {
-            db = new TicketDAO();
+
+        }
+        public List<Ticket> GetAllSortedById()
+        {
+            return ticketDAO.GetAllSortedById();
         }
 
-        public List<Ticket> GetTickets()
+        public List<Ticket> GetAllSortedByPriority()
         {
-            return db.GetTickets();
+            return ticketDAO.GetAllSortedByPriority();
         }
 
     }

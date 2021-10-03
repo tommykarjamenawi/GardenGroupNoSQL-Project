@@ -10,9 +10,9 @@ using MongoDB.Bson;
 
 namespace GardenGroupDAO
 {
-    public class TicketDAO
+    public class TicketDAO : BaseDAO
     {
-        private IMongoCollection<Ticket> collection;
+        private readonly string TABLE_NAME = "Tickets";
         public TicketDAO()
         {
             //MongoClient connection = MongoDB.GetInstance();
@@ -20,34 +20,19 @@ namespace GardenGroupDAO
             //collection = db.GetCollection<Ticket>("Tickets");
         }
 
-        public List<Ticket> GetTickets()
+        public List<Ticket> GetAll()
         {
-            IFindFluent<Ticket, Ticket> tickets = GetAllTickets();
-            var results = new List<Ticket>();
-
-            foreach (var item in tickets.ToList())
-            {
-                var ticket = new Ticket()
-                {
-                    Id = item.Id,
-                    ReportedBy = item.ReportedBy,
-                    Subject = item.Subject,
-                    TypeOfIncident = (Enums.TypeOfIncident)item.TypeOfIncident,
-                    TypeOfPriority = (Enums.TypeOfPriority)item.TypeOfPriority,
-                    ReportedDate = item.ReportedDate,
-                    Deadline = item.Deadline,
-                    Description = item.Description,
-                    IsSolved = item.IsSolved,                                     
-                };
-                results.Add(ticket);
-            }
-            return results;
+            return db.GetDocuments<Ticket>(TABLE_NAME);
         }
 
-        public IFindFluent<Ticket, Ticket> GetAllTickets()
+        public List<Ticket> GetAllSortedById()
         {
-            var allTickets = collection.Find(i => true);
-            return allTickets;
+            return db.GetSortedIDDocuments<Ticket>(TABLE_NAME);
+        }
+
+        public List<Ticket> GetAllSortedByPriority()
+        {
+            return db.GetSortedPriorityDocuments<Ticket>(TABLE_NAME);
         }
 
     }

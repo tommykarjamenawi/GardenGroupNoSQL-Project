@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using GardenGroupModel;
 using GardenGroupLogic;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Conventions;
 
 namespace GardenGroupUI
 {
@@ -20,6 +22,11 @@ namespace GardenGroupUI
         public TicketOverviewForm()
         {
             InitializeComponent();
+
+            var pack = new ConventionPack
+            {
+              new EnumRepresentationConvention(BsonType.String)
+            };
         }
 
         private void TicketOverviewForm_Load(object sender, EventArgs e)
