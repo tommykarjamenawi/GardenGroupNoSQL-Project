@@ -197,6 +197,10 @@
     <None Include="Resources\download.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GardenGroupDAO\GardenGroupDAO.csproj">
+      <Project>{B2624E97-70DD-41C6-ADAB-ACB0FDB7693E}</Project>
+      <Name>GardenGroupDAO</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GardenGroupLogic\GardenGroupLogic.csproj">
       <Project>{5804044f-82f2-4bd0-823f-dbaadf9021f9}</Project>
       <Name>GardenGroupLogic</Name>

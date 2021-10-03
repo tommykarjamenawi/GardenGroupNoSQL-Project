@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GardenGroupModel;
 using MongoDB.Bson;
 using MongoDB.Driver;
 
@@ -26,6 +27,21 @@ namespace GardenGroupDAO
             db = client.GetDatabase("GardenGroup");
         }
 
-
+        public bool GetUsersCollection(string LastName)
+        {
+            IMongoCollection<User> userCollection = db.GetCollection<User>("Users");
+            List<User> users = userCollection.AsQueryable().ToList<User>();
+            bool condition = false;
+            int count = 0;
+            foreach (User user in users)
+            {
+                if (user.LastName == LastName)
+                {
+                    count++;
+                }
+                
+            }
+            return count >= 1;
+        }
     }
 }

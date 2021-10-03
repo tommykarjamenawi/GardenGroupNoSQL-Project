@@ -13,24 +13,24 @@ namespace GardenGroupModel
         
         [BsonId]
         public ObjectId Id { get; set; }
-        [BsonElement("First name")]
+        [BsonElement("FirstName")]
         public string FirstName { get; set; }
-        [BsonElement("Last name")]
+        [BsonElement("LastName")]
         public string LastName { get; set; }
         [BsonElement("Email")]
         public string Email { get; set; }
         [BsonElement("Branch")]
         public string Branch { get; set; }
-        [BsonElement("Phone number")]
+        [BsonElement("Phone")]
         public string Phone { get; set; }
         [BsonElement("Password")]
         public string Password { get; set; }
-        [BsonElement("Type of user")]
-        public Enums.TypeOfUser TypeOfUser { get; set; }
-
+        [BsonElement("TypeOfUser")]
+        //public Enums.TypeOfUser TypeOfUser { get; set; }
+        public string TypeOfUser { get; set; }
 
         [BsonConstructor]
-        public User(string FirstName, string LastName, string Email, string Branch, string Phone, string Password, Enums.TypeOfUser TypeOfUser)
+        public User(string FirstName, string LastName, string Email, string Branch, string Phone, string Password, string TypeOfUser)
         {
             this.FirstName = FirstName;
             this.LastName = LastName;
