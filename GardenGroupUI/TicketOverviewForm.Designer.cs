@@ -32,16 +32,16 @@ namespace GardenGroupUI
             this.label1 = new System.Windows.Forms.Label();
             this.listViewTickets = new System.Windows.Forms.ListView();
             this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Subject = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.userColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Subject = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.TypeIncident = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.TypePriority = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Deadline = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Description = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnCreateIncident = new System.Windows.Forms.Button();
             this.txtFilter = new System.Windows.Forms.TextBox();
-            this.TypeIncident = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.TypePriority = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Deadline = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Description = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -85,20 +85,40 @@ namespace GardenGroupUI
             // 
             this.ID.Text = "ID";
             // 
-            // Subject
-            // 
-            this.Subject.Text = "Subject";
-            this.Subject.Width = 100;
-            // 
             // userColumn
             // 
             this.userColumn.Text = "User";
             this.userColumn.Width = 100;
             // 
+            // Subject
+            // 
+            this.Subject.Text = "Subject";
+            this.Subject.Width = 100;
+            // 
+            // TypeIncident
+            // 
+            this.TypeIncident.Text = "Incident";
+            this.TypeIncident.Width = 100;
+            // 
+            // TypePriority
+            // 
+            this.TypePriority.Text = "Priority";
+            this.TypePriority.Width = 100;
+            // 
             // columnDate
             // 
             this.columnDate.Text = "Date";
             this.columnDate.Width = 100;
+            // 
+            // Deadline
+            // 
+            this.Deadline.Text = "Deadline";
+            this.Deadline.Width = 100;
+            // 
+            // Description
+            // 
+            this.Description.Text = "Description";
+            this.Description.Width = 100;
             // 
             // columnStatus
             // 
@@ -107,8 +127,8 @@ namespace GardenGroupUI
             // 
             // btnCreateIncident
             // 
-            this.btnCreateIncident.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnCreateIncident.ForeColor = System.Drawing.Color.White;
+            this.btnCreateIncident.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnCreateIncident.ForeColor = System.Drawing.Color.Black;
             this.btnCreateIncident.Location = new System.Drawing.Point(762, 177);
             this.btnCreateIncident.Name = "btnCreateIncident";
             this.btnCreateIncident.Size = new System.Drawing.Size(147, 60);
@@ -123,26 +143,6 @@ namespace GardenGroupUI
             this.txtFilter.Name = "txtFilter";
             this.txtFilter.Size = new System.Drawing.Size(366, 45);
             this.txtFilter.TabIndex = 6;
-            // 
-            // TypeIncident
-            // 
-            this.TypeIncident.Text = "Incident";
-            this.TypeIncident.Width = 100;
-            // 
-            // TypePriority
-            // 
-            this.TypePriority.Text = "Priority";
-            this.TypePriority.Width = 100;
-            // 
-            // Deadline
-            // 
-            this.Deadline.Text = "Deadline";
-            this.Deadline.Width = 100;
-            // 
-            // Description
-            // 
-            this.Description.Text = "Description";
-            this.Description.Width = 100;
             // 
             // button2
             // 
@@ -175,6 +175,7 @@ namespace GardenGroupUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(217)))), ((int)(((byte)(112)))));
             this.ClientSize = new System.Drawing.Size(975, 844);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
