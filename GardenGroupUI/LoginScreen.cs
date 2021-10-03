@@ -20,10 +20,6 @@ namespace GardenGroupUI
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             MinimizeBox = false;
-            this.btnLogin.FlatAppearance.BorderSize = 0;
-            // Change textbox size
-            //this.textBox1.AutoSize = false;
-            //this.textBox1.Size = new System.Drawing.Size(80, 30);
         }
     }
 }
