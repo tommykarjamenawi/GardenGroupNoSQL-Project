@@ -12,21 +12,21 @@ namespace GardenGroupModel
     {
         [BsonId]
         public ObjectId Id { get; set; }
-        [BsonElement("Subject of indicent")]
+        [BsonElement("Subject")]
         public string Subject { get; set; }
         [BsonElement("Description")]
         public string Description { get; set; }
-        [BsonElement("Reported date")]
+        [BsonElement("ReportedDate")]
         public DateTime ReportedDate { get; set; }
-        [BsonElement("Reported by")]
+        [BsonElement("ReportedBy")]
         public string ReportedBy { get; set; }
         [BsonElement("Deadline")]
         public DateTime Deadline { get; set; }
-        [BsonElement("Type of incident")]
+        [BsonElement("TypeOfIncident")]
         public Enums.TypeOfIncident TypeOfIncident { get; set; }
-        [BsonElement("Type of priority")]
+        [BsonElement("TypeOfPriority")]
         public Enums.TypeOfPriority TypeOfPriority { get; set; }
-
+        [BsonElement("Solved")]
         public bool IsSolved { get; set; }
 
         [BsonConstructor]
