@@ -16,8 +16,7 @@ namespace GardenGroupUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new gardenGroupUI());
-
+            Application.Run(new LoginScreen());
         }
     }
 }
