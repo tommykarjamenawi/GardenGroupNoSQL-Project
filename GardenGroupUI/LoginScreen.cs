@@ -35,6 +35,11 @@ namespace GardenGroupUI
             };
 
             ConventionRegistry.Register("EnumStringConvention", pack, t => true);
+            txtUsername.Text = "username";
+            txtUsername.ForeColor = Color.DarkGray;
+            txtPassword.UseSystemPasswordChar = false;
+            txtPassword.Text = "password";
+            txtPassword.ForeColor = Color.DarkGray;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -61,6 +66,82 @@ namespace GardenGroupUI
                 txtUsername.Text = "";
                 txtPassword.Text = "";
                 lblError.Text = "username and/or password is incorrect!";
+            }
+        }
+
+        private void LoginScreen_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUsername_Enter(object sender, EventArgs e)
+        {
+            if (txtUsername.ForeColor == Color.Black)
+            {
+
+            }
+            else
+            {
+                txtUsername.ForeColor = Color.Black;
+                txtUsername.Text = "";
+            }
+        }
+
+        private void txtUsername_Leave(object sender, EventArgs e)
+        {
+            if (txtUsername.Text == "username")
+            {
+                txtUsername.Text = "";
+                txtUsername.ForeColor = Color.Black;
+            }
+            if (txtUsername.ForeColor == Color.Black)
+            {
+
+            }
+            if (txtUsername.Text == "")
+            {
+                txtUsername.Text = "username";
+                txtUsername.ForeColor = Color.DarkGray;
+            }
+        }
+
+        private void txtPassword_Enter(object sender, EventArgs e)
+        {
+            txtPassword.UseSystemPasswordChar = true;
+            if (txtPassword.ForeColor == Color.Black)
+            {
+
+            }
+            else
+            {
+                txtPassword.ForeColor = Color.Black;
+                txtPassword.Text = "";
+            }
+        }
+
+        private void txtPassword_Leave(object sender, EventArgs e)
+        {
+            if(txtPassword.Text.Length >= 1)
+            {
+                txtPassword.UseSystemPasswordChar = true;
+            }
+            else
+            {
+                txtPassword.UseSystemPasswordChar = false;
+            }
+            if (txtPassword.Text == "password")
+            {
+                txtPassword.Text = "";
+                txtPassword.ForeColor = Color.Black;
+            }
+            if (txtPassword.ForeColor == Color.Black)
+            {
+
+            }
+            if (txtPassword.Text == "")
+            {
+                txtPassword.Text = "password";
+                txtPassword.ForeColor = Color.DarkGray;
             }
         }
     }

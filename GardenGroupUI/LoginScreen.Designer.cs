@@ -47,7 +47,8 @@ namespace GardenGroupUI
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(332, 62);
             this.txtPassword.TabIndex = 0;
-            this.txtPassword.UseSystemPasswordChar = true;
+            this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
+            this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
             // 
             // btnLogin
             // 
@@ -69,6 +70,8 @@ namespace GardenGroupUI
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(332, 61);
             this.txtUsername.TabIndex = 2;
+            this.txtUsername.Enter += new System.EventHandler(this.txtUsername_Enter);
+            this.txtUsername.Leave += new System.EventHandler(this.txtUsername_Leave);
             // 
             // pictureBox2
             // 
@@ -114,6 +117,7 @@ namespace GardenGroupUI
             this.MaximizeBox = false;
             this.Name = "LoginScreen";
             this.Text = "GardenGroup Login";
+            this.Load += new System.EventHandler(this.LoginScreen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

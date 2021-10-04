@@ -79,7 +79,6 @@ namespace GardenGroupDAO
         {
             IMongoCollection<User> userCollection = db.GetCollection<User>("Users");
             List<User> users = userCollection.AsQueryable().ToList<User>();
-            bool condition = false;
             int count = 0;
             foreach (User user in users)
             {
