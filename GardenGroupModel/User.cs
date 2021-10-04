@@ -1,16 +1,10 @@
 ﻿using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Bson;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GardenGroupModel
 {
     public class User
-    {
-        
+    {    
         [BsonId]
         public ObjectId Id { get; set; }
         [BsonElement("FirstName")]
@@ -27,7 +21,6 @@ namespace GardenGroupModel
         public string Password { get; set; }
         [BsonElement("TypeOfUser")]
         public Enums.TypeOfUser TypeOfUser { get; set; }
-        //public string TypeOfUser { get; set; }
 
         [BsonConstructor]
         public User(string FirstName, string LastName, string Email, string Branch, string Phone, string Password, Enums.TypeOfUser TypeOfUser)
@@ -40,6 +33,5 @@ namespace GardenGroupModel
             this.Password = Password;
             this.TypeOfUser = TypeOfUser;
         }
-
     }
 }
