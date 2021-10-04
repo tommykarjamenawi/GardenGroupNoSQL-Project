@@ -18,7 +18,8 @@ namespace GardenGroupUI
     {
         private List<Ticket> tickets;
         private TicketService ticketService;
-
+        private List<User> users;
+        private User userLoggedIn;
         public TicketOverviewForm()
         {
             InitializeComponent();
@@ -72,6 +73,30 @@ namespace GardenGroupUI
                 //this.TypeOfPriority = TypeOfPriority;
                 //IsSolved = false;
             }
+        }
+
+        public void DisplayAllTickets2()
+        {
+            userLoggedIn = LoginSession.GetInstance().LoggedIn;
+
+
+        }
+
+
+
+        private string ReportedByFullName(int id)
+        {
+            string reportedFullName = "";
+
+            foreach(User user in users)
+            {
+                if (id.Equals(user.Id))
+                {
+                    reportedFullName = user.FirstName + user.LastName;
+                    break;
+                }
+            }
+            return reportedFullName;
         }
 
 
