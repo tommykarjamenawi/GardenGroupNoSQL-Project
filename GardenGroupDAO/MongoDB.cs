@@ -75,18 +75,17 @@ namespace GardenGroupDAO
         }
 
 
-        public bool GetUsersCollection(string LastName)
+        public bool GetUsersCollection(string email, string password)
         {
             IMongoCollection<User> userCollection = db.GetCollection<User>("Users");
             List<User> users = userCollection.AsQueryable().ToList<User>();
             int count = 0;
             foreach (User user in users)
             {
-                if (user.LastName == LastName)
+                if (user.Email == email && user.Password == password)
                 {
                     count++;
-                }
-                
+                }            
             }
             return count >= 1;
         }

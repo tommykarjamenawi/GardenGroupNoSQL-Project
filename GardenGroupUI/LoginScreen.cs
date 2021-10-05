@@ -15,7 +15,7 @@ namespace GardenGroupUI
 {
     public partial class LoginScreen : Form
     {
-        string username;
+        string email;
         string password;
         UserService userService;
         public LoginScreen()
@@ -35,8 +35,8 @@ namespace GardenGroupUI
             };
 
             ConventionRegistry.Register("EnumStringConvention", pack, t => true);
-            txtUsername.Text = "username";
-            txtUsername.ForeColor = Color.DarkGray;
+            txtEmail.Text = "username";
+            txtEmail.ForeColor = Color.DarkGray;
             txtPassword.UseSystemPasswordChar = false;
             txtPassword.Text = "password";
             txtPassword.ForeColor = Color.DarkGray;
@@ -45,12 +45,16 @@ namespace GardenGroupUI
         private void btnLogin_Click(object sender, EventArgs e)
         {
             //lblError.Visible = false;
-            username = txtUsername.Text;
+            email = txtEmail.Text;
             password = txtPassword.Text;
-            CredentialsEntered(username, password);
-            if (userService.CheckUser(username))
+            CredentialsEntered(email, password);
+            if (userService.CheckUser(email, password))
             {
                 lblError.Text = "correct";
+                this.Hide();
+                TicketOverviewForm ticketOverviewForm = new TicketOverviewForm();
+                ticketOverviewForm.ShowDialog();
+                this.Close();
             }
             else
             {
@@ -63,7 +67,7 @@ namespace GardenGroupUI
             if (!(user.Length >= 1 && key.Length >= 1))
             {
                 lblError.Visible = true;
-                txtUsername.Text = "";
+                txtEmail.Text = "";
                 txtPassword.Text = "";
                 lblError.Text = "username and/or password is incorrect!";
             }
@@ -76,32 +80,32 @@ namespace GardenGroupUI
 
         private void txtUsername_Enter(object sender, EventArgs e)
         {
-            if (txtUsername.ForeColor == Color.Black)
+            if (txtEmail.ForeColor == Color.Black)
             {
 
             }
             else
             {
-                txtUsername.ForeColor = Color.Black;
-                txtUsername.Text = "";
+                txtEmail.ForeColor = Color.Black;
+                txtEmail.Text = "";
             }
         }
 
         private void txtUsername_Leave(object sender, EventArgs e)
         {
-            if (txtUsername.Text == "username")
+            if (txtEmail.Text == "username")
             {
-                txtUsername.Text = "";
-                txtUsername.ForeColor = Color.Black;
+                txtEmail.Text = "";
+                txtEmail.ForeColor = Color.Black;
             }
-            if (txtUsername.ForeColor == Color.Black)
+            if (txtEmail.ForeColor == Color.Black)
             {
 
             }
-            if (txtUsername.Text == "")
+            if (txtEmail.Text == "")
             {
-                txtUsername.Text = "username";
-                txtUsername.ForeColor = Color.DarkGray;
+                txtEmail.Text = "username";
+                txtEmail.ForeColor = Color.DarkGray;
             }
         }
 

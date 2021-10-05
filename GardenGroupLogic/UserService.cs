@@ -14,9 +14,9 @@ namespace GardenGroupLogic
 
         }
 
-        public bool CheckUser(string lastName)
+        public bool CheckUser(string email, string password)
         {
-            return db.GetUsersCollection(lastName);
+            return db.GetUsersCollection(email, password);
         }
     }
 }
