@@ -39,7 +39,7 @@ namespace GardenGroupUI
             txtPassword.UseSystemPasswordChar = false;
             txtPassword.Text = "password";
             txtPassword.ForeColor = Color.DarkGray;
-            txtPassword.TabStop = false;
+            txtPassword.TabStop = false; // Prevent application to enter the password field on startup
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
