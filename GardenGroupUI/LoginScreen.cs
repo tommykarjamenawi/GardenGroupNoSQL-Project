@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using GardenGroupLogic;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Conventions;
+using System.Management;
 
 namespace GardenGroupUI
 {
@@ -34,6 +35,15 @@ namespace GardenGroupUI
               new EnumRepresentationConvention(BsonType.String)
             };          
             ConventionRegistry.Register("EnumStringConvention", pack, t => true);
+
+            var mbs = new ManagementObjectSearcher("Select ProcessorId From Win32_processor");
+            ManagementObjectCollection mbsList = mbs.Get();
+            foreach (ManagementObject mo in mbsList)
+            {
+                lblHardwareID.Text = mo["ProcessorId"].ToString();
+                break;
+            }
+
             txtEmail.Text = "email";
             txtEmail.ForeColor = Color.DarkGray;
             txtPassword.UseSystemPasswordChar = false;

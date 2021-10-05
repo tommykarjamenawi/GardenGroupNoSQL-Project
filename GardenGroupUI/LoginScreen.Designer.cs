@@ -35,6 +35,7 @@ namespace GardenGroupUI
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblError = new System.Windows.Forms.Label();
+            this.lblHardwareID = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -102,12 +103,22 @@ namespace GardenGroupUI
             this.lblError.TabIndex = 5;
             this.lblError.Text = "label1";
             // 
+            // lblHardwareID
+            // 
+            this.lblHardwareID.AutoSize = true;
+            this.lblHardwareID.Location = new System.Drawing.Point(181, 67);
+            this.lblHardwareID.Name = "lblHardwareID";
+            this.lblHardwareID.Size = new System.Drawing.Size(35, 13);
+            this.lblHardwareID.TabIndex = 6;
+            this.lblHardwareID.Text = "label1";
+            // 
             // LoginScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(217)))), ((int)(((byte)(112)))));
             this.ClientSize = new System.Drawing.Size(609, 441);
+            this.Controls.Add(this.lblHardwareID);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
@@ -133,5 +144,6 @@ namespace GardenGroupUI
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label lblError;
+        private System.Windows.Forms.Label lblHardwareID;
     }
 }
