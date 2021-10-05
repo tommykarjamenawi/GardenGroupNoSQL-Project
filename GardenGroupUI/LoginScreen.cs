@@ -32,14 +32,14 @@ namespace GardenGroupUI
             var pack = new ConventionPack
             {
               new EnumRepresentationConvention(BsonType.String)
-            };
-
+            };          
             ConventionRegistry.Register("EnumStringConvention", pack, t => true);
-            txtEmail.Text = "username";
+            txtEmail.Text = "email";
             txtEmail.ForeColor = Color.DarkGray;
             txtPassword.UseSystemPasswordChar = false;
             txtPassword.Text = "password";
             txtPassword.ForeColor = Color.DarkGray;
+            txtPassword.TabStop = false;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -58,7 +58,7 @@ namespace GardenGroupUI
             }
             else
             {
-                lblError.Text = "not correct";
+                MessageBox.Show("please enter correct email or password!");
             }
         }
 
