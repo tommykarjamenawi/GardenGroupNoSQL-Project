@@ -37,15 +37,15 @@ namespace GardenGroupUI
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.txtFirstName = new System.Windows.Forms.TextBox();
+            this.txtPhoneNumber = new System.Windows.Forms.TextBox();
+            this.txtEmailAddress = new System.Windows.Forms.TextBox();
+            this.txtLastName = new System.Windows.Forms.TextBox();
+            this.cmbTypeOfUser = new System.Windows.Forms.ComboBox();
+            this.cmbLocationBranch = new System.Windows.Forms.ComboBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -121,49 +121,49 @@ namespace GardenGroupUI
             this.label8.TabIndex = 7;
             this.label8.Text = "E-mail address:";
             // 
-            // textBox1
+            // txtFirstName
             // 
-            this.textBox1.Location = new System.Drawing.Point(237, 147);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(213, 22);
-            this.textBox1.TabIndex = 8;
+            this.txtFirstName.Location = new System.Drawing.Point(237, 147);
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.Size = new System.Drawing.Size(213, 22);
+            this.txtFirstName.TabIndex = 8;
             // 
-            // textBox2
+            // txtPhoneNumber
             // 
-            this.textBox2.Location = new System.Drawing.Point(237, 296);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(213, 22);
-            this.textBox2.TabIndex = 9;
+            this.txtPhoneNumber.Location = new System.Drawing.Point(237, 296);
+            this.txtPhoneNumber.Name = "txtPhoneNumber";
+            this.txtPhoneNumber.Size = new System.Drawing.Size(213, 22);
+            this.txtPhoneNumber.TabIndex = 9;
             // 
-            // textBox3
+            // txtEmailAddress
             // 
-            this.textBox3.Location = new System.Drawing.Point(237, 259);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(213, 22);
-            this.textBox3.TabIndex = 10;
+            this.txtEmailAddress.Location = new System.Drawing.Point(237, 259);
+            this.txtEmailAddress.Name = "txtEmailAddress";
+            this.txtEmailAddress.Size = new System.Drawing.Size(213, 22);
+            this.txtEmailAddress.TabIndex = 10;
             // 
-            // textBox4
+            // txtLastName
             // 
-            this.textBox4.Location = new System.Drawing.Point(236, 183);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(213, 22);
-            this.textBox4.TabIndex = 11;
+            this.txtLastName.Location = new System.Drawing.Point(236, 183);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(213, 22);
+            this.txtLastName.TabIndex = 11;
             // 
-            // comboBox1
+            // cmbTypeOfUser
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(237, 218);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(213, 24);
-            this.comboBox1.TabIndex = 12;
+            this.cmbTypeOfUser.FormattingEnabled = true;
+            this.cmbTypeOfUser.Location = new System.Drawing.Point(237, 218);
+            this.cmbTypeOfUser.Name = "cmbTypeOfUser";
+            this.cmbTypeOfUser.Size = new System.Drawing.Size(213, 24);
+            this.cmbTypeOfUser.TabIndex = 12;
             // 
-            // comboBox2
+            // cmbLocationBranch
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(237, 330);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(213, 24);
-            this.comboBox2.TabIndex = 13;
+            this.cmbLocationBranch.FormattingEnabled = true;
+            this.cmbLocationBranch.Location = new System.Drawing.Point(237, 330);
+            this.cmbLocationBranch.Name = "cmbLocationBranch";
+            this.cmbLocationBranch.Size = new System.Drawing.Size(213, 24);
+            this.cmbLocationBranch.TabIndex = 13;
             // 
             // checkBox1
             // 
@@ -175,38 +175,40 @@ namespace GardenGroupUI
             this.checkBox1.Text = "yes, a password e-mail will be sent to the user";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnCancel
             // 
-            this.button1.Location = new System.Drawing.Point(237, 404);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(103, 34);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "&Cancel";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCancel.Location = new System.Drawing.Point(237, 404);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(103, 34);
+            this.btnCancel.TabIndex = 15;
+            this.btnCancel.Text = "&Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // button2
+            // btnAdd
             // 
-            this.button2.Location = new System.Drawing.Point(346, 404);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(103, 34);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "&Add user";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnAdd.Location = new System.Drawing.Point(346, 404);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(103, 34);
+            this.btnAdd.TabIndex = 16;
+            this.btnAdd.Text = "&Add user";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // AddUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(812, 543);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.cmbLocationBranch);
+            this.Controls.Add(this.cmbTypeOfUser);
+            this.Controls.Add(this.txtLastName);
+            this.Controls.Add(this.txtEmailAddress);
+            this.Controls.Add(this.txtPhoneNumber);
+            this.Controls.Add(this.txtFirstName);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -232,14 +234,14 @@ namespace GardenGroupUI
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.TextBox txtFirstName;
+        private System.Windows.Forms.TextBox txtPhoneNumber;
+        private System.Windows.Forms.TextBox txtEmailAddress;
+        private System.Windows.Forms.TextBox txtLastName;
+        private System.Windows.Forms.ComboBox cmbTypeOfUser;
+        private System.Windows.Forms.ComboBox cmbLocationBranch;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnAdd;
     }
 }

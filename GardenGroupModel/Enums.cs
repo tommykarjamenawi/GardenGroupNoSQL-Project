@@ -11,6 +11,7 @@ namespace GardenGroupModel
         public enum TypeOfUser { EndUser, ServiceDeskEmployee };
         public enum TypeOfIncident { Software = 0, Hardware, Service };
 
+        public enum Branch { Haarlem, Amsterdam, Knuppeldam, Headquarters };
         public enum TypeOfPriority { Low = 0, Normal, High };
     }
 
