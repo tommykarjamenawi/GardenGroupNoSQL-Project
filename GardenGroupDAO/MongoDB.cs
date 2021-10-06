@@ -36,7 +36,7 @@ namespace GardenGroupDAO
         }
 
         // updating document
-        public void UpdateDocument<T>(string id, string table, T updatedRecord)
+        public void UpdateDocument<T>(ObjectId id, string table, T updatedRecord)
         {
             var collection = db.GetCollection<T>(table);
             var filter = Builders<T>.Filter.Eq("Id", id);
@@ -44,7 +44,7 @@ namespace GardenGroupDAO
         }
 
         // deleting document
-        public void DeleteDocument<T>(string table, string id)
+        public void DeleteDocument<T>(ObjectId id, string table)
         {
             var collection = db.GetCollection<T>(table);
             var filter = Builders<T>.Filter.Eq("Id", id);

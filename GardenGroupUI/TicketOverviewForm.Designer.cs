@@ -45,9 +45,9 @@ namespace GardenGroupUI
             this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnRemove = new System.Windows.Forms.Button();
+            this.btnCreate = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -174,38 +174,38 @@ namespace GardenGroupUI
             this.button5.Text = "Dashboard";
             this.button5.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnRemove
             // 
-            this.button1.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(840, 167);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(147, 60);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "REMOVE TICKET";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnRemove.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnRemove.ForeColor = System.Drawing.Color.Black;
+            this.btnRemove.Location = new System.Drawing.Point(840, 167);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(147, 60);
+            this.btnRemove.TabIndex = 13;
+            this.btnRemove.Text = "REMOVE TICKET";
+            this.btnRemove.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btnCreate
             // 
-            this.button3.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(438, 167);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(147, 60);
-            this.button3.TabIndex = 14;
-            this.button3.Text = "CREATE TICKET";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnCreate.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnCreate.ForeColor = System.Drawing.Color.Black;
+            this.btnCreate.Location = new System.Drawing.Point(438, 167);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(147, 60);
+            this.btnCreate.TabIndex = 14;
+            this.btnCreate.Text = "CREATE TICKET";
+            this.btnCreate.UseVisualStyleBackColor = false;
             // 
-            // button6
+            // btnUpdate
             // 
-            this.button6.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.button6.ForeColor = System.Drawing.Color.Black;
-            this.button6.Location = new System.Drawing.Point(635, 167);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(147, 60);
-            this.button6.TabIndex = 15;
-            this.button6.Text = "UPDATE TICKET";
-            this.button6.UseVisualStyleBackColor = false;
+            this.btnUpdate.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnUpdate.ForeColor = System.Drawing.Color.Black;
+            this.btnUpdate.Location = new System.Drawing.Point(635, 167);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(147, 60);
+            this.btnUpdate.TabIndex = 15;
+            this.btnUpdate.Text = "UPDATE TICKET";
+            this.btnUpdate.UseVisualStyleBackColor = false;
             // 
             // TicketOverviewForm
             // 
@@ -213,9 +213,9 @@ namespace GardenGroupUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(217)))), ((int)(((byte)(112)))));
             this.ClientSize = new System.Drawing.Size(1308, 898);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnCreate);
+            this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button2);
@@ -248,8 +248,8 @@ namespace GardenGroupUI
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnRemove;
+        private System.Windows.Forms.Button btnCreate;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }

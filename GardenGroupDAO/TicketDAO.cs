@@ -36,5 +36,22 @@ namespace GardenGroupDAO
             return GetSortedPriorityDocuments<Ticket>(TABLE_NAME);
         }
 
+        public void CreateTicket(Ticket newTicket)
+        {
+            InsertDocument<Ticket>(TABLE_NAME, newTicket);
+        }
+
+        public void UpdateTicket(ObjectId id, Ticket updatedTicket)
+        {
+            UpdateDocument<Ticket>(id, TABLE_NAME, updatedTicket);
+        }
+
+        public void DeleteTicket(ObjectId id)
+        {
+            DeleteDocument<Ticket>(id, TABLE_NAME);
+        }
+
+
+
     }
 }
