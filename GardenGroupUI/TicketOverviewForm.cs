@@ -22,6 +22,7 @@ namespace GardenGroupUI
         private User userLoggedIn;
         public TicketOverviewForm()
         {
+            ticketService = new TicketService();
             InitializeComponent();
 
             var pack = new ConventionPack
@@ -49,7 +50,7 @@ namespace GardenGroupUI
         public void DisplayAllTickets()
         {
             listViewTickets.Items.Clear();
-            List<Ticket> tickets = ticketService.GetAllTickets();
+            tickets = ticketService.GetAllTickets();
 
             foreach (Ticket ticket in tickets)
             {
@@ -58,7 +59,7 @@ namespace GardenGroupUI
                 item.SubItems.Add(ticket.Subject);
                 item.SubItems.Add(ticket.TypeOfIncident.ToString());
                 item.SubItems.Add(ticket.TypeOfPriority.ToString());
-                item.SubItems.Add(ticket.ReportedDate.ToString("dd-MM-yyyy"));
+                item.SubItems.Add(ticket.ReportedDate.ToString("MM/dd/yy H:mm:ss"));
                 item.SubItems.Add(ticket.Deadline.ToString());
                 item.SubItems.Add(ticket.Description.ToString());
                 item.SubItems.Add(ticket.IsSolved.ToString());

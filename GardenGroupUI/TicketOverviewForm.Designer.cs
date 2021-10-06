@@ -45,6 +45,9 @@ namespace GardenGroupUI
             this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -75,7 +78,7 @@ namespace GardenGroupUI
             this.listViewTickets.HideSelection = false;
             this.listViewTickets.Location = new System.Drawing.Point(44, 243);
             this.listViewTickets.Name = "listViewTickets";
-            this.listViewTickets.Size = new System.Drawing.Size(865, 561);
+            this.listViewTickets.Size = new System.Drawing.Size(1147, 590);
             this.listViewTickets.TabIndex = 8;
             this.listViewTickets.UseCompatibleStateImageBehavior = false;
             this.listViewTickets.View = System.Windows.Forms.View.Details;
@@ -129,7 +132,7 @@ namespace GardenGroupUI
             // 
             this.btnCreateIncident.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnCreateIncident.ForeColor = System.Drawing.Color.Black;
-            this.btnCreateIncident.Location = new System.Drawing.Point(762, 177);
+            this.btnCreateIncident.Location = new System.Drawing.Point(1044, 167);
             this.btnCreateIncident.Name = "btnCreateIncident";
             this.btnCreateIncident.Size = new System.Drawing.Size(147, 60);
             this.btnCreateIncident.TabIndex = 5;
@@ -146,18 +149,18 @@ namespace GardenGroupUI
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(614, 79);
+            this.button2.Location = new System.Drawing.Point(808, 79);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(295, 38);
+            this.button2.Size = new System.Drawing.Size(383, 38);
             this.button2.TabIndex = 9;
             this.button2.Text = "User Management";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(329, 79);
+            this.button4.Location = new System.Drawing.Point(430, 79);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(279, 38);
+            this.button4.Size = new System.Drawing.Size(362, 38);
             this.button4.TabIndex = 11;
             this.button4.Text = "Incident Management";
             this.button4.UseVisualStyleBackColor = true;
@@ -166,17 +169,53 @@ namespace GardenGroupUI
             // 
             this.button5.Location = new System.Drawing.Point(44, 79);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(279, 38);
+            this.button5.Size = new System.Drawing.Size(366, 38);
             this.button5.TabIndex = 12;
             this.button5.Text = "Dashboard";
             this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(840, 167);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(147, 60);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "REMOVE TICKET";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.button3.ForeColor = System.Drawing.Color.Black;
+            this.button3.Location = new System.Drawing.Point(438, 167);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(147, 60);
+            this.button3.TabIndex = 14;
+            this.button3.Text = "CREATE TICKET";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.button6.ForeColor = System.Drawing.Color.Black;
+            this.button6.Location = new System.Drawing.Point(635, 167);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(147, 60);
+            this.button6.TabIndex = 15;
+            this.button6.Text = "UPDATE TICKET";
+            this.button6.UseVisualStyleBackColor = false;
             // 
             // TicketOverviewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(217)))), ((int)(((byte)(112)))));
-            this.ClientSize = new System.Drawing.Size(975, 844);
+            this.ClientSize = new System.Drawing.Size(1308, 898);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button2);
@@ -209,5 +248,8 @@ namespace GardenGroupUI
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button6;
     }
 }
