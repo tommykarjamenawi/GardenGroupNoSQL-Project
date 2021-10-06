@@ -20,9 +20,10 @@ namespace GardenGroupDAO
             //collection = db.GetCollection<Ticket>("Tickets");
         }
 
-        public List<Ticket> GetAll()
+        public List<Ticket> GetAllTickets()
         {
-            return db.GetDocuments<Ticket>(TABLE_NAME);
+            List<Ticket> tickets = db.GetDocuments<Ticket>(TABLE_NAME);
+            return tickets;
         }
 
         public List<Ticket> GetAllSortedById()

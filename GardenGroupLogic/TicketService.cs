@@ -15,7 +15,7 @@ namespace GardenGroupLogic
 
         public TicketService()
         {
-
+            ticketDAO = new TicketDAO();
         }
         public List<Ticket> GetAllSortedById()
         {
@@ -27,5 +27,9 @@ namespace GardenGroupLogic
             return ticketDAO.GetAllSortedByPriority();
         }
 
+        public List<Ticket> GetAllTickets()
+        {
+            return ticketDAO.GetAllTickets();
+        }
     }
 }
