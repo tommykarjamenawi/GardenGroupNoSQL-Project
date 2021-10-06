@@ -21,12 +21,12 @@ namespace GardenGroupUI
         UserService userService;
         public LoginScreen()
         {
-            InitializeComponent();
-            userService = new UserService();
+            InitializeComponent();        
             // Disable ability to resize the login screen;
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             MinimizeBox = false;
+            userService = new UserService();
             // error message hidden on default
             //lblError.Visible = false;
             // Set up MongoDB conventions
