@@ -10,7 +10,7 @@ using MongoDB.Bson;
 
 namespace GardenGroupDAO
 {
-    public class TicketDAO : BaseDAO
+    public class TicketDAO : MongoDB
     {
         private readonly string TABLE_NAME = "Tickets";
         public TicketDAO()
@@ -22,18 +22,18 @@ namespace GardenGroupDAO
 
         public List<Ticket> GetAllTickets()
         {
-            List<Ticket> tickets = db.GetDocuments<Ticket>(TABLE_NAME);
+            List<Ticket> tickets = GetDocuments<Ticket>(TABLE_NAME);
             return tickets;
         }
 
         public List<Ticket> GetAllSortedById()
         {
-            return db.GetSortedIDDocuments<Ticket>(TABLE_NAME);
+            return GetSortedIDDocuments<Ticket>(TABLE_NAME);
         }
 
         public List<Ticket> GetAllSortedByPriority()
         {
-            return db.GetSortedPriorityDocuments<Ticket>(TABLE_NAME);
+            return GetSortedPriorityDocuments<Ticket>(TABLE_NAME);
         }
 
     }

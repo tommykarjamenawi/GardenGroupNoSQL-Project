@@ -9,7 +9,7 @@ using GardenGroupModel;
 namespace GardenGroupLogic
 {
     
-    public class UserService : BaseDAO
+    public class UserService 
     {
         UserDAO userdao = new UserDAO();
         public UserService()
@@ -19,7 +19,7 @@ namespace GardenGroupLogic
 
         public bool CheckUser(string email, string password)
         {
-            return db.GetUsersCollection(email, password);
+            return userdao.GetUsersCollection(email, password);
         }
 
         public void AddUser(User user)

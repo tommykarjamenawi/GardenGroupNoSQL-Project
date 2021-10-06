@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace GardenGroupDAO
 {
-   public class UserDAO : BaseDAO
+   public class UserDAO : MongoDB
     {
         string TABLE_NAME = "Users";
 
@@ -22,7 +22,7 @@ namespace GardenGroupDAO
             }
             else
             {
-                db.InsertDocument<User>(TABLE_NAME, user);
+                InsertDocument<User>(TABLE_NAME, user);
             }
         }
 
@@ -35,7 +35,7 @@ namespace GardenGroupDAO
 
         public List<User> GetAllUsers()
         {
-            List<User> users = db.GetDocuments<User>(TABLE_NAME);
+            List<User> users = GetDocuments<User>(TABLE_NAME);
 
             return users;
         }
@@ -44,7 +44,7 @@ namespace GardenGroupDAO
         {
 
             // need to ADD a working querie
-            List<User> user = db.GetDocuments<User>(TABLE_NAME);
+            List<User> user = GetDocuments<User>(TABLE_NAME);
             return user;
         }
     }
