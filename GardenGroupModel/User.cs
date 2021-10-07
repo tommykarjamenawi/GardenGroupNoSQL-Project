@@ -14,13 +14,13 @@ namespace GardenGroupModel
         [BsonElement("Email")]
         public string Email { get; set; }
         [BsonElement("Branch")]
-        public Enums.Branch branch { get; set; }
+        public string branch { get; set; }
         [BsonElement("Phone")]
         public string Phone { get; set; }
         [BsonElement("Password")]
         public string Password { get; set; }
         [BsonElement("TypeOfUser")]
-        public Enums.TypeOfUser TypeOfUser { get; set; }
+        public string TypeOfUser { get; set; }
 
         [BsonConstructor]
         public User()
@@ -29,7 +29,7 @@ namespace GardenGroupModel
         }
 
         [BsonConstructor]
-        public User(string FirstName, string LastName, string Email, Enums.Branch Branch, string Phone, string Password, Enums.TypeOfUser TypeOfUser)
+        public User(string FirstName, string LastName, string Email, string Branch, string Phone, string Password, string TypeOfUser)
         {
             this.FirstName = FirstName;
             this.LastName = LastName;
@@ -41,7 +41,7 @@ namespace GardenGroupModel
         }
 
         [BsonConstructor]
-        public User(string FirstName, string LastName, string Email, Enums.Branch Branch, string Phone, Enums.TypeOfUser TypeOfUser)
+        public User(string FirstName, string LastName, string Email, string Branch, string Phone, string TypeOfUser)
         {
             this.FirstName = FirstName;
             this.LastName = LastName;

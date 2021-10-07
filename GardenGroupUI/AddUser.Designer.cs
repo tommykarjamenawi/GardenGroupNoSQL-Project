@@ -151,6 +151,7 @@ namespace GardenGroupUI
             // 
             // cmbTypeOfUser
             // 
+            this.cmbTypeOfUser.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTypeOfUser.FormattingEnabled = true;
             this.cmbTypeOfUser.Location = new System.Drawing.Point(237, 218);
             this.cmbTypeOfUser.Name = "cmbTypeOfUser";
@@ -159,6 +160,7 @@ namespace GardenGroupUI
             // 
             // cmbLocationBranch
             // 
+            this.cmbLocationBranch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbLocationBranch.FormattingEnabled = true;
             this.cmbLocationBranch.Location = new System.Drawing.Point(237, 330);
             this.cmbLocationBranch.Name = "cmbLocationBranch";

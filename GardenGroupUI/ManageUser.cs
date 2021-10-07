@@ -29,6 +29,21 @@ namespace GardenGroupUI
 
         private void ManageUser_Load(object sender, EventArgs e)
         {
+            try
+            {
+                this.Show();
+                FillForm();
+            }
+            catch (Exception exp)
+            {
+
+                MessageBox.Show($"{exp.Message}\n Contact IT department");
+            }
+           
+        }
+
+        public void FillForm()
+        {
             List<User> users = userService.GetAllUsers();
 
             foreach (User u in users)

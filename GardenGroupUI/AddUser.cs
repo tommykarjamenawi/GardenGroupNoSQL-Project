@@ -19,47 +19,30 @@ namespace GardenGroupUI
         public AddUser()
         {
             InitializeComponent();
-            AddEnumToComBox();
+            InitializeComBox();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            user = new User();
-            user.FirstName = txtFirstName.Text.ToString();
-            user.LastName = txtLastName.Text;
-            string userType = cmbTypeOfUser.SelectedItem.ToString();
+            try
+            {
+                user = new User();
+                user.FirstName = txtFirstName.Text;
+                user.LastName = txtLastName.Text;
+                user.TypeOfUser = cmbTypeOfUser.SelectedItem.ToString();
+                user.Email = txtEmailAddress.Text;
+                user.Phone = txtPhoneNumber.Text;
+                user.branch = cmbLocationBranch.Text;
 
-            if (userType == "End User")
-            {
-                user.TypeOfUser = Enums.TypeOfUser.EndUser;
-            }
-            else
-            {
-                user.TypeOfUser = Enums.TypeOfUser.ServiceDeskEmployee;
-            }
 
-            user.Email = txtEmailAddress.Text;
-            user.Phone = txtPhoneNumber.Text;
-            string Branch = cmbLocationBranch.SelectedItem.ToString();
-
-            if (Branch == "Haarlem")
-            {
-                user.branch = Enums.Branch.Haarlem;
+                UserService = new UserService();
+                UserService.AddUser(user);
+                CleanForm();
             }
-            else if (Branch == "Amsterdam")
+            catch (Exception exp)
             {
-                user.branch = Enums.Branch.Amsterdam;
+                MessageBox.Show($"{exp}");
             }
-            else if (Branch == "Headquarters")
-            {
-                user.branch = Enums.Branch.Headquarters;
-            }
-            else if (Branch == "Knuppeldam")
-            {
-                user.branch = Enums.Branch.Knuppeldam;
-            }
-            UserService = new UserService();
-            UserService.AddUser(user);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -69,14 +52,20 @@ namespace GardenGroupUI
             this.Hide();
         }
 
-        void AddEnumToComBox()
+        private void InitializeComBox()
         {
-            cmbTypeOfUser.Items.Add(Enums.TypeOfUser.EndUser);
-            cmbTypeOfUser.Items.Add(Enums.TypeOfUser.ServiceDeskEmployee);
-            cmbLocationBranch.Items.Add(Enums.Branch.Amsterdam);
-            cmbLocationBranch.Items.Add(Enums.Branch.Haarlem);
-            cmbLocationBranch.Items.Add(Enums.Branch.Headquarters);
-            cmbLocationBranch.Items.Add(Enums.Branch.Knuppeldam);
+            cmbTypeOfUser.Items.AddRange(Enum.GetNames(typeof(Enums.TypeOfUser)));
+            cmbLocationBranch.Items.AddRange(Enum.GetNames(typeof(Enums.Branch)));
+        }
+
+        private void CleanForm()
+        {
+            txtEmailAddress.Clear();
+            txtFirstName.Clear();
+            txtLastName.Clear();
+            txtPhoneNumber.Clear();
+            cmbLocationBranch.Text = "";
+            cmbTypeOfUser.Text = "";
         }
     }
 }

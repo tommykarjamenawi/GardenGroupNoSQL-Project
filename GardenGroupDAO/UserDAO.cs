@@ -16,9 +16,9 @@ namespace GardenGroupDAO
         {
             User checkuser = FindOneByEmail(user.Email);
 
-            if (user != null)
+            if (checkuser != null)
             {
-                throw new Exception("Email already in registerd to other User!");
+                throw new Exception("Email already  registerd to other User!");
             }
             else
             {
