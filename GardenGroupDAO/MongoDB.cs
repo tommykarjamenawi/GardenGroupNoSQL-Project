@@ -26,7 +26,7 @@ namespace GardenGroupDAO
         {
             var collection = db.GetCollection<T>(table);
             collection.InsertOne(record);
-        }
+        } 
 
         // getting a document
         public List<T> GetDocuments<T>(string table)
@@ -82,6 +82,21 @@ namespace GardenGroupDAO
                 }            
             }
             return count >= 1;
+        }
+        public List<T> FindByQuery<T>(string table, FilterDefinition<T> filter)
+        {
+            var collection = db.GetCollection<T>(table);
+            return collection.Find<T>(filter).ToList();
+        }
+
+
+
+        public User FindOneByEmail(string email)
+        {
+            var filter = Builders<User>.Filter.Eq("Email", email);
+            List<User> users = FindByQuery<User>("Users", filter);
+
+            return users.Count > 0 ? users[0] : null;
         }
     }
 }

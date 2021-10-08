@@ -14,24 +14,9 @@ namespace GardenGroupDAO
 
         public void AddUser(User user)
         {
-            User checkuser = FindOneByEmail(user.Email);
-
-            if (checkuser != null)
-            {
-                throw new Exception("Email already  registerd to other User!");
-            }
-            else
-            {
                 InsertDocument<User>(TABLE_NAME, user);
-            }
         }
 
-        private User FindOneByEmail(string email)
-        {
-
-            // need to ADD a working querie
-            return null;
-        }
 
         public List<User> GetAllUsers()
         {
@@ -40,12 +25,9 @@ namespace GardenGroupDAO
             return users;
         }
 
-        public List<User> SearchUsers(String searchBox)
+        public User SearchUsers(string email)
         {
-
-            // need to ADD a working querie
-            List<User> user = GetDocuments<User>(TABLE_NAME);
-            return user;
+           return FindOneByEmail(email);
         }
     }
 }

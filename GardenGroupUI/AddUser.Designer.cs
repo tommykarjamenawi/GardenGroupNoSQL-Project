@@ -127,6 +127,7 @@ namespace GardenGroupUI
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(213, 22);
             this.txtFirstName.TabIndex = 8;
+            this.txtFirstName.TextChanged += new System.EventHandler(this.txtFirstName_TextChanged);
             // 
             // txtPhoneNumber
             // 
@@ -134,6 +135,7 @@ namespace GardenGroupUI
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(213, 22);
             this.txtPhoneNumber.TabIndex = 9;
+            this.txtPhoneNumber.TextChanged += new System.EventHandler(this.txtPhoneNumber_TextChanged);
             // 
             // txtEmailAddress
             // 
@@ -141,6 +143,7 @@ namespace GardenGroupUI
             this.txtEmailAddress.Name = "txtEmailAddress";
             this.txtEmailAddress.Size = new System.Drawing.Size(213, 22);
             this.txtEmailAddress.TabIndex = 10;
+            this.txtEmailAddress.TextChanged += new System.EventHandler(this.txtEmailAddress_TextChanged);
             // 
             // txtLastName
             // 
@@ -148,6 +151,7 @@ namespace GardenGroupUI
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(213, 22);
             this.txtLastName.TabIndex = 11;
+            this.txtLastName.TextChanged += new System.EventHandler(this.txtLastName_TextChanged);
             // 
             // cmbTypeOfUser
             // 
@@ -157,6 +161,7 @@ namespace GardenGroupUI
             this.cmbTypeOfUser.Name = "cmbTypeOfUser";
             this.cmbTypeOfUser.Size = new System.Drawing.Size(213, 24);
             this.cmbTypeOfUser.TabIndex = 12;
+            this.cmbTypeOfUser.SelectedIndexChanged += new System.EventHandler(this.cmbTypeOfUser_SelectedIndexChanged);
             // 
             // cmbLocationBranch
             // 
@@ -166,6 +171,7 @@ namespace GardenGroupUI
             this.cmbLocationBranch.Name = "cmbLocationBranch";
             this.cmbLocationBranch.Size = new System.Drawing.Size(213, 24);
             this.cmbLocationBranch.TabIndex = 13;
+            this.cmbLocationBranch.SelectedIndexChanged += new System.EventHandler(this.cmbLocationBranch_SelectedIndexChanged);
             // 
             // checkBox1
             // 

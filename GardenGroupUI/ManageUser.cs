@@ -1,20 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using GardenGroupLogic;
 using GardenGroupModel;
-using GardenGroupLogic;
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace GardenGroupUI
 {
     public partial class ManageUser : Form
     {
-        UserService userService = new UserService();
+        private UserService userService = new UserService();
+
         public ManageUser()
         {
             InitializeComponent();
@@ -36,10 +32,8 @@ namespace GardenGroupUI
             }
             catch (Exception exp)
             {
-
                 MessageBox.Show($"{exp.Message}\n Contact IT department");
             }
-           
         }
 
         public void FillForm()
@@ -59,10 +53,38 @@ namespace GardenGroupUI
 
         private void txtSearchBox_TextChanged(object sender, EventArgs e)
         {
-            String SearchBox = txtSearchBox.Text.ToString();
-            lblsearchcheck.Text = txtSearchBox.Text.ToString();
-            List<User> users = userService.SearchUsers(SearchBox);
+            if (txtSearchBox.TextLength == 0)
+            {
+                FillForm();
+            }
+        }
 
+        private void Search()
+        {
+            string SearchBox = txtSearchBox.Text.ToString();
+            User user = userService.SearchUsers(SearchBox);
+            if (user != null)
+            {
+                lstUsers.Items.Clear();
+
+                ListViewItem li = new ListViewItem(user.Id.ToString());
+                li.SubItems.Add(user.Email.ToString());
+                li.SubItems.Add(user.FirstName.ToString());
+                li.SubItems.Add(user.LastName.ToString());
+
+                lstUsers.Items.Add(li);
+            }
+            else
+            {
+                lstUsers.Items.Clear();
+                lblsearchcheck.ForeColor = Color.Red;
+                lblsearchcheck.Text = "user does not exist";
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Search();
         }
     }
 }

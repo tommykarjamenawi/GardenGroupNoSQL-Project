@@ -62,8 +62,8 @@ namespace GardenGroupUI
             {
                 lblError.Text = "correct";
                 this.Hide();
-                TicketOverviewForm ticketOverviewForm = new TicketOverviewForm();
-                ticketOverviewForm.ShowDialog();
+               // TicketOverviewForm ticketOverviewForm = new TicketOverviewForm();
+              //  ticketOverviewForm.ShowDialog();
                 this.Close();
             }
             else

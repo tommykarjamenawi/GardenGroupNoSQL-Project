@@ -39,6 +39,7 @@ namespace GardenGroupUI
             this.columnLastname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnTickets = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblsearchcheck = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -117,11 +118,21 @@ namespace GardenGroupUI
             // lblsearchcheck
             // 
             this.lblsearchcheck.AutoSize = true;
-            this.lblsearchcheck.Location = new System.Drawing.Point(87, 189);
+            this.lblsearchcheck.Location = new System.Drawing.Point(68, 189);
             this.lblsearchcheck.Name = "lblsearchcheck";
             this.lblsearchcheck.Size = new System.Drawing.Size(20, 17);
             this.lblsearchcheck.TabIndex = 4;
             this.lblsearchcheck.Text = "...";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(333, 155);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "&Search";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ManageUser
             // 
@@ -129,6 +140,7 @@ namespace GardenGroupUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(217)))), ((int)(((byte)(112)))));
             this.ClientSize = new System.Drawing.Size(800, 594);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblsearchcheck);
             this.Controls.Add(this.lstUsers);
             this.Controls.Add(this.btnAddNewUser);
@@ -154,5 +166,6 @@ namespace GardenGroupUI
         private System.Windows.Forms.ColumnHeader columnLastname;
         private System.Windows.Forms.ColumnHeader columnTickets;
         private System.Windows.Forms.Label lblsearchcheck;
+        private System.Windows.Forms.Button button1;
     }
 }

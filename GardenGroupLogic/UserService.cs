@@ -12,10 +12,7 @@ namespace GardenGroupLogic
     public class UserService 
     {
         UserDAO userdao = new UserDAO();
-        public UserService()
-        {
-
-        }
+       
 
         public bool CheckUser(string email, string password)
         {
@@ -32,7 +29,7 @@ namespace GardenGroupLogic
             return userdao.GetAllUsers();
         }
 
-        public List<User> SearchUsers(String searchBox)
+        public User SearchUsers(String searchBox)
         {
             return userdao.SearchUsers(searchBox);
         }
