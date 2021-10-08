@@ -11,7 +11,6 @@ namespace GardenGroupLogic
 {
     public class TicketService
     {
-        private List<Ticket> tickets;
         private TicketDAO ticketDAO;
 
         public TicketService()
@@ -33,20 +32,22 @@ namespace GardenGroupLogic
         {
             return ticketDAO.GetAllTicketsForUser(user);
         }
-        public List<Ticket> GetAllSortedById()
+
+        //check later
+        public Ticket SortByPriority(string priority)
         {
-            return ticketDAO.GetAllSortedById();
+            return ticketDAO.SortByPriority(priority);
         }
 
-        public List<Ticket> GetAllSortedByPriority()
-        {
-            return ticketDAO.GetAllSortedByPriority();
-        }
+        //public List<Ticket> GetAllSortedById()
+        //{
+        //    return ticketDAO.GetAllSortedById();
+        //}
 
-        public void CreateTicket(Ticket newTicket)
-        {
-            ticketDAO.CreateTicket(newTicket);
-        }
+        //public List<Ticket> GetAllSortedByPriority()
+        //{
+        //    return ticketDAO.GetAllSortedByPriority();
+        //}
 
         // check the update ticket later
         public void UpdateTicketCheck(Ticket ticket)

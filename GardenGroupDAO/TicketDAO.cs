@@ -45,20 +45,24 @@ namespace GardenGroupDAO
             //return tickets;
         }
 
-        public List<Ticket> GetAllSortedById()
+        // check later
+        public Ticket SortByPriority(string priority)
         {
-            return GetSortedIDDocuments<Ticket>(TABLE_NAME);
+            var filter = Builders<Ticket>.Filter.Eq("TypeOfPriority", priority);
+            List<Ticket> tickets = FindByQuery<Ticket>("Tickets", filter);
+
+            return tickets.Count > 0 ? tickets[0] : null;
         }
 
-        public List<Ticket> GetAllSortedByPriority()
-        {
-            return GetSortedPriorityDocuments<Ticket>(TABLE_NAME);
-        }
+        //public List<Ticket> GetAllSortedById()
+        //{
+        //    return GetSortedIDDocuments<Ticket>(TABLE_NAME);
+        //}
 
-        public void CreateTicket(Ticket newTicket)
-        {
-            InsertDocument<Ticket>(TABLE_NAME, newTicket);
-        }
+        //public List<Ticket> GetAllSortedByPriority()
+        //{
+        //    return GetSortedPriorityDocuments<Ticket>(TABLE_NAME);
+        //}
 
         public void UpdateTicket(ObjectId id, Ticket updatedTicket)
         {

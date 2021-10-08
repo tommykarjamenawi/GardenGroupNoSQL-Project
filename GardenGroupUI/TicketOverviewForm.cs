@@ -34,6 +34,7 @@ namespace GardenGroupUI
 
         private void TicketOverviewForm_Load(object sender, EventArgs e)
         {
+            //check whether the logged in user is admin or an enduser and display tickets accordingly
             if (user.TypeOfUser.Equals(Enums.TypeOfUser.ServiceDeskEmployee))
             {
                 tickets = ticketService.GetAllTickets();
@@ -54,18 +55,17 @@ namespace GardenGroupUI
         public void DisplayAllTickets()
         {
             listViewTickets.Items.Clear();
-            tickets = ticketService.GetAllTickets();
 
             foreach (Ticket ticket in tickets)
             {
                 ListViewItem item = new ListViewItem(ticket.Id.ToString());
                 item.SubItems.Add(ticket.ReportedBy.ToString());
                 item.SubItems.Add(ticket.Subject);
-                item.SubItems.Add(ticket.TypeOfIncident.ToString());
-                item.SubItems.Add(ticket.TypeOfPriority.ToString());
-                item.SubItems.Add(ticket.ReportedDate.ToString("MM/dd/yy H:mm:ss"));
+                item.SubItems.Add(ticket.TypeOfIncident);
+                item.SubItems.Add(ticket.TypeOfPriority);
+                item.SubItems.Add(ticket.ReportedDate.ToString());
                 item.SubItems.Add(ticket.Deadline.ToString());
-                item.SubItems.Add(ticket.Description.ToString());
+                item.SubItems.Add(ticket.Description);
                 item.SubItems.Add(ticket.IsSolved.ToString());
                 listViewTickets.Items.Add(item);
             }
@@ -76,6 +76,48 @@ namespace GardenGroupUI
             AddTicket addTicket = new AddTicket();
             addTicket.Show();
             this.Hide();
+        }
+
+        private void Filter()
+        {
+            string FilterBox = txtFilter.Text.ToString();
+            Ticket ticket = ticketService.SortByPriority(FilterBox);
+
+            if (ticket != null)
+            {
+                listViewTickets.Items.Clear();
+
+                ListViewItem item = new ListViewItem(user.Id.ToString());
+                item.SubItems.Add(ticket.ReportedBy.ToString());
+                item.SubItems.Add(ticket.Subject);
+                item.SubItems.Add(ticket.TypeOfIncident);
+                item.SubItems.Add(ticket.TypeOfPriority);
+                item.SubItems.Add(ticket.ReportedDate.ToString());
+                item.SubItems.Add(ticket.Deadline.ToString());
+                item.SubItems.Add(ticket.Description);
+                item.SubItems.Add(ticket.IsSolved.ToString());
+
+                listViewTickets.Items.Add(item);
+            }
+            else
+            {
+                listViewTickets.Items.Clear();
+                lblFilterCheck.ForeColor = Color.Red;
+                lblFilterCheck.Text = "Ticket does not exist!";
+            }
+        }
+
+        private void txtFilter_TextChanged(object sender, EventArgs e)
+        {
+            if (txtFilter.TextLength == 0)
+            {
+                DisplayAllTickets();
+            }
+        }
+
+        private void btnFilter_Click(object sender, EventArgs e)
+        {
+            Filter();
         }
     }
 }

@@ -78,7 +78,7 @@ namespace GardenGroupUI
             {
                 if (id.Equals(user.Id))
                 {
-                    reportedFullName = user.FirstName + user.LastName;
+                    reportedFullName = user.FirstName + " " + user.LastName;
                     break;
                 }
             }

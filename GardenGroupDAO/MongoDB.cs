@@ -89,8 +89,6 @@ namespace GardenGroupDAO
             return collection.Find<T>(filter).ToList();
         }
 
-
-
         public User FindOneByEmail(string email)
         {
             var filter = Builders<User>.Filter.Eq("Email", email);
