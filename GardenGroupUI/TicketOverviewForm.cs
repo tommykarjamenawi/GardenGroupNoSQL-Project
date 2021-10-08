@@ -35,13 +35,12 @@ namespace GardenGroupUI
         private void TicketOverviewForm_Load(object sender, EventArgs e)
         {
             //check whether the logged in user is admin or an enduser and display tickets accordingly
-            if (user.TypeOfUser.Equals(Enums.TypeOfUser.ServiceDeskEmployee))
+            if (tickets == null)
             {
-                tickets = ticketService.GetAllTickets();
-            }
-            else
-            {
-                tickets = ticketService.GetAllTicketsForUser(user);
+                if (user.TypeOfUser.Equals(Enums.TypeOfUser.EndUser))
+                    tickets = ticketService.GetAllTicketsForUser(user);
+                else
+                    tickets = ticketService.GetAllTickets();
             }
             DisplayAllTickets();
         }
