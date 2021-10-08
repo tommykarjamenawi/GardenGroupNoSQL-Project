@@ -18,6 +18,21 @@ namespace GardenGroupLogic
         {
             ticketDAO = new TicketDAO();
         }
+
+        public void AddTicket(Ticket ticket)
+        {
+            ticketDAO.AddTicket(ticket);
+        }
+
+        public List<Ticket> GetAllTickets()
+        {
+            return ticketDAO.GetAllTickets();
+        }
+
+        public List<Ticket> GetAllTicketsForUser(User user)
+        {
+            return ticketDAO.GetAllTicketsForUser(user);
+        }
         public List<Ticket> GetAllSortedById()
         {
             return ticketDAO.GetAllSortedById();
@@ -26,11 +41,6 @@ namespace GardenGroupLogic
         public List<Ticket> GetAllSortedByPriority()
         {
             return ticketDAO.GetAllSortedByPriority();
-        }
-
-        public List<Ticket> GetAllTickets()
-        {
-            return ticketDAO.GetAllTickets();
         }
 
         public void CreateTicket(Ticket newTicket)

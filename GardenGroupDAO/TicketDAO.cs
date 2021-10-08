@@ -20,10 +20,29 @@ namespace GardenGroupDAO
             //collection = db.GetCollection<Ticket>("Tickets");
         }
 
+        public void AddTicket(Ticket ticket)
+        {
+            IMongoCollection<Ticket> collection = db.GetCollection<Ticket>(TABLE_NAME);
+            collection.InsertOne(ticket);
+        }
+
+        // tickets for one specific user
+        public List<Ticket> GetAllTicketsForUser(User user)
+        {
+           // var tickets = GetDocuments<Ticket>(TABLE_NAME);
+            //return = tickets.Find<Ticket>(Ticket => Ticket.ReportedBy == user.FirstName).ToList<Ticket>();
+            IMongoCollection<Ticket> collection = db.GetCollection<Ticket>(TABLE_NAME);
+            return collection.Find<Ticket>(Ticket => Ticket.ReportedBy == user.FirstName).ToList<Ticket>();
+        }
+
+        // all tickets for an admin
         public List<Ticket> GetAllTickets()
         {
-            List<Ticket> tickets = GetDocuments<Ticket>(TABLE_NAME);
-            return tickets;
+            IMongoCollection<Ticket> collection = db.GetCollection<Ticket>(TABLE_NAME);
+            return collection.AsQueryable().ToList<Ticket>();
+
+            //List<Ticket> tickets = GetDocuments<Ticket>(TABLE_NAME);
+            //return tickets;
         }
 
         public List<Ticket> GetAllSortedById()

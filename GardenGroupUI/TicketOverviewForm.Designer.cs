@@ -46,7 +46,6 @@ namespace GardenGroupUI
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
-            this.btnCreate = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -138,6 +137,7 @@ namespace GardenGroupUI
             this.btnCreateIncident.TabIndex = 5;
             this.btnCreateIncident.Text = "CREATE INCIDENT";
             this.btnCreateIncident.UseVisualStyleBackColor = false;
+            this.btnCreateIncident.Click += new System.EventHandler(this.btnCreateIncident_Click);
             // 
             // txtFilter
             // 
@@ -185,17 +185,6 @@ namespace GardenGroupUI
             this.btnRemove.Text = "REMOVE TICKET";
             this.btnRemove.UseVisualStyleBackColor = false;
             // 
-            // btnCreate
-            // 
-            this.btnCreate.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnCreate.ForeColor = System.Drawing.Color.Black;
-            this.btnCreate.Location = new System.Drawing.Point(438, 167);
-            this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(147, 60);
-            this.btnCreate.TabIndex = 14;
-            this.btnCreate.Text = "CREATE TICKET";
-            this.btnCreate.UseVisualStyleBackColor = false;
-            // 
             // btnUpdate
             // 
             this.btnUpdate.BackColor = System.Drawing.Color.MediumSeaGreen;
@@ -214,7 +203,6 @@ namespace GardenGroupUI
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(217)))), ((int)(((byte)(112)))));
             this.ClientSize = new System.Drawing.Size(1308, 898);
             this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -249,7 +237,6 @@ namespace GardenGroupUI
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button btnRemove;
-        private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.Button btnUpdate;
     }
 }

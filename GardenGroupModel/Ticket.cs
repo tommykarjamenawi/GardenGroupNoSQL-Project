@@ -23,9 +23,9 @@ namespace GardenGroupModel
         [BsonElement("Deadline")]
         public DateTime Deadline { get; set; }
         [BsonElement("TypeOfIncident")]
-        public Enums.TypeOfIncident TypeOfIncident { get; set; }
+        public string TypeOfIncident { get; set; }
         [BsonElement("TypeOfPriority")]
-        public Enums.TypeOfPriority TypeOfPriority { get; set; }
+        public string TypeOfPriority { get; set; }
         [BsonElement("Solved")]
         public bool IsSolved { get; set; }
 
@@ -37,8 +37,8 @@ namespace GardenGroupModel
             this.ReportedDate = ReportedDate;
             this.ReportedBy = ReportedBy;
             this.Deadline = Deadline;
-            this.TypeOfIncident = TypeOfIncident;
-            this.TypeOfPriority = TypeOfPriority;
+            this.TypeOfIncident = TypeOfIncident.ToString();
+            this.TypeOfPriority = TypeOfPriority.ToString();
             IsSolved = false;
         }
 

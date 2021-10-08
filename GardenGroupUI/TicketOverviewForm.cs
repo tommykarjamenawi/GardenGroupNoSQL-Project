@@ -19,9 +19,10 @@ namespace GardenGroupUI
         private List<Ticket> tickets;
         private TicketService ticketService;
         private List<User> users;
-        private User userLoggedIn;
-        public TicketOverviewForm()
+        private User user;
+        public TicketOverviewForm(User user)
         {
+            this.user = user;
             ticketService = new TicketService();
             InitializeComponent();
 
@@ -33,18 +34,21 @@ namespace GardenGroupUI
 
         private void TicketOverviewForm_Load(object sender, EventArgs e)
         {
-            LoadDetails();
+            if (user.TypeOfUser.Equals(Enums.TypeOfUser.ServiceDeskEmployee))
+            {
+                tickets = ticketService.GetAllTickets();
+            }
+            else
+            {
+                tickets = ticketService.GetAllTicketsForUser(user);
+            }
+            DisplayAllTickets();
         }
 
         private void listViewItems_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (listViewTickets.SelectedItems.Count <= 0)
                 return;
-        }
-
-        private void LoadDetails()
-        {
-            DisplayAllTickets();
         }
 
         public void DisplayAllTickets()
@@ -67,30 +71,11 @@ namespace GardenGroupUI
             }
         }
 
-        public void DisplayAllTickets2()
+        private void btnCreateIncident_Click(object sender, EventArgs e)
         {
-            userLoggedIn = LoginSession.GetInstance().LoggedIn;
-
-
+            AddTicket addTicket = new AddTicket();
+            addTicket.Show();
+            this.Hide();
         }
-
-
-
-        private string ReportedByFullName(int id)
-        {
-            string reportedFullName = "";
-
-            foreach(User user in users)
-            {
-                if (id.Equals(user.Id))
-                {
-                    reportedFullName = user.FirstName + user.LastName;
-                    break;
-                }
-            }
-            return reportedFullName;
-        }
-
-
     }
 }
