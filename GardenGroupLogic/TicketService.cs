@@ -33,21 +33,24 @@ namespace GardenGroupLogic
             return ticketDAO.GetAllTicketsForUser(user);
         }
 
-        //check later
-        public Ticket SortByPriority(string priority)
+        public List<Ticket> GetAllSortedById()
         {
-            return ticketDAO.SortByPriority(priority);
+            return ticketDAO.GetAllSortedById();
         }
 
-        //public List<Ticket> GetAllSortedById()
-        //{
-        //    return ticketDAO.GetAllSortedById();
-        //}
+        public List<Ticket> GetAllSortedByPriority()
+        {
+            return ticketDAO.GetAllSortedByPriority();
+        }
 
-        //public List<Ticket> GetAllSortedByPriority()
-        //{
-        //    return ticketDAO.GetAllSortedByPriority();
-        //}
+        public List<Ticket> GetFromUserSortedById(User user)
+        {
+            return ticketDAO.GetUsersTicketsSortedByID(user);
+        }
+        public List<Ticket> GetFromUserSortedByPriority(User user)
+        {
+            return ticketDAO.GetUsersTicketsSortedByPriority(user);
+        }
 
         // check the update ticket later
         public void UpdateTicketCheck(Ticket ticket)

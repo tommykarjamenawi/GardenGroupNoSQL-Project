@@ -50,6 +50,8 @@ namespace GardenGroupUI
         {
             if (listViewTickets.SelectedItems.Count <= 0)
                 return;
+
+            btnUpdate.Enabled = listViewTickets.SelectedItems.Count > 0;
         }
 
         public void DisplayAllTickets()
@@ -78,46 +80,45 @@ namespace GardenGroupUI
             this.Hide();
         }
 
-        private void Filter()
+
+        private void cmbSortBy_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string FilterBox = txtFilter.Text.ToString();
-            Ticket ticket = ticketService.SortByPriority(FilterBox);
+            ChangedListSort();
+        }
 
-            if (ticket != null)
+        public void ChangedListSort()
+        {
+            string sortBy = cmbSortBy.Text;
+
+            List<Ticket> sortedList = tickets;
+
+            if (user.TypeOfUser.Equals(Enums.TypeOfUser.EndUser))
             {
-                listViewTickets.Items.Clear();
-
-                ListViewItem item = new ListViewItem(user.Id.ToString());
-                item.SubItems.Add(ticket.ReportedBy.ToString());
-                item.SubItems.Add(ticket.Subject);
-                item.SubItems.Add(ticket.TypeOfIncident);
-                item.SubItems.Add(ticket.TypeOfPriority);
-                item.SubItems.Add(ticket.ReportedDate.ToString());
-                item.SubItems.Add(ticket.Deadline.ToString());
-                item.SubItems.Add(ticket.Description);
-                item.SubItems.Add(ticket.IsSolved.ToString());
-
-                listViewTickets.Items.Add(item);
+                if (sortBy == "ID")
+                {
+                    sortedList = ticketService.GetFromUserSortedById(user);
+                }
+                else if (sortBy == "Priority")
+                {
+                    sortedList = ticketService.GetFromUserSortedByPriority(user);
+                }
             }
             else
             {
-                listViewTickets.Items.Clear();
-                lblFilterCheck.ForeColor = Color.Red;
-                lblFilterCheck.Text = "Ticket does not exist!";
+                if (sortBy == "ID")
+                {
+                    sortedList = ticketService.GetAllSortedById();
+                }
+                else
+                {
+                    sortedList = ticketService.GetAllSortedByPriority();
+                }
             }
-        }
 
-        private void txtFilter_TextChanged(object sender, EventArgs e)
-        {
-            if (txtFilter.TextLength == 0)
-            {
-                DisplayAllTickets();
-            }
-        }
+            listViewTickets.Items.Clear();
 
-        private void btnFilter_Click(object sender, EventArgs e)
-        {
-            Filter();
+            tickets = sortedList;
+            DisplayAllTickets();
         }
     }
 }

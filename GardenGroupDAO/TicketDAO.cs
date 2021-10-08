@@ -45,24 +45,25 @@ namespace GardenGroupDAO
             //return tickets;
         }
 
-        // check later
-        public Ticket SortByPriority(string priority)
+        public List<Ticket> GetAllSortedById()
         {
-            var filter = Builders<Ticket>.Filter.Eq("TypeOfPriority", priority);
-            List<Ticket> tickets = FindByQuery<Ticket>("Tickets", filter);
-
-            return tickets.Count > 0 ? tickets[0] : null;
+            return GetSortedIDDocuments<Ticket>(TABLE_NAME);
         }
 
-        //public List<Ticket> GetAllSortedById()
-        //{
-        //    return GetSortedIDDocuments<Ticket>(TABLE_NAME);
-        //}
+        public List<Ticket> GetUsersTicketsSortedByID(User user)
+        {
+            return GetUsersTicketsSortedByIDDocuments<Ticket>(TABLE_NAME, user);
+        }
 
-        //public List<Ticket> GetAllSortedByPriority()
-        //{
-        //    return GetSortedPriorityDocuments<Ticket>(TABLE_NAME);
-        //}
+        public List<Ticket> GetUsersTicketsSortedByPriority(User user)
+        {
+            return GetUsersTicketsSortedByPriorityDocuments<Ticket>(TABLE_NAME, user);
+        }
+
+        public List<Ticket> GetAllSortedByPriority()
+        {
+            return GetSortedPriorityDocuments<Ticket>(TABLE_NAME);
+        }
 
         public void UpdateTicket(ObjectId id, Ticket updatedTicket)
         {
@@ -73,8 +74,5 @@ namespace GardenGroupDAO
         {
             DeleteDocument<Ticket>(id, TABLE_NAME);
         }
-
-
-
     }
 }
