@@ -30,15 +30,16 @@ namespace GardenGroupModel
         public bool IsSolved { get; set; }
 
         [BsonConstructor]
-        public Ticket(string Subject, string Description, DateTime ReportedDate, string ReportedBy, DateTime Deadline, Enums.TypeOfIncident TypeOfIncident, Enums.TypeOfPriority TypeOfPriority)
+        public Ticket(DateTime ReportedDate, string Subject, Enums.TypeOfIncident TypeOfIncident, string ReportedBy, Enums.TypeOfPriority TypeOfPriority, DateTime Deadline, string Description)
         {
-            this.Subject = Subject;
-            this.Description = Description;
             this.ReportedDate = ReportedDate;
-            this.ReportedBy = ReportedBy;
-            this.Deadline = Deadline;
+            this.Subject = Subject;
             this.TypeOfIncident = TypeOfIncident.ToString();
+            this.ReportedBy = ReportedBy;
             this.TypeOfPriority = TypeOfPriority.ToString();
+            this.Deadline = Deadline;
+            this.Description = Description;         
+            
             IsSolved = false;
         }
 

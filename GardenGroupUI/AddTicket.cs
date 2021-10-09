@@ -30,13 +30,16 @@ namespace GardenGroupUI
         {
             try
             {
-                ticket.ReportedBy = cmbUser.Text;
-                ticket.Subject = txtSubject.Text;
-                ticket.Description = txtDescription.Text;
-                ticket.ReportedDate = dtpDate.Value;
-                ticket.Deadline = dtpDeadline.Value;
-                ticket.TypeOfIncident = cmbTypeOfIncident.SelectedItem.ToString();
-                ticket.TypeOfPriority = cmbTypeOfPriority.SelectedItem.ToString();
+                Ticket ticket = new Ticket(dtpDate.Value, txtSubject.Text, (Enums.TypeOfIncident)cmbTypeOfIncident.SelectedIndex,
+                    cmbUser.SelectedItem.ToString(), (Enums.TypeOfPriority)cmbTypeOfPriority.SelectedIndex, dtpDeadline.Value, txtDescription.Text);
+
+                //ticket.ReportedBy = cmbUser.Text;
+                //ticket.Subject = txtSubject.Text;
+                //ticket.Description = txtDescription.Text;
+                //ticket.ReportedDate = dtpDate.Value;
+                //ticket.Deadline = dtpDeadline.Value;
+                //ticket.TypeOfIncident = cmbTypeOfIncident.SelectedItem.ToString();
+                //ticket.TypeOfPriority = cmbTypeOfPriority.SelectedItem.ToString();
 
                 ticketService.AddTicket(ticket);
                 MessageBox.Show("Your ticket has been added!");
