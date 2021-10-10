@@ -110,7 +110,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HardDrive.cs" />
     <Compile Include="LoginSession.cs" />
+    <Compile Include="RememberMe.cs" />
     <Compile Include="Ticket.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Enums.cs" />

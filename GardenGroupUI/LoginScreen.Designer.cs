@@ -36,6 +36,8 @@ namespace GardenGroupUI
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblError = new System.Windows.Forms.Label();
             this.lblHardwareID = new System.Windows.Forms.Label();
+            this.lblHDDId = new System.Windows.Forms.Label();
+            this.chbRememberMe = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -43,7 +45,7 @@ namespace GardenGroupUI
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(181, 209);
+            this.txtPassword.Location = new System.Drawing.Point(181, 168);
             this.txtPassword.MaxLength = 10;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(332, 62);
@@ -55,7 +57,7 @@ namespace GardenGroupUI
             // 
             this.btnLogin.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(100, 290);
+            this.btnLogin.Location = new System.Drawing.Point(100, 275);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(413, 62);
             this.btnLogin.TabIndex = 1;
@@ -66,7 +68,7 @@ namespace GardenGroupUI
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("MS Reference Sans Serif", 33F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(181, 127);
+            this.txtEmail.Location = new System.Drawing.Point(181, 86);
             this.txtEmail.MaxLength = 30;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(332, 61);
@@ -77,7 +79,7 @@ namespace GardenGroupUI
             // pictureBox2
             // 
             this.pictureBox2.Image = global::GardenGroupUI.Properties.Resources.green_circle_orange_house_key_11;
-            this.pictureBox2.Location = new System.Drawing.Point(100, 209);
+            this.pictureBox2.Location = new System.Drawing.Point(100, 168);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(75, 62);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -87,7 +89,7 @@ namespace GardenGroupUI
             // pictureBox1
             // 
             this.pictureBox1.Image = global::GardenGroupUI.Properties.Resources.download;
-            this.pictureBox1.Location = new System.Drawing.Point(100, 127);
+            this.pictureBox1.Location = new System.Drawing.Point(100, 86);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(75, 62);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -97,7 +99,7 @@ namespace GardenGroupUI
             // lblError
             // 
             this.lblError.AutoSize = true;
-            this.lblError.Location = new System.Drawing.Point(100, 376);
+            this.lblError.Location = new System.Drawing.Point(97, 355);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(35, 13);
             this.lblError.TabIndex = 5;
@@ -106,11 +108,31 @@ namespace GardenGroupUI
             // lblHardwareID
             // 
             this.lblHardwareID.AutoSize = true;
-            this.lblHardwareID.Location = new System.Drawing.Point(181, 67);
+            this.lblHardwareID.Location = new System.Drawing.Point(32, 18);
             this.lblHardwareID.Name = "lblHardwareID";
             this.lblHardwareID.Size = new System.Drawing.Size(35, 13);
             this.lblHardwareID.TabIndex = 6;
             this.lblHardwareID.Text = "label1";
+            // 
+            // lblHDDId
+            // 
+            this.lblHDDId.AutoSize = true;
+            this.lblHDDId.Location = new System.Drawing.Point(277, 18);
+            this.lblHDDId.Name = "lblHDDId";
+            this.lblHDDId.Size = new System.Drawing.Size(35, 13);
+            this.lblHDDId.TabIndex = 7;
+            this.lblHDDId.Text = "label1";
+            // 
+            // chbRememberMe
+            // 
+            this.chbRememberMe.AutoSize = true;
+            this.chbRememberMe.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbRememberMe.Location = new System.Drawing.Point(181, 236);
+            this.chbRememberMe.Name = "chbRememberMe";
+            this.chbRememberMe.Size = new System.Drawing.Size(195, 33);
+            this.chbRememberMe.TabIndex = 8;
+            this.chbRememberMe.Text = "remember me";
+            this.chbRememberMe.UseVisualStyleBackColor = true;
             // 
             // LoginScreen
             // 
@@ -118,6 +140,8 @@ namespace GardenGroupUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(217)))), ((int)(((byte)(112)))));
             this.ClientSize = new System.Drawing.Size(609, 441);
+            this.Controls.Add(this.chbRememberMe);
+            this.Controls.Add(this.lblHDDId);
             this.Controls.Add(this.lblHardwareID);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.pictureBox2);
@@ -145,5 +169,7 @@ namespace GardenGroupUI
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label lblError;
         private System.Windows.Forms.Label lblHardwareID;
+        private System.Windows.Forms.Label lblHDDId;
+        private System.Windows.Forms.CheckBox chbRememberMe;
     }
 }

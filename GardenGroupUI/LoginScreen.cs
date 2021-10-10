@@ -20,6 +20,8 @@ namespace GardenGroupUI
         string email;
         string password;
         UserService userService;
+        LoginService loginService;
+
         public LoginScreen()
         {
             InitializeComponent();        
@@ -28,8 +30,8 @@ namespace GardenGroupUI
             MaximizeBox = false;
             MinimizeBox = false;
             userService = new UserService();
-            // error message hidden on default
-            //lblError.Visible = false;
+            loginService = new LoginService();
+
             // Set up MongoDB conventions
             var pack = new ConventionPack
             {
@@ -37,6 +39,7 @@ namespace GardenGroupUI
             };          
             ConventionRegistry.Register("EnumStringConvention", pack, t => true);
 
+            // Get serial numbers of the current device
             var mbs = new ManagementObjectSearcher("Select ProcessorId From Win32_processor");
             ManagementObjectCollection mbsList = mbs.Get();
             foreach (ManagementObject mo in mbsList)
@@ -44,13 +47,27 @@ namespace GardenGroupUI
                 lblHardwareID.Text = mo["ProcessorId"].ToString();
                 break;
             }
-
-            txtEmail.Text = "email";
-            txtEmail.ForeColor = Color.DarkGray;
+            List<HardDrive> hardDrives = loginService.GetHardDriveId();
+            foreach (HardDrive hdd in hardDrives)
+            {
+                lblHDDId.Text = hdd.SerialNo;
+            }
+            RememberMe remember = loginService.CheckRememberMe(lblHDDId.Text.TrimStart(), lblHardwareID.Text);
+            if (!(remember == null))
+            {
+                txtEmail.Text = remember.email;
+                txtPassword.Text = remember.password;
+            }
+            else
+            {
+                txtEmail.Text = "email";
+                txtEmail.ForeColor = Color.DarkGray;
+                txtPassword.Text = "password";
+                txtPassword.ForeColor = Color.DarkGray;
+            }
             txtPassword.UseSystemPasswordChar = false;
-            txtPassword.Text = "password";
-            txtPassword.ForeColor = Color.DarkGray;
             txtPassword.TabStop = false; // Prevent application to enter the password field on startup
+            chbRememberMe.Checked = false;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -64,6 +81,11 @@ namespace GardenGroupUI
             if (user != null)
             {
                 lblError.Text = "correct";
+                if (chbRememberMe.Checked)
+                {
+                    RememberMe remember = new RememberMe(txtEmail.Text, txtPassword.Text, lblHDDId.Text.TrimStart(), lblHardwareID.Text); ;
+                    loginService.AddRememberMe(remember);
+                }
                 this.Hide();
                 TicketOverviewForm ticketOverviewForm = new TicketOverviewForm(user);
                 ticketOverviewForm.ShowDialog();

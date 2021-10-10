@@ -23,11 +23,6 @@ namespace GardenGroupLogic
             return userdao.GetAllUsers();
         }
 
-        //public List<User> GetUsers()
-        //{
-       //     return userdao.GetUsers();
-       // }
-
         public User SearchUsers(String searchBox)
         {
             return userdao.SearchUsers(searchBox);
