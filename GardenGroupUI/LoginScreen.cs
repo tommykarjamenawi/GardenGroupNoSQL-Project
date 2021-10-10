@@ -83,8 +83,16 @@ namespace GardenGroupUI
                 lblError.Text = "correct";
                 if (chbRememberMe.Checked)
                 {
-                    RememberMe remember = new RememberMe(txtEmail.Text, txtPassword.Text, lblHDDId.Text.TrimStart(), lblHardwareID.Text); ;
-                    loginService.AddRememberMe(remember);
+                    RememberMe remember = loginService.CheckRememberMe(lblHDDId.Text.TrimStart(), lblHardwareID.Text);
+                    if (remember == null)
+                    {
+                        RememberMe rememberr = new RememberMe(txtEmail.Text, txtPassword.Text, lblHDDId.Text.TrimStart(), lblHardwareID.Text);
+                        loginService.AddRememberMe(rememberr);
+                    }
+                    else if (txtEmail.Text != remember.email && lblHardwareID.Text == remember.ProcessorSerial)
+                    {
+                        loginService.OverWriteRememberMe(new RememberMe(txtEmail.Text, txtPassword.Text, lblHDDId.Text.TrimStart(), lblHardwareID.Text));
+                    }
                 }
                 this.Hide();
                 TicketOverviewForm ticketOverviewForm = new TicketOverviewForm(user);

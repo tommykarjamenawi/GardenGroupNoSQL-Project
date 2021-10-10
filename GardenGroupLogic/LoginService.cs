@@ -48,5 +48,10 @@ namespace GardenGroupLogic
             }
             return null;
         }
+
+        public void OverWriteRememberMe(RememberMe record)
+        {
+            loginDao.OverWriteRememberMe(record);
+        }
     }
 }
