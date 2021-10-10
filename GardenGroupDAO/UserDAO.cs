@@ -10,18 +10,17 @@ namespace GardenGroupDAO
 {
    public class UserDAO : MongoDB
     {
-        string TABLE_NAME = "Users";
+        string COLLECTION_NAME = "Users";
 
         public void AddUser(User user)
         {
-            InsertDocument<User>(TABLE_NAME, user);
+            InsertDocument<User>(COLLECTION_NAME, user);
         }
 
         public List<User> GetAllUsers()
         {
-            List<User> users = GetDocuments<User>(TABLE_NAME);
-
-            return users;
+            IMongoCollection<User> userCollection = db.GetCollection<User>("Users");
+            return userCollection.AsQueryable().ToList<User>();
         }
 
         public User SearchUsers(string email)
@@ -29,11 +28,32 @@ namespace GardenGroupDAO
            return FindOneByEmail(email);
         }
 
-        // test query
-        public User GetUser(string email, string password)
+        public User GetUserByEmail(string email)
         {
-            IMongoCollection<User> collection = db.GetCollection<User>("Users");
-            return (User)collection.Find<User>(User => User.Email == email && User.Password == password).FirstOrDefault();
+            return FindOneByEmail(email);
         }
+
+        public User FindOneByEmail(string email)
+        {
+            var filter = Builders<User>.Filter.Eq("Email", email);
+            List<User> users = FindByQuery<User>("Users", filter);
+
+            return users.Count > 0 ? users[0] : null;
+        }
+
+        //public bool GetUsersCollection(string email, string password)
+        //{
+        //    IMongoCollection<User> userCollection = db.GetCollection<User>("Users");
+        //    List<User> users = userCollection.AsQueryable().ToList<User>();
+        //    int count = 0;
+        //    foreach (User user in users)
+        //    {
+        //        if (user.Email == email && user.Password == password)
+        //        {
+        //            count++;
+        //        }            
+        //    }
+        //    return count >= 1;
+        //}
     }
 }

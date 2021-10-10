@@ -12,12 +12,6 @@ namespace GardenGroupLogic
     public class UserService 
     {
         UserDAO userdao = new UserDAO();
-       
-
-        public bool CheckUser(string email, string password)
-        {
-            return userdao.GetUsersCollection(email, password);
-        }
 
         public void AddUser(User user)
         {
@@ -39,9 +33,10 @@ namespace GardenGroupLogic
             return userdao.SearchUsers(searchBox);
         }
 
-        public User GetUser(string email, string password)
+        public User GetUserByEmail(string email, string password)
         {
-            return userdao.GetUser(email, password);
+            User user = userdao.GetUserByEmail(email);
+            return user.Password == password ? user : null; // check if password matches the email
         }
     }
 }

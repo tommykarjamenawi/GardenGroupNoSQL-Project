@@ -60,8 +60,7 @@ namespace GardenGroupUI
             password = txtPassword.Text;
 
             CredentialsEntered(email, password);
-            User user = userService.GetUser(email, password);
-            //userService.CheckUser(email, password)
+            User user = userService.GetUserByEmail(email, password);
             if (user != null)
             {
                 lblError.Text = "correct";

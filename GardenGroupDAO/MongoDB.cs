@@ -87,33 +87,10 @@ namespace GardenGroupDAO
             return collection.Find<T>(filter).Sort(reportSort).Sort(prioritySort).ToList();
         }
 
-
-        public bool GetUsersCollection(string email, string password)
-        {
-            IMongoCollection<User> userCollection = db.GetCollection<User>("Users");
-            List<User> users = userCollection.AsQueryable().ToList<User>();
-            int count = 0;
-            foreach (User user in users)
-            {
-                if (user.Email == email && user.Password == password)
-                {
-                    count++;
-                }            
-            }
-            return count >= 1;
-        }
         public List<T> FindByQuery<T>(string table, FilterDefinition<T> filter)
         {
             var collection = db.GetCollection<T>(table);
             return collection.Find<T>(filter).ToList();
-        }
-
-        public User FindOneByEmail(string email)
-        {
-            var filter = Builders<User>.Filter.Eq("Email", email);
-            List<User> users = FindByQuery<User>("Users", filter);
-
-            return users.Count > 0 ? users[0] : null;
         }
     }
 }
