@@ -21,6 +21,7 @@ namespace GardenGroupModel
         public string Password { get; set; }
         [BsonElement("TypeOfUser")]
         public string TypeOfUser { get; set; }
+        
 
         [BsonConstructor]
         public User()
