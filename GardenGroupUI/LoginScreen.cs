@@ -59,14 +59,13 @@ namespace GardenGroupUI
             email = txtEmail.Text;
             password = txtPassword.Text;
 
-            User user = new User();
             CredentialsEntered(email, password);
-            if (userService.CheckUser(email, password);)
+            if (userService.CheckUser(email, password))
             {
                 lblError.Text = "correct";
                 this.Hide();
-                TicketOverviewForm ticketOverviewForm = new TicketOverviewForm(user);
-                ticketOverviewForm.ShowDialog();
+                //TicketOverviewForm ticketOverviewForm = new TicketOverviewForm(user);
+                //ticketOverviewForm.ShowDialog();
                 this.Close();
             }
             else
