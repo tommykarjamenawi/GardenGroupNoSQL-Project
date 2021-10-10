@@ -22,6 +22,7 @@ namespace GardenGroupUI
         public AddTicket()
         {
             ticketService = new TicketService();
+            userService = new UserService();
             InitializeComponent();
         }
 

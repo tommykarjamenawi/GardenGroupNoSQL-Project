@@ -29,9 +29,19 @@ namespace GardenGroupLogic
             return userdao.GetAllUsers();
         }
 
+        //public List<User> GetUsers()
+        //{
+       //     return userdao.GetUsers();
+       // }
+
         public User SearchUsers(String searchBox)
         {
             return userdao.SearchUsers(searchBox);
+        }
+
+        public User GetUser(string email, string password)
+        {
+            return userdao.GetUser(email, password);
         }
     }
 }

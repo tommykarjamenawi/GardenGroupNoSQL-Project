@@ -28,5 +28,12 @@ namespace GardenGroupDAO
         {
            return FindOneByEmail(email);
         }
+
+        // test query
+        public User GetUser(string email, string password)
+        {
+            IMongoCollection<User> collection = db.GetCollection<User>("Users");
+            return (User)collection.Find<User>(User => User.Email == email && User.Password == password).FirstOrDefault();
+        }
     }
 }

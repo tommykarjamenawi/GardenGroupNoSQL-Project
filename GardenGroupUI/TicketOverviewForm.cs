@@ -75,8 +75,7 @@ namespace GardenGroupUI
         private void btnCreateIncident_Click(object sender, EventArgs e)
         {
             AddTicket addTicket = new AddTicket();
-            addTicket.Show();
-            this.Hide();
+            addTicket.ShowDialog();
         }
 
 
@@ -118,6 +117,12 @@ namespace GardenGroupUI
 
             tickets = sortedList;
             DisplayAllTickets();
+        }
+
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            // think of smth
         }
     }
 }
