@@ -32,7 +32,7 @@ namespace GardenGroupDAO
            // var tickets = GetDocuments<Ticket>(TABLE_NAME);
             //return = tickets.Find<Ticket>(Ticket => Ticket.ReportedBy == user.FirstName).ToList<Ticket>();
             IMongoCollection<Ticket> collection = db.GetCollection<Ticket>(TABLE_NAME);
-            return collection.Find<Ticket>(Ticket => Ticket.ReportedBy == user.FirstName).ToList<Ticket>();
+            return collection.Find<Ticket>(Ticket => Ticket.ReportedBy == user.FirstName + " " + user.LastName).ToList<Ticket>();
         }
 
         // all tickets for an admin

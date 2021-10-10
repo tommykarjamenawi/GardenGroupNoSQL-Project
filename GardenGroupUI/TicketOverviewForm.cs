@@ -37,10 +37,10 @@ namespace GardenGroupUI
             //check whether the logged in user is admin or an enduser and display tickets accordingly
             if (tickets == null)
             {
-                if (user.TypeOfUser.Equals(Enums.TypeOfUser.EndUser))
-                    tickets = ticketService.GetFromUserSortedById(user);
+                if (user.TypeOfUser == Enums.TypeOfUser.EndUser.ToString()) // Enum.GetName(typeof(Enums.TypeOfUser),Enums.TypeOfUser.EndUser) // note: need == and NOT Equals!
+                    tickets = ticketService.GetAllTicketsForUser(user);
                 else
-                    tickets = ticketService.GetAllSortedById();
+                    tickets = ticketService.GetAllTickets();
             }
             DisplayAllTickets();
         }
@@ -90,9 +90,9 @@ namespace GardenGroupUI
 
             List<Ticket> sortedList = tickets;
 
-            if (user.TypeOfUser.Equals(Enums.TypeOfUser.EndUser))
+            if (user.TypeOfUser == Enums.TypeOfUser.EndUser.ToString())
             {
-                if (sortBy == "ID")
+                if (sortBy == "Default")
                 {
                     sortedList = ticketService.GetFromUserSortedById(user);
                 }
@@ -103,7 +103,7 @@ namespace GardenGroupUI
             }
             else
             {
-                if (sortBy == "ID")
+                if (sortBy == "Default")
                 {
                     sortedList = ticketService.GetAllSortedById();
                 }
