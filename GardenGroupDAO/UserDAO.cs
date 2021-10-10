@@ -14,9 +14,8 @@ namespace GardenGroupDAO
 
         public void AddUser(User user)
         {
-                InsertDocument<User>(TABLE_NAME, user);
+            InsertDocument<User>(TABLE_NAME, user);
         }
-
 
         public List<User> GetAllUsers()
         {

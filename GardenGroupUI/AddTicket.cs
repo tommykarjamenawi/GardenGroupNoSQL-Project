@@ -21,7 +21,6 @@ namespace GardenGroupUI
         private List<User> users;
         public AddTicket()
         {
-            ticket = new Ticket();
             ticketService = new TicketService();
             InitializeComponent();
         }

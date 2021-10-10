@@ -26,10 +26,9 @@ namespace GardenGroupModel
         public string TypeOfIncident { get; set; }
         [BsonElement("TypeOfPriority")]
         public string TypeOfPriority { get; set; }
-        [BsonElement("Solved")]
+        [BsonElement("IsSolved")]
         public bool IsSolved { get; set; }
 
-        [BsonConstructor]
         public Ticket(DateTime ReportedDate, string Subject, Enums.TypeOfIncident TypeOfIncident, string ReportedBy, Enums.TypeOfPriority TypeOfPriority, DateTime Deadline, string Description)
         {
             this.ReportedDate = ReportedDate;

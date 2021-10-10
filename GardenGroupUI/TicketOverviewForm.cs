@@ -38,9 +38,9 @@ namespace GardenGroupUI
             if (tickets == null)
             {
                 if (user.TypeOfUser.Equals(Enums.TypeOfUser.EndUser))
-                    tickets = ticketService.GetAllTicketsForUser(user);
+                    tickets = ticketService.GetFromUserSortedById(user);
                 else
-                    tickets = ticketService.GetAllTickets();
+                    tickets = ticketService.GetAllSortedById();
             }
             DisplayAllTickets();
         }
