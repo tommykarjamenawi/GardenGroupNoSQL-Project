@@ -27,10 +27,10 @@ namespace GardenGroupUI
             ticketService = new TicketService();
             InitializeComponent();
 
-            var pack = new ConventionPack
-            {
-              new EnumRepresentationConvention(BsonType.String)
-            };
+            //var pack = new ConventionPack
+            //{
+            //  new EnumRepresentationConvention(BsonType.String)
+            //};
         }
 
         private void TicketOverviewForm_Load(object sender, EventArgs e)
@@ -38,7 +38,8 @@ namespace GardenGroupUI
             //check whether the logged in user is admin or an enduser and display tickets accordingly
             if (tickets == null)
             {
-                if (user.TypeOfUser == Enums.TypeOfUser.EndUser.ToString()) // Enum.GetName(typeof(Enums.TypeOfUser),Enums.TypeOfUser.EndUser) // note: need == and NOT Equals!
+                //user.TypeOfUser == Enums.TypeOfUser.EndUser.ToString()
+                if (user.TypeOfUser.Equals(Enums.TypeOfUser.EndUser)) // Enum.GetName(typeof(Enums.TypeOfUser),Enums.TypeOfUser.EndUser) // note: need == and NOT Equals!
                     tickets = ticketService.GetAllTicketsForUser(user);
                 else
                     tickets = ticketService.GetAllTickets();
@@ -51,7 +52,10 @@ namespace GardenGroupUI
             if (listViewTickets.SelectedItems.Count <= 0)
                 return;
 
-            btnUpdate.Enabled = listViewTickets.SelectedItems.Count > 0;
+            
+            UpdateTicket ut = new UpdateTicket(ticket);
+            this.Hide();
+            ut.Show();
 
         }
 
@@ -62,10 +66,10 @@ namespace GardenGroupUI
             foreach (Ticket ticket in tickets)
             {
                 ListViewItem item = new ListViewItem(ticket.Id.ToString());
-                item.SubItems.Add(ticket.ReportedBy.ToString());
+                item.SubItems.Add(ticket.ReportedBy.Email.ToString());
                 item.SubItems.Add(ticket.Subject);
-                item.SubItems.Add(ticket.TypeOfIncident);
-                item.SubItems.Add(ticket.TypeOfPriority);
+                item.SubItems.Add(ticket.TypeOfIncident.ToString());
+                item.SubItems.Add(ticket.TypeOfPriority.ToString());
                 item.SubItems.Add(ticket.ReportedDate.ToString());
                 item.SubItems.Add(ticket.Deadline.ToString());
                 item.SubItems.Add(ticket.Description);
@@ -120,28 +124,6 @@ namespace GardenGroupUI
 
             tickets = sortedList;
             DisplayAllTickets();
-        }
-
-
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
-            DisplayAllTickets();
-            listViewTickets.Update();
-        }
-
-        private void btnRemove_Click(object sender, EventArgs e)
-        {
-            if (listViewTickets.SelectedItems.Count >=0)
-            {
-                MessageBox.Show("Please select a ticket to delete");
-                return;
-            }
-
-            if(MessageBox.Show("Are you sure you want to delete this ticket?", "Delete",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
-            {
-                ticketService.RemoveTicket(ticket.Id);
-            }
-
         }
     }
 }

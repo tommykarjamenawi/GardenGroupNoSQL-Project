@@ -41,10 +41,7 @@ namespace GardenGroupUI
             this.Description = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnCreateIncident = new System.Windows.Forms.Button();
-            this.btnRemove = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
             this.cmbSortBy = new System.Windows.Forms.ComboBox();
-            this.btnRefresh = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -139,54 +136,16 @@ namespace GardenGroupUI
             this.btnCreateIncident.UseVisualStyleBackColor = false;
             this.btnCreateIncident.Click += new System.EventHandler(this.btnCreateIncident_Click);
             // 
-            // btnRemove
-            // 
-            this.btnRemove.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnRemove.ForeColor = System.Drawing.Color.Black;
-            this.btnRemove.Location = new System.Drawing.Point(840, 176);
-            this.btnRemove.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(147, 60);
-            this.btnRemove.TabIndex = 13;
-            this.btnRemove.Text = "REMOVE TICKET";
-            this.btnRemove.UseVisualStyleBackColor = false;
-            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnUpdate.ForeColor = System.Drawing.Color.Black;
-            this.btnUpdate.Location = new System.Drawing.Point(635, 176);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(147, 60);
-            this.btnUpdate.TabIndex = 15;
-            this.btnUpdate.Text = "UPDATE TICKET";
-            this.btnUpdate.UseVisualStyleBackColor = false;
-            // 
             // cmbSortBy
             // 
             this.cmbSortBy.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSortBy.FormattingEnabled = true;
             this.cmbSortBy.Location = new System.Drawing.Point(44, 191);
-            this.cmbSortBy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbSortBy.Margin = new System.Windows.Forms.Padding(4);
             this.cmbSortBy.Name = "cmbSortBy";
             this.cmbSortBy.Size = new System.Drawing.Size(379, 45);
             this.cmbSortBy.TabIndex = 18;
             this.cmbSortBy.SelectedIndexChanged += new System.EventHandler(this.cmbSortBy_SelectedIndexChanged);
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnRefresh.ForeColor = System.Drawing.Color.Black;
-            this.btnRefresh.Location = new System.Drawing.Point(461, 176);
-            this.btnRefresh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(147, 60);
-            this.btnRefresh.TabIndex = 19;
-            this.btnRefresh.Text = "REFRESH";
-            this.btnRefresh.UseVisualStyleBackColor = false;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // TicketOverviewForm
             // 
@@ -194,10 +153,7 @@ namespace GardenGroupUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(217)))), ((int)(((byte)(112)))));
             this.ClientSize = new System.Drawing.Size(1308, 898);
-            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.cmbSortBy);
-            this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnCreateIncident);
             this.Controls.Add(this.listViewTickets);
             this.Controls.Add(this.label1);
@@ -223,9 +179,6 @@ namespace GardenGroupUI
         private System.Windows.Forms.ColumnHeader TypePriority;
         private System.Windows.Forms.ColumnHeader Deadline;
         private System.Windows.Forms.ColumnHeader Description;
-        private System.Windows.Forms.Button btnRemove;
-        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.ComboBox cmbSortBy;
-        private System.Windows.Forms.Button btnRefresh;
     }
 }

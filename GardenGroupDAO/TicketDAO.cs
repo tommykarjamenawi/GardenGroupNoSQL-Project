@@ -15,9 +15,7 @@ namespace GardenGroupDAO
         private readonly string TABLE_NAME = "Tickets";
         public TicketDAO()
         {
-            //MongoClient connection = MongoDB.GetInstance();
-            //IMongoDatabase db = connection.GetDatabase("GardenGroup");
-            //collection = db.GetCollection<Ticket>("Tickets");
+
         }
 
         public void AddTicket(Ticket ticket)
@@ -36,10 +34,8 @@ namespace GardenGroupDAO
         // tickets for one specific user
         public List<Ticket> GetAllTicketsForUser(User user)
         {
-           // var tickets = GetDocuments<Ticket>(TABLE_NAME);
-            //return = tickets.Find<Ticket>(Ticket => Ticket.ReportedBy == user.FirstName).ToList<Ticket>();
             IMongoCollection<Ticket> collection = db.GetCollection<Ticket>(TABLE_NAME);
-            return collection.Find<Ticket>(Ticket => Ticket.ReportedBy == user.FirstName + " " + user.LastName).ToList<Ticket>();
+            return collection.Find<Ticket>(Ticket => Ticket.ReportedBy.Email == user.Email).ToList<Ticket>();
         }
 
         // all tickets for an admin
@@ -47,9 +43,6 @@ namespace GardenGroupDAO
         {
             IMongoCollection<Ticket> collection = db.GetCollection<Ticket>(TABLE_NAME);
             return collection.AsQueryable().ToList<Ticket>();
-
-            //List<Ticket> tickets = GetDocuments<Ticket>(TABLE_NAME);
-            //return tickets;
         }
 
         public List<Ticket> GetAllSortedById()
@@ -72,14 +65,18 @@ namespace GardenGroupDAO
             return GetSortedPriorityDocuments<Ticket>(TABLE_NAME);
         }
 
-        public void UpdateTicket(ObjectId id, Ticket updatedTicket)
+        public void UpdateTicket(Ticket ticket)
         {
-            UpdateDocument<Ticket>(id, TABLE_NAME, updatedTicket);
+            IMongoCollection<Ticket> collection = db.GetCollection<Ticket>(TABLE_NAME);
+            var filter = Builders<Ticket>.Filter.Eq("Id", ticket.Id);
+            collection.ReplaceOne(filter, ticket);
         }
 
-        public void DeleteTicket(ObjectId id)
+        public void ChangeStatus(Ticket ticket)
         {
-            DeleteDocument<Ticket>(id, TABLE_NAME);
+            IMongoCollection<Ticket> collection = db.GetCollection<Ticket>(TABLE_NAME);
+            var update = Builders<Ticket>.Update.Set("IsSolved", true);
+            collection.UpdateOne<Ticket>(Ticket => Ticket.IsSolved , update);
         }
     }
 }

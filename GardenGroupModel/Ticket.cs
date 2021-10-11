@@ -19,23 +19,23 @@ namespace GardenGroupModel
         [BsonElement("ReportedDate")]
         public DateTime ReportedDate { get; set; }
         [BsonElement("ReportedBy")]
-        public string ReportedBy { get; set; }
+        public User ReportedBy { get; set; }
         [BsonElement("Deadline")]
         public DateTime Deadline { get; set; }
         [BsonElement("TypeOfIncident")]
-        public string TypeOfIncident { get; set; }
+        public Enums.TypeOfIncident TypeOfIncident { get; set; }
         [BsonElement("TypeOfPriority")]
-        public string TypeOfPriority { get; set; }
+        public Enums.TypeOfPriority TypeOfPriority { get; set; }
         [BsonElement("IsSolved")]
         public bool IsSolved { get; set; }
 
-        public Ticket(DateTime ReportedDate, string Subject, Enums.TypeOfIncident TypeOfIncident, string ReportedBy, Enums.TypeOfPriority TypeOfPriority, DateTime Deadline, string Description)
+        public Ticket(DateTime ReportedDate, string Subject, Enums.TypeOfIncident TypeOfIncident, User ReportedBy, Enums.TypeOfPriority TypeOfPriority, DateTime Deadline, string Description)
         {
             this.ReportedDate = ReportedDate;
             this.Subject = Subject;
-            this.TypeOfIncident = TypeOfIncident.ToString();
+            this.TypeOfIncident = TypeOfIncident;
             this.ReportedBy = ReportedBy;
-            this.TypeOfPriority = TypeOfPriority.ToString();
+            this.TypeOfPriority = TypeOfPriority;
             this.Deadline = Deadline;
             this.Description = Description;         
             

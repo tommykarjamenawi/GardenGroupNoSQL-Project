@@ -36,10 +36,8 @@ namespace GardenGroupUI
             {
 
                 Ticket ticket = new Ticket(dtpDate.Value, txtSubject.Text, (Enums.TypeOfIncident)cmbTypeOfIncident.SelectedIndex,
-                    cmbUser.SelectedItem.ToString(), (Enums.TypeOfPriority)cmbTypeOfPriority.SelectedIndex, dtpDeadline.Value, txtDescription.Text);
-
+                    (User)userService.GetUserByEmailTest(user.Email), (Enums.TypeOfPriority)cmbTypeOfPriority.SelectedIndex, dtpDeadline.Value, txtDescription.Text);
                 
-
                 //ticket.ReportedBy = cmbUser.Text;
                 //ticket.Subject = txtSubject.Text;
                 //ticket.Description = txtDescription.Text;
@@ -75,13 +73,13 @@ namespace GardenGroupUI
 
             if (user.TypeOfUser == Enums.TypeOfUser.EndUser.ToString())
             {
-                cmbUser.Items.Add(user.FirstName + " " + user.LastName);
+                cmbUser.Items.Add(user.Email);
             }
             else
             {
                 foreach (User user in users)
                 {
-                    cmbUser.Items.Add(ReportedByFullName(user.Id));
+                    cmbUser.Items.Add(user.Email);
                 }
             }
 
@@ -91,21 +89,6 @@ namespace GardenGroupUI
             // assign values to the combobox from the enums
             cmbTypeOfIncident.DataSource = Enum.GetValues(typeof(Enums.TypeOfIncident));
             cmbTypeOfPriority.DataSource = Enum.GetValues(typeof(Enums.TypeOfPriority));
-        }
-
-        private string ReportedByFullName(ObjectId id)
-        {
-            string reportedFullName = "";
-
-            foreach (User user in users)
-            {
-                if (id.Equals(user.Id))
-                {
-                    reportedFullName = user.FirstName + " " + user.LastName;
-                    break;
-                }
-            }
-            return reportedFullName;
         }
     }
 }

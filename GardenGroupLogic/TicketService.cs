@@ -28,6 +28,16 @@ namespace GardenGroupLogic
             ticketDAO.RemoveTicket(id);
         }
 
+        public void UpdateTicket(Ticket ticket)
+        {
+            ticketDAO.UpdateTicket(ticket);
+        }
+
+        public void ChangeStatus(Ticket ticket)
+        {
+            ticketDAO.ChangeStatus(ticket);
+        }
+
         public List<Ticket> GetAllTickets()
         {
             return ticketDAO.GetAllTickets();
@@ -58,22 +68,5 @@ namespace GardenGroupLogic
         }
 
         // check the update ticket later
-        public void UpdateTicketCheck(Ticket ticket)
-        {
-            if (ticket.Id == null)
-                return;
-            ticketDAO.UpdateTicket(ticket.Id, ticket);
-        }
-
-        public void UpdateTicket(ObjectId id, Ticket ticket)
-        {
-            ticket.Id = id;
-            UpdateTicketCheck(ticket);
-        }
-
-        public void DeleteTicket(ObjectId id)
-        {
-            ticketDAO.DeleteTicket(id);
-        }
     }
 }
