@@ -17,6 +17,7 @@ namespace GardenGroupUI
     public partial class TicketOverviewForm : Form
     {
         private List<Ticket> tickets;
+        private Ticket ticket;
         private TicketService ticketService;
         private List<User> users;
         private User user;
@@ -51,6 +52,7 @@ namespace GardenGroupUI
                 return;
 
             btnUpdate.Enabled = listViewTickets.SelectedItems.Count > 0;
+
         }
 
         public void DisplayAllTickets()
@@ -74,7 +76,8 @@ namespace GardenGroupUI
 
         private void btnCreateIncident_Click(object sender, EventArgs e)
         {
-            AddTicket addTicket = new AddTicket();
+            AddTicket addTicket = new AddTicket(user);
+            this.Hide();
             addTicket.ShowDialog();
         }
 
@@ -92,7 +95,7 @@ namespace GardenGroupUI
 
             if (user.TypeOfUser == Enums.TypeOfUser.EndUser.ToString())
             {
-                if (sortBy == "Default")
+                if (sortBy == "ID")
                 {
                     sortedList = ticketService.GetFromUserSortedById(user);
                 }
@@ -103,7 +106,7 @@ namespace GardenGroupUI
             }
             else
             {
-                if (sortBy == "Default")
+                if (sortBy == "ID")
                 {
                     sortedList = ticketService.GetAllSortedById();
                 }
@@ -122,7 +125,23 @@ namespace GardenGroupUI
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            // think of smth
+            DisplayAllTickets();
+            listViewTickets.Update();
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            if (listViewTickets.SelectedItems.Count >=0)
+            {
+                MessageBox.Show("Please select a ticket to delete");
+                return;
+            }
+
+            if(MessageBox.Show("Are you sure you want to delete this ticket?", "Delete",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
+            {
+                ticketService.RemoveTicket(ticket.Id);
+            }
+
         }
     }
 }

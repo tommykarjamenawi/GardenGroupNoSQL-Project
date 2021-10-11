@@ -26,6 +26,13 @@ namespace GardenGroupDAO
             collection.InsertOne(ticket);
         }
 
+        public void RemoveTicket(ObjectId id)
+        {
+            IMongoCollection<Ticket> collection = db.GetCollection<Ticket>(TABLE_NAME);
+            var filter = Builders<Ticket>.Filter.Eq("Id", id);
+            collection.DeleteOne(filter);
+        }
+
         // tickets for one specific user
         public List<Ticket> GetAllTicketsForUser(User user)
         {

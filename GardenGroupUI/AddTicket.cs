@@ -19,10 +19,14 @@ namespace GardenGroupUI
         private TicketService ticketService;
         private UserService userService;
         private List<User> users;
-        public AddTicket()
+        private User user;
+        public AddTicket(User user)
         {
+            this.user = user;
+            
             ticketService = new TicketService();
             userService = new UserService();
+
             InitializeComponent();
         }
 
@@ -30,8 +34,11 @@ namespace GardenGroupUI
         {
             try
             {
+
                 Ticket ticket = new Ticket(dtpDate.Value, txtSubject.Text, (Enums.TypeOfIncident)cmbTypeOfIncident.SelectedIndex,
                     cmbUser.SelectedItem.ToString(), (Enums.TypeOfPriority)cmbTypeOfPriority.SelectedIndex, dtpDeadline.Value, txtDescription.Text);
+
+                
 
                 //ticket.ReportedBy = cmbUser.Text;
                 //ticket.Subject = txtSubject.Text;
@@ -43,10 +50,16 @@ namespace GardenGroupUI
 
                 ticketService.AddTicket(ticket);
                 MessageBox.Show("Your ticket has been added!");
-                this.Close();
-            } catch(Exception exp)
+
+                TicketOverviewForm tof = new TicketOverviewForm(user);
+                this.Hide();
+                tof.ShowDialog();
+
+
+
+            } catch(NullReferenceException exp)
             {
-                MessageBox.Show("A problem has occured while attempting to add your ticket! " + exp.Message);
+                MessageBox.Show($"{exp}" + "Please fill out all the fields");
             }
 
         }
@@ -60,17 +73,24 @@ namespace GardenGroupUI
         {
             users = userService.GetAllUsers();
 
+            if (user.TypeOfUser == Enums.TypeOfUser.EndUser.ToString())
+            {
+                cmbUser.Items.Add(user.FirstName + " " + user.LastName);
+            }
+            else
+            {
+                foreach (User user in users)
+                {
+                    cmbUser.Items.Add(ReportedByFullName(user.Id));
+                }
+            }
+
             cmbTypeOfIncident.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbTypeOfPriority.DropDownStyle = ComboBoxStyle.DropDownList;
 
             // assign values to the combobox from the enums
             cmbTypeOfIncident.DataSource = Enum.GetValues(typeof(Enums.TypeOfIncident));
             cmbTypeOfPriority.DataSource = Enum.GetValues(typeof(Enums.TypeOfPriority));
-
-            foreach(User user in users)
-            {
-                cmbUser.Items.Add(ReportedByFullName(user.Id));
-            }
         }
 
         private string ReportedByFullName(ObjectId id)

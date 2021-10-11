@@ -23,6 +23,11 @@ namespace GardenGroupLogic
             ticketDAO.AddTicket(ticket);
         }
 
+        public void RemoveTicket(ObjectId id)
+        {
+            ticketDAO.RemoveTicket(id);
+        }
+
         public List<Ticket> GetAllTickets()
         {
             return ticketDAO.GetAllTickets();
