@@ -72,8 +72,6 @@ namespace GardenGroupUI
         {
             if (MessageBox.Show("Are you sure you want to delete this ticket?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                //this.ticket.Id = (ObjectId)ticketService.RemoveTicket(ticket.Id);
-                //this.ticket = (Ticket)
                 ticketService.RemoveTicket(this.ticket);
                 MessageBox.Show($"Ticket {ticket.Id} has been removed!");
                 this.Close();

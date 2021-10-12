@@ -34,20 +34,18 @@ namespace GardenGroupUI
         private void TicketOverviewForm_Load(object sender, EventArgs e)
         {
             //check whether the logged in user is admin or an enduser and display tickets accordingly
-            if (tickets == null)
-            {
                 //user.TypeOfUser == Enums.TypeOfUser.EndUser.ToString()
                 if (user.TypeOfUser == Enums.TypeOfUser.EndUser.ToString()) // Enum.GetName(typeof(Enums.TypeOfUser),Enums.TypeOfUser.EndUser) // note: need == and NOT Equals!
                     tickets = ticketService.GetAllTicketsForUser(user);
                 else
                     tickets = ticketService.GetAllTickets();
-            }
+
             DisplayAllTickets();
         }
 
         private void listViewTickets_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(listViewTickets.SelectedItems.Count > 0)
+            if(listViewTickets.SelectedIndices.Count > 0)
             {
                 Ticket ticket = (Ticket)listViewTickets.SelectedItems[0].Tag;
 
@@ -126,6 +124,7 @@ namespace GardenGroupUI
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
+            TicketOverviewForm_Load(sender, e);
             DisplayAllTickets();
         }
     }

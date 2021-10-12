@@ -57,11 +57,8 @@ namespace GardenGroupUI
             {
                 AddingTicket();
                 MessageBox.Show("Your ticket has been added!");
+                this.Close();
             }
-
-            TicketOverviewForm tof = new TicketOverviewForm(user);
-            this.Hide();
-            tof.ShowDialog();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
