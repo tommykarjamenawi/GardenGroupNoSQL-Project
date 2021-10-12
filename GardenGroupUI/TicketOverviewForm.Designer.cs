@@ -141,6 +141,10 @@ namespace GardenGroupUI
             // 
             this.cmbSortBy.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSortBy.FormattingEnabled = true;
+            this.cmbSortBy.Items.AddRange(new object[] {
+            "ID",
+            "Priority",
+            "Reported date"});
             this.cmbSortBy.Location = new System.Drawing.Point(44, 191);
             this.cmbSortBy.Margin = new System.Windows.Forms.Padding(4);
             this.cmbSortBy.Name = "cmbSortBy";

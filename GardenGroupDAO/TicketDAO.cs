@@ -43,26 +43,6 @@ namespace GardenGroupDAO
             return collection.AsQueryable().ToList<Ticket>();
         }
 
-        public List<Ticket> GetAllSortedById()
-        {
-            return GetSortedIDDocuments<Ticket>(TABLE_NAME);
-        }
-
-        public List<Ticket> GetUsersTicketsSortedByID(User user)
-        {
-            return GetUsersTicketsSortedByIDDocuments<Ticket>(TABLE_NAME, user);
-        }
-
-        public List<Ticket> GetUsersTicketsSortedByPriority(User user)
-        {
-            return GetUsersTicketsSortedByPriorityDocuments<Ticket>(TABLE_NAME, user);
-        }
-
-        public List<Ticket> GetAllSortedByPriority()
-        {
-            return GetSortedPriorityDocuments<Ticket>(TABLE_NAME);
-        }
-
         public void UpdateTicket(Ticket ticket)
         {
             var filter = Builders<Ticket>.Filter.Eq("Id", ticket.Id);
@@ -73,6 +53,51 @@ namespace GardenGroupDAO
         {
             var update = Builders<Ticket>.Update.Set("IsSolved", true);
             collection.UpdateOne<Ticket>(Ticket => Ticket.Id == ticket.Id, update);
+        }
+
+        public List<Ticket> GetUserSortedById(User user)
+        {
+            var filter = Builders<Ticket>.Filter.Eq("Id", user.Id);
+            var sort = Builders<Ticket>.Sort.Descending("Id");
+
+            return collection.Find(filter).Sort(sort).ToList();
+        }
+
+        public List<Ticket> GetAllSortedById()
+        {
+            var sort = Builders<Ticket>.Sort.Descending("Id");
+
+            return collection.Find<Ticket>(new BsonDocument()).Sort(sort).ToList();
+        }
+
+        public List<Ticket> GetUserSortedPriority(User user)
+        {
+            var filter = Builders<Ticket>.Filter.Eq("ReportedBy", user.Id);
+            var prioritySort = Builders<Ticket>.Sort.Descending("Priority");
+            var reportSort = Builders<Ticket>.Sort.Descending("ReportedDate");
+
+            return collection.Find(filter).Sort(reportSort).Sort(prioritySort).ToList();
+        }
+
+        public List<Ticket> GetAllSortedByPriority()
+        {
+            var prioritySort = Builders<Ticket>.Sort.Descending("Priority");
+            var reportedDateSort = Builders<Ticket>.Sort.Descending("ReportedDate");
+
+            return collection.Find<Ticket>(new BsonDocument()).Sort(reportedDateSort).Sort(prioritySort).ToList();
+        }
+
+        public List<Ticket> GetUserSortedByReportedDate(User user)
+        {
+            var filter = Builders<Ticket>.Filter.Eq("ReportedBy", user.Id);
+            var sort = Builders<Ticket>.Sort.Ascending("ReportedDate");
+            return collection.Find<Ticket>(filter).Sort(sort).ToList();
+        }
+
+        public List<Ticket> GetAllSortedByReportedDate()
+        { 
+            var sort = Builders<Ticket>.Sort.Ascending("ReportedDate");
+            return collection.Find<Ticket>(new BsonDocument()).Sort(sort).ToList();
         }
     }
 }

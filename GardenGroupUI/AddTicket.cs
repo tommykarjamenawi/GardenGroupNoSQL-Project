@@ -43,7 +43,7 @@ namespace GardenGroupUI
 
         private void AddingTicket()
         {
-            Ticket ticket = new Ticket(dtpDate.Value = DateTime.Now, txtSubject.Text, (Enums.TypeOfIncident)cmbTypeOfIncident.SelectedIndex,
+            Ticket ticket = new Ticket(dtpDate.Value, txtSubject.Text, (Enums.TypeOfIncident)cmbTypeOfIncident.SelectedIndex,
                     (User)userService.GetUserByEmailTest(user.Email), (Enums.TypeOfPriority)cmbTypeOfPriority.SelectedIndex, dtpDeadline.Value, txtDescription.Text);
 
             ticketService = new TicketService();

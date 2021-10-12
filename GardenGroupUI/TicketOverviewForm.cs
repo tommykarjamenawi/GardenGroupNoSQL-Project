@@ -28,21 +28,17 @@ namespace GardenGroupUI
 
         private void TicketOverviewForm_Load(object sender, EventArgs e)
         {
-            
-            CheckUserType();
+            DisplayAllTickets();          
         }
 
-        private void CheckUserType()
-        {
-            //check whether the logged in user is admin or an enduser and display tickets accordingly
-            //user.TypeOfUser == Enums.TypeOfUser.EndUser.ToString()
-            if (user.TypeOfUser == Enums.TypeOfUser.EndUser.ToString()) // Enum.GetName(typeof(Enums.TypeOfUser),Enums.TypeOfUser.EndUser) // note: need == and NOT Equals!
-                tickets = ticketService.GetAllTicketsForUser(user);
-            else
-                tickets = ticketService.GetAllTickets();
+        //private void CheckUserType()
+        //{
+        //    //check whether the logged in user is admin or an enduser and display tickets accordingly
+        //    //user.TypeOfUser == Enums.TypeOfUser.EndUser.ToString()
 
-            DisplayAllTickets();
-        }
+
+        //    DisplayAllTickets();
+        //}
 
         private void listViewTickets_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -57,6 +53,11 @@ namespace GardenGroupUI
 
         public void DisplayAllTickets()
         {
+                if (user.TypeOfUser == Enums.TypeOfUser.EndUser.ToString()) // Enum.GetName(typeof(Enums.TypeOfUser),Enums.TypeOfUser.EndUser) // note: need == and NOT Equals!
+                    tickets = ticketService.GetAllTicketsForUser(user);
+                else
+                    tickets = ticketService.GetAllTickets();
+
             listViewTickets.Items.Clear();
 
             foreach (Ticket ticket in tickets)
@@ -98,11 +99,15 @@ namespace GardenGroupUI
             {
                 if (sortBy == "ID")
                 {
-                    sortedList = ticketService.GetFromUserSortedById(user);
+                    sortedList = ticketService.GetUserSortedById(user);
                 }
                 else if (sortBy == "Priority")
                 {
-                    sortedList = ticketService.GetFromUserSortedByPriority(user);
+                    sortedList = ticketService.GetUserSortedByPriority(user);
+                }
+                else if (sortBy == "Reported date")
+                {
+                    sortedList = ticketService.GetUsersSortedByReportedDate(user);
                 }
             }
             else
@@ -111,9 +116,13 @@ namespace GardenGroupUI
                 {
                     sortedList = ticketService.GetAllSortedById();
                 }
-                else
+                else if(sortBy == "Priority")
                 {
                     sortedList = ticketService.GetAllSortedByPriority();
+                }
+                else if (sortBy == "Reported date")
+                {
+                    sortedList = ticketService.GetAllSortedByReportedDate();
                 }
             }
 
@@ -125,7 +134,7 @@ namespace GardenGroupUI
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            CheckUserType();
+            DisplayAllTickets();
         }
     }
 }
