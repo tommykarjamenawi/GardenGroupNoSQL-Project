@@ -40,6 +40,7 @@ namespace GardenGroupUI
             this.columnTickets = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblsearchcheck = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -73,15 +74,14 @@ namespace GardenGroupUI
             // 
             // lstUsers
             // 
-            this.lstUsers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lstUsers.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ColumnId,
             this.ColumnEmail,
             this.ColumnFirstname,
             this.columnLastname,
             this.columnTickets});
+            this.lstUsers.FullRowSelect = true;
+            this.lstUsers.GridLines = true;
             this.lstUsers.HideSelection = false;
             this.lstUsers.Location = new System.Drawing.Point(67, 220);
             this.lstUsers.Name = "lstUsers";
@@ -89,6 +89,7 @@ namespace GardenGroupUI
             this.lstUsers.TabIndex = 3;
             this.lstUsers.UseCompatibleStateImageBehavior = false;
             this.lstUsers.View = System.Windows.Forms.View.Details;
+            this.lstUsers.SelectedIndexChanged += new System.EventHandler(this.lstUsers_SelectedIndexChanged);
             // 
             // ColumnId
             // 
@@ -134,12 +135,24 @@ namespace GardenGroupUI
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRefresh.Location = new System.Drawing.Point(553, 565);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(155, 42);
+            this.btnRefresh.TabIndex = 6;
+            this.btnRefresh.Text = "&Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // ManageUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(217)))), ((int)(((byte)(112)))));
-            this.ClientSize = new System.Drawing.Size(800, 594);
+            this.ClientSize = new System.Drawing.Size(800, 619);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblsearchcheck);
             this.Controls.Add(this.lstUsers);
@@ -167,5 +180,6 @@ namespace GardenGroupUI
         private System.Windows.Forms.ColumnHeader columnTickets;
         private System.Windows.Forms.Label lblsearchcheck;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }

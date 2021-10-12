@@ -46,7 +46,7 @@ namespace GardenGroupUI
                 li.SubItems.Add(u.Email.ToString());
                 li.SubItems.Add(u.FirstName.ToString());
                 li.SubItems.Add(u.LastName.ToString());
-
+                li.Tag = u;
                 lstUsers.Items.Add(li);
             }
         }
@@ -71,7 +71,7 @@ namespace GardenGroupUI
                 li.SubItems.Add(user.Email.ToString());
                 li.SubItems.Add(user.FirstName.ToString());
                 li.SubItems.Add(user.LastName.ToString());
-
+                
                 lstUsers.Items.Add(li);
             }
             else
@@ -85,6 +85,23 @@ namespace GardenGroupUI
         private void button1_Click(object sender, EventArgs e)
         {
             Search();
+        }
+
+        private void lstUsers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+            if (lstUsers.SelectedIndices.Count>0)
+            {
+                User user = (User)lstUsers.SelectedItems[0].Tag;
+               DeleteOrUpdateUser deleteOrUpdateUser = new DeleteOrUpdateUser(user);
+                deleteOrUpdateUser.ShowDialog();
+            }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            lstUsers.Items.Clear();
+            FillForm();
         }
     }
 }

@@ -10,7 +10,7 @@ namespace GardenGroupDAO
 {
    public class UserDAO : MongoDB
     {
-        string COLLECTION_NAME = "Users";
+        readonly string COLLECTION_NAME = "Users";
 
         public void AddUser(User user)
         {
@@ -47,19 +47,15 @@ namespace GardenGroupDAO
             return (User)collection.Find<User>(User => User.Email == email).FirstOrDefault();
         }
 
-        //public bool GetUsersCollection(string email, string password)
-        //{
-        //    IMongoCollection<User> userCollection = db.GetCollection<User>("Users");
-        //    List<User> users = userCollection.AsQueryable().ToList<User>();
-        //    int count = 0;
-        //    foreach (User user in users)
-        //    {
-        //        if (user.Email == email && user.Password == password)
-        //        {
-        //            count++;
-        //        }            
-        //    }
-        //    return count >= 1;
-        //}
+      
+        public void UpdateUser(User user)
+        {
+            UpdateDocument<User>(user.Id, COLLECTION_NAME, user);
+        }
+
+        public void RemoveUser(User user)
+        {
+            DeleteDocument<User>(user.Id, COLLECTION_NAME);
+        }
     }
 }

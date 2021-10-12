@@ -38,5 +38,14 @@ namespace GardenGroupLogic
         {
             return userdao.GetUserByEmailTest(email);
         }
+
+       public void UpdateUser(User user)
+        {
+            userdao.UpdateUser(user);
+        }
+        public void RemoveUser(User user)
+        {
+            userdao.RemoveUser(user);
+        }
     }
 }
