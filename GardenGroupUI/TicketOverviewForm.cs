@@ -17,9 +17,7 @@ namespace GardenGroupUI
     public partial class TicketOverviewForm : Form
     {
         private List<Ticket> tickets;
-        private Ticket ticket;
         private TicketService ticketService;
-        private List<User> users;
         private User user;
         public TicketOverviewForm(User user)
         {
@@ -27,10 +25,10 @@ namespace GardenGroupUI
             ticketService = new TicketService();
             InitializeComponent();
 
-            //var pack = new ConventionPack
-            //{
-            //  new EnumRepresentationConvention(BsonType.String)
-            //};
+            var pack = new ConventionPack
+            {
+              new EnumRepresentationConvention(BsonType.String)
+            };
         }
 
         private void TicketOverviewForm_Load(object sender, EventArgs e)
@@ -39,7 +37,7 @@ namespace GardenGroupUI
             if (tickets == null)
             {
                 //user.TypeOfUser == Enums.TypeOfUser.EndUser.ToString()
-                if (user.TypeOfUser.Equals(Enums.TypeOfUser.EndUser)) // Enum.GetName(typeof(Enums.TypeOfUser),Enums.TypeOfUser.EndUser) // note: need == and NOT Equals!
+                if (user.TypeOfUser == Enums.TypeOfUser.EndUser.ToString()) // Enum.GetName(typeof(Enums.TypeOfUser),Enums.TypeOfUser.EndUser) // note: need == and NOT Equals!
                     tickets = ticketService.GetAllTicketsForUser(user);
                 else
                     tickets = ticketService.GetAllTickets();
@@ -47,15 +45,15 @@ namespace GardenGroupUI
             DisplayAllTickets();
         }
 
-        private void listViewItems_SelectedIndexChanged(object sender, EventArgs e)
+        private void listViewTickets_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (listViewTickets.SelectedItems.Count <= 0)
-                return;
+            if(listViewTickets.SelectedItems.Count > 0)
+            {
+                Ticket ticket = (Ticket)listViewTickets.SelectedItems[0].Tag;
 
-            
-            UpdateTicket ut = new UpdateTicket(ticket);
-            this.Hide();
-            ut.Show();
+                UpdateTicket ut = new UpdateTicket(ticket, user);
+                ut.ShowDialog();
+            }
 
         }
 
@@ -75,6 +73,7 @@ namespace GardenGroupUI
                 item.SubItems.Add(ticket.Description);
                 item.SubItems.Add(ticket.IsSolved.ToString());
                 listViewTickets.Items.Add(item);
+                item.Tag = ticket;
             }
         }
 
@@ -125,5 +124,7 @@ namespace GardenGroupUI
             tickets = sortedList;
             DisplayAllTickets();
         }
+
+
     }
 }

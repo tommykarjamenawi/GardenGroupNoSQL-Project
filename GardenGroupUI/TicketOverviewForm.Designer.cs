@@ -77,7 +77,7 @@ namespace GardenGroupUI
             this.listViewTickets.TabIndex = 8;
             this.listViewTickets.UseCompatibleStateImageBehavior = false;
             this.listViewTickets.View = System.Windows.Forms.View.Details;
-            this.listViewTickets.SelectedIndexChanged += new System.EventHandler(this.listViewItems_SelectedIndexChanged);
+            this.listViewTickets.SelectedIndexChanged += new System.EventHandler(this.listViewTickets_SelectedIndexChanged);
             // 
             // ID
             // 

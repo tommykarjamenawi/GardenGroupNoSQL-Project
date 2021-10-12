@@ -29,7 +29,6 @@ namespace GardenGroupUI
         /// </summary>
         private void InitializeComponent()
         {
-            this.cmbUser = new System.Windows.Forms.ComboBox();
             this.dtpDeadline = new System.Windows.Forms.DateTimePicker();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -47,19 +46,10 @@ namespace GardenGroupUI
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnRemove = new System.Windows.Forms.Button();
             this.btnStatus = new System.Windows.Forms.Button();
+            this.txtUser = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // cmbUser
-            // 
-            this.cmbUser.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbUser.FormattingEnabled = true;
-            this.cmbUser.Location = new System.Drawing.Point(359, 199);
-            this.cmbUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cmbUser.Name = "cmbUser";
-            this.cmbUser.Size = new System.Drawing.Size(213, 24);
-            this.cmbUser.TabIndex = 54;
             // 
             // dtpDeadline
             // 
@@ -220,16 +210,17 @@ namespace GardenGroupUI
             this.label1.TabIndex = 37;
             this.label1.Text = "Update current ticket";
             // 
-            // button1
+            // btnRemove
             // 
-            this.button1.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.button1.Location = new System.Drawing.Point(359, 401);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(103, 34);
-            this.button1.TabIndex = 55;
-            this.button1.Text = "&Remove ticket";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnRemove.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnRemove.Location = new System.Drawing.Point(359, 401);
+            this.btnRemove.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(103, 34);
+            this.btnRemove.TabIndex = 55;
+            this.btnRemove.Text = "&Remove ticket";
+            this.btnRemove.UseVisualStyleBackColor = false;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // btnStatus
             // 
@@ -244,15 +235,23 @@ namespace GardenGroupUI
             this.btnStatus.UseVisualStyleBackColor = false;
             this.btnStatus.Click += new System.EventHandler(this.btnStatus_Click);
             // 
+            // txtUser
+            // 
+            this.txtUser.Location = new System.Drawing.Point(359, 201);
+            this.txtUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtUser.Name = "txtUser";
+            this.txtUser.Size = new System.Drawing.Size(213, 22);
+            this.txtUser.TabIndex = 57;
+            // 
             // UpdateTicket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(217)))), ((int)(((byte)(112)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtUser);
             this.Controls.Add(this.btnStatus);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.cmbUser);
+            this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.dtpDeadline);
             this.Controls.Add(this.dtpDate);
             this.Controls.Add(this.btnUpdate);
@@ -279,8 +278,6 @@ namespace GardenGroupUI
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox cmbUser;
         private System.Windows.Forms.DateTimePicker dtpDeadline;
         private System.Windows.Forms.DateTimePicker dtpDate;
         private System.Windows.Forms.Button btnUpdate;
@@ -298,7 +295,8 @@ namespace GardenGroupUI
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnStatus;
+        private System.Windows.Forms.TextBox txtUser;
     }
 }

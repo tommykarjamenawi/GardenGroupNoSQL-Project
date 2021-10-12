@@ -82,7 +82,6 @@ namespace GardenGroupUI
                     cmbUser.Items.Add(user.Email);
                 }
             }
-
             cmbTypeOfIncident.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbTypeOfPriority.DropDownStyle = ComboBoxStyle.DropDownList;
 

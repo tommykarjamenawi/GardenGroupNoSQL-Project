@@ -38,8 +38,6 @@ namespace GardenGroupModel
             this.TypeOfPriority = TypeOfPriority;
             this.Deadline = Deadline;
             this.Description = Description;         
-            
-            IsSolved = false;
         }
 
 
