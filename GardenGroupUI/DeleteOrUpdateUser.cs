@@ -28,17 +28,17 @@ namespace GardenGroupUI
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            User user1 = new User();
-            user1.Id = user.Id;
-            user1.FirstName = txtFirstName.Text;
-            user1.LastName = txtLastName.Text;
-           // user1.TypeOfUser = cmbTypeOfUser.SelectedItem.ToString();
-            user1.Email = txtEmailAddress.Text;
-            user1.Phone = txtPhoneNumber.Text;
+          
+          
+           this. user.FirstName = txtFirstName.Text;
+            this.user.LastName = txtLastName.Text;
+            // user1.TypeOfUser = cmbTypeOfUser.SelectedItem.ToString();
+            this.user.Email = txtEmailAddress.Text;
+            this.user.Phone = txtPhoneNumber.Text;
           //  user1.branch = cmbLocationBranch.Text;
 
 
-            userService.UpdateUser(user1);
+            userService.UpdateUser(user);
         }
 
         private void btnRemove_Click(object sender, EventArgs e)

@@ -138,6 +138,7 @@ namespace GardenGroupUI
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(213, 72);
             this.txtDescription.TabIndex = 27;
+            this.txtDescription.TextChanged += new System.EventHandler(this.txtDescription_TextChanged);
             // 
             // txtSubject
             // 
@@ -146,6 +147,7 @@ namespace GardenGroupUI
             this.txtSubject.Name = "txtSubject";
             this.txtSubject.Size = new System.Drawing.Size(213, 22);
             this.txtSubject.TabIndex = 28;
+            this.txtSubject.TextChanged += new System.EventHandler(this.txtSubject_TextChanged);
             // 
             // cmbTypeOfIncident
             // 
@@ -156,6 +158,7 @@ namespace GardenGroupUI
             this.cmbTypeOfIncident.Name = "cmbTypeOfIncident";
             this.cmbTypeOfIncident.Size = new System.Drawing.Size(213, 24);
             this.cmbTypeOfIncident.TabIndex = 29;
+            this.cmbTypeOfIncident.SelectedIndexChanged += new System.EventHandler(this.cmbTypeOfIncident_SelectedIndexChanged);
             // 
             // cmbTypeOfPriority
             // 
@@ -166,6 +169,7 @@ namespace GardenGroupUI
             this.cmbTypeOfPriority.Name = "cmbTypeOfPriority";
             this.cmbTypeOfPriority.Size = new System.Drawing.Size(213, 24);
             this.cmbTypeOfPriority.TabIndex = 30;
+            this.cmbTypeOfPriority.SelectedIndexChanged += new System.EventHandler(this.cmbTypeOfPriority_SelectedIndexChanged);
             // 
             // btnCancel
             // 
@@ -199,6 +203,7 @@ namespace GardenGroupUI
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(213, 22);
             this.dtpDate.TabIndex = 34;
+            this.dtpDate.ValueChanged += new System.EventHandler(this.dtpDate_ValueChanged);
             // 
             // dtpDeadline
             // 
@@ -207,6 +212,7 @@ namespace GardenGroupUI
             this.dtpDeadline.Name = "dtpDeadline";
             this.dtpDeadline.Size = new System.Drawing.Size(213, 22);
             this.dtpDeadline.TabIndex = 35;
+            this.dtpDeadline.ValueChanged += new System.EventHandler(this.dtpDeadline_ValueChanged);
             // 
             // cmbUser
             // 
@@ -217,6 +223,7 @@ namespace GardenGroupUI
             this.cmbUser.Name = "cmbUser";
             this.cmbUser.Size = new System.Drawing.Size(213, 24);
             this.cmbUser.TabIndex = 36;
+            this.cmbUser.SelectedIndexChanged += new System.EventHandler(this.cmbUser_SelectedIndexChanged);
             // 
             // AddTicket
             // 

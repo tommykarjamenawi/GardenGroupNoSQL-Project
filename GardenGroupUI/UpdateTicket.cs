@@ -1,5 +1,6 @@
 ﻿using GardenGroupLogic;
 using GardenGroupModel;
+using MongoDB.Bson;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,7 +26,6 @@ namespace GardenGroupUI
             userService = new UserService();
             ticketService = new TicketService();
             InitializeComponent();
-
         }
 
 
@@ -46,7 +46,6 @@ namespace GardenGroupUI
         {
             dtpDate.Enabled = false;
             dtpDate.Value = ticket.ReportedDate;
-
             txtSubject.Text = ticket.Subject;
             txtUser.Enabled = false;
 
@@ -73,21 +72,33 @@ namespace GardenGroupUI
         {
             if (MessageBox.Show("Are you sure you want to delete this ticket?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                ticketService.RemoveTicket(ticket.Id);
-                MessageBox.Show("Ticket has been updated!");
+                //this.ticket.Id = (ObjectId)ticketService.RemoveTicket(ticket.Id);
+                //this.ticket = (Ticket)
+                ticketService.RemoveTicket(ticket);
+                MessageBox.Show("Ticket has been removed!");
+                this.Close();
             }
         }
 
         private void btnStatus_Click(object sender, EventArgs e)
         {
+            this.ticket.IsSolved = true;
             ticketService.ChangeStatus(ticket);
             MessageBox.Show("Ticket has been solved!");
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            //updating the replaced values to db and listview
+            this.ticket.Subject = txtSubject.Text;
+            this.ticket.TypeOfIncident = (Enums.TypeOfIncident)Enum.Parse(typeof(Enums.TypeOfIncident), cmbTypeOfIncident.Text);
+            this.ticket.Deadline = dtpDeadline.Value;
+            this.ticket.TypeOfPriority = (Enums.TypeOfPriority)Enum.Parse(typeof(Enums.TypeOfPriority), cmbTypeOfPriority.Text);
+            this.ticket.Description = txtDescription.Text;
+
             ticketService.UpdateTicket(ticket);
             MessageBox.Show("Ticket has been updated!");
+            this.Close();
         }
     }
 

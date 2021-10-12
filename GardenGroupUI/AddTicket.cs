@@ -23,43 +23,46 @@ namespace GardenGroupUI
         public AddTicket(User user)
         {
             this.user = user;
-            
             ticketService = new TicketService();
             userService = new UserService();
 
             InitializeComponent();
+            btnAdd.Enabled = false;
+        }
+        private void CleanForm()
+        {
+            dtpDate.Value = DateTime.Now;
+            txtSubject.Clear();
+            cmbTypeOfIncident.SelectedIndex = -1;
+            cmbUser.SelectedIndex = -1;
+            cmbTypeOfPriority.SelectedIndex = -1;
+            dtpDeadline.Value = DateTime.Now;
+            txtDescription.Clear();
+            btnAdd.Enabled = false;
+        }
+
+        private void AddingTicket()
+        {
+            Ticket ticket = new Ticket(dtpDate.Value, txtSubject.Text, (Enums.TypeOfIncident)cmbTypeOfIncident.SelectedIndex,
+                    (User)userService.GetUserByEmailTest(user.Email), (Enums.TypeOfPriority)cmbTypeOfPriority.SelectedIndex, dtpDeadline.Value, txtDescription.Text);
+
+            ticketService = new TicketService();
+            ticketService.AddTicket(ticket);
+            CleanForm();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            try
+            if (ticket == null)
             {
-
-                Ticket ticket = new Ticket(dtpDate.Value, txtSubject.Text, (Enums.TypeOfIncident)cmbTypeOfIncident.SelectedIndex,
-                    (User)userService.GetUserByEmailTest(user.Email), (Enums.TypeOfPriority)cmbTypeOfPriority.SelectedIndex, dtpDeadline.Value, txtDescription.Text);
-                
-                //ticket.ReportedBy = cmbUser.Text;
-                //ticket.Subject = txtSubject.Text;
-                //ticket.Description = txtDescription.Text;
-                //ticket.ReportedDate = dtpDate.Value;
-                //ticket.Deadline = dtpDeadline.Value;
-                //ticket.TypeOfIncident = cmbTypeOfIncident.SelectedItem.ToString();
-                //ticket.TypeOfPriority = cmbTypeOfPriority.SelectedItem.ToString();
-
-                ticketService.AddTicket(ticket);
+                AddingTicket();
                 MessageBox.Show("Your ticket has been added!");
-
-                TicketOverviewForm tof = new TicketOverviewForm(user);
-                this.Hide();
-                tof.ShowDialog();
-
-
-
-            } catch(NullReferenceException exp)
-            {
-                MessageBox.Show($"{exp}" + "Please fill out all the fields");
             }
+            this.Close();
 
+            //TicketOverviewForm tof = new TicketOverviewForm(user);
+            //this.Hide();
+            //tof.ShowDialog();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -88,6 +91,49 @@ namespace GardenGroupUI
             // assign values to the combobox from the enums
             cmbTypeOfIncident.DataSource = Enum.GetValues(typeof(Enums.TypeOfIncident));
             cmbTypeOfPriority.DataSource = Enum.GetValues(typeof(Enums.TypeOfPriority));
+        }
+
+        private void EnableButtonAdd()
+        {
+            if (txtSubject.Text != "" && txtDescription.Text != "" && cmbUser.SelectedIndex > -1 && cmbTypeOfIncident.SelectedIndex > -1 && cmbTypeOfIncident.SelectedIndex > -1 && dtpDeadline.Value > DateTime.Now)
+            {
+                btnAdd.Enabled = true;
+            }
+        }
+
+        private void txtSubject_TextChanged(object sender, EventArgs e)
+        {
+            EnableButtonAdd();
+        }
+
+        private void cmbTypeOfIncident_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            EnableButtonAdd();
+        }
+
+        private void cmbUser_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            EnableButtonAdd();
+        }
+
+        private void cmbTypeOfPriority_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            EnableButtonAdd();
+        }
+
+        private void dtpDeadline_ValueChanged(object sender, EventArgs e)
+        {
+            EnableButtonAdd();
+        }
+
+        private void txtDescription_TextChanged(object sender, EventArgs e)
+        {
+            EnableButtonAdd();
+        }
+
+        private void dtpDate_ValueChanged(object sender, EventArgs e)
+        {
+            EnableButtonAdd();
         }
     }
 }

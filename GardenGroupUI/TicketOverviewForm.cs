@@ -54,7 +54,6 @@ namespace GardenGroupUI
                 UpdateTicket ut = new UpdateTicket(ticket, user);
                 ut.ShowDialog();
             }
-
         }
 
         public void DisplayAllTickets()
@@ -72,16 +71,17 @@ namespace GardenGroupUI
                 item.SubItems.Add(ticket.Deadline.ToString());
                 item.SubItems.Add(ticket.Description);
                 item.SubItems.Add(ticket.IsSolved.ToString());
-                listViewTickets.Items.Add(item);
                 item.Tag = ticket;
+                listViewTickets.Items.Add(item);
+
             }
         }
 
         private void btnCreateIncident_Click(object sender, EventArgs e)
         {
             AddTicket addTicket = new AddTicket(user);
-            this.Hide();
             addTicket.ShowDialog();
+
         }
 
 
@@ -125,6 +125,9 @@ namespace GardenGroupUI
             DisplayAllTickets();
         }
 
-
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            DisplayAllTickets();
+        }
     }
 }

@@ -13,6 +13,7 @@ namespace GardenGroupDAO
     public class TicketDAO : MongoDB
     {
         private readonly string TABLE_NAME = "Tickets";
+        private IMongoCollection<Ticket> collection;
         public TicketDAO()
         {
 
@@ -20,28 +21,28 @@ namespace GardenGroupDAO
 
         public void AddTicket(Ticket ticket)
         {
-            IMongoCollection<Ticket> collection = db.GetCollection<Ticket>(TABLE_NAME);
+            collection = db.GetCollection<Ticket>(TABLE_NAME);
             collection.InsertOne(ticket);
         }
 
-        public void RemoveTicket(ObjectId id)
+        public void RemoveTicket(Ticket ticket)
         {
-            IMongoCollection<Ticket> collection = db.GetCollection<Ticket>(TABLE_NAME);
-            var filter = Builders<Ticket>.Filter.Eq("Id", id);
+            collection = db.GetCollection<Ticket>(TABLE_NAME);
+            var filter = Builders<Ticket>.Filter.Eq("Id", ticket.Id);
             collection.DeleteOne(filter);
         }
 
         // tickets for one specific user
         public List<Ticket> GetAllTicketsForUser(User user)
         {
-            IMongoCollection<Ticket> collection = db.GetCollection<Ticket>(TABLE_NAME);
+            collection = db.GetCollection<Ticket>(TABLE_NAME);
             return collection.Find<Ticket>(Ticket => Ticket.ReportedBy.Email == user.Email).ToList<Ticket>();
         }
 
         // all tickets for an admin
         public List<Ticket> GetAllTickets()
         {
-            IMongoCollection<Ticket> collection = db.GetCollection<Ticket>(TABLE_NAME);
+            collection = db.GetCollection<Ticket>(TABLE_NAME);
             return collection.AsQueryable().ToList<Ticket>();
         }
 
@@ -67,16 +68,16 @@ namespace GardenGroupDAO
 
         public void UpdateTicket(Ticket ticket)
         {
-            IMongoCollection<Ticket> collection = db.GetCollection<Ticket>(TABLE_NAME);
+            collection = db.GetCollection<Ticket>(TABLE_NAME);
             var filter = Builders<Ticket>.Filter.Eq("Id", ticket.Id);
-            collection.ReplaceOne(filter, ticket);
+            collection.ReplaceOne(filter, ticket, new ReplaceOptions() { IsUpsert = true });
         }
 
         public void ChangeStatus(Ticket ticket)
         {
-            IMongoCollection<Ticket> collection = db.GetCollection<Ticket>(TABLE_NAME);
+            collection = db.GetCollection<Ticket>(TABLE_NAME);
             var update = Builders<Ticket>.Update.Set("IsSolved", true);
-            collection.UpdateOne<Ticket>(Ticket => Ticket.IsSolved , update);
+            collection.UpdateOne<Ticket>(Ticket => Ticket.Id == ticket.Id, update);
         }
     }
 }

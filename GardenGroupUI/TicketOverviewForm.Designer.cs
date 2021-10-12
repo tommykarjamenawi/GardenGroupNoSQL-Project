@@ -42,6 +42,7 @@ namespace GardenGroupUI
             this.columnStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnCreateIncident = new System.Windows.Forms.Button();
             this.cmbSortBy = new System.Windows.Forms.ComboBox();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -120,7 +121,7 @@ namespace GardenGroupUI
             // 
             // columnStatus
             // 
-            this.columnStatus.Text = "Status";
+            this.columnStatus.Text = "IsSolved";
             this.columnStatus.Width = 100;
             // 
             // btnCreateIncident
@@ -147,12 +148,26 @@ namespace GardenGroupUI
             this.cmbSortBy.TabIndex = 18;
             this.cmbSortBy.SelectedIndexChanged += new System.EventHandler(this.cmbSortBy_SelectedIndexChanged);
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnRefresh.ForeColor = System.Drawing.Color.Black;
+            this.btnRefresh.Location = new System.Drawing.Point(445, 178);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(147, 60);
+            this.btnRefresh.TabIndex = 19;
+            this.btnRefresh.Text = "&REFRESH";
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // TicketOverviewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(217)))), ((int)(((byte)(112)))));
             this.ClientSize = new System.Drawing.Size(1308, 898);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.cmbSortBy);
             this.Controls.Add(this.btnCreateIncident);
             this.Controls.Add(this.listViewTickets);
@@ -180,5 +195,6 @@ namespace GardenGroupUI
         private System.Windows.Forms.ColumnHeader Deadline;
         private System.Windows.Forms.ColumnHeader Description;
         private System.Windows.Forms.ComboBox cmbSortBy;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }

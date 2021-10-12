@@ -23,9 +23,9 @@ namespace GardenGroupLogic
             ticketDAO.AddTicket(ticket);
         }
 
-        public void RemoveTicket(ObjectId id)
+        public void RemoveTicket(Ticket ticket)
         {
-            ticketDAO.RemoveTicket(id);
+            ticketDAO.RemoveTicket(ticket);
         }
 
         public void UpdateTicket(Ticket ticket)

@@ -37,7 +37,7 @@ namespace GardenGroupModel
             this.ReportedBy = ReportedBy;
             this.TypeOfPriority = TypeOfPriority;
             this.Deadline = Deadline;
-            this.Description = Description;         
+            this.Description = Description;
         }
 
 
