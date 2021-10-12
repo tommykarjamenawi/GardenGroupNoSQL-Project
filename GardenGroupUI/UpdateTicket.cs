@@ -74,8 +74,8 @@ namespace GardenGroupUI
             {
                 //this.ticket.Id = (ObjectId)ticketService.RemoveTicket(ticket.Id);
                 //this.ticket = (Ticket)
-                ticketService.RemoveTicket(ticket);
-                MessageBox.Show("Ticket has been removed!");
+                ticketService.RemoveTicket(this.ticket);
+                MessageBox.Show($"Ticket {ticket.Id} has been removed!");
                 this.Close();
             }
         }
@@ -83,8 +83,8 @@ namespace GardenGroupUI
         private void btnStatus_Click(object sender, EventArgs e)
         {
             this.ticket.IsSolved = true;
-            ticketService.ChangeStatus(ticket);
-            MessageBox.Show("Ticket has been solved!");
+            ticketService.ChangeStatus(this.ticket);
+            MessageBox.Show($"Ticket {ticket.Id} has been solved!");
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -96,8 +96,8 @@ namespace GardenGroupUI
             this.ticket.TypeOfPriority = (Enums.TypeOfPriority)Enum.Parse(typeof(Enums.TypeOfPriority), cmbTypeOfPriority.Text);
             this.ticket.Description = txtDescription.Text;
 
-            ticketService.UpdateTicket(ticket);
-            MessageBox.Show("Ticket has been updated!");
+            ticketService.UpdateTicket(this.ticket);
+            MessageBox.Show($"Ticket {ticket.Id} has been updated!");
             this.Close();
         }
     }

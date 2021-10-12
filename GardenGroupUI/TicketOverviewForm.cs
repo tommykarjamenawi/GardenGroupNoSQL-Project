@@ -81,7 +81,6 @@ namespace GardenGroupUI
         {
             AddTicket addTicket = new AddTicket(user);
             addTicket.ShowDialog();
-
         }
 
 
