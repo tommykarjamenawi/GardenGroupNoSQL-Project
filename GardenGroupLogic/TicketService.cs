@@ -67,7 +67,7 @@ namespace GardenGroupLogic
             return ticketDAO.GetUserSortedPriority(user);
         }
 
-        public List<Ticket> GetUsersSortedByReportedDate(User user)
+        public List<Ticket> GetUserSortedByReportedDate(User user)
         {
             return ticketDAO.GetUserSortedByReportedDate(user);
         }
@@ -75,6 +75,26 @@ namespace GardenGroupLogic
         public List<Ticket> GetAllSortedByReportedDate()
         {
             return ticketDAO.GetAllSortedByReportedDate();
+        }
+
+        public List<Ticket> GetAllSortedByDeadline()
+        {
+            return ticketDAO.GetAllSortedByDeadline();
+        }
+
+        public List<Ticket> GetUserSortedByDeadline(User user)
+        {
+            return ticketDAO.GetUserSortedByDeadline(user);
+        }
+
+        public List<Ticket> GetAllSortedBySolved()
+        {
+            return ticketDAO.GetAllSortedBySolved();
+        }
+
+        public List<Ticket> GetUserSortedBySolved(User user)
+        {
+            return ticketDAO.GetUserSortedBySolved(user);
         }
     }
 }

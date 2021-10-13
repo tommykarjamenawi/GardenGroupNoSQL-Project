@@ -32,17 +32,6 @@ namespace GardenGroupUI
             DateTimeReported = DateTime.Now;
             txtDateReported.Text = DateTimeReported.ToString();
         }
-        private void CleanForm()
-        {
-            txtDateReported.Text = DateTimeReported.ToString();
-            txtSubject.Clear();
-            cmbTypeOfIncident.SelectedIndex = -1;
-            cmbUser.SelectedIndex = -1;
-            cmbTypeOfPriority.SelectedIndex = -1;
-            dtpDeadline.Value = DateTime.Now;
-            txtDescription.Clear();
-            btnAdd.Enabled = false;
-        }
 
         private void AddingTicket()
         {
@@ -51,7 +40,6 @@ namespace GardenGroupUI
 
             ticketService = new TicketService();
             ticketService.AddTicket(ticket);
-            CleanForm();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

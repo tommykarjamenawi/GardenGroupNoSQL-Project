@@ -38,8 +38,8 @@ namespace GardenGroupUI
             this.TypePriority = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Deadline = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Description = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.isSolved = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Description = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnCreateIncident = new System.Windows.Forms.Button();
             this.cmbSortBy = new System.Windows.Forms.ComboBox();
             this.btnRefresh = new System.Windows.Forms.Button();
@@ -118,7 +118,7 @@ namespace GardenGroupUI
             this.Deadline.Text = "Deadline";
             this.Deadline.Width = 100;
             // 
-            // columnStatus
+            // isSolved
             // 
             this.isSolved.Text = "IsSolved";
             this.isSolved.Width = 100;
@@ -147,10 +147,12 @@ namespace GardenGroupUI
             this.cmbSortBy.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSortBy.FormattingEnabled = true;
             this.cmbSortBy.Items.AddRange(new object[] {
-            "Not sorted",
+            "Default",
             "ID",
             "Priority",
-            "Reported date"});
+            "Reported date",
+            "Deadline",
+            "Solved"});
             this.cmbSortBy.Location = new System.Drawing.Point(44, 191);
             this.cmbSortBy.Margin = new System.Windows.Forms.Padding(4);
             this.cmbSortBy.Name = "cmbSortBy";
@@ -174,36 +176,40 @@ namespace GardenGroupUI
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(41, 13);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(36, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 17);
+            this.label2.Size = new System.Drawing.Size(168, 39);
             this.label2.TabIndex = 20;
             this.label2.Text = "Welcome:";
             // 
             // lblUser
             // 
             this.lblUser.AutoSize = true;
-            this.lblUser.Location = new System.Drawing.Point(140, 13);
+            this.lblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUser.Location = new System.Drawing.Point(210, 14);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(16, 17);
+            this.lblUser.Size = new System.Drawing.Size(30, 32);
             this.lblUser.TabIndex = 21;
             this.lblUser.Text = "_";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(40, 49);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(37, 67);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 17);
+            this.label4.Size = new System.Drawing.Size(97, 39);
             this.label4.TabIndex = 22;
             this.label4.Text = "Role:";
             // 
             // lblTypeOfUser
             // 
             this.lblTypeOfUser.AutoSize = true;
-            this.lblTypeOfUser.Location = new System.Drawing.Point(140, 49);
+            this.lblTypeOfUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTypeOfUser.Location = new System.Drawing.Point(140, 72);
             this.lblTypeOfUser.Name = "lblTypeOfUser";
-            this.lblTypeOfUser.Size = new System.Drawing.Size(16, 17);
+            this.lblTypeOfUser.Size = new System.Drawing.Size(30, 32);
             this.lblTypeOfUser.TabIndex = 23;
             this.lblTypeOfUser.Text = "_";
             // 

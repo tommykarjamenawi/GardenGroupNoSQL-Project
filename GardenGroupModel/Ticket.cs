@@ -23,8 +23,10 @@ namespace GardenGroupModel
         [BsonElement("Deadline")]
         public DateTime Deadline { get; set; }
         [BsonElement("TypeOfIncident")]
+        [BsonRepresentation(BsonType.Int32)]
         public Enums.TypeOfIncident TypeOfIncident { get; set; }
         [BsonElement("TypeOfPriority")]
+        [BsonRepresentation(BsonType.Int32)]
         public Enums.TypeOfPriority TypeOfPriority { get; set; }
         [BsonElement("IsSolved")]
         public bool IsSolved { get; set; }
@@ -39,9 +41,5 @@ namespace GardenGroupModel
             this.Deadline = Deadline;
             this.Description = Description;
         }
-
-
-        public Ticket() { }
-
     }
 }

@@ -71,18 +71,16 @@ namespace GardenGroupDAO
 
         public List<Ticket> GetUserSortedPriority(User user)
         {
-            var prioritySort = Builders<Ticket>.Sort.Descending("Priority");
-            var reportSort = Builders<Ticket>.Sort.Descending("ReportedDate");
-
-            return collection.Find<Ticket>(Ticket => Ticket.ReportedBy.Id == user.Id).Sort(reportSort).Sort(prioritySort).ToList();
+            var prioritySort = Builders<Ticket>.Sort.Descending("TypeOfPriority");
+            var reportedDateSort = Builders<Ticket>.Sort.Ascending("ReportedDate");
+            return collection.Find<Ticket>(Ticket => Ticket.ReportedBy.Id == user.Id).Sort(reportedDateSort).Sort(prioritySort).ToList();
         }
 
         public List<Ticket> GetAllSortedByPriority()
         {
-            var prioritySort = Builders<Ticket>.Sort.Descending("Priority");
-            var reportedDateSort = Builders<Ticket>.Sort.Descending("ReportedDate");
-
-            return collection.Find<Ticket>(new BsonDocument()).Sort(reportedDateSort).Sort(prioritySort).ToList();
+            var prioritySort = Builders<Ticket>.Sort.Descending("TypeOfPriority");
+            var reportedDateSort = Builders<Ticket>.Sort.Ascending("ReportedDate");
+            return collection.Find(new BsonDocument()).Sort(reportedDateSort).Sort(prioritySort).ToList();
         }
 
         public List<Ticket> GetUserSortedByReportedDate(User user)
@@ -96,6 +94,30 @@ namespace GardenGroupDAO
         { 
             var sort = Builders<Ticket>.Sort.Ascending("ReportedDate");
             return collection.Find<Ticket>(new BsonDocument()).Sort(sort).ToList();
+        }
+
+        public List<Ticket> GetAllSortedByDeadline()
+        {
+            var sort = Builders<Ticket>.Sort.Ascending("Deadline");
+            return collection.Find<Ticket>(new BsonDocument()).Sort(sort).ToList();
+        }
+
+        public List<Ticket> GetAllSortedBySolved()
+        {
+            var sort = Builders<Ticket>.Sort.Ascending("IsSolved");
+            return collection.Find<Ticket>(new BsonDocument()).Sort(sort).ToList();
+        }
+
+        public List<Ticket> GetUserSortedByDeadline(User user)
+        {
+            var sort = Builders<Ticket>.Sort.Ascending("Deadline");
+            return collection.Find(Ticket => Ticket.ReportedBy.Id == user.Id).Sort(sort).ToList();
+        }
+
+        public List<Ticket> GetUserSortedBySolved(User user)
+        {
+            var sort = Builders<Ticket>.Sort.Ascending("IsSolved");
+            return collection.Find(Ticket => Ticket.ReportedBy.Id == user.Id).Sort(sort).ToList();
         }
     }
 }

@@ -30,25 +30,16 @@ namespace GardenGroupUI
         {
             if (user.TypeOfUser == Enums.TypeOfUser.EndUser.ToString())
             {
-                lblUser.Text = user.FirstName + user.LastName;
+                lblUser.Text = user.FirstName + " " + user.LastName;
                 lblTypeOfUser.Text = user.TypeOfUser;
             }
             else
             {
-                lblUser.Text = user.FirstName + user.LastName;
+                lblUser.Text = user.FirstName + " " + user.LastName;
                 lblTypeOfUser.Text = user.TypeOfUser;
             }
                 DisplayAllTickets();          
         }
-
-        //private void CheckUserType()
-        //{
-        //    //check whether the logged in user is admin or an enduser and display tickets accordingly
-        //    //user.TypeOfUser == Enums.TypeOfUser.EndUser.ToString()
-
-
-        //    DisplayAllTickets();
-        //}
 
         private void listViewTickets_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -66,29 +57,51 @@ namespace GardenGroupUI
             string sortBy = cmbSortBy.Text;
             if (user.TypeOfUser == Enums.TypeOfUser.EndUser.ToString())
             {
-                if (sortBy == "ID")
-                    tickets = ticketService.GetUserSortedById(user);
-                else 
-                if (sortBy == "Priority")
-                    tickets = ticketService.GetUserSortedByPriority(user);
-                else 
-                if (sortBy == "Reported date")
-                    tickets = ticketService.GetUsersSortedByReportedDate(user);
-                else // default is Not sorted
-                    tickets = ticketService.GetAllTicketsForUser(user);
+                switch(sortBy)
+                {
+                    case "ID":
+                        tickets = ticketService.GetUserSortedById(user);
+                        break;
+                    case "Priority":
+                        tickets = ticketService.GetUserSortedByPriority(user);
+                        break;
+                    case "Reported date":
+                        tickets = ticketService.GetUserSortedByReportedDate(user);
+                        break;
+                    case "Deadline":
+                        tickets = ticketService.GetUserSortedByDeadline(user);
+                        break;
+                    case "Solved":
+                        tickets = ticketService.GetUserSortedBySolved(user);
+                        break;
+                    default:
+                        tickets = ticketService.GetAllTicketsForUser(user);
+                            break;
+                }
             }
             else
             {
-                if (sortBy == "ID")
-                    tickets = ticketService.GetAllSortedById();
-                else 
-                if (sortBy == "Priority")
-                    tickets = ticketService.GetAllSortedByPriority();
-                else 
-                if (sortBy == "Reported date")
-                    tickets = ticketService.GetAllSortedByReportedDate();
-                else // default is Not sorted
-                    tickets = ticketService.GetAllTickets();
+                switch (sortBy)
+                {
+                    case "ID":
+                        tickets = ticketService.GetAllSortedById();
+                        break;
+                    case "Priority":
+                        tickets = ticketService.GetAllSortedByPriority();
+                        break;
+                    case "Reported date":
+                        tickets = ticketService.GetAllSortedByReportedDate();
+                        break;
+                    case "Deadline":
+                        tickets = ticketService.GetAllSortedByDeadline();
+                        break;
+                    case "Solved":
+                        tickets = ticketService.GetAllSortedBySolved();
+                        break;         
+                    default:
+                        tickets = ticketService.GetAllTickets();
+                        break;
+                 }
             }
 
             // if (user.TypeOfUser == Enums.TypeOfUser.EndUser.ToString()) // Enum.GetName(typeof(Enums.TypeOfUser),Enums.TypeOfUser.EndUser) // note: need == and NOT Equals!
