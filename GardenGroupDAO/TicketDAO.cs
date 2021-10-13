@@ -57,10 +57,9 @@ namespace GardenGroupDAO
 
         public List<Ticket> GetUserSortedById(User user)
         {
-            var filter = Builders<Ticket>.Filter.Eq("Id", user.Id);
             var sort = Builders<Ticket>.Sort.Descending("Id");
 
-            return collection.Find(filter).Sort(sort).ToList();
+            return collection.Find<Ticket>(Ticket => Ticket.ReportedBy.Id == user.Id).Sort(sort).ToList();
         }
 
         public List<Ticket> GetAllSortedById()
@@ -72,11 +71,10 @@ namespace GardenGroupDAO
 
         public List<Ticket> GetUserSortedPriority(User user)
         {
-            var filter = Builders<Ticket>.Filter.Eq("ReportedBy", user.Id);
             var prioritySort = Builders<Ticket>.Sort.Descending("Priority");
             var reportSort = Builders<Ticket>.Sort.Descending("ReportedDate");
 
-            return collection.Find(filter).Sort(reportSort).Sort(prioritySort).ToList();
+            return collection.Find<Ticket>(Ticket => Ticket.ReportedBy.Id == user.Id).Sort(reportSort).Sort(prioritySort).ToList();
         }
 
         public List<Ticket> GetAllSortedByPriority()
@@ -89,9 +87,9 @@ namespace GardenGroupDAO
 
         public List<Ticket> GetUserSortedByReportedDate(User user)
         {
-            var filter = Builders<Ticket>.Filter.Eq("ReportedBy", user.Id);
+            
             var sort = Builders<Ticket>.Sort.Ascending("ReportedDate");
-            return collection.Find<Ticket>(filter).Sort(sort).ToList();
+            return collection.Find<Ticket>(Ticket => Ticket.ReportedBy.Id == user.Id).Sort(sort).ToList();
         }
 
         public List<Ticket> GetAllSortedByReportedDate()

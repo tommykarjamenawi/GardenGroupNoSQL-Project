@@ -39,10 +39,14 @@ namespace GardenGroupUI
             this.columnDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Deadline = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Description = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.isSolved = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnCreateIncident = new System.Windows.Forms.Button();
             this.cmbSortBy = new System.Windows.Forms.ComboBox();
             this.btnRefresh = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblUser = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblTypeOfUser = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -65,8 +69,8 @@ namespace GardenGroupUI
             this.TypePriority,
             this.columnDate,
             this.Deadline,
-            this.Description,
-            this.columnStatus});
+            this.isSolved,
+            this.Description});
             this.listViewTickets.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listViewTickets.FullRowSelect = true;
             this.listViewTickets.GridLines = true;
@@ -114,15 +118,15 @@ namespace GardenGroupUI
             this.Deadline.Text = "Deadline";
             this.Deadline.Width = 100;
             // 
+            // columnStatus
+            // 
+            this.isSolved.Text = "IsSolved";
+            this.isSolved.Width = 100;
+            // 
             // Description
             // 
             this.Description.Text = "Description";
-            this.Description.Width = 100;
-            // 
-            // columnStatus
-            // 
-            this.columnStatus.Text = "IsSolved";
-            this.columnStatus.Width = 100;
+            this.Description.Width = 96;
             // 
             // btnCreateIncident
             // 
@@ -139,9 +143,11 @@ namespace GardenGroupUI
             // 
             // cmbSortBy
             // 
+            this.cmbSortBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSortBy.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSortBy.FormattingEnabled = true;
             this.cmbSortBy.Items.AddRange(new object[] {
+            "Not sorted",
             "ID",
             "Priority",
             "Reported date"});
@@ -165,12 +171,52 @@ namespace GardenGroupUI
             this.btnRefresh.UseVisualStyleBackColor = false;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(41, 13);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(70, 17);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "Welcome:";
+            // 
+            // lblUser
+            // 
+            this.lblUser.AutoSize = true;
+            this.lblUser.Location = new System.Drawing.Point(140, 13);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(16, 17);
+            this.lblUser.TabIndex = 21;
+            this.lblUser.Text = "_";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(40, 49);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(41, 17);
+            this.label4.TabIndex = 22;
+            this.label4.Text = "Role:";
+            // 
+            // lblTypeOfUser
+            // 
+            this.lblTypeOfUser.AutoSize = true;
+            this.lblTypeOfUser.Location = new System.Drawing.Point(140, 49);
+            this.lblTypeOfUser.Name = "lblTypeOfUser";
+            this.lblTypeOfUser.Size = new System.Drawing.Size(16, 17);
+            this.lblTypeOfUser.TabIndex = 23;
+            this.lblTypeOfUser.Text = "_";
+            // 
             // TicketOverviewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(217)))), ((int)(((byte)(112)))));
             this.ClientSize = new System.Drawing.Size(1308, 898);
+            this.Controls.Add(this.lblTypeOfUser);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblUser);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.cmbSortBy);
             this.Controls.Add(this.btnCreateIncident);
@@ -193,12 +239,16 @@ namespace GardenGroupUI
         private System.Windows.Forms.Button btnCreateIncident;
         private System.Windows.Forms.ColumnHeader userColumn;
         private System.Windows.Forms.ColumnHeader columnDate;
-        private System.Windows.Forms.ColumnHeader columnStatus;
+        private System.Windows.Forms.ColumnHeader isSolved;
         private System.Windows.Forms.ColumnHeader TypeIncident;
         private System.Windows.Forms.ColumnHeader TypePriority;
         private System.Windows.Forms.ColumnHeader Deadline;
         private System.Windows.Forms.ColumnHeader Description;
         private System.Windows.Forms.ComboBox cmbSortBy;
         private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblUser;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblTypeOfUser;
     }
 }

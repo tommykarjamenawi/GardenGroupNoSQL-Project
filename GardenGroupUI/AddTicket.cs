@@ -20,6 +20,7 @@ namespace GardenGroupUI
         private UserService userService;
         private List<User> users;
         private User user;
+        private DateTime DateTimeReported;
         public AddTicket(User user)
         {
             this.user = user;
@@ -28,10 +29,12 @@ namespace GardenGroupUI
 
             InitializeComponent();
             btnAdd.Enabled = false;
+            DateTimeReported = DateTime.Now;
+            txtDateReported.Text = DateTimeReported.ToString();
         }
         private void CleanForm()
         {
-            dtpDate.Value = DateTime.Now;
+            txtDateReported.Text = DateTimeReported.ToString();
             txtSubject.Clear();
             cmbTypeOfIncident.SelectedIndex = -1;
             cmbUser.SelectedIndex = -1;
@@ -43,7 +46,7 @@ namespace GardenGroupUI
 
         private void AddingTicket()
         {
-            Ticket ticket = new Ticket(dtpDate.Value, txtSubject.Text, (Enums.TypeOfIncident)cmbTypeOfIncident.SelectedIndex,
+            Ticket ticket = new Ticket(DateTimeReported, txtSubject.Text, (Enums.TypeOfIncident)cmbTypeOfIncident.SelectedIndex,
                     (User)userService.GetUserByEmailTest(user.Email), (Enums.TypeOfPriority)cmbTypeOfPriority.SelectedIndex, dtpDeadline.Value, txtDescription.Text);
 
             ticketService = new TicketService();

@@ -44,9 +44,9 @@ namespace GardenGroupUI
             this.cmbTypeOfPriority = new System.Windows.Forms.ComboBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.dtpDeadline = new System.Windows.Forms.DateTimePicker();
             this.cmbUser = new System.Windows.Forms.ComboBox();
+            this.txtDateReported = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -196,15 +196,6 @@ namespace GardenGroupUI
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // dtpDate
-            // 
-            this.dtpDate.Location = new System.Drawing.Point(325, 80);
-            this.dtpDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(213, 22);
-            this.dtpDate.TabIndex = 34;
-            this.dtpDate.ValueChanged += new System.EventHandler(this.dtpDate_ValueChanged);
-            // 
             // dtpDeadline
             // 
             this.dtpDeadline.Location = new System.Drawing.Point(325, 286);
@@ -225,15 +216,23 @@ namespace GardenGroupUI
             this.cmbUser.TabIndex = 36;
             this.cmbUser.SelectedIndexChanged += new System.EventHandler(this.cmbUser_SelectedIndexChanged);
             // 
+            // txtDateReported
+            // 
+            this.txtDateReported.Location = new System.Drawing.Point(325, 80);
+            this.txtDateReported.Name = "txtDateReported";
+            this.txtDateReported.ReadOnly = true;
+            this.txtDateReported.Size = new System.Drawing.Size(213, 22);
+            this.txtDateReported.TabIndex = 37;
+            // 
             // AddTicket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(217)))), ((int)(((byte)(112)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtDateReported);
             this.Controls.Add(this.cmbUser);
             this.Controls.Add(this.dtpDeadline);
-            this.Controls.Add(this.dtpDate);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.cmbTypeOfPriority);
@@ -275,8 +274,8 @@ namespace GardenGroupUI
         private System.Windows.Forms.ComboBox cmbTypeOfPriority;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.DateTimePicker dtpDate;
         private System.Windows.Forms.DateTimePicker dtpDeadline;
         private System.Windows.Forms.ComboBox cmbUser;
+        private System.Windows.Forms.TextBox txtDateReported;
     }
 }

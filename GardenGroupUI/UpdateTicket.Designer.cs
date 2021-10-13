@@ -30,7 +30,6 @@ namespace GardenGroupUI
         private void InitializeComponent()
         {
             this.dtpDeadline = new System.Windows.Forms.DateTimePicker();
-            this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.cmbTypeOfPriority = new System.Windows.Forms.ComboBox();
@@ -49,6 +48,7 @@ namespace GardenGroupUI
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnStatus = new System.Windows.Forms.Button();
             this.txtUser = new System.Windows.Forms.TextBox();
+            this.txtDateReported = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // dtpDeadline
@@ -58,14 +58,6 @@ namespace GardenGroupUI
             this.dtpDeadline.Name = "dtpDeadline";
             this.dtpDeadline.Size = new System.Drawing.Size(213, 22);
             this.dtpDeadline.TabIndex = 53;
-            // 
-            // dtpDate
-            // 
-            this.dtpDate.Location = new System.Drawing.Point(359, 78);
-            this.dtpDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(213, 22);
-            this.dtpDate.TabIndex = 52;
             // 
             // btnUpdate
             // 
@@ -240,8 +232,17 @@ namespace GardenGroupUI
             this.txtUser.Location = new System.Drawing.Point(359, 201);
             this.txtUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUser.Name = "txtUser";
+            this.txtUser.ReadOnly = true;
             this.txtUser.Size = new System.Drawing.Size(213, 22);
             this.txtUser.TabIndex = 57;
+            // 
+            // txtDateReported
+            // 
+            this.txtDateReported.Location = new System.Drawing.Point(359, 83);
+            this.txtDateReported.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtDateReported.Name = "txtDateReported";
+            this.txtDateReported.Size = new System.Drawing.Size(213, 22);
+            this.txtDateReported.TabIndex = 58;
             // 
             // UpdateTicket
             // 
@@ -249,11 +250,11 @@ namespace GardenGroupUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(217)))), ((int)(((byte)(112)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtDateReported);
             this.Controls.Add(this.txtUser);
             this.Controls.Add(this.btnStatus);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.dtpDeadline);
-            this.Controls.Add(this.dtpDate);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.cmbTypeOfPriority);
@@ -279,7 +280,6 @@ namespace GardenGroupUI
 
         #endregion
         private System.Windows.Forms.DateTimePicker dtpDeadline;
-        private System.Windows.Forms.DateTimePicker dtpDate;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.ComboBox cmbTypeOfPriority;
@@ -298,5 +298,6 @@ namespace GardenGroupUI
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnStatus;
         private System.Windows.Forms.TextBox txtUser;
+        private System.Windows.Forms.TextBox txtDateReported;
     }
 }

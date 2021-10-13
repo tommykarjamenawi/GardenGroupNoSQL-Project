@@ -19,6 +19,7 @@ namespace GardenGroupUI
         private UserService userService;
         private Ticket ticket;
         private User user;
+        private DateTime DateTimeReported;
         public UpdateTicket(Ticket ticket, User user)
         {
             this.ticket = ticket;
@@ -26,6 +27,8 @@ namespace GardenGroupUI
             userService = new UserService();
             ticketService = new TicketService();
             InitializeComponent();
+            DateTimeReported = DateTime.Now;
+            txtDateReported.Text = DateTimeReported.ToString();
         }
 
 
@@ -44,8 +47,8 @@ namespace GardenGroupUI
 
         private void ShowTicket()
         {
-            dtpDate.Enabled = false;
-            dtpDate.Value = ticket.ReportedDate;
+            txtDateReported.Enabled = false;
+            DateTimeReported = ticket.ReportedDate;
             txtSubject.Text = ticket.Subject;
             txtUser.Enabled = false;
 

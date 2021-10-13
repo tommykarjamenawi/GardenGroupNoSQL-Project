@@ -28,7 +28,17 @@ namespace GardenGroupUI
 
         private void TicketOverviewForm_Load(object sender, EventArgs e)
         {
-            DisplayAllTickets();          
+            if (user.TypeOfUser == Enums.TypeOfUser.EndUser.ToString())
+            {
+                lblUser.Text = user.FirstName + user.LastName;
+                lblTypeOfUser.Text = user.TypeOfUser;
+            }
+            else
+            {
+                lblUser.Text = user.FirstName + user.LastName;
+                lblTypeOfUser.Text = user.TypeOfUser;
+            }
+                DisplayAllTickets();          
         }
 
         //private void CheckUserType()
@@ -53,11 +63,37 @@ namespace GardenGroupUI
 
         public void DisplayAllTickets()
         {
-                if (user.TypeOfUser == Enums.TypeOfUser.EndUser.ToString()) // Enum.GetName(typeof(Enums.TypeOfUser),Enums.TypeOfUser.EndUser) // note: need == and NOT Equals!
+            string sortBy = cmbSortBy.Text;
+            if (user.TypeOfUser == Enums.TypeOfUser.EndUser.ToString())
+            {
+                if (sortBy == "ID")
+                    tickets = ticketService.GetUserSortedById(user);
+                else 
+                if (sortBy == "Priority")
+                    tickets = ticketService.GetUserSortedByPriority(user);
+                else 
+                if (sortBy == "Reported date")
+                    tickets = ticketService.GetUsersSortedByReportedDate(user);
+                else // default is Not sorted
                     tickets = ticketService.GetAllTicketsForUser(user);
-                else
+            }
+            else
+            {
+                if (sortBy == "ID")
+                    tickets = ticketService.GetAllSortedById();
+                else 
+                if (sortBy == "Priority")
+                    tickets = ticketService.GetAllSortedByPriority();
+                else 
+                if (sortBy == "Reported date")
+                    tickets = ticketService.GetAllSortedByReportedDate();
+                else // default is Not sorted
                     tickets = ticketService.GetAllTickets();
+            }
 
+            // if (user.TypeOfUser == Enums.TypeOfUser.EndUser.ToString()) // Enum.GetName(typeof(Enums.TypeOfUser),Enums.TypeOfUser.EndUser) // note: need == and NOT Equals!
+
+ 
             listViewTickets.Items.Clear();
 
             foreach (Ticket ticket in tickets)
@@ -69,10 +105,11 @@ namespace GardenGroupUI
                 item.SubItems.Add(ticket.TypeOfPriority.ToString());
                 item.SubItems.Add(ticket.ReportedDate.ToString());
                 item.SubItems.Add(ticket.Deadline.ToString());
-                item.SubItems.Add(ticket.Description);
                 item.SubItems.Add(ticket.IsSolved.ToString());
+                item.SubItems.Add(ticket.Description);
                 item.Tag = ticket;
                 listViewTickets.Items.Add(item);
+                listViewTickets.Columns[8].Width = -2;
 
             }
         }
@@ -91,44 +128,6 @@ namespace GardenGroupUI
 
         public void ChangedListSort()
         {
-            string sortBy = cmbSortBy.Text;
-
-            List<Ticket> sortedList = tickets;
-
-            if (user.TypeOfUser == Enums.TypeOfUser.EndUser.ToString())
-            {
-                if (sortBy == "ID")
-                {
-                    sortedList = ticketService.GetUserSortedById(user);
-                }
-                else if (sortBy == "Priority")
-                {
-                    sortedList = ticketService.GetUserSortedByPriority(user);
-                }
-                else if (sortBy == "Reported date")
-                {
-                    sortedList = ticketService.GetUsersSortedByReportedDate(user);
-                }
-            }
-            else
-            {
-                if (sortBy == "ID")
-                {
-                    sortedList = ticketService.GetAllSortedById();
-                }
-                else if(sortBy == "Priority")
-                {
-                    sortedList = ticketService.GetAllSortedByPriority();
-                }
-                else if (sortBy == "Reported date")
-                {
-                    sortedList = ticketService.GetAllSortedByReportedDate();
-                }
-            }
-
-            listViewTickets.Items.Clear();
-
-            tickets = sortedList;
             DisplayAllTickets();
         }
 
