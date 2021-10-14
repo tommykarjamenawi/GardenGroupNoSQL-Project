@@ -24,6 +24,7 @@ namespace GardenGroupUI
             this.user = user;
             ticketService = new TicketService();
             InitializeComponent();
+            btnTransfer.Enabled = false;
         }
 
         private void TicketOverviewForm_Load(object sender, EventArgs e)
@@ -32,23 +33,22 @@ namespace GardenGroupUI
             {
                 lblUser.Text = user.FirstName + " " + user.LastName;
                 lblTypeOfUser.Text = user.TypeOfUser;
+                lblEmail.Text = user.Email;
             }
             else
             {
                 lblUser.Text = user.FirstName + " " + user.LastName;
                 lblTypeOfUser.Text = user.TypeOfUser;
+                lblEmail.Text = user.Email;
             }
                 DisplayAllTickets();          
         }
 
         private void listViewTickets_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(listViewTickets.SelectedIndices.Count > 0)
+            if (listViewTickets.SelectedIndices.Count > 0)
             {
-                Ticket ticket = (Ticket)listViewTickets.SelectedItems[0].Tag;
-
-                UpdateTicket ut = new UpdateTicket(ticket, user);
-                ut.ShowDialog();
+                btnTransfer.Enabled = true;
             }
         }
 
@@ -147,6 +147,33 @@ namespace GardenGroupUI
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             DisplayAllTickets();
+        }
+
+        private void listViewTickets_DoubleClick(object sender, EventArgs e)
+        {
+            if (listViewTickets.SelectedIndices.Count > 0)
+            {
+                Ticket ticket = (Ticket)listViewTickets.SelectedItems[0].Tag;
+
+                UpdateTicket ut = new UpdateTicket(ticket, user);
+                ut.ShowDialog();
+            }
+        }
+
+        private void btnTransfer_Click(object sender, EventArgs e)
+        {
+            Ticket ticket = (Ticket)listViewTickets.SelectedItems[0].Tag;
+
+            TransferTicket tt = new TransferTicket(user, ticket);
+            tt.ShowDialog();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            LoginScreen ls = new LoginScreen();
+            this.Hide();
+            ls.ShowDialog();
+
         }
     }
 }

@@ -160,6 +160,12 @@
     <Compile Include="TicketOverviewForm.Designer.cs">
       <DependentUpon>TicketOverviewForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransferTicket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransferTicket.Designer.cs">
+      <DependentUpon>TransferTicket.cs</DependentUpon>
+    </Compile>
     <Compile Include="UpdateTicket.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,6 +202,9 @@
     </Compile>
     <EmbeddedResource Include="TicketOverviewForm.resx">
       <DependentUpon>TicketOverviewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransferTicket.resx">
+      <DependentUpon>TransferTicket.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateTicket.resx">
       <DependentUpon>UpdateTicket.cs</DependentUpon>

@@ -119,5 +119,12 @@ namespace GardenGroupDAO
             var sort = Builders<Ticket>.Sort.Ascending("IsSolved");
             return collection.Find(Ticket => Ticket.ReportedBy.Id == user.Id).Sort(sort).ToList();
         }
+
+        // edit this
+        public void TransferTicket(Ticket ticket)
+        {
+            var filter = Builders<Ticket>.Filter.Eq("ReportedBy", ticket.ReportedBy.Email);
+            collection.ReplaceOne(filter, ticket, new ReplaceOptions() { IsUpsert = true });
+        }
     }
 }

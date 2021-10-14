@@ -41,5 +41,7 @@ namespace GardenGroupModel
             this.Deadline = Deadline;
             this.Description = Description;
         }
+
+        public Ticket() { }
     }
 }

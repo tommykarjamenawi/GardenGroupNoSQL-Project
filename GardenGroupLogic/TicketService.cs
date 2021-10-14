@@ -96,5 +96,10 @@ namespace GardenGroupLogic
         {
             return ticketDAO.GetUserSortedBySolved(user);
         }
+
+        public void TransferTicket(Ticket ticket)
+        {
+            ticketDAO.TransferTicket(ticket);
+        }
     }
 }

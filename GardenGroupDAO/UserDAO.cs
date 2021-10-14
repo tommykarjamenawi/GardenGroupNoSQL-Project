@@ -41,7 +41,8 @@ namespace GardenGroupDAO
             return users.Count > 0 ? users[0] : null;
         }
 
-        public User GetUserByEmailTest(string email)
+        // for tickets
+        public User GetUserObjectByEmail(string email)
         {
             IMongoCollection<User> collection = db.GetCollection<User>(COLLECTION_NAME);
             return (User)collection.Find<User>(User => User.Email == email).FirstOrDefault();
