@@ -162,6 +162,15 @@ namespace GardenGroupUI
 
         private void btnTransfer_Click(object sender, EventArgs e)
         {
+            if (listViewTickets.SelectedItems.Count <= 0)
+            {
+               if (MessageBox.Show("Please select a ticket to transfer", "Select ticket", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
+                {
+                    return;
+                }
+            }
+ 
+      
             Ticket ticket = (Ticket)listViewTickets.SelectedItems[0].Tag;
 
             TransferTicket tt = new TransferTicket(user, ticket);

@@ -20,6 +20,7 @@ namespace GardenGroupDAO
             collection = db.GetCollection<Ticket>(TABLE_NAME);
         }
 
+        // Queries for CRUD functionalities (add/remove/update, etc)
         public void AddTicket(Ticket ticket)
         {
             collection.InsertOne(ticket);
@@ -29,18 +30,6 @@ namespace GardenGroupDAO
         {
             var filter = Builders<Ticket>.Filter.Eq("Id", ticket.Id);
             collection.DeleteOne(filter);
-        }
-
-        // tickets for one specific user
-        public List<Ticket> GetAllTicketsForUser(User user)
-        {
-            return collection.Find<Ticket>(Ticket => Ticket.ReportedBy.Email == user.Email).ToList<Ticket>();
-        }
-
-        // all tickets for an admin
-        public List<Ticket> GetAllTickets()
-        {
-            return collection.AsQueryable().ToList<Ticket>();
         }
 
         public void UpdateTicket(Ticket ticket)
@@ -55,6 +44,21 @@ namespace GardenGroupDAO
             collection.UpdateOne<Ticket>(Ticket => Ticket.Id == ticket.Id, update);
         }
 
+        
+        // Queries for getting all tickets for users and admins
+        public List<Ticket> GetAllTicketsForUser(User user)
+        {
+            return collection.Find<Ticket>(Ticket => Ticket.ReportedBy.Email == user.Email).ToList<Ticket>();
+        }
+
+        
+        public List<Ticket> GetAllTickets()
+        {
+            return collection.AsQueryable().ToList<Ticket>();
+        }
+
+
+        // Queries for sorting the list by different kind of criteria
         public List<Ticket> GetUserSortedById(User user)
         {
             var sort = Builders<Ticket>.Sort.Descending("Id");
@@ -123,7 +127,7 @@ namespace GardenGroupDAO
         // edit this
         public void TransferTicket(Ticket ticket)
         {
-            var filter = Builders<Ticket>.Filter.Eq("ReportedBy", ticket.ReportedBy.Email);
+            var filter = Builders<Ticket>.Filter.Eq("Id", ticket.Id);
             collection.ReplaceOne(filter, ticket, new ReplaceOptions() { IsUpsert = true });
         }
     }
