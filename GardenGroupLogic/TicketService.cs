@@ -38,6 +38,11 @@ namespace GardenGroupLogic
             ticketDAO.ChangeStatus(ticket);
         }
 
+        public void TransferTicket(Ticket ticket)
+        {
+            ticketDAO.TransferTicket(ticket);
+        }
+
         public List<Ticket> GetAllTickets()
         {
             return ticketDAO.GetAllTickets();
@@ -95,11 +100,6 @@ namespace GardenGroupLogic
         public List<Ticket> GetUserSortedBySolved(User user)
         {
             return ticketDAO.GetUserSortedBySolved(user);
-        }
-
-        public void TransferTicket(Ticket ticket)
-        {
-            ticketDAO.TransferTicket(ticket);
         }
     }
 }

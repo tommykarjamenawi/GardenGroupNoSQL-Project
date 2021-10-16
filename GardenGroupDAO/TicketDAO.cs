@@ -37,11 +37,16 @@ namespace GardenGroupDAO
             var filter = Builders<Ticket>.Filter.Eq("Id", ticket.Id);
             collection.ReplaceOne(filter, ticket, new ReplaceOptions() { IsUpsert = true });
         }
-
         public void ChangeStatus(Ticket ticket)
         {
             var update = Builders<Ticket>.Update.Set("IsSolved", true);
             collection.UpdateOne<Ticket>(Ticket => Ticket.Id == ticket.Id, update);
+        }
+
+        public void TransferTicket(Ticket ticket)
+        {
+            var filter = Builders<Ticket>.Filter.Eq("Id", ticket.Id);
+            collection.ReplaceOne(filter, ticket, new ReplaceOptions() { IsUpsert = true });
         }
 
         
@@ -122,13 +127,6 @@ namespace GardenGroupDAO
         {
             var sort = Builders<Ticket>.Sort.Ascending("IsSolved");
             return collection.Find(Ticket => Ticket.ReportedBy.Id == user.Id).Sort(sort).ToList();
-        }
-
-        // edit this
-        public void TransferTicket(Ticket ticket)
-        {
-            var filter = Builders<Ticket>.Filter.Eq("Id", ticket.Id);
-            collection.ReplaceOne(filter, ticket, new ReplaceOptions() { IsUpsert = true });
         }
     }
 }
