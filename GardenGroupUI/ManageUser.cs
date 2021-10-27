@@ -62,24 +62,39 @@ namespace GardenGroupUI
         private void Search()
         {
             string SearchBox = txtSearchBox.Text.ToString();
-            User user = userService.SearchUsers(SearchBox);
-            if (user != null)
+            List<User> users = userService.GetAllUsers();
+            lstUsers.Items.Clear();
+            foreach (User user in users)
             {
-                lstUsers.Items.Clear();
+                if (user.Email.Contains(SearchBox))
+                {
+                    ListViewItem li = new ListViewItem(user.Id.ToString());
+                    li.SubItems.Add(user.Email.ToString());
+                    li.SubItems.Add(user.FirstName.ToString());
+                    li.SubItems.Add(user.LastName.ToString());
 
-                ListViewItem li = new ListViewItem(user.Id.ToString());
-                li.SubItems.Add(user.Email.ToString());
-                li.SubItems.Add(user.FirstName.ToString());
-                li.SubItems.Add(user.LastName.ToString());
-                
-                lstUsers.Items.Add(li);
+                    lstUsers.Items.Add(li);
+                }
             }
-            else
-            {
-                lstUsers.Items.Clear();
-                lblsearchcheck.ForeColor = Color.Red;
-                lblsearchcheck.Text = "user does not exist";
-            }
+            //string SearchBox = txtSearchBox.Text.ToString();
+            //User user = userService.SearchUsers(SearchBox);
+            //if (user != null)
+            //{
+            //    lstUsers.Items.Clear();
+
+            //    ListViewItem li = new ListViewItem(user.Id.ToString());
+            //    li.SubItems.Add(user.Email.ToString());
+            //    li.SubItems.Add(user.FirstName.ToString());
+            //    li.SubItems.Add(user.LastName.ToString());
+
+            //    lstUsers.Items.Add(li);
+            //}
+            //else
+            //{
+            //    lstUsers.Items.Clear();
+            //    lblsearchcheck.ForeColor = Color.Red;
+            //    lblsearchcheck.Text = "user does not exist";
+            //}
         }
 
         private void button1_Click(object sender, EventArgs e)
