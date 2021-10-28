@@ -22,23 +22,30 @@ namespace GardenGroupUI
             txtLastName.Text = user.LastName;
             txtPhoneNumber.Text = user.Phone;
             txtEmailAddress.Text = user.Email;
+            cmbLocationBranch.DataSource = Enum.GetValues(typeof(Enums.Branch));
             cmbLocationBranch.Text = user.branch;
-            cmbTypeOfUser.SelectedItem = user.TypeOfUser;
+            cmbTypeOfUser.DataSource = Enum.GetValues(typeof(Enums.TypeOfUser));
+            cmbTypeOfUser.Text = user.TypeOfUser;
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-          
-          
-           this. user.FirstName = txtFirstName.Text;
+
+            DialogResult dialogResult = MessageBox.Show("Are you sure\n you want to Update this user", "Confirmation",
+                                                           MessageBoxButtons.YesNo);
+
+            this. user.FirstName = txtFirstName.Text;
             this.user.LastName = txtLastName.Text;
-            // user1.TypeOfUser = cmbTypeOfUser.SelectedItem.ToString();
+            this.user.TypeOfUser = cmbTypeOfUser.SelectedItem.ToString();
             this.user.Email = txtEmailAddress.Text;
             this.user.Phone = txtPhoneNumber.Text;
-          //  user1.branch = cmbLocationBranch.Text;
+            this.user.branch = cmbLocationBranch.Text;
+            if (dialogResult == DialogResult.Yes)
+            {
+                userService.UpdateUser(user);
 
-
-            userService.UpdateUser(user);
+                this.Hide();
+            }
         }
 
         private void btnRemove_Click(object sender, EventArgs e)

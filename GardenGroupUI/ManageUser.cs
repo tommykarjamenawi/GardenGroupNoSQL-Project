@@ -10,10 +10,14 @@ namespace GardenGroupUI
     public partial class ManageUser : Form
     {
         private UserService userService = new UserService();
+        TicketService ticketService = new TicketService();
 
         public ManageUser()
         {
             InitializeComponent();
+            this.txtSearchBox.AutoSize = false;
+            this.txtSearchBox.Size = new System.Drawing.Size(261, 25);
+
         }
 
         private void btnAddNewUser_Click(object sender, EventArgs e)
@@ -27,7 +31,7 @@ namespace GardenGroupUI
         {
             try
             {
-                this.Show();
+              
                 FillForm();
             }
             catch (Exception exp)
@@ -38,14 +42,17 @@ namespace GardenGroupUI
 
         public void FillForm()
         {
+            lstUsers.Items.Clear();
             List<User> users = userService.GetAllUsers();
-
+            List<Ticket> tickets;
             foreach (User u in users)
             {
                 ListViewItem li = new ListViewItem(u.Id.ToString());
                 li.SubItems.Add(u.Email.ToString());
                 li.SubItems.Add(u.FirstName.ToString());
                 li.SubItems.Add(u.LastName.ToString());
+                tickets = ticketService.GetAllTicketsForUser(u);
+                li.SubItems.Add(tickets.Count.ToString());
                 li.Tag = u;
                 lstUsers.Items.Add(li);
             }
@@ -53,8 +60,13 @@ namespace GardenGroupUI
 
         private void txtSearchBox_TextChanged(object sender, EventArgs e)
         {
-            if (txtSearchBox.TextLength == 0)
+            if (string.IsNullOrEmpty(txtSearchBox.Text) == false)
             {
+                Search();
+            }
+            else
+            {
+
                 FillForm();
             }
         }
@@ -66,8 +78,9 @@ namespace GardenGroupUI
             lstUsers.Items.Clear();
             foreach (User user in users)
             {
-                if (user.Email.Contains(SearchBox))
+                if (user.Email.StartsWith(SearchBox))
                 {
+
                     ListViewItem li = new ListViewItem(user.Id.ToString());
                     li.SubItems.Add(user.Email.ToString());
                     li.SubItems.Add(user.FirstName.ToString());
@@ -76,31 +89,9 @@ namespace GardenGroupUI
                     lstUsers.Items.Add(li);
                 }
             }
-            //string SearchBox = txtSearchBox.Text.ToString();
-            //User user = userService.SearchUsers(SearchBox);
-            //if (user != null)
-            //{
-            //    lstUsers.Items.Clear();
-
-            //    ListViewItem li = new ListViewItem(user.Id.ToString());
-            //    li.SubItems.Add(user.Email.ToString());
-            //    li.SubItems.Add(user.FirstName.ToString());
-            //    li.SubItems.Add(user.LastName.ToString());
-
-            //    lstUsers.Items.Add(li);
-            //}
-            //else
-            //{
-            //    lstUsers.Items.Clear();
-            //    lblsearchcheck.ForeColor = Color.Red;
-            //    lblsearchcheck.Text = "user does not exist";
-            //}
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Search();
-        }
+      
 
         private void lstUsers_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -115,7 +106,8 @@ namespace GardenGroupUI
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            lstUsers.Items.Clear();
+            
+            txtSearchBox.Clear();
             FillForm();
         }
     }
