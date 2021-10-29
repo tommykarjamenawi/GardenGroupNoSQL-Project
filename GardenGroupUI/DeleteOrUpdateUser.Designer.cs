@@ -44,6 +44,7 @@ namespace GardenGroupUI
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnArchive = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cmbLocationBranch
@@ -148,7 +149,7 @@ namespace GardenGroupUI
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(253, 403);
+            this.btnUpdate.Location = new System.Drawing.Point(201, 407);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(106, 37);
             this.btnUpdate.TabIndex = 26;
@@ -158,7 +159,7 @@ namespace GardenGroupUI
             // 
             // btnRemove
             // 
-            this.btnRemove.Location = new System.Drawing.Point(360, 403);
+            this.btnRemove.Location = new System.Drawing.Point(308, 407);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(106, 37);
             this.btnRemove.TabIndex = 27;
@@ -176,11 +177,22 @@ namespace GardenGroupUI
             this.label1.TabIndex = 28;
             this.label1.Text = "Update Or Delete User";
             // 
+            // btnArchive
+            // 
+            this.btnArchive.Location = new System.Drawing.Point(420, 407);
+            this.btnArchive.Name = "btnArchive";
+            this.btnArchive.Size = new System.Drawing.Size(106, 37);
+            this.btnArchive.TabIndex = 29;
+            this.btnArchive.Text = "&Archive";
+            this.btnArchive.UseVisualStyleBackColor = true;
+            this.btnArchive.Click += new System.EventHandler(this.btnArchive_Click);
+            // 
             // DeleteOrUpdateUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(812, 543);
+            this.Controls.Add(this.btnArchive);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnUpdate);
@@ -220,5 +232,6 @@ namespace GardenGroupUI
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnArchive;
     }
 }

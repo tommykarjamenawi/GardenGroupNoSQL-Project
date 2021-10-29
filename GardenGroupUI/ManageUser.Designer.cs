@@ -40,6 +40,8 @@ namespace GardenGroupUI
             this.columnTickets = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnRefresh = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnArchive = new System.Windows.Forms.Button();
+            this.btnOpenArchive = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -64,7 +66,7 @@ namespace GardenGroupUI
             // btnAddNewUser
             // 
             this.btnAddNewUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddNewUser.Location = new System.Drawing.Point(553, 145);
+            this.btnAddNewUser.Location = new System.Drawing.Point(553, 167);
             this.btnAddNewUser.Name = "btnAddNewUser";
             this.btnAddNewUser.Size = new System.Drawing.Size(155, 42);
             this.btnAddNewUser.TabIndex = 2;
@@ -136,12 +138,36 @@ namespace GardenGroupUI
             this.label2.TabIndex = 7;
             this.label2.Text = "Search by E-mail";
             // 
+            // btnArchive
+            // 
+            this.btnArchive.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnArchive.Location = new System.Drawing.Point(65, 560);
+            this.btnArchive.Name = "btnArchive";
+            this.btnArchive.Size = new System.Drawing.Size(155, 42);
+            this.btnArchive.TabIndex = 8;
+            this.btnArchive.Text = "&Archive";
+            this.btnArchive.UseVisualStyleBackColor = true;
+        
+            // 
+            // btnOpenArchive
+            // 
+            this.btnOpenArchive.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnOpenArchive.Location = new System.Drawing.Point(553, 119);
+            this.btnOpenArchive.Name = "btnOpenArchive";
+            this.btnOpenArchive.Size = new System.Drawing.Size(155, 42);
+            this.btnOpenArchive.TabIndex = 9;
+            this.btnOpenArchive.Text = "&Open Archive";
+            this.btnOpenArchive.UseVisualStyleBackColor = true;
+            this.btnOpenArchive.Click += new System.EventHandler(this.btnOpenArchive_Click);
+            // 
             // ManageUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(217)))), ((int)(((byte)(112)))));
             this.ClientSize = new System.Drawing.Size(800, 619);
+            this.Controls.Add(this.btnOpenArchive);
+            this.Controls.Add(this.btnArchive);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.lstUsers);
@@ -169,5 +195,7 @@ namespace GardenGroupUI
         private System.Windows.Forms.ColumnHeader columnTickets;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnArchive;
+        private System.Windows.Forms.Button btnOpenArchive;
     }
 }
