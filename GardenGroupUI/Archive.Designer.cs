@@ -127,6 +127,7 @@ namespace GardenGroupUI
             this.Controls.Add(this.lstUsers);
             this.Name = "Archive";
             this.Text = "Archive";
+            this.Load += new System.EventHandler(this.Archive_Load);
             this.ResumeLayout(false);
 
         }

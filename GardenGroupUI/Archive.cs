@@ -59,5 +59,10 @@ namespace GardenGroupUI
                 FillForm();
             }
         }
+
+        private void Archive_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

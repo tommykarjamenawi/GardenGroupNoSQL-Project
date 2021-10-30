@@ -25,6 +25,7 @@ namespace GardenGroupUI
             ticketService = new TicketService();
             InitializeComponent();
             btnTransfer.Enabled = false;
+            btnStatistics.Enabled = false;
         }
 
         private void TicketOverviewForm_Load(object sender, EventArgs e)
@@ -37,6 +38,7 @@ namespace GardenGroupUI
             }
             else
             {
+                btnStatistics.Enabled = true;
                 lblUser.Text = user.FirstName + " " + user.LastName;
                 lblTypeOfUser.Text = user.TypeOfUser;
                 lblEmail.Text = user.Email;
@@ -183,6 +185,13 @@ namespace GardenGroupUI
             this.Hide();
             ls.ShowDialog();
 
+        }
+
+        private void btnStatistics_Click(object sender, EventArgs e)
+        {
+                TicketOverviewStatistics tos = new TicketOverviewStatistics(user);
+                this.Hide();
+                tos.ShowDialog();
         }
     }
 }

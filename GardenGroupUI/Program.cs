@@ -18,8 +18,8 @@ namespace GardenGroupUI
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new LoginScreen());
           //Application.Run(new ManageUser());
-            //Application.Run(new LoginScreen());
-            Application.Run(new Archive());
+            Application.Run(new LoginScreen());
+           // Application.Run(new Archive());
         }
     }
 }
