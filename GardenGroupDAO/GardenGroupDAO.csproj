@@ -110,11 +110,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ArchiveDAO.cs" />
+    <Compile Include="UserArchiveDAO.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="LoginDAO.cs" />
     <Compile Include="MongoDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TicketArchiveDAO.cs" />
     <Compile Include="TicketDAO.cs" />
     <Compile Include="UserDAO.cs" />
   </ItemGroup>

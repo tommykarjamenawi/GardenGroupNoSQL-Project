@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace GardenGroupDAO
 {
-    public class ArchiveDAO:MongoDB
+    public class UserArchiveDAO:MongoDB
     {
         readonly string COLLECTION_NAME = "UserArchive";
         public List<User> GetAllArchivedUsers()

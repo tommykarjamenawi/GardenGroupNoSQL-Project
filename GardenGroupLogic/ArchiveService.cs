@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace GardenGroupLogic
 {
-   public class ArchiveService
+   public class UserArchiveService
     {
-        ArchiveDAO archiveDAO;
-        public ArchiveService()
+        UserArchiveDAO archiveDAO;
+        public UserArchiveService()
         {
-            archiveDAO = new ArchiveDAO();
+            archiveDAO = new UserArchiveDAO();
         }
        public List<User> GetAllArchivedUsers()
         {

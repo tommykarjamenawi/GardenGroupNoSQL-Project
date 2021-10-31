@@ -11,7 +11,7 @@ namespace GardenGroupUI
     {
         private UserService userService = new UserService();
         TicketService ticketService = new TicketService();
-        ArchiveService archiveService = new ArchiveService();
+        UserArchiveService archiveService = new UserArchiveService();
 
         public ManageUser()
         {
@@ -116,7 +116,7 @@ namespace GardenGroupUI
 
         private void btnOpenArchive_Click(object sender, EventArgs e)
         {
-            Archive archive = new Archive();
+            UserArchive archive = new UserArchive();
             archive.Show();
             this.Hide();
         }

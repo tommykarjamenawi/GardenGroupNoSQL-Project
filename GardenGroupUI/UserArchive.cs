@@ -12,14 +12,14 @@ using System.Windows.Forms;
 
 namespace GardenGroupUI
 {
-    public partial class Archive : Form
+    public partial class UserArchive : Form
     {
-        ArchiveService archiveService;
+        UserArchiveService archiveService;
         UserService userService;
-        public Archive()
+        public UserArchive()
         {
             InitializeComponent();
-            archiveService = new ArchiveService();
+            archiveService = new UserArchiveService();
             userService = new UserService();
             FillForm();
 

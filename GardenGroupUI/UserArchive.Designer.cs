@@ -1,7 +1,7 @@
 ﻿
 namespace GardenGroupUI
 {
-    partial class Archive
+    partial class UserArchive
     {
         /// <summary>
         /// Required designer variable.
