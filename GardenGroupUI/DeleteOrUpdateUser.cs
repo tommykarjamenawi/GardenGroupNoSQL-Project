@@ -9,7 +9,7 @@ namespace GardenGroupUI
     {
         User user = new User();
         UserService userService = new UserService();
-        ArchiveService archiveService = new ArchiveService();
+        //ArchiveService archiveService = new ArchiveService();
         public DeleteOrUpdateUser(User user )
         {
             InitializeComponent();
@@ -70,7 +70,7 @@ namespace GardenGroupUI
                                                       MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                archiveService.AddUser(user);
+                //archiveService.AddUser(user);
                 userService.RemoveUser(user);
                 MessageBox.Show("User succesfully archived");
                 this.Close();

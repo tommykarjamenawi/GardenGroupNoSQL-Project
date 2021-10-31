@@ -36,12 +36,15 @@ namespace GardenGroupUI
             tickets = ticketService.GetAllTickets();
 
             int nrOfUnsolvedTickets = 0;
+            int nrOfSolvedTickets = 0;
             int nrOfTicketsPastDeadline = 0;
 
             foreach (Ticket ticket in tickets)
             {
                 if (ticket.IsSolved == false)
                     nrOfUnsolvedTickets++;
+                else
+                    nrOfSolvedTickets++;
                 if (ticket.Deadline <= DateTime.Now)
                     nrOfTicketsPastDeadline++;
             }
@@ -49,7 +52,15 @@ namespace GardenGroupUI
             lblUnsolvedTickets.Text = nrOfUnsolvedTickets.ToString();
             lblTotalTickets.Text = tickets.Count.ToString();
             lblPastDeadline.Text = nrOfTicketsPastDeadline.ToString();
-        }
 
+            chartUnresolvedTickets.Titles.Add("Unresolved incidents");
+            chartUnresolvedTickets.Series["Unresolved incidents"].Points.AddXY("Unsolved", nrOfUnsolvedTickets);
+            chartUnresolvedTickets.Series["Unresolved incidents"].Points.AddXY("Solved", nrOfSolvedTickets);
+            chartUnresolvedTickets.Series["Unresolved incidents"].IsValueShownAsLabel = true;
+
+            chartIncidentsPastDeadline.Titles.Add("Incidents past deadline");
+            chartIncidentsPastDeadline.Series["Past deadline"].Points.AddXY("Past deadline", nrOfTicketsPastDeadline);
+            chartIncidentsPastDeadline.Series["Past deadline"].IsValueShownAsLabel = true;
+        }
     }
 }
