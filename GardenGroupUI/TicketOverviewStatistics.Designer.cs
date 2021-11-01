@@ -32,9 +32,13 @@ namespace GardenGroupUI
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.label1 = new System.Windows.Forms.Label();
             this.btnShowTickets = new System.Windows.Forms.Button();
             this.lblUnsolvedTickets = new System.Windows.Forms.Label();
@@ -66,7 +70,7 @@ namespace GardenGroupUI
             // 
             this.btnShowTickets.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnShowTickets.Location = new System.Drawing.Point(634, 9);
-            this.btnShowTickets.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnShowTickets.Margin = new System.Windows.Forms.Padding(2);
             this.btnShowTickets.Name = "btnShowTickets";
             this.btnShowTickets.Size = new System.Drawing.Size(113, 41);
             this.btnShowTickets.TabIndex = 1;
@@ -172,13 +176,21 @@ namespace GardenGroupUI
             this.chartUnresolvedTickets.Location = new System.Drawing.Point(25, 277);
             this.chartUnresolvedTickets.Name = "chartUnresolvedTickets";
             series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series1.CustomProperties = "PieStartAngle=270";
             series1.Legend = "Legend1";
             series1.Name = "Unresolved incidents";
             this.chartUnresolvedTickets.Series.Add(series1);
             this.chartUnresolvedTickets.Size = new System.Drawing.Size(331, 278);
             this.chartUnresolvedTickets.TabIndex = 11;
             this.chartUnresolvedTickets.Text = "chart1";
+            title1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title1.Name = "title1chart1";
+            title1.Text = "Unresolved Incidents";
+            title2.Name = "title2chart1";
+            title2.Text = "All tickets currently open";
+            this.chartUnresolvedTickets.Titles.Add(title1);
+            this.chartUnresolvedTickets.Titles.Add(title2);
             // 
             // chartIncidentsPastDeadline
             // 
@@ -191,12 +203,20 @@ namespace GardenGroupUI
             this.chartIncidentsPastDeadline.Name = "chartIncidentsPastDeadline";
             series2.ChartArea = "ChartArea1";
             series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series2.CustomProperties = "PieStartAngle=270";
             series2.Legend = "Legend1";
             series2.Name = "Past deadline";
             this.chartIncidentsPastDeadline.Series.Add(series2);
             this.chartIncidentsPastDeadline.Size = new System.Drawing.Size(331, 278);
             this.chartIncidentsPastDeadline.TabIndex = 13;
             this.chartIncidentsPastDeadline.Text = "chart1";
+            title3.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title3.Name = "title1chart2";
+            title3.Text = "Incidents past deadline";
+            title4.Name = "title2chart2";
+            title4.Text = "These tickets need your immediate attention";
+            this.chartIncidentsPastDeadline.Titles.Add(title3);
+            this.chartIncidentsPastDeadline.Titles.Add(title4);
             // 
             // TicketOverviewStatistics
             // 
@@ -216,7 +236,7 @@ namespace GardenGroupUI
             this.Controls.Add(this.lblUnsolvedTickets);
             this.Controls.Add(this.btnShowTickets);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "TicketOverviewStatistics";
             this.Text = "TicketOverviewStatistics";
             this.Load += new System.EventHandler(this.TicketOverviewStatistics_Load);
@@ -242,4 +262,5 @@ namespace GardenGroupUI
         private System.Windows.Forms.DataVisualization.Charting.Chart chartUnresolvedTickets;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartIncidentsPastDeadline;
     }
+
 }

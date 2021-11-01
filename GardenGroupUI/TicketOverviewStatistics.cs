@@ -38,6 +38,7 @@ namespace GardenGroupUI
             int nrOfUnsolvedTickets = 0;
             int nrOfSolvedTickets = 0;
             int nrOfTicketsPastDeadline = 0;
+            int nrOfTicketsBeforeDeadline = 0;
 
             foreach (Ticket ticket in tickets)
             {
@@ -47,20 +48,42 @@ namespace GardenGroupUI
                     nrOfSolvedTickets++;
                 if (ticket.Deadline <= DateTime.Now)
                     nrOfTicketsPastDeadline++;
+                if (ticket.Deadline > DateTime.Now)
+                    nrOfTicketsBeforeDeadline++;
             }
 
             lblUnsolvedTickets.Text = nrOfUnsolvedTickets.ToString();
             lblTotalTickets.Text = tickets.Count.ToString();
             lblPastDeadline.Text = nrOfTicketsPastDeadline.ToString();
 
-            chartUnresolvedTickets.Titles.Add("Unresolved incidents");
-            chartUnresolvedTickets.Series["Unresolved incidents"].Points.AddXY("Unsolved", nrOfUnsolvedTickets);
-            chartUnresolvedTickets.Series["Unresolved incidents"].Points.AddXY("Solved", nrOfSolvedTickets);
-            chartUnresolvedTickets.Series["Unresolved incidents"].IsValueShownAsLabel = true;
+            UnsolvedTicketsChart(nrOfUnsolvedTickets, nrOfSolvedTickets);
+            IncidentsPastDeadlineChart(nrOfTicketsPastDeadline, nrOfTicketsBeforeDeadline);
 
-            chartIncidentsPastDeadline.Titles.Add("Incidents past deadline");
+
+        }
+
+        private void UnsolvedTicketsChart(int nrOfUnsolvedTickets, int nrOfSolvedTickets)
+        {
+            chartUnresolvedTickets.Series["Unresolved incidents"].Points.AddXY("Unsolved tickets", nrOfUnsolvedTickets);
+            chartUnresolvedTickets.Series["Unresolved incidents"].Points.AddXY("Solved tickets", nrOfSolvedTickets);
+            chartUnresolvedTickets.Series["Unresolved incidents"]["DoughnutRadius"] = "50";
+            chartUnresolvedTickets.Series[0].Points[0].Color = Color.Yellow;
+            chartUnresolvedTickets.Series[0].Points[1].Color = Color.LightGray;
+            chartUnresolvedTickets.ChartAreas[0].Area3DStyle.Enable3D = true;
+            chartUnresolvedTickets.Series["Unresolved incidents"].IsValueShownAsLabel = true;
+        }
+
+        private void IncidentsPastDeadlineChart(int nrOfTicketsPastDeadline, int nrOfTicketsBeforeDeadline)
+        {
             chartIncidentsPastDeadline.Series["Past deadline"].Points.AddXY("Past deadline", nrOfTicketsPastDeadline);
+            chartIncidentsPastDeadline.Series["Past deadline"].Points.AddXY("Before deadline", nrOfTicketsBeforeDeadline);
+            chartIncidentsPastDeadline.Series["Past deadline"]["DoughnutRadius"] = "50";
+            chartIncidentsPastDeadline.Series[0].Points[0].Color = Color.Red;
+            chartIncidentsPastDeadline.Series[0].Points[1].Color = Color.LightGray;
+            chartIncidentsPastDeadline.ChartAreas[0].Area3DStyle.Enable3D = true;
             chartIncidentsPastDeadline.Series["Past deadline"].IsValueShownAsLabel = true;
         }
+
+
     }
 }
