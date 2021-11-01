@@ -28,7 +28,6 @@ namespace GardenGroupUI
             userService = new UserService();
 
             InitializeComponent();
-            btnAdd.Enabled = false;
             DateTimeReported = DateTime.Now;
             txtDateReported.Text = DateTimeReported.ToString();
         }
@@ -46,6 +45,42 @@ namespace GardenGroupUI
         {
             if (ticket == null)
             {
+                if (txtSubject.Text == "")
+                {
+                    MessageBox.Show("Please fill out the subject");
+                    return;
+                }
+
+                if (cmbTypeOfIncident.SelectedIndex <= -1)
+                {
+                    MessageBox.Show("Please fill out the type of incident");
+                    return;
+                }
+
+                if (cmbUser.SelectedIndex <= -1)
+                {
+                    MessageBox.Show("Please fill out the user");
+                    return;
+                }
+
+                if (cmbTypeOfPriority.SelectedIndex <= -1)
+                {
+                    MessageBox.Show("Please fill out the priority level");
+                    return;
+                }
+
+                if (dtpDeadline.Value <= DateTime.Now)
+                {
+                    MessageBox.Show("Please fill out a proper deadline (has to be bigger than the current date/time)");
+                    return;
+                }
+
+                if (txtDescription.Text == "")
+                {
+                    MessageBox.Show("Please fill out the description");
+                    return;
+                }
+
                 AddingTicket();
                 MessageBox.Show("Your ticket has been added!");
                 this.Close();
@@ -79,48 +114,42 @@ namespace GardenGroupUI
             cmbTypeOfIncident.DataSource = Enum.GetValues(typeof(Enums.TypeOfIncident));
             cmbTypeOfPriority.DataSource = Enum.GetValues(typeof(Enums.TypeOfPriority));
         }
+        //private void EnableButtonAdd()
+        //{
+        //    if (txtSubject.Text != "" && txtDescription.Text != "" && cmbUser.SelectedIndex > -1 && cmbTypeOfIncident.SelectedIndex > -1 && cmbTypeOfIncident.SelectedIndex > -1 && dtpDeadline.Value > DateTime.Now)
+        //    {
+        //        btnAdd.Enabled = true;
+        //    }
+        //}
 
-        private void EnableButtonAdd()
-        {
-            if (txtSubject.Text != "" && txtDescription.Text != "" && cmbUser.SelectedIndex > -1 && cmbTypeOfIncident.SelectedIndex > -1 && cmbTypeOfIncident.SelectedIndex > -1 && dtpDeadline.Value > DateTime.Now)
-            {
-                btnAdd.Enabled = true;
-            }
-        }
+        //private void txtSubject_TextChanged(object sender, EventArgs e)
+        //{
+        //    EnableButtonAdd();
+        //}
 
-        private void txtSubject_TextChanged(object sender, EventArgs e)
-        {
-            EnableButtonAdd();
-        }
+        //private void cmbTypeOfIncident_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    EnableButtonAdd();
+        //}
 
-        private void cmbTypeOfIncident_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            EnableButtonAdd();
-        }
+        //private void cmbUser_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    EnableButtonAdd();
+        //}
 
-        private void cmbUser_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            EnableButtonAdd();
-        }
+        //private void cmbTypeOfPriority_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    EnableButtonAdd();
+        //}
 
-        private void cmbTypeOfPriority_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            EnableButtonAdd();
-        }
+        //private void dtpDeadline_ValueChanged(object sender, EventArgs e)
+        //{
+        //    EnableButtonAdd();
+        //}
 
-        private void dtpDeadline_ValueChanged(object sender, EventArgs e)
-        {
-            EnableButtonAdd();
-        }
-
-        private void txtDescription_TextChanged(object sender, EventArgs e)
-        {
-            EnableButtonAdd();
-        }
-
-        private void dtpDate_ValueChanged(object sender, EventArgs e)
-        {
-            EnableButtonAdd();
-        }
+        //private void txtDescription_TextChanged(object sender, EventArgs e)
+        //{
+        //    EnableButtonAdd();
+        //}
     }
 }

@@ -97,6 +97,36 @@ namespace GardenGroupUI
             this.ticket.TypeOfPriority = (Enums.TypeOfPriority)Enum.Parse(typeof(Enums.TypeOfPriority), cmbTypeOfPriority.Text);
             this.ticket.Description = txtDescription.Text;
 
+            if (txtSubject.Text == "")
+            {
+                MessageBox.Show("Please fill out the subject");
+                return;
+            }
+
+            if (cmbTypeOfIncident.SelectedIndex <= -1)
+            {
+                MessageBox.Show("Please fill out the type of incident");
+                return;
+            }
+
+            if (cmbTypeOfPriority.SelectedIndex <= -1)
+            {
+                MessageBox.Show("Please fill out the priority level");
+                return;
+            }
+
+            if (dtpDeadline.Value <= DateTime.Now)
+            {
+                MessageBox.Show("Please fill out a proper deadline (has to be bigger than the current date/time)");
+                return;
+            }
+
+            if (txtDescription.Text == "")
+            {
+                MessageBox.Show("Please fill out the description");
+                return;
+            }
+
             ticketService.UpdateTicket(this.ticket);
             MessageBox.Show($"Ticket {ticket.Id} has been updated!");
             this.Close();
