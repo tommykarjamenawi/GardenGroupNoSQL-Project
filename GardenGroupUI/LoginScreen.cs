@@ -17,10 +17,12 @@ namespace GardenGroupUI
 {
     public partial class LoginScreen : Form
     {
-        string email;
-        string password;
-        UserService userService;
-        LoginService loginService;
+        private string email;
+        private string password;
+        private UserService userService;
+        private LoginService loginService;
+        private string hardwareID;
+        private string hardDriveId;
 
         public LoginScreen()
         {
@@ -44,19 +46,20 @@ namespace GardenGroupUI
             ManagementObjectCollection mbsList = mbs.Get();
             foreach (ManagementObject mo in mbsList)
             {
-                lblHardwareID.Text = mo["ProcessorId"].ToString();
+                hardwareID = mo["ProcessorId"].ToString();
                 break;
             }
             List<HardDrive> hardDrives = loginService.GetHardDriveId();
             foreach (HardDrive hdd in hardDrives)
             {
-                lblHDDId.Text = hdd.SerialNo;
+                hardDriveId = hdd.SerialNo;
             }
-            RememberMe remember = loginService.CheckRememberMe(lblHDDId.Text.TrimStart(), lblHardwareID.Text);
+            RememberMe remember = loginService.CheckRememberMe(hardDriveId.TrimStart(), hardwareID);
             if (!(remember == null))
             {
                 txtEmail.Text = remember.email;
                 txtPassword.Text = remember.password;
+                txtPassword.UseSystemPasswordChar = true;
             }
             else
             {
@@ -64,15 +67,16 @@ namespace GardenGroupUI
                 txtEmail.ForeColor = Color.DarkGray;
                 txtPassword.Text = "password";
                 txtPassword.ForeColor = Color.DarkGray;
+                txtPassword.UseSystemPasswordChar = false;
             }
-            txtPassword.UseSystemPasswordChar = false;
+            //txtPassword.UseSystemPasswordChar = false;
             txtPassword.TabStop = false; // Prevent application to enter the password field on startup
             chbRememberMe.Checked = false;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            //lblError.Visible = false;
+            lblError.Visible = false;
             email = txtEmail.Text;
             password = txtPassword.Text;
 
@@ -81,17 +85,17 @@ namespace GardenGroupUI
             if (user != null)
             {
                 lblError.Text = "correct";
-                if (chbRememberMe.Checked)
+                if (chbRememberMe.Checked) // Will add/overwrite the remembered login credentials.
                 {
-                    RememberMe remember = loginService.CheckRememberMe(lblHDDId.Text.TrimStart(), lblHardwareID.Text);
+                    RememberMe remember = loginService.CheckRememberMe(hardDriveId.TrimStart(), hardwareID);
                     if (remember == null)
                     {
-                        RememberMe rememberr = new RememberMe(txtEmail.Text, txtPassword.Text, lblHDDId.Text.TrimStart(), lblHardwareID.Text);
+                        RememberMe rememberr = new RememberMe(txtEmail.Text, txtPassword.Text, hardDriveId.TrimStart(), hardwareID);
                         loginService.AddRememberMe(rememberr);
                     }
-                    else if (txtEmail.Text != remember.email && lblHardwareID.Text == remember.ProcessorSerial)
+                    else if (txtEmail.Text != remember.email && hardwareID == remember.ProcessorSerial)
                     {
-                        loginService.OverWriteRememberMe(new RememberMe(txtEmail.Text, txtPassword.Text, lblHDDId.Text.TrimStart(), lblHardwareID.Text));
+                        loginService.OverWriteRememberMe(new RememberMe(txtEmail.Text, txtPassword.Text, hardDriveId.TrimStart(), hardwareID));
                     }
                 }
                 this.Hide();
@@ -114,11 +118,6 @@ namespace GardenGroupUI
                 txtPassword.Text = "";
                 lblError.Text = "username and/or password is incorrect!";
             }
-        }
-
-        private void LoginScreen_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void txtUsername_Enter(object sender, EventArgs e)

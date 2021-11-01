@@ -31,7 +31,9 @@ namespace GardenGroupLogic
         public User GetUserByEmail(string email, string password)
         {
             User user = userdao.GetUserByEmail(email);
-            return user.Password == password ? user : null; // check if password matches the email
+            if (user == null) { return null;}
+            else if (user.Password == password) { return user; }
+            return null;  
         }
 
         public User GetUserObjectByEmail(string email)
