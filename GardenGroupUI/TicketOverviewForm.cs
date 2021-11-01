@@ -125,7 +125,6 @@ namespace GardenGroupUI
                 item.Tag = ticket;
                 listViewTickets.Items.Add(item);
                 listViewTickets.Columns[8].Width = -2;
-
             }
         }
 
@@ -171,7 +170,6 @@ namespace GardenGroupUI
                     return;
                 }
             }
- 
       
             Ticket ticket = (Ticket)listViewTickets.SelectedItems[0].Tag;
 
@@ -184,14 +182,13 @@ namespace GardenGroupUI
             LoginScreen ls = new LoginScreen();
             this.Hide();
             ls.ShowDialog();
-
         }
 
         private void btnStatistics_Click(object sender, EventArgs e)
         {
-                TicketOverviewStatistics tos = new TicketOverviewStatistics(user);
-                this.Hide();
-                tos.ShowDialog();
+            TicketOverviewStatistics tos = new TicketOverviewStatistics(user);
+            this.Hide();
+            tos.ShowDialog();
         }
     }
 }

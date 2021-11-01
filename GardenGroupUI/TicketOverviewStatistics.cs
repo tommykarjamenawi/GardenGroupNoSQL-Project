@@ -58,8 +58,6 @@ namespace GardenGroupUI
 
             UnsolvedTicketsChart(nrOfUnsolvedTickets, nrOfSolvedTickets);
             IncidentsPastDeadlineChart(nrOfTicketsPastDeadline, nrOfTicketsBeforeDeadline);
-
-
         }
 
         private void UnsolvedTicketsChart(int nrOfUnsolvedTickets, int nrOfSolvedTickets)
@@ -83,7 +81,5 @@ namespace GardenGroupUI
             chartIncidentsPastDeadline.ChartAreas[0].Area3DStyle.Enable3D = true;
             chartIncidentsPastDeadline.Series["Past deadline"].IsValueShownAsLabel = true;
         }
-
-
     }
 }
