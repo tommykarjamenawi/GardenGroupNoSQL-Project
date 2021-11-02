@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GardenGroupLogic;
+using MongoDB.Bson;
+
 namespace GardenGroupUI
 {
     public partial class TransferTicket : Form
@@ -38,10 +40,9 @@ namespace GardenGroupUI
                 txtCurrentUser.Text = ticket.ReportedBy.Email;
                 lblLoggedinUser.Text = this.user.Email;
 
-                foreach(User user in users)
-                {
-                    cmbUser.Items.Add(user.Email);
-                }
+                cmbUser.DisplayMember = "Email";
+                cmbUser.ValueMember = "Id";
+                cmbUser.DataSource = users;
 
                 cmbTicket.Items.Add(ticket.Id);
 
@@ -51,10 +52,14 @@ namespace GardenGroupUI
                 txtCurrentUser.Text = ticket.ReportedBy.Email;
                 lblLoggedinUser.Text = this.user.Email;
 
-                foreach (User user in users)
-                {
-                    cmbUser.Items.Add(user.Email);
-                }
+                //foreach (User user in users)
+                //{
+                //    cmbUser.Items.Add(user.Email);
+                //}
+
+                cmbUser.DisplayMember = "Email";
+                cmbUser.ValueMember = "Id";
+                cmbUser.DataSource = users;
 
                 foreach (Ticket ticket in tickets)
                 {
@@ -65,9 +70,22 @@ namespace GardenGroupUI
 
         private void btnTransfer_Click(object sender, EventArgs e)
         {
+            if (cmbTicket.SelectedIndex <= -1)
+            {
+                MessageBox.Show("Please select a ticket");
+                return;
+            }
+
+            if (cmbUser.SelectedIndex <= -1)
+            {
+                MessageBox.Show("Please select a user");
+                return;
+            }
+   
+
             if (MessageBox.Show("Are you sure you want to transfer this ticket?", "Transfer?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                User user = userService.GetUserObjectByEmail(cmbUser.Text);
+                User user = userService.GetUserObjectById((ObjectId)cmbUser.SelectedValue);
                 ticket.ReportedBy = user;
                 ticketService.TransferTicket(this.ticket);
                 MessageBox.Show($"Ticket {ticket.Id} has been moved to {user.Email}!");

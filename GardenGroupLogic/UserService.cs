@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GardenGroupModel;
+using MongoDB.Bson;
 
 namespace GardenGroupLogic
 {
@@ -41,9 +42,9 @@ namespace GardenGroupLogic
             if (user == null) { return null; } else { return user; }
         }
 
-        public User GetUserObjectByEmail(string email)
+        public User GetUserObjectById(ObjectId id)
         {
-            return userdao.GetUserObjectByEmail(email);
+            return userdao.GetUserObjectById(id);
         }
 
        public void UpdateUser(User user)

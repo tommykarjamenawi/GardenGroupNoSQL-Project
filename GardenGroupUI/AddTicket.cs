@@ -35,7 +35,7 @@ namespace GardenGroupUI
         private void AddingTicket()
         {
             Ticket ticket = new Ticket(DateTimeReported, txtSubject.Text, (Enums.TypeOfIncident)cmbTypeOfIncident.SelectedIndex,
-                    (User)userService.GetUserObjectByEmail(cmbUser.Text), (Enums.TypeOfPriority)cmbTypeOfPriority.SelectedIndex, dtpDeadline.Value, txtDescription.Text);
+                    (User)userService.GetUserObjectById((ObjectId)cmbUser.SelectedValue), (Enums.TypeOfPriority)cmbTypeOfPriority.SelectedIndex, dtpDeadline.Value, txtDescription.Text);
 
             ticketService = new TicketService();
             ticketService.AddTicket(ticket);
@@ -96,17 +96,10 @@ namespace GardenGroupUI
         {
             users = userService.GetAllUsers();
 
-            if (user.TypeOfUser == Enums.TypeOfUser.EndUser.ToString())
-            {
-                cmbUser.Items.Add(user.Email);
-            }
-            else
-            {
-                foreach (User user in users)
-                {
-                    cmbUser.Items.Add(user.Email);
-                }
-            }
+            cmbUser.DisplayMember = "Email";
+            cmbUser.ValueMember = "Id";
+            cmbUser.DataSource = users;
+
             cmbTypeOfIncident.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbTypeOfPriority.DropDownStyle = ComboBoxStyle.DropDownList;
 

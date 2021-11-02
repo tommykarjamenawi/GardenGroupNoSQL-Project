@@ -1,4 +1,5 @@
 ﻿using GardenGroupModel;
+using MongoDB.Bson;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
@@ -41,11 +42,11 @@ namespace GardenGroupDAO
             return users.Count > 0 ? users[0] : null;
         }
 
-        // for tickets
-        public User GetUserObjectByEmail(string email)
+        // for ticketsx
+        public User GetUserObjectById(ObjectId id)
         {
             IMongoCollection<User> collection = db.GetCollection<User>(COLLECTION_NAME);
-            return (User)collection.Find<User>(User => User.Email == email).FirstOrDefault();
+            return (User)collection.Find<User>(User => User.Id == id).FirstOrDefault();
         }
 
       
