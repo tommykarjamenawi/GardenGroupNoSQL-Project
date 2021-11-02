@@ -23,6 +23,7 @@ namespace GardenGroupUI
         private DateTime DateTimeReported;
         public AddTicket(User user)
         {
+
             this.user = user;
             ticketService = new TicketService();
             userService = new UserService();
@@ -34,8 +35,9 @@ namespace GardenGroupUI
 
         private void AddingTicket()
         {
+            var objid = ((User)cmbUser.SelectedItem).Id;
             Ticket ticket = new Ticket(DateTimeReported, txtSubject.Text, (Enums.TypeOfIncident)cmbTypeOfIncident.SelectedIndex,
-                    (User)userService.GetUserObjectById((ObjectId)cmbUser.SelectedValue), (Enums.TypeOfPriority)cmbTypeOfPriority.SelectedIndex, dtpDeadline.Value, txtDescription.Text);
+                    (User)userService.GetUserObjectById(objid), (Enums.TypeOfPriority)cmbTypeOfPriority.SelectedIndex, dtpDeadline.Value, txtDescription.Text);
 
             ticketService = new TicketService();
             ticketService.AddTicket(ticket);
@@ -98,9 +100,9 @@ namespace GardenGroupUI
 
             if (user.TypeOfUser == Enums.TypeOfUser.EndUser.ToString())
             {
+                cmbUser.Items.Add(user);
                 cmbUser.DisplayMember = "Email";
                 cmbUser.ValueMember = "Id";
-                cmbUser.Items.Add(user.Email);
             }
             else
             {
