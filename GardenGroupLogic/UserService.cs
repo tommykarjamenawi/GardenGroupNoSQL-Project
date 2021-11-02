@@ -42,11 +42,6 @@ namespace GardenGroupLogic
             if (user == null) { return null; } else { return user; }
         }
 
-        public List<User> GetLoggedInUser(User user)
-        {
-            return userdao.GetLoggedInUser(user);
-        }
-
         public User GetUserObjectById(ObjectId id)
         {
             return userdao.GetUserObjectById(id);

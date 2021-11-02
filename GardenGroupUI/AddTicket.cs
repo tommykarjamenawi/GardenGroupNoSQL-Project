@@ -18,8 +18,7 @@ namespace GardenGroupUI
         private Ticket ticket;
         private TicketService ticketService;
         private UserService userService;
-        private List<User> allUsers;
-        private List<User> specificUser;
+        private List<User> users;
         private User user;
         private DateTime DateTimeReported;
         public AddTicket(User user)
@@ -95,20 +94,19 @@ namespace GardenGroupUI
 
         private void AddTicket_Load(object sender, EventArgs e)
         {
-            allUsers = userService.GetAllUsers();
-            specificUser = userService.GetLoggedInUser(user);
+            users = userService.GetAllUsers();
 
             if (user.TypeOfUser == Enums.TypeOfUser.EndUser.ToString())
             {
                 cmbUser.DisplayMember = "Email";
                 cmbUser.ValueMember = "Id";
-                cmbUser.DataSource = specificUser;
+                cmbUser.Items.Add(user.Email);
             }
             else
             {
                 cmbUser.DisplayMember = "Email";
                 cmbUser.ValueMember = "Id";
-                cmbUser.DataSource = allUsers;
+                cmbUser.DataSource = users;
             }
 
             cmbTypeOfIncident.DropDownStyle = ComboBoxStyle.DropDownList;

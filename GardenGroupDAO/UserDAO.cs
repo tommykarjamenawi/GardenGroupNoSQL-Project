@@ -24,12 +24,6 @@ namespace GardenGroupDAO
             return userCollection.AsQueryable().ToList<User>();
         }
 
-        public List<User> GetLoggedInUser(User user)
-        {
-            IMongoCollection<User> userCollection = db.GetCollection<User>("Users");
-            return userCollection.Find<User>(User => User.Email == user.Email).ToList<User>();
-        }
-
         public User SearchUsers(string email)
         {
            return FindOneByEmail(email);
