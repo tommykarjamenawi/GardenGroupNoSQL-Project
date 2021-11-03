@@ -46,7 +46,9 @@ namespace GardenGroupUI
             this.label3 = new System.Windows.Forms.Label();
             this.btnLogout = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // listViewTickets
@@ -65,7 +67,7 @@ namespace GardenGroupUI
             this.listViewTickets.FullRowSelect = true;
             this.listViewTickets.GridLines = true;
             this.listViewTickets.HideSelection = false;
-            this.listViewTickets.Location = new System.Drawing.Point(12, 433);
+            this.listViewTickets.Location = new System.Drawing.Point(14, 313);
             this.listViewTickets.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listViewTickets.Name = "listViewTickets";
             this.listViewTickets.Size = new System.Drawing.Size(1477, 590);
@@ -122,7 +124,7 @@ namespace GardenGroupUI
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(2, 355);
+            this.label1.Location = new System.Drawing.Point(4, 235);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(364, 59);
             this.label1.TabIndex = 10;
@@ -131,7 +133,7 @@ namespace GardenGroupUI
             // btnDashboard
             // 
             this.btnDashboard.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnDashboard.Location = new System.Drawing.Point(12, 293);
+            this.btnDashboard.Location = new System.Drawing.Point(14, 173);
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.Size = new System.Drawing.Size(393, 44);
             this.btnDashboard.TabIndex = 12;
@@ -142,7 +144,7 @@ namespace GardenGroupUI
             // btnTicketOverview
             // 
             this.btnTicketOverview.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnTicketOverview.Location = new System.Drawing.Point(421, 293);
+            this.btnTicketOverview.Location = new System.Drawing.Point(423, 173);
             this.btnTicketOverview.Name = "btnTicketOverview";
             this.btnTicketOverview.Size = new System.Drawing.Size(393, 44);
             this.btnTicketOverview.TabIndex = 13;
@@ -191,12 +193,24 @@ namespace GardenGroupUI
             this.pictureBox1.TabIndex = 66;
             this.pictureBox1.TabStop = false;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::GardenGroupUI.Properties.Resources.nodeskLogo;
+            this.pictureBox2.Location = new System.Drawing.Point(24, 13);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(202, 113);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 70;
+            this.pictureBox2.TabStop = false;
+            // 
             // TicketArchive
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(217)))), ((int)(((byte)(112)))));
-            this.ClientSize = new System.Drawing.Size(1537, 1053);
+            this.ClientSize = new System.Drawing.Size(1537, 948);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblEmailSignedIn);
             this.Controls.Add(this.label3);
@@ -208,6 +222,7 @@ namespace GardenGroupUI
             this.Name = "TicketArchive";
             this.Text = "TicketArchive";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -232,5 +247,6 @@ namespace GardenGroupUI
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
