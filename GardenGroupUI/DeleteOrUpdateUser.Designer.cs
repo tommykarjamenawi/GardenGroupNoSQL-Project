@@ -253,7 +253,6 @@ namespace GardenGroupUI
             this.Controls.Add(this.label2);
             this.Name = "DeleteOrUpdateUser";
             this.Text = "DeleteOrUpdateUser";
-            this.Load += new System.EventHandler(this.DeleteOrUpdateUser_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

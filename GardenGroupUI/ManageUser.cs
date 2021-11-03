@@ -21,15 +21,13 @@ namespace GardenGroupUI
             this.user = user;
             this.txtSearchBox.AutoSize = false;
             this.txtSearchBox.Size = new System.Drawing.Size(261, 25);
-          
-
         }
 
         private void btnAddNewUser_Click(object sender, EventArgs e)
         {
             AddUser addUser = new AddUser();
-            addUser.Show();
             this.Hide();
+            addUser.ShowDialog();
         }
 
         private void ManageUser_Load(object sender, EventArgs e)
@@ -105,6 +103,7 @@ namespace GardenGroupUI
             {
                 User user = (User)lstUsers.SelectedItems[0].Tag;
                DeleteOrUpdateUser deleteOrUpdateUser = new DeleteOrUpdateUser(user);
+                this.Hide();
                 deleteOrUpdateUser.ShowDialog();
                
             }
@@ -123,8 +122,8 @@ namespace GardenGroupUI
         private void btnOpenArchive_Click(object sender, EventArgs e)
         {
             UserArchive archive = new UserArchive(user);
-            archive.Show();
             this.Hide();
+            archive.ShowDialog();
         }
 
         private void btnTicketOverview_Click(object sender, EventArgs e)

@@ -69,8 +69,8 @@ namespace GardenGroupUI
         private void btnCancel_Click(object sender, EventArgs e)
         {
             ManageUser manageUser = new ManageUser(user);
-            manageUser.Show();
             this.Hide();
+            manageUser.ShowDialog();
         }
 
         private void InitializeComBox()
@@ -131,8 +131,9 @@ namespace GardenGroupUI
         private void btnManageUser_Click(object sender, EventArgs e)
         {
             ManageUser manageUser = new ManageUser(user);
-            manageUser.Show();
             this.Hide();
+            manageUser.ShowDialog();
+
         }
 
         private void btnTicketOverview_Click(object sender, EventArgs e)

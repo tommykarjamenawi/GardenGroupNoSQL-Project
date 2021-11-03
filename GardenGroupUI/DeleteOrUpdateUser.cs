@@ -112,10 +112,5 @@ namespace GardenGroupUI
             this.Hide();
             ticketOverviewStatistics.ShowDialog();
         }
-
-        private void DeleteOrUpdateUser_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
