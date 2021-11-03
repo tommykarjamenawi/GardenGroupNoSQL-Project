@@ -35,8 +35,10 @@ namespace GardenGroupUI
         private void TicketOverviewForm_Load(object sender, EventArgs e)
         {
             if (user.TypeOfUser == Enums.TypeOfUser.EndUser.ToString())
+            {
+                btnManageUser.Hide();
                 btnStatistics.Enabled = false;
-
+            }
                 DisplayAllTickets();          
         }
 

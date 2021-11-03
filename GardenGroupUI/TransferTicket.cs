@@ -28,6 +28,8 @@ namespace GardenGroupUI
             ticketService = new TicketService();
             userService = new UserService();
             InitializeComponent();
+
+
         }
 
         private void TransferTicket_Load(object sender, EventArgs e)
@@ -37,6 +39,7 @@ namespace GardenGroupUI
 
             if (user.TypeOfUser == Enums.TypeOfUser.EndUser.ToString())
             {
+                btnManageUser.Hide();
                 txtCurrentUser.Text = ticket.ReportedBy.Email;
                 lblLoggedinUser.Text = this.user.Email;
 

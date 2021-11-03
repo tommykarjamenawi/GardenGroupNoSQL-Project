@@ -31,6 +31,9 @@ namespace GardenGroupUI
             InitializeComponent();
             DateTimeReported = DateTime.Now;
             txtDateReported.Text = DateTimeReported.ToString();
+
+            if (user.TypeOfUser == Enums.TypeOfUser.EndUser.ToString())
+                btnManageUser.Hide();
         }
 
         private void AddingTicket()

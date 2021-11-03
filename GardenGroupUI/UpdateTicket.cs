@@ -37,6 +37,7 @@ namespace GardenGroupUI
             if (user.TypeOfUser == Enums.TypeOfUser.EndUser.ToString())
             {
                 btnStatus.Enabled = false;
+                btnManageUser.Hide();
             }
             else
             {
