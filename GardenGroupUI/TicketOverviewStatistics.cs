@@ -15,7 +15,8 @@ namespace GardenGroupUI
     public partial class TicketOverviewStatistics : Form
     {
         private TicketService ticketService;
-        private List<Ticket> tickets;
+        private List<Ticket> allTickets;
+        private List<Ticket> userTickets;
         private User user;
         public TicketOverviewStatistics(User user)
         {
@@ -33,27 +34,46 @@ namespace GardenGroupUI
 
         private void TicketOverviewStatistics_Load(object sender, EventArgs e)
         {
-            tickets = ticketService.GetAllTickets();
+            allTickets = ticketService.GetAllTickets();
+            userTickets = ticketService.GetAllTicketsForUser(user);
 
             int nrOfUnsolvedTickets = 0;
             int nrOfSolvedTickets = 0;
             int nrOfTicketsPastDeadline = 0;
             int nrOfTicketsBeforeDeadline = 0;
 
-            foreach (Ticket ticket in tickets)
+            if (user.TypeOfUser == Enums.TypeOfUser.EndUser.ToString())
             {
-                if (ticket.IsSolved == false)
-                    nrOfUnsolvedTickets++;
-                else
-                    nrOfSolvedTickets++;
-                if (ticket.Deadline <= DateTime.Now)
-                    nrOfTicketsPastDeadline++;
-                if (ticket.Deadline > DateTime.Now)
-                    nrOfTicketsBeforeDeadline++;
+                foreach(Ticket ticket in userTickets)
+                {
+                    if (ticket.IsSolved == false)
+                        nrOfUnsolvedTickets++;
+                    else
+                        nrOfSolvedTickets++;
+                    if (ticket.Deadline <= DateTime.Now)
+                        nrOfTicketsPastDeadline++;
+                    if (ticket.Deadline > DateTime.Now)
+                        nrOfTicketsBeforeDeadline++;
+                    lblTotalTickets.Text = userTickets.Count.ToString();
+                }
+            }
+            else
+            {
+                foreach (Ticket ticket in allTickets)
+                {
+                    if (ticket.IsSolved == false)
+                        nrOfUnsolvedTickets++;
+                    else
+                        nrOfSolvedTickets++;
+                    if (ticket.Deadline <= DateTime.Now)
+                        nrOfTicketsPastDeadline++;
+                    if (ticket.Deadline > DateTime.Now)
+                        nrOfTicketsBeforeDeadline++;
+                    lblTotalTickets.Text = allTickets.Count.ToString();
+                }
             }
 
             lblUnsolvedTickets.Text = nrOfUnsolvedTickets.ToString();
-            lblTotalTickets.Text = tickets.Count.ToString();
             lblPastDeadline.Text = nrOfTicketsPastDeadline.ToString();
 
             UnsolvedTicketsChart(nrOfUnsolvedTickets, nrOfSolvedTickets);
