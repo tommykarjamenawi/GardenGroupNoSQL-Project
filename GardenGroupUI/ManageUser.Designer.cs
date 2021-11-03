@@ -55,7 +55,7 @@ namespace GardenGroupUI
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 30F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(75, 254);
+            this.label1.Location = new System.Drawing.Point(79, 212);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(458, 59);
             this.label1.TabIndex = 0;
@@ -64,7 +64,7 @@ namespace GardenGroupUI
             // txtSearchBox
             // 
             this.txtSearchBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchBox.Location = new System.Drawing.Point(85, 356);
+            this.txtSearchBox.Location = new System.Drawing.Point(89, 314);
             this.txtSearchBox.Name = "txtSearchBox";
             this.txtSearchBox.Size = new System.Drawing.Size(231, 28);
             this.txtSearchBox.TabIndex = 1;
@@ -74,7 +74,7 @@ namespace GardenGroupUI
             // 
             this.btnAddNewUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddNewUser.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnAddNewUser.Location = new System.Drawing.Point(916, 342);
+            this.btnAddNewUser.Location = new System.Drawing.Point(920, 300);
             this.btnAddNewUser.Name = "btnAddNewUser";
             this.btnAddNewUser.Size = new System.Drawing.Size(155, 42);
             this.btnAddNewUser.TabIndex = 2;
@@ -96,9 +96,9 @@ namespace GardenGroupUI
             this.lstUsers.FullRowSelect = true;
             this.lstUsers.GridLines = true;
             this.lstUsers.HideSelection = false;
-            this.lstUsers.Location = new System.Drawing.Point(85, 395);
+            this.lstUsers.Location = new System.Drawing.Point(89, 353);
             this.lstUsers.Name = "lstUsers";
-            this.lstUsers.Size = new System.Drawing.Size(986, 473);
+            this.lstUsers.Size = new System.Drawing.Size(986, 414);
             this.lstUsers.TabIndex = 3;
             this.lstUsers.UseCompatibleStateImageBehavior = false;
             this.lstUsers.View = System.Windows.Forms.View.Details;
@@ -131,10 +131,9 @@ namespace GardenGroupUI
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRefresh.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnRefresh.Location = new System.Drawing.Point(916, 896);
+            this.btnRefresh.Location = new System.Drawing.Point(919, 788);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(155, 55);
             this.btnRefresh.TabIndex = 6;
@@ -145,7 +144,7 @@ namespace GardenGroupUI
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(85, 333);
+            this.label2.Location = new System.Drawing.Point(89, 291);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(115, 17);
             this.label2.TabIndex = 7;
@@ -155,7 +154,7 @@ namespace GardenGroupUI
             // 
             this.btnOpenArchive.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnOpenArchive.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnOpenArchive.Location = new System.Drawing.Point(916, 294);
+            this.btnOpenArchive.Location = new System.Drawing.Point(920, 252);
             this.btnOpenArchive.Name = "btnOpenArchive";
             this.btnOpenArchive.Size = new System.Drawing.Size(155, 42);
             this.btnOpenArchive.TabIndex = 9;
@@ -166,7 +165,7 @@ namespace GardenGroupUI
             // btnTicketOverview
             // 
             this.btnTicketOverview.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnTicketOverview.Location = new System.Drawing.Point(421, 187);
+            this.btnTicketOverview.Location = new System.Drawing.Point(425, 145);
             this.btnTicketOverview.Name = "btnTicketOverview";
             this.btnTicketOverview.Size = new System.Drawing.Size(304, 44);
             this.btnTicketOverview.TabIndex = 16;
@@ -177,7 +176,7 @@ namespace GardenGroupUI
             // btnDashboard
             // 
             this.btnDashboard.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnDashboard.Location = new System.Drawing.Point(86, 187);
+            this.btnDashboard.Location = new System.Drawing.Point(90, 145);
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.Size = new System.Drawing.Size(304, 44);
             this.btnDashboard.TabIndex = 15;
@@ -188,7 +187,7 @@ namespace GardenGroupUI
             // btnManageUser
             // 
             this.btnManageUser.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnManageUser.Location = new System.Drawing.Point(763, 187);
+            this.btnManageUser.Location = new System.Drawing.Point(767, 145);
             this.btnManageUser.Name = "btnManageUser";
             this.btnManageUser.Size = new System.Drawing.Size(304, 44);
             this.btnManageUser.TabIndex = 14;
@@ -197,6 +196,7 @@ namespace GardenGroupUI
             // 
             // btnLogout
             // 
+            this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLogout.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnLogout.Location = new System.Drawing.Point(917, 36);
             this.btnLogout.Name = "btnLogout";
@@ -208,6 +208,7 @@ namespace GardenGroupUI
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(815, 8);
@@ -218,6 +219,7 @@ namespace GardenGroupUI
             // 
             // lblEmailSignedIn
             // 
+            this.lblEmailSignedIn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblEmailSignedIn.AutoSize = true;
             this.lblEmailSignedIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmailSignedIn.Location = new System.Drawing.Point(915, 10);
@@ -242,7 +244,7 @@ namespace GardenGroupUI
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(217)))), ((int)(((byte)(112)))));
-            this.ClientSize = new System.Drawing.Size(1145, 976);
+            this.ClientSize = new System.Drawing.Size(1145, 1005);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblEmailSignedIn);
             this.Controls.Add(this.label3);

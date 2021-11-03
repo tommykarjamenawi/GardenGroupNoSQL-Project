@@ -45,7 +45,7 @@ namespace GardenGroupUI
             user.FirstName = txtFirstName.Text;
             user.LastName = txtLastName.Text;
             user.TypeOfUser = cmbTypeOfUser.SelectedItem.ToString();
-            user.Email = txtEmailAddress.Text;
+            user.Email = txtEmailAddress.Text + "@Gardengroup.nl";
             user.Phone = txtPhoneNumber.Text;
             user.branch = cmbLocationBranch.Text;
             user.Password = CreatePassword();
