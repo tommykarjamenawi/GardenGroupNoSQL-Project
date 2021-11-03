@@ -23,19 +23,17 @@ namespace GardenGroupDAO
         // Queries for CRUD functionalities (add/remove/update, etc)
         public void AddTicket(Ticket ticket)
         {
-            collection.InsertOne(ticket);
+            InsertDocument<Ticket>(TABLE_NAME, ticket);
         }
 
         public void RemoveTicket(Ticket ticket)
         {
-            var filter = Builders<Ticket>.Filter.Eq("Id", ticket.Id);
-            collection.DeleteOne(filter);
+            DeleteDocument<Ticket>(ticket.Id, TABLE_NAME);
         }
 
         public void UpdateTicket(Ticket ticket)
         {
-            var filter = Builders<Ticket>.Filter.Eq("Id", ticket.Id);
-            collection.ReplaceOne(filter, ticket, new ReplaceOptions() { IsUpsert = true });
+            UpdateDocument<Ticket>(ticket.Id, TABLE_NAME, ticket);
         }
         public void ChangeStatus(Ticket ticket)
         {
@@ -56,7 +54,6 @@ namespace GardenGroupDAO
             return collection.Find<Ticket>(Ticket => Ticket.ReportedBy.Email == user.Email).ToList<Ticket>();
         }
 
-        
         public List<Ticket> GetAllTickets()
         {
             return collection.AsQueryable().ToList<Ticket>();
