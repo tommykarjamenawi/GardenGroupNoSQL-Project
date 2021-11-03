@@ -39,21 +39,24 @@ namespace GardenGroupUI
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lblLoggedinUser = new System.Windows.Forms.Label();
+            this.btnTicketOverview = new System.Windows.Forms.Button();
+            this.btnDashboard = new System.Windows.Forms.Button();
+            this.btnManageUser = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cmbUser
             // 
             this.cmbUser.FormattingEnabled = true;
-            this.cmbUser.Location = new System.Drawing.Point(392, 252);
-            this.cmbUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbUser.Location = new System.Drawing.Point(424, 343);
+            this.cmbUser.Margin = new System.Windows.Forms.Padding(4);
             this.cmbUser.Name = "cmbUser";
             this.cmbUser.Size = new System.Drawing.Size(245, 24);
             this.cmbUser.TabIndex = 0;
             // 
             // txtCurrentUser
             // 
-            this.txtCurrentUser.Location = new System.Drawing.Point(440, 123);
-            this.txtCurrentUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCurrentUser.Location = new System.Drawing.Point(472, 214);
+            this.txtCurrentUser.Margin = new System.Windows.Forms.Padding(4);
             this.txtCurrentUser.Name = "txtCurrentUser";
             this.txtCurrentUser.ReadOnly = true;
             this.txtCurrentUser.Size = new System.Drawing.Size(160, 22);
@@ -62,8 +65,8 @@ namespace GardenGroupUI
             // btnTransfer
             // 
             this.btnTransfer.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnTransfer.Location = new System.Drawing.Point(440, 303);
-            this.btnTransfer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTransfer.Location = new System.Drawing.Point(472, 394);
+            this.btnTransfer.Margin = new System.Windows.Forms.Padding(4);
             this.btnTransfer.Name = "btnTransfer";
             this.btnTransfer.Size = new System.Drawing.Size(161, 41);
             this.btnTransfer.TabIndex = 2;
@@ -74,8 +77,8 @@ namespace GardenGroupUI
             // cmbTicket
             // 
             this.cmbTicket.FormattingEnabled = true;
-            this.cmbTicket.Location = new System.Drawing.Point(392, 186);
-            this.cmbTicket.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbTicket.Location = new System.Drawing.Point(424, 277);
+            this.cmbTicket.Margin = new System.Windows.Forms.Padding(4);
             this.cmbTicket.Name = "cmbTicket";
             this.cmbTicket.Size = new System.Drawing.Size(245, 24);
             this.cmbTicket.TabIndex = 3;
@@ -83,7 +86,7 @@ namespace GardenGroupUI
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(451, 103);
+            this.label1.Location = new System.Drawing.Point(483, 194);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(134, 17);
@@ -93,7 +96,7 @@ namespace GardenGroupUI
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(451, 233);
+            this.label2.Location = new System.Drawing.Point(483, 324);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(114, 17);
@@ -103,7 +106,7 @@ namespace GardenGroupUI
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(467, 166);
+            this.label3.Location = new System.Drawing.Point(499, 257);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(88, 17);
@@ -114,7 +117,7 @@ namespace GardenGroupUI
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(245, 34);
+            this.label4.Location = new System.Drawing.Point(277, 125);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(498, 39);
@@ -125,7 +128,7 @@ namespace GardenGroupUI
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(4, 124);
+            this.label5.Location = new System.Drawing.Point(118, 216);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(140, 20);
@@ -136,12 +139,45 @@ namespace GardenGroupUI
             // 
             this.lblLoggedinUser.AutoSize = true;
             this.lblLoggedinUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLoggedinUser.Location = new System.Drawing.Point(165, 124);
+            this.lblLoggedinUser.Location = new System.Drawing.Point(279, 216);
             this.lblLoggedinUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLoggedinUser.Name = "lblLoggedinUser";
             this.lblLoggedinUser.Size = new System.Drawing.Size(19, 20);
             this.lblLoggedinUser.TabIndex = 9;
             this.lblLoggedinUser.Text = "_";
+            // 
+            // btnTicketOverview
+            // 
+            this.btnTicketOverview.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnTicketOverview.Location = new System.Drawing.Point(442, 64);
+            this.btnTicketOverview.Name = "btnTicketOverview";
+            this.btnTicketOverview.Size = new System.Drawing.Size(200, 44);
+            this.btnTicketOverview.TabIndex = 64;
+            this.btnTicketOverview.Text = "&Ticket overview";
+            this.btnTicketOverview.UseVisualStyleBackColor = false;
+            this.btnTicketOverview.Click += new System.EventHandler(this.btnTicketOverview_Click);
+            // 
+            // btnDashboard
+            // 
+            this.btnDashboard.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnDashboard.Location = new System.Drawing.Point(216, 64);
+            this.btnDashboard.Name = "btnDashboard";
+            this.btnDashboard.Size = new System.Drawing.Size(200, 44);
+            this.btnDashboard.TabIndex = 63;
+            this.btnDashboard.Text = "&Dashboard";
+            this.btnDashboard.UseVisualStyleBackColor = false;
+            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
+            // 
+            // btnManageUser
+            // 
+            this.btnManageUser.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnManageUser.Location = new System.Drawing.Point(670, 64);
+            this.btnManageUser.Name = "btnManageUser";
+            this.btnManageUser.Size = new System.Drawing.Size(200, 44);
+            this.btnManageUser.TabIndex = 62;
+            this.btnManageUser.Text = "Manage user";
+            this.btnManageUser.UseVisualStyleBackColor = false;
+            this.btnManageUser.Click += new System.EventHandler(this.btnManageUser_Click);
             // 
             // TransferTicket
             // 
@@ -149,6 +185,9 @@ namespace GardenGroupUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(217)))), ((int)(((byte)(112)))));
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.btnTicketOverview);
+            this.Controls.Add(this.btnDashboard);
+            this.Controls.Add(this.btnManageUser);
             this.Controls.Add(this.lblLoggedinUser);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -159,7 +198,7 @@ namespace GardenGroupUI
             this.Controls.Add(this.btnTransfer);
             this.Controls.Add(this.txtCurrentUser);
             this.Controls.Add(this.cmbUser);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "TransferTicket";
             this.Text = "TransferTicket";
             this.Load += new System.EventHandler(this.TransferTicket_Load);
@@ -180,5 +219,8 @@ namespace GardenGroupUI
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblLoggedinUser;
+        private System.Windows.Forms.Button btnTicketOverview;
+        private System.Windows.Forms.Button btnDashboard;
+        private System.Windows.Forms.Button btnManageUser;
     }
 }

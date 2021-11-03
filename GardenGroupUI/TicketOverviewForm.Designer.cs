@@ -43,23 +43,20 @@ namespace GardenGroupUI
             this.btnCreateIncident = new System.Windows.Forms.Button();
             this.cmbSortBy = new System.Windows.Forms.ComboBox();
             this.btnRefresh = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblUser = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lblTypeOfUser = new System.Windows.Forms.Label();
             this.btnTransfer = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblEmail = new System.Windows.Forms.Label();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnStatistics = new System.Windows.Forms.Button();
             this.btnrchive = new System.Windows.Forms.Button();
+            this.btnTicketOverview = new System.Windows.Forms.Button();
+            this.btnDashboard = new System.Windows.Forms.Button();
+            this.btnManageUser = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(33, 119);
+            this.label1.Location = new System.Drawing.Point(30, 192);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(398, 59);
             this.label1.TabIndex = 3;
@@ -81,10 +78,10 @@ namespace GardenGroupUI
             this.listViewTickets.FullRowSelect = true;
             this.listViewTickets.GridLines = true;
             this.listViewTickets.HideSelection = false;
-            this.listViewTickets.Location = new System.Drawing.Point(44, 242);
+            this.listViewTickets.Location = new System.Drawing.Point(43, 313);
             this.listViewTickets.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listViewTickets.Name = "listViewTickets";
-            this.listViewTickets.Size = new System.Drawing.Size(1477, 590);
+            this.listViewTickets.Size = new System.Drawing.Size(1477, 461);
             this.listViewTickets.TabIndex = 8;
             this.listViewTickets.UseCompatibleStateImageBehavior = false;
             this.listViewTickets.View = System.Windows.Forms.View.Details;
@@ -140,12 +137,12 @@ namespace GardenGroupUI
             // 
             this.btnCreateIncident.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnCreateIncident.ForeColor = System.Drawing.Color.Black;
-            this.btnCreateIncident.Location = new System.Drawing.Point(679, 178);
+            this.btnCreateIncident.Location = new System.Drawing.Point(461, 249);
             this.btnCreateIncident.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCreateIncident.Name = "btnCreateIncident";
             this.btnCreateIncident.Size = new System.Drawing.Size(147, 60);
             this.btnCreateIncident.TabIndex = 5;
-            this.btnCreateIncident.Text = "&CREATE INCIDENT";
+            this.btnCreateIncident.Text = "&Create incident";
             this.btnCreateIncident.UseVisualStyleBackColor = false;
             this.btnCreateIncident.Click += new System.EventHandler(this.btnCreateIncident_Click);
             // 
@@ -161,8 +158,8 @@ namespace GardenGroupUI
             "Reported date",
             "Deadline",
             "Solved"});
-            this.cmbSortBy.Location = new System.Drawing.Point(44, 191);
-            this.cmbSortBy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbSortBy.Location = new System.Drawing.Point(41, 264);
+            this.cmbSortBy.Margin = new System.Windows.Forms.Padding(4);
             this.cmbSortBy.Name = "cmbSortBy";
             this.cmbSortBy.Size = new System.Drawing.Size(379, 45);
             this.cmbSortBy.TabIndex = 18;
@@ -172,87 +169,27 @@ namespace GardenGroupUI
             // 
             this.btnRefresh.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnRefresh.ForeColor = System.Drawing.Color.Black;
-            this.btnRefresh.Location = new System.Drawing.Point(445, 178);
+            this.btnRefresh.Location = new System.Drawing.Point(1373, 778);
             this.btnRefresh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(147, 60);
             this.btnRefresh.TabIndex = 19;
-            this.btnRefresh.Text = "&REFRESH";
+            this.btnRefresh.Text = "&Refresh";
             this.btnRefresh.UseVisualStyleBackColor = false;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(36, 7);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(162, 38);
-            this.label2.TabIndex = 20;
-            this.label2.Text = "Welcome:";
-            // 
-            // lblUser
-            // 
-            this.lblUser.AutoSize = true;
-            this.lblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUser.Location = new System.Drawing.Point(211, 14);
-            this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(30, 32);
-            this.lblUser.TabIndex = 21;
-            this.lblUser.Text = "_";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(36, 81);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(93, 38);
-            this.label4.TabIndex = 22;
-            this.label4.Text = "Role:";
-            // 
-            // lblTypeOfUser
-            // 
-            this.lblTypeOfUser.AutoSize = true;
-            this.lblTypeOfUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTypeOfUser.Location = new System.Drawing.Point(145, 86);
-            this.lblTypeOfUser.Name = "lblTypeOfUser";
-            this.lblTypeOfUser.Size = new System.Drawing.Size(30, 32);
-            this.lblTypeOfUser.TabIndex = 23;
-            this.lblTypeOfUser.Text = "_";
             // 
             // btnTransfer
             // 
             this.btnTransfer.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnTransfer.ForeColor = System.Drawing.Color.Black;
-            this.btnTransfer.Location = new System.Drawing.Point(927, 178);
+            this.btnTransfer.Location = new System.Drawing.Point(679, 249);
             this.btnTransfer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTransfer.Name = "btnTransfer";
             this.btnTransfer.Size = new System.Drawing.Size(147, 60);
             this.btnTransfer.TabIndex = 24;
-            this.btnTransfer.Text = "&TRANSFER TICKET";
+            this.btnTransfer.Text = "&Transfer ticket";
             this.btnTransfer.UseVisualStyleBackColor = false;
             this.btnTransfer.Click += new System.EventHandler(this.btnTransfer_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(36, 43);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(107, 38);
-            this.label3.TabIndex = 25;
-            this.label3.Text = "Email:";
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(145, 48);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(30, 32);
-            this.lblEmail.TabIndex = 26;
-            this.lblEmail.Text = "_";
             // 
             // btnLogout
             // 
@@ -263,7 +200,7 @@ namespace GardenGroupUI
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(147, 60);
             this.btnLogout.TabIndex = 27;
-            this.btnLogout.Text = "LOGOUT";
+            this.btnLogout.Text = "&Logout";
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
@@ -271,12 +208,12 @@ namespace GardenGroupUI
             // 
             this.btnStatistics.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnStatistics.ForeColor = System.Drawing.Color.Black;
-            this.btnStatistics.Location = new System.Drawing.Point(1376, 176);
+            this.btnStatistics.Location = new System.Drawing.Point(1113, 249);
             this.btnStatistics.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnStatistics.Name = "btnStatistics";
             this.btnStatistics.Size = new System.Drawing.Size(147, 60);
             this.btnStatistics.TabIndex = 28;
-            this.btnStatistics.Text = "&STATISTICS";
+            this.btnStatistics.Text = "&Statistics";
             this.btnStatistics.UseVisualStyleBackColor = false;
             this.btnStatistics.Click += new System.EventHandler(this.btnStatistics_Click);
             // 
@@ -284,31 +221,60 @@ namespace GardenGroupUI
             // 
             this.btnrchive.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnrchive.ForeColor = System.Drawing.Color.Black;
-            this.btnrchive.Location = new System.Drawing.Point(1155, 176);
+            this.btnrchive.Location = new System.Drawing.Point(896, 249);
             this.btnrchive.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnrchive.Name = "btnrchive";
             this.btnrchive.Size = new System.Drawing.Size(147, 60);
             this.btnrchive.TabIndex = 29;
-            this.btnrchive.Text = "&ARCHIVE";
+            this.btnrchive.Text = "&Archive ticket";
             this.btnrchive.UseVisualStyleBackColor = false;
             this.btnrchive.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnTicketOverview
+            // 
+            this.btnTicketOverview.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnTicketOverview.Location = new System.Drawing.Point(596, 126);
+            this.btnTicketOverview.Name = "btnTicketOverview";
+            this.btnTicketOverview.Size = new System.Drawing.Size(379, 63);
+            this.btnTicketOverview.TabIndex = 32;
+            this.btnTicketOverview.Text = "&Ticket overview";
+            this.btnTicketOverview.UseVisualStyleBackColor = false;
+            // 
+            // btnDashboard
+            // 
+            this.btnDashboard.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnDashboard.Location = new System.Drawing.Point(40, 126);
+            this.btnDashboard.Name = "btnDashboard";
+            this.btnDashboard.Size = new System.Drawing.Size(380, 63);
+            this.btnDashboard.TabIndex = 31;
+            this.btnDashboard.Text = "&Dashboard";
+            this.btnDashboard.UseVisualStyleBackColor = false;
+            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
+            // 
+            // btnManageUser
+            // 
+            this.btnManageUser.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnManageUser.Location = new System.Drawing.Point(1142, 126);
+            this.btnManageUser.Name = "btnManageUser";
+            this.btnManageUser.Size = new System.Drawing.Size(378, 63);
+            this.btnManageUser.TabIndex = 30;
+            this.btnManageUser.Text = "&Manage user";
+            this.btnManageUser.UseVisualStyleBackColor = false;
+            this.btnManageUser.Click += new System.EventHandler(this.btnManageUser_Click);
             // 
             // TicketOverviewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(217)))), ((int)(((byte)(112)))));
-            this.ClientSize = new System.Drawing.Size(1537, 898);
+            this.ClientSize = new System.Drawing.Size(1537, 900);
+            this.Controls.Add(this.btnTicketOverview);
+            this.Controls.Add(this.btnDashboard);
+            this.Controls.Add(this.btnManageUser);
             this.Controls.Add(this.btnrchive);
             this.Controls.Add(this.btnStatistics);
             this.Controls.Add(this.btnLogout);
-            this.Controls.Add(this.lblEmail);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnTransfer);
-            this.Controls.Add(this.lblTypeOfUser);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.lblUser);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.cmbSortBy);
             this.Controls.Add(this.btnCreateIncident);
@@ -338,15 +304,12 @@ namespace GardenGroupUI
         private System.Windows.Forms.ColumnHeader Description;
         private System.Windows.Forms.ComboBox cmbSortBy;
         private System.Windows.Forms.Button btnRefresh;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblUser;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label lblTypeOfUser;
         private System.Windows.Forms.Button btnTransfer;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnStatistics;
         private System.Windows.Forms.Button btnrchive;
+        private System.Windows.Forms.Button btnTicketOverview;
+        private System.Windows.Forms.Button btnDashboard;
+        private System.Windows.Forms.Button btnManageUser;
     }
 }

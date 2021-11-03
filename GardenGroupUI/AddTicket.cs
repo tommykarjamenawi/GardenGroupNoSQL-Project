@@ -118,42 +118,27 @@ namespace GardenGroupUI
             cmbTypeOfIncident.DataSource = Enum.GetValues(typeof(Enums.TypeOfIncident));
             cmbTypeOfPriority.DataSource = Enum.GetValues(typeof(Enums.TypeOfPriority));
         }
-        //private void EnableButtonAdd()
-        //{
-        //    if (txtSubject.Text != "" && txtDescription.Text != "" && cmbUser.SelectedIndex > -1 && cmbTypeOfIncident.SelectedIndex > -1 && cmbTypeOfIncident.SelectedIndex > -1 && dtpDeadline.Value > DateTime.Now)
-        //    {
-        //        btnAdd.Enabled = true;
-        //    }
-        //}
 
-        //private void txtSubject_TextChanged(object sender, EventArgs e)
-        //{
-        //    EnableButtonAdd();
-        //}
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            TicketOverviewStatistics ticketOverviewStatistics = new TicketOverviewStatistics(user);
+            this.Hide();
+            ticketOverviewStatistics.ShowDialog();
+        }
 
-        //private void cmbTypeOfIncident_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    EnableButtonAdd();
-        //}
+        private void btnTicketOverview_Click(object sender, EventArgs e)
+        {
+            TicketOverviewForm ticketOverviewForm = new TicketOverviewForm(user);
+            this.Hide();
+            ticketOverviewForm.ShowDialog();
+        }
 
-        //private void cmbUser_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    EnableButtonAdd();
-        //}
-
-        //private void cmbTypeOfPriority_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    EnableButtonAdd();
-        //}
-
-        //private void dtpDeadline_ValueChanged(object sender, EventArgs e)
-        //{
-        //    EnableButtonAdd();
-        //}
-
-        //private void txtDescription_TextChanged(object sender, EventArgs e)
-        //{
-        //    EnableButtonAdd();
-        //}
+        private void btnManageUser_Click(object sender, EventArgs e)
+        {
+            ManageUser manageUser = new ManageUser(user);
+            this.Hide();
+            manageUser.ShowDialog();
+        }
+      
     }
 }

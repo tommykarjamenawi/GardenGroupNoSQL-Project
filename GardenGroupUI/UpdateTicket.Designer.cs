@@ -49,23 +49,26 @@ namespace GardenGroupUI
             this.btnStatus = new System.Windows.Forms.Button();
             this.txtUser = new System.Windows.Forms.TextBox();
             this.txtDateReported = new System.Windows.Forms.TextBox();
+            this.btnTicketOverview = new System.Windows.Forms.Button();
+            this.btnDashboard = new System.Windows.Forms.Button();
+            this.btnManageUser = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // dtpDeadline
             // 
-            this.dtpDeadline.Location = new System.Drawing.Point(269, 231);
-            this.dtpDeadline.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpDeadline.Location = new System.Drawing.Point(267, 334);
+            this.dtpDeadline.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpDeadline.Name = "dtpDeadline";
-            this.dtpDeadline.Size = new System.Drawing.Size(161, 20);
+            this.dtpDeadline.Size = new System.Drawing.Size(213, 22);
             this.dtpDeadline.TabIndex = 53;
             // 
             // btnUpdate
             // 
             this.btnUpdate.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnUpdate.Location = new System.Drawing.Point(146, 288);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUpdate.Location = new System.Drawing.Point(486, 375);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(77, 28);
+            this.btnUpdate.Size = new System.Drawing.Size(103, 34);
             this.btnUpdate.TabIndex = 51;
             this.btnUpdate.Text = "&Update ticket";
             this.btnUpdate.UseVisualStyleBackColor = false;
@@ -75,10 +78,10 @@ namespace GardenGroupUI
             // 
             this.btnCancel.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnCancel.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.btnCancel.Location = new System.Drawing.Point(352, 326);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancel.Location = new System.Drawing.Point(377, 451);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(77, 28);
+            this.btnCancel.Size = new System.Drawing.Size(103, 34);
             this.btnCancel.TabIndex = 50;
             this.btnCancel.Text = "&Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -88,114 +91,107 @@ namespace GardenGroupUI
             // 
             this.cmbTypeOfPriority.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTypeOfPriority.FormattingEnabled = true;
-            this.cmbTypeOfPriority.Location = new System.Drawing.Point(269, 197);
-            this.cmbTypeOfPriority.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbTypeOfPriority.Location = new System.Drawing.Point(267, 292);
+            this.cmbTypeOfPriority.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbTypeOfPriority.Name = "cmbTypeOfPriority";
-            this.cmbTypeOfPriority.Size = new System.Drawing.Size(161, 21);
+            this.cmbTypeOfPriority.Size = new System.Drawing.Size(213, 24);
             this.cmbTypeOfPriority.TabIndex = 49;
             // 
             // cmbTypeOfIncident
             // 
             this.cmbTypeOfIncident.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTypeOfIncident.FormattingEnabled = true;
-            this.cmbTypeOfIncident.Location = new System.Drawing.Point(269, 127);
-            this.cmbTypeOfIncident.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbTypeOfIncident.Location = new System.Drawing.Point(267, 206);
+            this.cmbTypeOfIncident.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbTypeOfIncident.Name = "cmbTypeOfIncident";
-            this.cmbTypeOfIncident.Size = new System.Drawing.Size(161, 21);
+            this.cmbTypeOfIncident.Size = new System.Drawing.Size(213, 24);
             this.cmbTypeOfIncident.TabIndex = 48;
             // 
             // txtSubject
             // 
-            this.txtSubject.Location = new System.Drawing.Point(269, 94);
-            this.txtSubject.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSubject.Location = new System.Drawing.Point(267, 166);
+            this.txtSubject.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSubject.Name = "txtSubject";
-            this.txtSubject.Size = new System.Drawing.Size(161, 20);
+            this.txtSubject.Size = new System.Drawing.Size(213, 22);
             this.txtSubject.TabIndex = 47;
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(269, 264);
-            this.txtDescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDescription.Location = new System.Drawing.Point(267, 375);
+            this.txtDescription.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(161, 59);
+            this.txtDescription.Size = new System.Drawing.Size(213, 72);
             this.txtDescription.TabIndex = 46;
             // 
             // txtPhoneNumber
             // 
-            this.txtPhoneNumber.Location = new System.Drawing.Point(676, 129);
-            this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPhoneNumber.Location = new System.Drawing.Point(901, 159);
+            this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
-            this.txtPhoneNumber.Size = new System.Drawing.Size(161, 20);
+            this.txtPhoneNumber.Size = new System.Drawing.Size(213, 22);
             this.txtPhoneNumber.TabIndex = 45;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(143, 264);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Location = new System.Drawing.Point(99, 375);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(63, 13);
+            this.label8.Size = new System.Drawing.Size(83, 17);
             this.label8.TabIndex = 44;
             this.label8.Text = "Description:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(143, 67);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Location = new System.Drawing.Point(99, 132);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(99, 13);
+            this.label7.Size = new System.Drawing.Size(130, 17);
             this.label7.TabIndex = 43;
             this.label7.Text = "Date/time reported:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(143, 202);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(99, 299);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(79, 13);
+            this.label6.Size = new System.Drawing.Size(107, 17);
             this.label6.TabIndex = 42;
             this.label6.Text = "Type of priority:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(143, 234);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(99, 338);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(52, 13);
+            this.label5.Size = new System.Drawing.Size(68, 17);
             this.label5.TabIndex = 41;
             this.label5.Text = "Deadline:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(143, 132);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(99, 212);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 13);
+            this.label4.Size = new System.Drawing.Size(113, 17);
             this.label4.TabIndex = 40;
             this.label4.Text = "Type of incident:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(145, 98);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(101, 171);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(98, 13);
+            this.label3.Size = new System.Drawing.Size(128, 17);
             this.label3.TabIndex = 39;
             this.label3.Text = "Subject of incident:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(143, 167);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(99, 256);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 13);
+            this.label2.Size = new System.Drawing.Size(122, 17);
             this.label2.TabIndex = 38;
             this.label2.Text = "Reported by user:";
             // 
@@ -203,20 +199,19 @@ namespace GardenGroupUI
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(142, 21);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(98, 84);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(233, 26);
+            this.label1.Size = new System.Drawing.Size(287, 31);
             this.label1.TabIndex = 37;
             this.label1.Text = "Update current ticket";
             // 
             // btnRemove
             // 
             this.btnRemove.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnRemove.Location = new System.Drawing.Point(269, 326);
-            this.btnRemove.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRemove.Location = new System.Drawing.Point(267, 451);
+            this.btnRemove.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(77, 28);
+            this.btnRemove.Size = new System.Drawing.Size(103, 34);
             this.btnRemove.TabIndex = 55;
             this.btnRemove.Text = "&Remove ticket";
             this.btnRemove.UseVisualStyleBackColor = false;
@@ -226,10 +221,10 @@ namespace GardenGroupUI
             // 
             this.btnStatus.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnStatus.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.btnStatus.Location = new System.Drawing.Point(146, 326);
-            this.btnStatus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnStatus.Location = new System.Drawing.Point(486, 413);
+            this.btnStatus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnStatus.Name = "btnStatus";
-            this.btnStatus.Size = new System.Drawing.Size(77, 28);
+            this.btnStatus.Size = new System.Drawing.Size(103, 34);
             this.btnStatus.TabIndex = 56;
             this.btnStatus.Text = "&Solve Ticket";
             this.btnStatus.UseVisualStyleBackColor = false;
@@ -237,27 +232,63 @@ namespace GardenGroupUI
             // 
             // txtUser
             // 
-            this.txtUser.Location = new System.Drawing.Point(269, 163);
-            this.txtUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUser.Location = new System.Drawing.Point(267, 251);
+            this.txtUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUser.Name = "txtUser";
             this.txtUser.ReadOnly = true;
-            this.txtUser.Size = new System.Drawing.Size(161, 20);
+            this.txtUser.Size = new System.Drawing.Size(213, 22);
             this.txtUser.TabIndex = 57;
             // 
             // txtDateReported
             // 
-            this.txtDateReported.Location = new System.Drawing.Point(269, 67);
-            this.txtDateReported.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDateReported.Location = new System.Drawing.Point(267, 132);
+            this.txtDateReported.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDateReported.Name = "txtDateReported";
-            this.txtDateReported.Size = new System.Drawing.Size(161, 20);
+            this.txtDateReported.Size = new System.Drawing.Size(213, 22);
             this.txtDateReported.TabIndex = 58;
+            // 
+            // btnTicketOverview
+            // 
+            this.btnTicketOverview.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnTicketOverview.Location = new System.Drawing.Point(326, 37);
+            this.btnTicketOverview.Name = "btnTicketOverview";
+            this.btnTicketOverview.Size = new System.Drawing.Size(200, 44);
+            this.btnTicketOverview.TabIndex = 61;
+            this.btnTicketOverview.Text = "&Ticket overview";
+            this.btnTicketOverview.UseVisualStyleBackColor = false;
+            this.btnTicketOverview.Click += new System.EventHandler(this.btnTicketOverview_Click);
+            // 
+            // btnDashboard
+            // 
+            this.btnDashboard.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnDashboard.Location = new System.Drawing.Point(100, 37);
+            this.btnDashboard.Name = "btnDashboard";
+            this.btnDashboard.Size = new System.Drawing.Size(200, 44);
+            this.btnDashboard.TabIndex = 60;
+            this.btnDashboard.Text = "&Dashboard";
+            this.btnDashboard.UseVisualStyleBackColor = false;
+            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
+            // 
+            // btnManageUser
+            // 
+            this.btnManageUser.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnManageUser.Location = new System.Drawing.Point(554, 37);
+            this.btnManageUser.Name = "btnManageUser";
+            this.btnManageUser.Size = new System.Drawing.Size(200, 44);
+            this.btnManageUser.TabIndex = 59;
+            this.btnManageUser.Text = "Manage user";
+            this.btnManageUser.UseVisualStyleBackColor = false;
+            this.btnManageUser.Click += new System.EventHandler(this.btnManageUser_Click);
             // 
             // UpdateTicket
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(217)))), ((int)(((byte)(112)))));
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(865, 501);
+            this.Controls.Add(this.btnTicketOverview);
+            this.Controls.Add(this.btnDashboard);
+            this.Controls.Add(this.btnManageUser);
             this.Controls.Add(this.txtDateReported);
             this.Controls.Add(this.txtUser);
             this.Controls.Add(this.btnStatus);
@@ -278,7 +309,7 @@ namespace GardenGroupUI
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UpdateTicket";
             this.Text = "UpdateTicket";
             this.Load += new System.EventHandler(this.UpdateTicket_Load);
@@ -308,5 +339,8 @@ namespace GardenGroupUI
         private System.Windows.Forms.Button btnStatus;
         private System.Windows.Forms.TextBox txtUser;
         private System.Windows.Forms.TextBox txtDateReported;
+        private System.Windows.Forms.Button btnTicketOverview;
+        private System.Windows.Forms.Button btnDashboard;
+        private System.Windows.Forms.Button btnManageUser;
     }
 }

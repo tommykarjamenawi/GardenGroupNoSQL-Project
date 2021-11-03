@@ -27,7 +27,6 @@ namespace GardenGroupUI
             ticketArchiveService = new TicketArchiveService();
             InitializeComponent();
             btnTransfer.Enabled = false;
-            btnStatistics.Enabled = false;
 
             // done by Biniam for automatic check to Archive tickets
             CheckTicketyearForArchive();
@@ -36,18 +35,8 @@ namespace GardenGroupUI
         private void TicketOverviewForm_Load(object sender, EventArgs e)
         {
             if (user.TypeOfUser == Enums.TypeOfUser.EndUser.ToString())
-            {
-                lblUser.Text = user.FirstName + " " + user.LastName;
-                lblTypeOfUser.Text = user.TypeOfUser;
-                lblEmail.Text = user.Email;
-            }
-            else
-            {
-                btnStatistics.Enabled = true;
-                lblUser.Text = user.FirstName + " " + user.LastName;
-                lblTypeOfUser.Text = user.TypeOfUser;
-                lblEmail.Text = user.Email;
-            }
+                btnStatistics.Enabled = false;
+
                 DisplayAllTickets();          
         }
 
@@ -217,6 +206,20 @@ namespace GardenGroupUI
                 }
 
             }
+        }
+
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            TicketOverviewStatistics ticketOverviewStatistics = new TicketOverviewStatistics(user);
+            this.Hide();
+            ticketOverviewStatistics.ShowDialog();
+        }
+
+        private void btnManageUser_Click(object sender, EventArgs e)
+        {
+            ManageUser manageUser = new ManageUser(user);
+            this.Hide();
+            manageUser.ShowDialog();
         }
     }
 }

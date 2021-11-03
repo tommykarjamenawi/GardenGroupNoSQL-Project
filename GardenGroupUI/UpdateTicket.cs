@@ -131,6 +131,27 @@ namespace GardenGroupUI
             MessageBox.Show($"Ticket {ticket.Id} has been updated!");
             this.Close();
         }
+
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            TicketOverviewStatistics ticketOverviewStatistics = new TicketOverviewStatistics(user);
+            this.Hide();
+            ticketOverviewStatistics.ShowDialog();
+        }
+
+        private void btnTicketOverview_Click(object sender, EventArgs e)
+        {
+            TicketOverviewForm ticketOverviewForm = new TicketOverviewForm(user);
+            this.Hide();
+            ticketOverviewForm.ShowDialog();
+        }
+
+        private void btnManageUser_Click(object sender, EventArgs e)
+        {
+            ManageUser manageUser = new ManageUser(user);
+            this.Hide();
+            manageUser.ShowDialog();
+        }
     }
 
 
