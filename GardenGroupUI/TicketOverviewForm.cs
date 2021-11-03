@@ -178,13 +178,6 @@ namespace GardenGroupUI
             ls.ShowDialog();
         }
 
-        private void btnStatistics_Click(object sender, EventArgs e)
-        {
-            TicketOverviewStatistics tos = new TicketOverviewStatistics(user);
-            this.Hide();
-            tos.ShowDialog();
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
 

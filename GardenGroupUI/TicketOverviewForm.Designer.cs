@@ -45,7 +45,6 @@ namespace GardenGroupUI
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnTransfer = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
-            this.btnStatistics = new System.Windows.Forms.Button();
             this.btnrchive = new System.Windows.Forms.Button();
             this.btnTicketOverview = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
@@ -204,19 +203,6 @@ namespace GardenGroupUI
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
-            // btnStatistics
-            // 
-            this.btnStatistics.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnStatistics.ForeColor = System.Drawing.Color.Black;
-            this.btnStatistics.Location = new System.Drawing.Point(1102, 246);
-            this.btnStatistics.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnStatistics.Name = "btnStatistics";
-            this.btnStatistics.Size = new System.Drawing.Size(147, 60);
-            this.btnStatistics.TabIndex = 28;
-            this.btnStatistics.Text = "&Statistics";
-            this.btnStatistics.UseVisualStyleBackColor = false;
-            this.btnStatistics.Click += new System.EventHandler(this.btnStatistics_Click);
-            // 
             // btnrchive
             // 
             this.btnrchive.BackColor = System.Drawing.Color.MediumSeaGreen;
@@ -272,7 +258,6 @@ namespace GardenGroupUI
             this.Controls.Add(this.btnDashboard);
             this.Controls.Add(this.btnManageUser);
             this.Controls.Add(this.btnrchive);
-            this.Controls.Add(this.btnStatistics);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnTransfer);
             this.Controls.Add(this.btnRefresh);
@@ -306,7 +291,6 @@ namespace GardenGroupUI
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnTransfer;
         private System.Windows.Forms.Button btnLogout;
-        private System.Windows.Forms.Button btnStatistics;
         private System.Windows.Forms.Button btnrchive;
         private System.Windows.Forms.Button btnTicketOverview;
         private System.Windows.Forms.Button btnDashboard;
