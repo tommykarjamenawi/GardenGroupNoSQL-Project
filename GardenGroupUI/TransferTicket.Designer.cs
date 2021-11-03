@@ -57,7 +57,7 @@ namespace GardenGroupUI
             // 
             // txtCurrentUser
             // 
-            this.txtCurrentUser.Location = new System.Drawing.Point(469, 322);
+            this.txtCurrentUser.Location = new System.Drawing.Point(455, 323);
             this.txtCurrentUser.Margin = new System.Windows.Forms.Padding(4);
             this.txtCurrentUser.Name = "txtCurrentUser";
             this.txtCurrentUser.ReadOnly = true;
@@ -88,7 +88,7 @@ namespace GardenGroupUI
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(480, 302);
+            this.label1.Location = new System.Drawing.Point(466, 303);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(134, 17);
