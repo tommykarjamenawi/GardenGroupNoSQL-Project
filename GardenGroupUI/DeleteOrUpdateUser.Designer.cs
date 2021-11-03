@@ -48,13 +48,16 @@ namespace GardenGroupUI
             this.btnTicketOverview = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.btnManageUser = new System.Windows.Forms.Button();
+            this.lblEmailSignedIn = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cmbLocationBranch
             // 
             this.cmbLocationBranch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbLocationBranch.FormattingEnabled = true;
-            this.cmbLocationBranch.Location = new System.Drawing.Point(248, 405);
+            this.cmbLocationBranch.Location = new System.Drawing.Point(252, 504);
             this.cmbLocationBranch.Name = "cmbLocationBranch";
             this.cmbLocationBranch.Size = new System.Drawing.Size(213, 24);
             this.cmbLocationBranch.TabIndex = 25;
@@ -63,35 +66,35 @@ namespace GardenGroupUI
             // 
             this.cmbTypeOfUser.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTypeOfUser.FormattingEnabled = true;
-            this.cmbTypeOfUser.Location = new System.Drawing.Point(248, 293);
+            this.cmbTypeOfUser.Location = new System.Drawing.Point(252, 392);
             this.cmbTypeOfUser.Name = "cmbTypeOfUser";
             this.cmbTypeOfUser.Size = new System.Drawing.Size(213, 24);
             this.cmbTypeOfUser.TabIndex = 24;
             // 
             // txtLastName
             // 
-            this.txtLastName.Location = new System.Drawing.Point(247, 258);
+            this.txtLastName.Location = new System.Drawing.Point(251, 357);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(213, 22);
             this.txtLastName.TabIndex = 23;
             // 
             // txtEmailAddress
             // 
-            this.txtEmailAddress.Location = new System.Drawing.Point(248, 334);
+            this.txtEmailAddress.Location = new System.Drawing.Point(252, 433);
             this.txtEmailAddress.Name = "txtEmailAddress";
             this.txtEmailAddress.Size = new System.Drawing.Size(213, 22);
             this.txtEmailAddress.TabIndex = 22;
             // 
             // txtPhoneNumber
             // 
-            this.txtPhoneNumber.Location = new System.Drawing.Point(248, 371);
+            this.txtPhoneNumber.Location = new System.Drawing.Point(252, 470);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(213, 22);
             this.txtPhoneNumber.TabIndex = 21;
             // 
             // txtFirstName
             // 
-            this.txtFirstName.Location = new System.Drawing.Point(248, 222);
+            this.txtFirstName.Location = new System.Drawing.Point(252, 321);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(213, 22);
             this.txtFirstName.TabIndex = 20;
@@ -99,7 +102,7 @@ namespace GardenGroupUI
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(80, 337);
+            this.label8.Location = new System.Drawing.Point(84, 436);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(106, 17);
             this.label8.TabIndex = 19;
@@ -108,7 +111,7 @@ namespace GardenGroupUI
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(80, 374);
+            this.label7.Location = new System.Drawing.Point(84, 473);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(105, 17);
             this.label7.TabIndex = 18;
@@ -117,7 +120,7 @@ namespace GardenGroupUI
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(83, 408);
+            this.label6.Location = new System.Drawing.Point(87, 507);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(114, 17);
             this.label6.TabIndex = 17;
@@ -126,7 +129,7 @@ namespace GardenGroupUI
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(80, 302);
+            this.label4.Location = new System.Drawing.Point(84, 401);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(92, 17);
             this.label4.TabIndex = 16;
@@ -135,7 +138,7 @@ namespace GardenGroupUI
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(80, 263);
+            this.label3.Location = new System.Drawing.Point(84, 362);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(78, 17);
             this.label3.TabIndex = 15;
@@ -144,7 +147,7 @@ namespace GardenGroupUI
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(83, 228);
+            this.label2.Location = new System.Drawing.Point(87, 327);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 17);
             this.label2.TabIndex = 14;
@@ -153,7 +156,7 @@ namespace GardenGroupUI
             // btnUpdate
             // 
             this.btnUpdate.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnUpdate.Location = new System.Drawing.Point(196, 469);
+            this.btnUpdate.Location = new System.Drawing.Point(200, 568);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(106, 37);
             this.btnUpdate.TabIndex = 26;
@@ -164,7 +167,7 @@ namespace GardenGroupUI
             // btnRemove
             // 
             this.btnRemove.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnRemove.Location = new System.Drawing.Point(303, 469);
+            this.btnRemove.Location = new System.Drawing.Point(307, 568);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(106, 37);
             this.btnRemove.TabIndex = 27;
@@ -176,7 +179,7 @@ namespace GardenGroupUI
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(80, 171);
+            this.label1.Location = new System.Drawing.Point(84, 270);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(311, 31);
             this.label1.TabIndex = 28;
@@ -185,7 +188,7 @@ namespace GardenGroupUI
             // btnArchive
             // 
             this.btnArchive.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnArchive.Location = new System.Drawing.Point(415, 469);
+            this.btnArchive.Location = new System.Drawing.Point(419, 568);
             this.btnArchive.Name = "btnArchive";
             this.btnArchive.Size = new System.Drawing.Size(106, 37);
             this.btnArchive.TabIndex = 29;
@@ -196,7 +199,7 @@ namespace GardenGroupUI
             // btnTicketOverview
             // 
             this.btnTicketOverview.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnTicketOverview.Location = new System.Drawing.Point(303, 108);
+            this.btnTicketOverview.Location = new System.Drawing.Point(307, 207);
             this.btnTicketOverview.Name = "btnTicketOverview";
             this.btnTicketOverview.Size = new System.Drawing.Size(200, 44);
             this.btnTicketOverview.TabIndex = 32;
@@ -207,7 +210,7 @@ namespace GardenGroupUI
             // btnDashboard
             // 
             this.btnDashboard.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnDashboard.Location = new System.Drawing.Point(77, 108);
+            this.btnDashboard.Location = new System.Drawing.Point(81, 207);
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.Size = new System.Drawing.Size(200, 44);
             this.btnDashboard.TabIndex = 31;
@@ -218,7 +221,7 @@ namespace GardenGroupUI
             // btnManageUser
             // 
             this.btnManageUser.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnManageUser.Location = new System.Drawing.Point(531, 108);
+            this.btnManageUser.Location = new System.Drawing.Point(535, 207);
             this.btnManageUser.Name = "btnManageUser";
             this.btnManageUser.Size = new System.Drawing.Size(200, 44);
             this.btnManageUser.TabIndex = 30;
@@ -226,12 +229,48 @@ namespace GardenGroupUI
             this.btnManageUser.UseVisualStyleBackColor = false;
             this.btnManageUser.Click += new System.EventHandler(this.btnManageUser_Click);
             // 
+            // lblEmailSignedIn
+            // 
+            this.lblEmailSignedIn.AutoSize = true;
+            this.lblEmailSignedIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmailSignedIn.Location = new System.Drawing.Point(582, 17);
+            this.lblEmailSignedIn.Name = "lblEmailSignedIn";
+            this.lblEmailSignedIn.Size = new System.Drawing.Size(29, 20);
+            this.lblEmailSignedIn.TabIndex = 35;
+            this.lblEmailSignedIn.Text = ".....";
+            
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(482, 15);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(94, 24);
+            this.label5.TabIndex = 34;
+            this.label5.Text = "sign in as:";
+           
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnLogout.Location = new System.Drawing.Point(584, 43);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(151, 31);
+            this.btnLogout.TabIndex = 33;
+            this.btnLogout.Text = "&Logout";
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
             // DeleteOrUpdateUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(217)))), ((int)(((byte)(112)))));
-            this.ClientSize = new System.Drawing.Size(812, 543);
+            this.ClientSize = new System.Drawing.Size(812, 657);
+            this.Controls.Add(this.lblEmailSignedIn);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnTicketOverview);
             this.Controls.Add(this.btnDashboard);
             this.Controls.Add(this.btnManageUser);
@@ -279,5 +318,8 @@ namespace GardenGroupUI
         private System.Windows.Forms.Button btnTicketOverview;
         private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.Button btnManageUser;
+        private System.Windows.Forms.Label lblEmailSignedIn;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnLogout;
     }
 }

@@ -44,6 +44,9 @@ namespace GardenGroupUI
             this.btnTicketOverview = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.btnManageUser = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblEmailSignedIn = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -191,12 +194,46 @@ namespace GardenGroupUI
             this.btnManageUser.Text = "Manage user";
             this.btnManageUser.UseVisualStyleBackColor = false;
             // 
+            // btnLogout
+            // 
+            this.btnLogout.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnLogout.Location = new System.Drawing.Point(917, 36);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(151, 31);
+            this.btnLogout.TabIndex = 17;
+            this.btnLogout.Text = "&Logout";
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(815, 8);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(94, 24);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "sign in as:";
+            // 
+            // lblEmailSignedIn
+            // 
+            this.lblEmailSignedIn.AutoSize = true;
+            this.lblEmailSignedIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmailSignedIn.Location = new System.Drawing.Point(915, 10);
+            this.lblEmailSignedIn.Name = "lblEmailSignedIn";
+            this.lblEmailSignedIn.Size = new System.Drawing.Size(29, 20);
+            this.lblEmailSignedIn.TabIndex = 19;
+            this.lblEmailSignedIn.Text = ".....";
+            // 
             // ManageUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(217)))), ((int)(((byte)(112)))));
             this.ClientSize = new System.Drawing.Size(1145, 842);
+            this.Controls.Add(this.lblEmailSignedIn);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnTicketOverview);
             this.Controls.Add(this.btnDashboard);
             this.Controls.Add(this.btnManageUser);
@@ -232,5 +269,8 @@ namespace GardenGroupUI
         private System.Windows.Forms.Button btnTicketOverview;
         private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.Button btnManageUser;
+        private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblEmailSignedIn;
     }
 }

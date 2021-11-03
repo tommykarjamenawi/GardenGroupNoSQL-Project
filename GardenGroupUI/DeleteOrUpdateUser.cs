@@ -9,26 +9,28 @@ namespace GardenGroupUI
     public partial class DeleteOrUpdateUser : Form
     {
         User user = new User();
+        User user1 = new User();
         UserService userService = new UserService();
         UserArchiveService userArchiveService = new UserArchiveService();
         TicketService ticketService = new TicketService();
-        public DeleteOrUpdateUser(User user)
+        public DeleteOrUpdateUser(User user1,User user)
         {
             InitializeComponent();
             this.user = user;
+            this.user1 = user1;
             FillForm();
         }
 
         void FillForm()
         {
-            txtFirstName.Text = user.FirstName;
-            txtLastName.Text = user.LastName;
-            txtPhoneNumber.Text = user.Phone;
-            txtEmailAddress.Text = user.Email;
+            txtFirstName.Text = user1.FirstName;
+            txtLastName.Text = user1.LastName;
+            txtPhoneNumber.Text = user1.Phone;
+            txtEmailAddress.Text = user1.Email;
             cmbLocationBranch.DataSource = Enum.GetValues(typeof(Enums.Branch));
-            cmbLocationBranch.Text = user.branch;
+            cmbLocationBranch.Text = user1.branch;
             cmbTypeOfUser.DataSource = Enum.GetValues(typeof(Enums.TypeOfUser));
-            cmbTypeOfUser.Text = user.TypeOfUser;
+            cmbTypeOfUser.Text = user1.TypeOfUser;
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -57,9 +59,9 @@ namespace GardenGroupUI
                     }
 
                 }
-                
 
-                this.Hide();
+
+                showManageUser();
             }
         }
 
@@ -71,7 +73,7 @@ namespace GardenGroupUI
             {
                 userService.RemoveUser(user);
                 MessageBox.Show("User succesfully removed");
-                this.Close();
+                showManageUser();
             }
             
 
@@ -88,15 +90,14 @@ namespace GardenGroupUI
                 userService.RemoveUser(user);
                 userArchiveService.AddUser(user);
                 MessageBox.Show("User succesfully archived");
-                
-                this.Close();
+
+                showManageUser();
             }
         }
 
         private void btnManageUser_Click(object sender, EventArgs e)
         {
-           
-            this.Hide();
+            showManageUser();
         }
 
         private void btnTicketOverview_Click(object sender, EventArgs e)
@@ -112,5 +113,21 @@ namespace GardenGroupUI
             this.Hide();
             ticketOverviewStatistics.ShowDialog();
         }
+
+        void showManageUser()
+        {
+            ManageUser manageUser = new ManageUser(user);
+            this.Hide();
+            manageUser.ShowDialog();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            LoginScreen loginScreen = new LoginScreen();
+            this.Hide();
+            loginScreen.ShowDialog();
+        }
+
+       
     }
 }

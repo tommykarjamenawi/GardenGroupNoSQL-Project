@@ -22,6 +22,7 @@ namespace GardenGroupUI
             InitializeComponent();
             this.user = user;
             FillForm();
+            lblEmailSignedIn.Text = user.Email;
         }
 
         void FillForm()

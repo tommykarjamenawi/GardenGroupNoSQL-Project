@@ -11,21 +11,22 @@ namespace GardenGroupUI
     {
         private UserService userService ;
         TicketService ticketService ;
-        private User user;
+        private User signinUser;
 
-        public ManageUser(User user)
+        public ManageUser(User signinUser)
         {
             InitializeComponent();
             userService = new UserService();
             ticketService = new TicketService();
-            this.user = user;
+            this.signinUser = signinUser;
             this.txtSearchBox.AutoSize = false;
             this.txtSearchBox.Size = new System.Drawing.Size(261, 25);
+            lblEmailSignedIn.Text = signinUser.Email;
         }
 
         private void btnAddNewUser_Click(object sender, EventArgs e)
         {
-            AddUser addUser = new AddUser();
+            AddUser addUser = new AddUser(signinUser);
             this.Hide();
             addUser.ShowDialog();
         }
@@ -101,8 +102,8 @@ namespace GardenGroupUI
            
             if (lstUsers.SelectedIndices.Count>0)
             {
-                User user = (User)lstUsers.SelectedItems[0].Tag;
-               DeleteOrUpdateUser deleteOrUpdateUser = new DeleteOrUpdateUser(user);
+                User user1 = (User)lstUsers.SelectedItems[0].Tag;
+               DeleteOrUpdateUser deleteOrUpdateUser = new DeleteOrUpdateUser(user1, signinUser);
                 this.Hide();
                 deleteOrUpdateUser.ShowDialog();
                
@@ -121,24 +122,30 @@ namespace GardenGroupUI
 
         private void btnOpenArchive_Click(object sender, EventArgs e)
         {
-            UserArchive archive = new UserArchive(user);
+            UserArchive archive = new UserArchive(signinUser);
             this.Hide();
             archive.ShowDialog();
         }
 
         private void btnTicketOverview_Click(object sender, EventArgs e)
         {
-            TicketOverviewForm ticketOverviewForm = new TicketOverviewForm(user);
+            TicketOverviewForm ticketOverviewForm = new TicketOverviewForm(signinUser);
             this.Hide();
             ticketOverviewForm.ShowDialog();
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            TicketOverviewStatistics ticketOverviewStatistics = new TicketOverviewStatistics(user);
+            TicketOverviewStatistics ticketOverviewStatistics = new TicketOverviewStatistics(signinUser);
             this.Hide();
             ticketOverviewStatistics.ShowDialog();
         }
-       
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            LoginScreen loginScreen = new LoginScreen();
+            this.Hide();
+            loginScreen.ShowDialog();
+        }
     }
 }

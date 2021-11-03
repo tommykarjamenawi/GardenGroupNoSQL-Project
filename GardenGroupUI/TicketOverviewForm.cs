@@ -192,7 +192,7 @@ namespace GardenGroupUI
             tickets = ticketService.GetAllTickets();
             foreach (Ticket t in tickets)
             {
-                if (DateTime.Now.Year - t.ReportedDate.Year > 2)
+                if (DateTime.Now.Year - t.ReportedDate.Year >= 2)
                 {
                     ticketArchiveService.AddTicketToArchive(t);
                     ticketService.RemoveTicket(t);
