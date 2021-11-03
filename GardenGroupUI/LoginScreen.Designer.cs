@@ -99,9 +99,9 @@ namespace GardenGroupUI
             // pictureBox3
             // 
             this.pictureBox3.Image = global::GardenGroupUI.Properties.Resources.nodeskLogo;
-            this.pictureBox3.Location = new System.Drawing.Point(533, 0);
+            this.pictureBox3.Location = new System.Drawing.Point(495, 0);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(75, 62);
+            this.pictureBox3.Size = new System.Drawing.Size(113, 80);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 10;
             this.pictureBox3.TabStop = false;
