@@ -54,6 +54,8 @@ namespace GardenGroupUI
             this.lblName = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblRole = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -289,7 +291,7 @@ namespace GardenGroupUI
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(605, 55);
+            this.label3.Location = new System.Drawing.Point(605, 45);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(90, 36);
             this.label3.TabIndex = 36;
@@ -299,11 +301,31 @@ namespace GardenGroupUI
             // 
             this.lblRole.AutoSize = true;
             this.lblRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRole.Location = new System.Drawing.Point(701, 61);
+            this.lblRole.Location = new System.Drawing.Point(701, 51);
             this.lblRole.Name = "lblRole";
             this.lblRole.Size = new System.Drawing.Size(26, 29);
             this.lblRole.TabIndex = 37;
             this.lblRole.Text = "_";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(605, 80);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(102, 36);
+            this.label4.TabIndex = 38;
+            this.label4.Text = "Email:";
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Location = new System.Drawing.Point(713, 86);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(26, 29);
+            this.lblEmail.TabIndex = 39;
+            this.lblEmail.Text = "_";
             // 
             // TicketOverviewForm
             // 
@@ -311,6 +333,8 @@ namespace GardenGroupUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(217)))), ((int)(((byte)(112)))));
             this.ClientSize = new System.Drawing.Size(1537, 840);
+            this.Controls.Add(this.lblEmail);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.lblRole);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblName);
@@ -363,5 +387,7 @@ namespace GardenGroupUI
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblRole;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblEmail;
     }
 }

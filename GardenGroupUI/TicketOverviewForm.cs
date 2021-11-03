@@ -39,6 +39,7 @@ namespace GardenGroupUI
 
             lblName.Text = user.FirstName + " " + user.LastName;
             lblRole.Text = user.TypeOfUser;
+            lblEmail.Text = user.Email;
 
                 DisplayAllTickets();          
         }
