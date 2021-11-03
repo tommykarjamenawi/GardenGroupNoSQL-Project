@@ -153,9 +153,9 @@ namespace GardenGroupUI
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(781, 10);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(114, 24);
+            this.label3.Size = new System.Drawing.Size(119, 24);
             this.label3.TabIndex = 21;
-            this.label3.Text = "Signed in as";
+            this.label3.Text = "Signed in as:";
             // 
             // btnLogout
             // 
