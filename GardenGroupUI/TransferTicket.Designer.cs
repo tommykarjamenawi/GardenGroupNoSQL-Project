@@ -43,6 +43,7 @@ namespace GardenGroupUI
             this.btnDashboard = new System.Windows.Forms.Button();
             this.btnManageUser = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnLogout = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -129,13 +130,13 @@ namespace GardenGroupUI
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(735, 13);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(727, 13);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(93, 20);
+            this.label5.Size = new System.Drawing.Size(119, 24);
             this.label5.TabIndex = 8;
-            this.label5.Text = "Sign in as";
+            this.label5.Text = "Signed in as:";
             // 
             // lblLoggedinUser
             // 
@@ -192,12 +193,24 @@ namespace GardenGroupUI
             this.pictureBox2.TabIndex = 70;
             this.pictureBox2.TabStop = false;
             // 
+            // btnLogout
+            // 
+            this.btnLogout.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnLogout.Location = new System.Drawing.Point(852, 45);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(151, 31);
+            this.btnLogout.TabIndex = 72;
+            this.btnLogout.Text = "&Logout";
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
             // TransferTicket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(217)))), ((int)(((byte)(112)))));
             this.ClientSize = new System.Drawing.Size(1067, 626);
+            this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.btnTicketOverview);
             this.Controls.Add(this.btnDashboard);
@@ -238,5 +251,6 @@ namespace GardenGroupUI
         private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.Button btnManageUser;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button btnLogout;
     }
 }

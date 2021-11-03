@@ -260,11 +260,11 @@ namespace GardenGroupUI
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(489, 11);
+            this.label9.Location = new System.Drawing.Point(464, 11);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(94, 24);
+            this.label9.Size = new System.Drawing.Size(119, 24);
             this.label9.TabIndex = 21;
-            this.label9.Text = "sign in as:";
+            this.label9.Text = "Signed in as:";
             // 
             // btnLogout
             // 

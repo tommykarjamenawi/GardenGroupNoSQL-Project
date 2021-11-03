@@ -34,6 +34,8 @@ namespace GardenGroupUI
 
         private void UpdateTicket_Load(object sender, EventArgs e)
         {
+            lblEmailSignedIn.Text = user.Email;
+
             if (user.TypeOfUser == Enums.TypeOfUser.EndUser.ToString())
             {
                 btnStatus.Enabled = false;
@@ -152,6 +154,13 @@ namespace GardenGroupUI
             ManageUser manageUser = new ManageUser(user);
             this.Hide();
             manageUser.ShowDialog();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            LoginScreen ls = new LoginScreen();
+            this.Hide();
+            ls.ShowDialog();
         }
     }
 

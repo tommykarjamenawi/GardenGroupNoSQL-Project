@@ -117,5 +117,12 @@ namespace GardenGroupUI
             this.Hide();
             manageUser.ShowDialog();
         }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            LoginScreen ls = new LoginScreen();
+            this.Hide();
+            ls.ShowDialog();
+        }
     }
 }

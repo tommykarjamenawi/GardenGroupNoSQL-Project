@@ -34,6 +34,8 @@ namespace GardenGroupUI
 
         private void TicketOverviewStatistics_Load(object sender, EventArgs e)
         {
+            lblEmailSignedIn.Text = user.Email;
+
             allTickets = ticketService.GetAllTickets();
             userTickets = ticketService.GetAllTicketsForUser(user);
 
