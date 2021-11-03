@@ -32,10 +32,12 @@ namespace GardenGroupUI
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.chbRememberMe = new System.Windows.Forms.CheckBox();
             this.lblError = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -74,26 +76,6 @@ namespace GardenGroupUI
             this.txtEmail.Enter += new System.EventHandler(this.txtUsername_Enter);
             this.txtEmail.Leave += new System.EventHandler(this.txtUsername_Leave);
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::GardenGroupUI.Properties.Resources.green_circle_orange_house_key_11;
-            this.pictureBox2.Location = new System.Drawing.Point(100, 168);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(75, 62);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::GardenGroupUI.Properties.Resources.download;
-            this.pictureBox1.Location = new System.Drawing.Point(100, 86);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(75, 62);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
             // chbRememberMe
             // 
             this.chbRememberMe.AutoSize = true;
@@ -114,12 +96,43 @@ namespace GardenGroupUI
             this.lblError.TabIndex = 9;
             this.lblError.Text = "...";
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::GardenGroupUI.Properties.Resources.nodeskLogo;
+            this.pictureBox3.Location = new System.Drawing.Point(533, 0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(75, 62);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 10;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::GardenGroupUI.Properties.Resources.green_circle_orange_house_key_11;
+            this.pictureBox2.Location = new System.Drawing.Point(100, 168);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(75, 62);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::GardenGroupUI.Properties.Resources.download;
+            this.pictureBox1.Location = new System.Drawing.Point(100, 86);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(75, 62);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
             // LoginScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(217)))), ((int)(((byte)(112)))));
             this.ClientSize = new System.Drawing.Size(609, 441);
+            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.chbRememberMe);
             this.Controls.Add(this.pictureBox2);
@@ -130,6 +143,7 @@ namespace GardenGroupUI
             this.MaximizeBox = false;
             this.Name = "LoginScreen";
             this.Text = "GardenGroup Login";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -146,5 +160,6 @@ namespace GardenGroupUI
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.CheckBox chbRememberMe;
         private System.Windows.Forms.Label lblError;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }
