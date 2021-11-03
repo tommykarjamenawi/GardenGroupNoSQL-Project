@@ -56,7 +56,7 @@ namespace GardenGroupUI
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(30, 192);
+            this.label1.Location = new System.Drawing.Point(19, 189);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(398, 59);
             this.label1.TabIndex = 3;
@@ -78,7 +78,7 @@ namespace GardenGroupUI
             this.listViewTickets.FullRowSelect = true;
             this.listViewTickets.GridLines = true;
             this.listViewTickets.HideSelection = false;
-            this.listViewTickets.Location = new System.Drawing.Point(43, 313);
+            this.listViewTickets.Location = new System.Drawing.Point(32, 310);
             this.listViewTickets.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listViewTickets.Name = "listViewTickets";
             this.listViewTickets.Size = new System.Drawing.Size(1477, 461);
@@ -137,7 +137,7 @@ namespace GardenGroupUI
             // 
             this.btnCreateIncident.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnCreateIncident.ForeColor = System.Drawing.Color.Black;
-            this.btnCreateIncident.Location = new System.Drawing.Point(461, 249);
+            this.btnCreateIncident.Location = new System.Drawing.Point(450, 246);
             this.btnCreateIncident.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCreateIncident.Name = "btnCreateIncident";
             this.btnCreateIncident.Size = new System.Drawing.Size(147, 60);
@@ -158,7 +158,7 @@ namespace GardenGroupUI
             "Reported date",
             "Deadline",
             "Solved"});
-            this.cmbSortBy.Location = new System.Drawing.Point(41, 264);
+            this.cmbSortBy.Location = new System.Drawing.Point(30, 261);
             this.cmbSortBy.Margin = new System.Windows.Forms.Padding(4);
             this.cmbSortBy.Name = "cmbSortBy";
             this.cmbSortBy.Size = new System.Drawing.Size(379, 45);
@@ -169,7 +169,7 @@ namespace GardenGroupUI
             // 
             this.btnRefresh.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnRefresh.ForeColor = System.Drawing.Color.Black;
-            this.btnRefresh.Location = new System.Drawing.Point(1373, 778);
+            this.btnRefresh.Location = new System.Drawing.Point(1362, 775);
             this.btnRefresh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(147, 60);
@@ -182,7 +182,7 @@ namespace GardenGroupUI
             // 
             this.btnTransfer.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnTransfer.ForeColor = System.Drawing.Color.Black;
-            this.btnTransfer.Location = new System.Drawing.Point(679, 249);
+            this.btnTransfer.Location = new System.Drawing.Point(668, 246);
             this.btnTransfer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTransfer.Name = "btnTransfer";
             this.btnTransfer.Size = new System.Drawing.Size(147, 60);
@@ -208,7 +208,7 @@ namespace GardenGroupUI
             // 
             this.btnStatistics.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnStatistics.ForeColor = System.Drawing.Color.Black;
-            this.btnStatistics.Location = new System.Drawing.Point(1113, 249);
+            this.btnStatistics.Location = new System.Drawing.Point(1102, 246);
             this.btnStatistics.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnStatistics.Name = "btnStatistics";
             this.btnStatistics.Size = new System.Drawing.Size(147, 60);
@@ -221,7 +221,7 @@ namespace GardenGroupUI
             // 
             this.btnrchive.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnrchive.ForeColor = System.Drawing.Color.Black;
-            this.btnrchive.Location = new System.Drawing.Point(896, 249);
+            this.btnrchive.Location = new System.Drawing.Point(885, 246);
             this.btnrchive.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnrchive.Name = "btnrchive";
             this.btnrchive.Size = new System.Drawing.Size(147, 60);
@@ -233,7 +233,7 @@ namespace GardenGroupUI
             // btnTicketOverview
             // 
             this.btnTicketOverview.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnTicketOverview.Location = new System.Drawing.Point(596, 126);
+            this.btnTicketOverview.Location = new System.Drawing.Point(591, 123);
             this.btnTicketOverview.Name = "btnTicketOverview";
             this.btnTicketOverview.Size = new System.Drawing.Size(379, 63);
             this.btnTicketOverview.TabIndex = 32;
@@ -243,7 +243,7 @@ namespace GardenGroupUI
             // btnDashboard
             // 
             this.btnDashboard.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnDashboard.Location = new System.Drawing.Point(40, 126);
+            this.btnDashboard.Location = new System.Drawing.Point(29, 123);
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.Size = new System.Drawing.Size(380, 63);
             this.btnDashboard.TabIndex = 31;
@@ -254,7 +254,7 @@ namespace GardenGroupUI
             // btnManageUser
             // 
             this.btnManageUser.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnManageUser.Location = new System.Drawing.Point(1142, 126);
+            this.btnManageUser.Location = new System.Drawing.Point(1131, 123);
             this.btnManageUser.Name = "btnManageUser";
             this.btnManageUser.Size = new System.Drawing.Size(378, 63);
             this.btnManageUser.TabIndex = 30;
@@ -267,7 +267,7 @@ namespace GardenGroupUI
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(217)))), ((int)(((byte)(112)))));
-            this.ClientSize = new System.Drawing.Size(1537, 900);
+            this.ClientSize = new System.Drawing.Size(1537, 840);
             this.Controls.Add(this.btnTicketOverview);
             this.Controls.Add(this.btnDashboard);
             this.Controls.Add(this.btnManageUser);
