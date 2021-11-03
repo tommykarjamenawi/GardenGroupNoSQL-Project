@@ -141,10 +141,10 @@ namespace GardenGroupUI
             // 
             this.btnCreateIncident.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnCreateIncident.ForeColor = System.Drawing.Color.Black;
-            this.btnCreateIncident.Location = new System.Drawing.Point(453, 297);
+            this.btnCreateIncident.Location = new System.Drawing.Point(453, 312);
             this.btnCreateIncident.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCreateIncident.Name = "btnCreateIncident";
-            this.btnCreateIncident.Size = new System.Drawing.Size(147, 60);
+            this.btnCreateIncident.Size = new System.Drawing.Size(147, 45);
             this.btnCreateIncident.TabIndex = 5;
             this.btnCreateIncident.Text = "&Create incident";
             this.btnCreateIncident.UseVisualStyleBackColor = false;
@@ -186,10 +186,10 @@ namespace GardenGroupUI
             // 
             this.btnTransfer.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnTransfer.ForeColor = System.Drawing.Color.Black;
-            this.btnTransfer.Location = new System.Drawing.Point(671, 297);
+            this.btnTransfer.Location = new System.Drawing.Point(671, 312);
             this.btnTransfer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTransfer.Name = "btnTransfer";
-            this.btnTransfer.Size = new System.Drawing.Size(147, 60);
+            this.btnTransfer.Size = new System.Drawing.Size(147, 45);
             this.btnTransfer.TabIndex = 24;
             this.btnTransfer.Text = "&Transfer ticket";
             this.btnTransfer.UseVisualStyleBackColor = false;
@@ -212,10 +212,10 @@ namespace GardenGroupUI
             // 
             this.btnrchive.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnrchive.ForeColor = System.Drawing.Color.Black;
-            this.btnrchive.Location = new System.Drawing.Point(888, 297);
+            this.btnrchive.Location = new System.Drawing.Point(888, 312);
             this.btnrchive.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnrchive.Name = "btnrchive";
-            this.btnrchive.Size = new System.Drawing.Size(147, 60);
+            this.btnrchive.Size = new System.Drawing.Size(147, 45);
             this.btnrchive.TabIndex = 29;
             this.btnrchive.Text = "&Archive ticket";
             this.btnrchive.UseVisualStyleBackColor = false;
@@ -224,7 +224,7 @@ namespace GardenGroupUI
             // btnTicketOverview
             // 
             this.btnTicketOverview.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnTicketOverview.Location = new System.Drawing.Point(888, 174);
+            this.btnTicketOverview.Location = new System.Drawing.Point(471, 174);
             this.btnTicketOverview.Name = "btnTicketOverview";
             this.btnTicketOverview.Size = new System.Drawing.Size(405, 47);
             this.btnTicketOverview.TabIndex = 32;
@@ -245,7 +245,7 @@ namespace GardenGroupUI
             // btnManageUser
             // 
             this.btnManageUser.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnManageUser.Location = new System.Drawing.Point(462, 174);
+            this.btnManageUser.Location = new System.Drawing.Point(905, 174);
             this.btnManageUser.Name = "btnManageUser";
             this.btnManageUser.Size = new System.Drawing.Size(406, 47);
             this.btnManageUser.TabIndex = 30;
