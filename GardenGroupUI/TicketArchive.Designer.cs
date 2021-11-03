@@ -45,6 +45,8 @@ namespace GardenGroupUI
             this.lblEmailSignedIn = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnLogout = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // listViewTickets
@@ -152,7 +154,7 @@ namespace GardenGroupUI
             // 
             this.lblEmailSignedIn.AutoSize = true;
             this.lblEmailSignedIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmailSignedIn.Location = new System.Drawing.Point(1317, 20);
+            this.lblEmailSignedIn.Location = new System.Drawing.Point(1272, 21);
             this.lblEmailSignedIn.Name = "lblEmailSignedIn";
             this.lblEmailSignedIn.Size = new System.Drawing.Size(29, 20);
             this.lblEmailSignedIn.TabIndex = 22;
@@ -162,7 +164,7 @@ namespace GardenGroupUI
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(1217, 18);
+            this.label3.Location = new System.Drawing.Point(1172, 19);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(94, 24);
             this.label3.TabIndex = 21;
@@ -171,12 +173,23 @@ namespace GardenGroupUI
             // btnLogout
             // 
             this.btnLogout.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnLogout.Location = new System.Drawing.Point(1319, 46);
+            this.btnLogout.Location = new System.Drawing.Point(1274, 47);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(151, 31);
             this.btnLogout.TabIndex = 20;
             this.btnLogout.Text = "&Logout";
             this.btnLogout.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::GardenGroupUI.Properties.Resources.nodeskLogo;
+            this.pictureBox3.Location = new System.Drawing.Point(1436, 1);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(100, 76);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 66;
+            this.pictureBox3.TabStop = false;
             // 
             // TicketArchive
             // 
@@ -184,6 +197,7 @@ namespace GardenGroupUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(217)))), ((int)(((byte)(112)))));
             this.ClientSize = new System.Drawing.Size(1537, 1053);
+            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.lblEmailSignedIn);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnLogout);
@@ -193,6 +207,7 @@ namespace GardenGroupUI
             this.Controls.Add(this.listViewTickets);
             this.Name = "TicketArchive";
             this.Text = "TicketArchive";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,5 +231,6 @@ namespace GardenGroupUI
         private System.Windows.Forms.Label lblEmailSignedIn;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

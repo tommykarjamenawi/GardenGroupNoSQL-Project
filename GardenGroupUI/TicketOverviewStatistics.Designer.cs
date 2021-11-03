@@ -29,16 +29,16 @@ namespace GardenGroupUI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title5 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.Title title6 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title7 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.Title title8 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title9 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.Title title10 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title11 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.Title title12 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.label1 = new System.Windows.Forms.Label();
             this.btnShowTickets = new System.Windows.Forms.Button();
             this.lblUnsolvedTickets = new System.Windows.Forms.Label();
@@ -162,61 +162,61 @@ namespace GardenGroupUI
             // chartUnresolvedTickets
             // 
             this.chartUnresolvedTickets.BorderlineColor = System.Drawing.Color.MediumSeaGreen;
-            chartArea3.Name = "ChartArea1";
-            this.chartUnresolvedTickets.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chartUnresolvedTickets.Legends.Add(legend3);
+            chartArea5.Name = "ChartArea1";
+            this.chartUnresolvedTickets.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend1";
+            this.chartUnresolvedTickets.Legends.Add(legend5);
             this.chartUnresolvedTickets.Location = new System.Drawing.Point(33, 341);
             this.chartUnresolvedTickets.Margin = new System.Windows.Forms.Padding(4);
             this.chartUnresolvedTickets.Name = "chartUnresolvedTickets";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series3.CustomProperties = "PieStartAngle=270";
-            series3.Legend = "Legend1";
-            series3.Name = "Unresolved incidents";
-            this.chartUnresolvedTickets.Series.Add(series3);
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series5.CustomProperties = "PieStartAngle=270";
+            series5.Legend = "Legend1";
+            series5.Name = "Unresolved incidents";
+            this.chartUnresolvedTickets.Series.Add(series5);
             this.chartUnresolvedTickets.Size = new System.Drawing.Size(441, 342);
             this.chartUnresolvedTickets.TabIndex = 11;
             this.chartUnresolvedTickets.Text = "chart1";
-            title5.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title5.Name = "title1chart1";
-            title5.Text = "Unresolved Incidents";
-            title6.Name = "title2chart1";
-            title6.Text = "All tickets currently open";
-            this.chartUnresolvedTickets.Titles.Add(title5);
-            this.chartUnresolvedTickets.Titles.Add(title6);
+            title9.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title9.Name = "title1chart1";
+            title9.Text = "Unresolved Incidents";
+            title10.Name = "title2chart1";
+            title10.Text = "All tickets currently open";
+            this.chartUnresolvedTickets.Titles.Add(title9);
+            this.chartUnresolvedTickets.Titles.Add(title10);
             // 
             // chartIncidentsPastDeadline
             // 
             this.chartIncidentsPastDeadline.BorderlineColor = System.Drawing.Color.Black;
-            chartArea4.Name = "ChartArea1";
-            this.chartIncidentsPastDeadline.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chartIncidentsPastDeadline.Legends.Add(legend4);
+            chartArea6.Name = "ChartArea1";
+            this.chartIncidentsPastDeadline.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.chartIncidentsPastDeadline.Legends.Add(legend6);
             this.chartIncidentsPastDeadline.Location = new System.Drawing.Point(533, 341);
             this.chartIncidentsPastDeadline.Margin = new System.Windows.Forms.Padding(4);
             this.chartIncidentsPastDeadline.Name = "chartIncidentsPastDeadline";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series4.CustomProperties = "PieStartAngle=270";
-            series4.Legend = "Legend1";
-            series4.Name = "Past deadline";
-            this.chartIncidentsPastDeadline.Series.Add(series4);
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series6.CustomProperties = "PieStartAngle=270";
+            series6.Legend = "Legend1";
+            series6.Name = "Past deadline";
+            this.chartIncidentsPastDeadline.Series.Add(series6);
             this.chartIncidentsPastDeadline.Size = new System.Drawing.Size(441, 342);
             this.chartIncidentsPastDeadline.TabIndex = 13;
             this.chartIncidentsPastDeadline.Text = "chart1";
-            title7.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title7.Name = "title1chart2";
-            title7.Text = "Incidents past deadline";
-            title8.Name = "title2chart2";
-            title8.Text = "These tickets need your immediate attention";
-            this.chartIncidentsPastDeadline.Titles.Add(title7);
-            this.chartIncidentsPastDeadline.Titles.Add(title8);
+            title11.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title11.Name = "title1chart2";
+            title11.Text = "Incidents past deadline";
+            title12.Name = "title2chart2";
+            title12.Text = "These tickets need your immediate attention";
+            this.chartIncidentsPastDeadline.Titles.Add(title11);
+            this.chartIncidentsPastDeadline.Titles.Add(title12);
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = global::GardenGroupUI.Properties.Resources.nodeskLogo;
-            this.pictureBox3.Location = new System.Drawing.Point(911, -1);
+            this.pictureBox3.Location = new System.Drawing.Point(910, 1);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(100, 76);
