@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace GardenGroupLogic
 {
-    class TicketArchiveService
+  public  class TicketArchiveService
     {
-        TicketArchiveDAO tickettArchiveDAO;
+        TicketArchiveDAO tickettArchiveDAO =  new TicketArchiveDAO();
         public List<Ticket> GetAllArchivedTickets()
         {
             return tickettArchiveDAO.GetAllArchivedTickets();
@@ -18,6 +18,11 @@ namespace GardenGroupLogic
         public void AddTicketToArchive(Ticket ticket)
         {
             tickettArchiveDAO.AddTicketToArchive(ticket);
+        }
+
+        public void RemoveTicket(Ticket ticket)
+        {
+            tickettArchiveDAO.RemoveTicket(ticket);
         }
     }
 }

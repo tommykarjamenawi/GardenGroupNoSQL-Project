@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using GardenGroupModel;
 using GardenGroupLogic;
+using System.Collections.Generic;
 
 namespace GardenGroupUI
 {
@@ -9,8 +10,9 @@ namespace GardenGroupUI
     {
         User user = new User();
         UserService userService = new UserService();
-        //ArchiveService archiveService = new ArchiveService();
-        public DeleteOrUpdateUser(User user )
+        UserArchiveService userArchiveService = new UserArchiveService();
+        TicketService ticketService = new TicketService();
+        public DeleteOrUpdateUser(User user)
         {
             InitializeComponent();
             this.user = user;
@@ -35,6 +37,8 @@ namespace GardenGroupUI
             DialogResult dialogResult = MessageBox.Show("Are you sure\n you want to Update this user", "Confirmation",
                                                            MessageBoxButtons.YesNo);
 
+            List<Ticket> tickets = ticketService.GetAllTickets();
+
             this. user.FirstName = txtFirstName.Text;
             this.user.LastName = txtLastName.Text;
             this.user.TypeOfUser = cmbTypeOfUser.SelectedItem.ToString();
@@ -44,6 +48,16 @@ namespace GardenGroupUI
             if (dialogResult == DialogResult.Yes)
             {
                 userService.UpdateUser(user);
+                foreach (Ticket t in tickets)
+                {
+                    if (user.Id==t.ReportedBy.Id)
+                    {
+                        t.ReportedBy = user;
+                        ticketService.UpdateTicket(t);
+                    }
+
+                }
+                
 
                 this.Hide();
             }
@@ -72,9 +86,32 @@ namespace GardenGroupUI
             {
                 //archiveService.AddUser(user);
                 userService.RemoveUser(user);
+                userArchiveService.AddUser(user);
                 MessageBox.Show("User succesfully archived");
+                
                 this.Close();
             }
         }
+
+        private void btnManageUser_Click(object sender, EventArgs e)
+        {
+           
+            this.Hide();
+        }
+
+        private void btnTicketOverview_Click(object sender, EventArgs e)
+        {
+            TicketOverviewForm ticketOverviewForm = new TicketOverviewForm(user);
+            this.Hide();
+            ticketOverviewForm.ShowDialog();
+        }
+
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            TicketOverviewStatistics ticketOverviewStatistics = new TicketOverviewStatistics(user);
+            this.Hide();
+            ticketOverviewStatistics.ShowDialog();
+        }
+       
     }
 }

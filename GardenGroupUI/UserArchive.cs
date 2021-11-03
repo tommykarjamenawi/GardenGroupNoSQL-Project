@@ -16,11 +16,14 @@ namespace GardenGroupUI
     {
         UserArchiveService archiveService;
         UserService userService;
-        public UserArchive()
+        private User user;
+
+        public UserArchive(User user)
         {
             InitializeComponent();
             archiveService = new UserArchiveService();
             userService = new UserService();
+            this.user = user;
             FillForm();
 
 
@@ -41,12 +44,7 @@ namespace GardenGroupUI
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            ManageUser manageUser = new ManageUser();
-            manageUser.Show();
-            this.Hide();
-        }
+       
 
         private void btnRestore_Click(object sender, EventArgs e)
         {
@@ -60,9 +58,28 @@ namespace GardenGroupUI
             }
         }
 
-        private void Archive_Load(object sender, EventArgs e)
-        {
+      
 
+        private void btnManageUser_Click(object sender, EventArgs e)
+        {
+            ManageUser manageUser = new ManageUser(user);
+            manageUser.Show();
+            this.Hide();
+        }
+
+        private void btnTicketOverview_Click(object sender, EventArgs e)
+        {
+            TicketOverviewForm ticketOverviewForm = new TicketOverviewForm(user);
+            this.Hide();
+            ticketOverviewForm.ShowDialog();
+
+        }
+
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            TicketOverviewStatistics ticketOverviewStatistics = new TicketOverviewStatistics(user);
+            this.Hide();
+            ticketOverviewStatistics.ShowDialog();
         }
     }
 }

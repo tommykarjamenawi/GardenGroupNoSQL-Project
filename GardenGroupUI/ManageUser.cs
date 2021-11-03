@@ -9,15 +9,19 @@ namespace GardenGroupUI
 {
     public partial class ManageUser : Form
     {
-        private UserService userService = new UserService();
-        TicketService ticketService = new TicketService();
-        UserArchiveService archiveService = new UserArchiveService();
+        private UserService userService ;
+        TicketService ticketService ;
+        private User user;
 
-        public ManageUser()
+        public ManageUser(User user)
         {
             InitializeComponent();
+            userService = new UserService();
+            ticketService = new TicketService();
+            this.user = user;
             this.txtSearchBox.AutoSize = false;
             this.txtSearchBox.Size = new System.Drawing.Size(261, 25);
+          
 
         }
 
@@ -102,7 +106,9 @@ namespace GardenGroupUI
                 User user = (User)lstUsers.SelectedItems[0].Tag;
                DeleteOrUpdateUser deleteOrUpdateUser = new DeleteOrUpdateUser(user);
                 deleteOrUpdateUser.ShowDialog();
+               
             }
+            //FillForm();
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -116,9 +122,24 @@ namespace GardenGroupUI
 
         private void btnOpenArchive_Click(object sender, EventArgs e)
         {
-            UserArchive archive = new UserArchive();
+            UserArchive archive = new UserArchive(user);
             archive.Show();
             this.Hide();
         }
+
+        private void btnTicketOverview_Click(object sender, EventArgs e)
+        {
+            TicketOverviewForm ticketOverviewForm = new TicketOverviewForm(user);
+            this.Hide();
+            ticketOverviewForm.ShowDialog();
+        }
+
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            TicketOverviewStatistics ticketOverviewStatistics = new TicketOverviewStatistics(user);
+            this.Hide();
+            ticketOverviewStatistics.ShowDialog();
+        }
+       
     }
 }

@@ -34,10 +34,11 @@ namespace GardenGroupUI
             this.ColumnEmail = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ColumnFirstname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnLastname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnUsers = new System.Windows.Forms.Button();
-            this.btnTicket = new System.Windows.Forms.Button();
             this.btnRestore = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnManageUser = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnDashboard = new System.Windows.Forms.Button();
+            this.btnTicketOverview = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lstUsers
@@ -50,9 +51,9 @@ namespace GardenGroupUI
             this.lstUsers.FullRowSelect = true;
             this.lstUsers.GridLines = true;
             this.lstUsers.HideSelection = false;
-            this.lstUsers.Location = new System.Drawing.Point(72, 152);
+            this.lstUsers.Location = new System.Drawing.Point(70, 289);
             this.lstUsers.Name = "lstUsers";
-            this.lstUsers.Size = new System.Drawing.Size(629, 334);
+            this.lstUsers.Size = new System.Drawing.Size(981, 459);
             this.lstUsers.TabIndex = 4;
             this.lstUsers.UseCompatibleStateImageBehavior = false;
             this.lstUsers.View = System.Windows.Forms.View.Details;
@@ -65,7 +66,7 @@ namespace GardenGroupUI
             // ColumnEmail
             // 
             this.ColumnEmail.Text = "Email";
-            this.ColumnEmail.Width = 146;
+            this.ColumnEmail.Width = 200;
             // 
             // ColumnFirstname
             // 
@@ -77,58 +78,76 @@ namespace GardenGroupUI
             this.columnLastname.Text = "Last name";
             this.columnLastname.Width = 174;
             // 
-            // btnUsers
-            // 
-            this.btnUsers.Location = new System.Drawing.Point(72, 99);
-            this.btnUsers.Name = "btnUsers";
-            this.btnUsers.Size = new System.Drawing.Size(126, 33);
-            this.btnUsers.TabIndex = 5;
-            this.btnUsers.Text = "&Users Archive";
-            this.btnUsers.UseVisualStyleBackColor = true;
-            // 
-            // btnTicket
-            // 
-            this.btnTicket.Location = new System.Drawing.Point(215, 99);
-            this.btnTicket.Name = "btnTicket";
-            this.btnTicket.Size = new System.Drawing.Size(126, 33);
-            this.btnTicket.TabIndex = 6;
-            this.btnTicket.Text = "&Tickets Archive";
-            this.btnTicket.UseVisualStyleBackColor = true;
-            // 
             // btnRestore
             // 
-            this.btnRestore.Location = new System.Drawing.Point(575, 104);
+            this.btnRestore.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnRestore.Location = new System.Drawing.Point(925, 236);
             this.btnRestore.Name = "btnRestore";
             this.btnRestore.Size = new System.Drawing.Size(126, 33);
             this.btnRestore.TabIndex = 7;
             this.btnRestore.Text = "&Restore";
-            this.btnRestore.UseVisualStyleBackColor = true;
+            this.btnRestore.UseVisualStyleBackColor = false;
             this.btnRestore.Click += new System.EventHandler(this.btnRestore_Click);
             // 
-            // button1
+            // btnManageUser
             // 
-            this.button1.Location = new System.Drawing.Point(72, 60);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(269, 33);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "&Return Manage user";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnManageUser.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnManageUser.Location = new System.Drawing.Point(756, 147);
+            this.btnManageUser.Name = "btnManageUser";
+            this.btnManageUser.Size = new System.Drawing.Size(304, 44);
+            this.btnManageUser.TabIndex = 8;
+            this.btnManageUser.Text = "Manage user";
+            this.btnManageUser.UseVisualStyleBackColor = false;
+            this.btnManageUser.Click += new System.EventHandler(this.btnManageUser_Click);
             // 
-            // Archive
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(69, 207);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(329, 59);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "User Archive";
+            // 
+            // btnDashboard
+            // 
+            this.btnDashboard.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnDashboard.Location = new System.Drawing.Point(79, 147);
+            this.btnDashboard.Name = "btnDashboard";
+            this.btnDashboard.Size = new System.Drawing.Size(304, 44);
+            this.btnDashboard.TabIndex = 12;
+            this.btnDashboard.Text = "&Dashboard";
+            this.btnDashboard.UseVisualStyleBackColor = false;
+            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
+            // 
+            // btnTicketOverview
+            // 
+            this.btnTicketOverview.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnTicketOverview.Location = new System.Drawing.Point(414, 147);
+            this.btnTicketOverview.Name = "btnTicketOverview";
+            this.btnTicketOverview.Size = new System.Drawing.Size(304, 44);
+            this.btnTicketOverview.TabIndex = 13;
+            this.btnTicketOverview.Text = "&Ticket overview";
+            this.btnTicketOverview.UseVisualStyleBackColor = false;
+            this.btnTicketOverview.Click += new System.EventHandler(this.btnTicketOverview_Click);
+            // 
+            // UserArchive
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 542);
-            this.Controls.Add(this.button1);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(217)))), ((int)(((byte)(112)))));
+            this.ClientSize = new System.Drawing.Size(1145, 816);
+            this.Controls.Add(this.btnTicketOverview);
+            this.Controls.Add(this.btnDashboard);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnManageUser);
             this.Controls.Add(this.btnRestore);
-            this.Controls.Add(this.btnTicket);
-            this.Controls.Add(this.btnUsers);
             this.Controls.Add(this.lstUsers);
-            this.Name = "Archive";
+            this.Name = "UserArchive";
             this.Text = "Archive";
-            this.Load += new System.EventHandler(this.Archive_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -139,9 +158,10 @@ namespace GardenGroupUI
         private System.Windows.Forms.ColumnHeader ColumnEmail;
         private System.Windows.Forms.ColumnHeader ColumnFirstname;
         private System.Windows.Forms.ColumnHeader columnLastname;
-        private System.Windows.Forms.Button btnUsers;
-        private System.Windows.Forms.Button btnTicket;
         private System.Windows.Forms.Button btnRestore;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnManageUser;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnDashboard;
+        private System.Windows.Forms.Button btnTicketOverview;
     }
 }

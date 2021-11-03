@@ -19,13 +19,18 @@ namespace GardenGroupUI
         private List<Ticket> tickets;
         private TicketService ticketService;
         private User user;
+        TicketArchiveService ticketArchiveService ;
         public TicketOverviewForm(User user)
         {
             this.user = user;
             ticketService = new TicketService();
+            ticketArchiveService = new TicketArchiveService();
             InitializeComponent();
             btnTransfer.Enabled = false;
             btnStatistics.Enabled = false;
+
+            // done by Biniam for automatic check to Archive tickets
+            CheckTicketyearForArchive();
         }
 
         private void TicketOverviewForm_Load(object sender, EventArgs e)
@@ -189,6 +194,29 @@ namespace GardenGroupUI
             TicketOverviewStatistics tos = new TicketOverviewStatistics(user);
             this.Hide();
             tos.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            TicketArchive ticketArchive = new TicketArchive(user);
+            this.Hide();
+            ticketArchive.ShowDialog();
+            
+        }
+
+        void CheckTicketyearForArchive()
+        {
+            tickets = ticketService.GetAllTickets();
+            foreach (Ticket t in tickets)
+            {
+                if (DateTime.Now.Year - t.ReportedDate.Year > 2)
+                {
+                    ticketArchiveService.AddTicketToArchive(t);
+                    ticketService.RemoveTicket(t);
+                }
+
+            }
         }
     }
 }

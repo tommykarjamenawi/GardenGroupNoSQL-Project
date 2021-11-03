@@ -68,7 +68,7 @@ namespace GardenGroupUI
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            ManageUser manageUser = new ManageUser();
+            ManageUser manageUser = new ManageUser(user);
             manageUser.Show();
             this.Hide();
         }
@@ -127,5 +127,27 @@ namespace GardenGroupUI
         {
             EnablebuttonAdd();
         }
+
+        private void btnManageUser_Click(object sender, EventArgs e)
+        {
+            ManageUser manageUser = new ManageUser(user);
+            manageUser.Show();
+            this.Hide();
+        }
+
+        private void btnTicketOverview_Click(object sender, EventArgs e)
+        {
+            TicketOverviewForm ticketOverviewForm = new TicketOverviewForm(user);
+            this.Hide();
+            ticketOverviewForm.ShowDialog();
+        }
+
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            TicketOverviewStatistics ticketOverviewStatistics = new TicketOverviewStatistics(user);
+            this.Hide();
+            ticketOverviewStatistics.ShowDialog();
+        }
+      
     }
 }

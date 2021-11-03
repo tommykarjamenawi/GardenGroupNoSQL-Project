@@ -129,7 +129,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ArchiveService.cs" />
+    <Compile Include="UserArchiveService.cs" />
     <Compile Include="HashWithSalt.cs" />
     <Compile Include="LoginService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

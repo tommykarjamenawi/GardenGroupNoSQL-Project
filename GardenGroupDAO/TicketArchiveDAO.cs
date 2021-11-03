@@ -20,5 +20,10 @@ namespace GardenGroupDAO
         {
             InsertDocument<Ticket>(COLLECTION_NAME, ticket);
         }
+
+        public void RemoveTicket(Ticket ticket)
+        {
+            DeleteDocument<Ticket>(ticket.Id, COLLECTION_NAME);
+        }
     }
 }
