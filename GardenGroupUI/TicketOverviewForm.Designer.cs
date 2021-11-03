@@ -49,14 +49,14 @@ namespace GardenGroupUI
             this.btnTicketOverview = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.btnManageUser = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblRole = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -256,17 +256,6 @@ namespace GardenGroupUI
             this.btnManageUser.UseVisualStyleBackColor = false;
             this.btnManageUser.Click += new System.EventHandler(this.btnManageUser_Click);
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::GardenGroupUI.Properties.Resources.nodeskLogo;
-            this.pictureBox3.Location = new System.Drawing.Point(1423, 2);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(114, 99);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 33;
-            this.pictureBox3.TabStop = false;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -327,19 +316,30 @@ namespace GardenGroupUI
             this.lblEmail.TabIndex = 39;
             this.lblEmail.Text = "_";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::GardenGroupUI.Properties.Resources.nodeskLogo;
+            this.pictureBox1.Location = new System.Drawing.Point(1384, 1);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(151, 98);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 65;
+            this.pictureBox1.TabStop = false;
+            // 
             // TicketOverviewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(217)))), ((int)(((byte)(112)))));
             this.ClientSize = new System.Drawing.Size(1537, 840);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lblRole);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.btnTicketOverview);
             this.Controls.Add(this.btnDashboard);
             this.Controls.Add(this.btnManageUser);
@@ -355,7 +355,7 @@ namespace GardenGroupUI
             this.Name = "TicketOverviewForm";
             this.Text = "TicketOverviewForm";
             this.Load += new System.EventHandler(this.TicketOverviewForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -382,12 +382,12 @@ namespace GardenGroupUI
         private System.Windows.Forms.Button btnTicketOverview;
         private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.Button btnManageUser;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblRole;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

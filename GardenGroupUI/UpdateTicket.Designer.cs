@@ -51,8 +51,8 @@ namespace GardenGroupUI
             this.btnTicketOverview = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.btnManageUser = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dtpDeadline
@@ -273,16 +273,16 @@ namespace GardenGroupUI
             this.btnManageUser.UseVisualStyleBackColor = false;
             this.btnManageUser.Click += new System.EventHandler(this.btnManageUser_Click);
             // 
-            // pictureBox3
+            // pictureBox1
             // 
-            this.pictureBox3.Image = global::GardenGroupUI.Properties.Resources.nodeskLogo;
-            this.pictureBox3.Location = new System.Drawing.Point(828, 1);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(100, 76);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 62;
-            this.pictureBox3.TabStop = false;
+            this.pictureBox1.Image = global::GardenGroupUI.Properties.Resources.nodeskLogo;
+            this.pictureBox1.Location = new System.Drawing.Point(775, 1);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(151, 98);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 66;
+            this.pictureBox1.TabStop = false;
             // 
             // UpdateTicket
             // 
@@ -290,7 +290,7 @@ namespace GardenGroupUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(217)))), ((int)(((byte)(112)))));
             this.ClientSize = new System.Drawing.Size(927, 531);
-            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnTicketOverview);
             this.Controls.Add(this.btnDashboard);
             this.Controls.Add(this.btnManageUser);
@@ -317,7 +317,7 @@ namespace GardenGroupUI
             this.Name = "UpdateTicket";
             this.Text = "UpdateTicket";
             this.Load += new System.EventHandler(this.UpdateTicket_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -346,6 +346,6 @@ namespace GardenGroupUI
         private System.Windows.Forms.Button btnTicketOverview;
         private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.Button btnManageUser;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
