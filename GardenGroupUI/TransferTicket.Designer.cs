@@ -42,6 +42,8 @@ namespace GardenGroupUI
             this.btnTicketOverview = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.btnManageUser = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbUser
@@ -179,12 +181,24 @@ namespace GardenGroupUI
             this.btnManageUser.UseVisualStyleBackColor = false;
             this.btnManageUser.Click += new System.EventHandler(this.btnManageUser_Click);
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::GardenGroupUI.Properties.Resources.nodeskLogo;
+            this.pictureBox3.Location = new System.Drawing.Point(967, 0);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(100, 76);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 65;
+            this.pictureBox3.TabStop = false;
+            // 
             // TransferTicket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(217)))), ((int)(((byte)(112)))));
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(1067, 520);
+            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.btnTicketOverview);
             this.Controls.Add(this.btnDashboard);
             this.Controls.Add(this.btnManageUser);
@@ -202,6 +216,7 @@ namespace GardenGroupUI
             this.Name = "TransferTicket";
             this.Text = "TransferTicket";
             this.Load += new System.EventHandler(this.TransferTicket_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,5 +237,6 @@ namespace GardenGroupUI
         private System.Windows.Forms.Button btnTicketOverview;
         private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.Button btnManageUser;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

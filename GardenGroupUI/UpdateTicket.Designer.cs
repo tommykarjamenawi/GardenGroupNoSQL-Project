@@ -36,7 +36,6 @@ namespace GardenGroupUI
             this.cmbTypeOfIncident = new System.Windows.Forms.ComboBox();
             this.txtSubject = new System.Windows.Forms.TextBox();
             this.txtDescription = new System.Windows.Forms.TextBox();
-            this.txtPhoneNumber = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -52,11 +51,13 @@ namespace GardenGroupUI
             this.btnTicketOverview = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.btnManageUser = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // dtpDeadline
             // 
-            this.dtpDeadline.Location = new System.Drawing.Point(267, 334);
+            this.dtpDeadline.Location = new System.Drawing.Point(269, 368);
             this.dtpDeadline.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpDeadline.Name = "dtpDeadline";
             this.dtpDeadline.Size = new System.Drawing.Size(213, 22);
@@ -65,7 +66,7 @@ namespace GardenGroupUI
             // btnUpdate
             // 
             this.btnUpdate.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnUpdate.Location = new System.Drawing.Point(486, 375);
+            this.btnUpdate.Location = new System.Drawing.Point(488, 409);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(103, 34);
@@ -78,7 +79,7 @@ namespace GardenGroupUI
             // 
             this.btnCancel.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnCancel.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.btnCancel.Location = new System.Drawing.Point(377, 451);
+            this.btnCancel.Location = new System.Drawing.Point(379, 485);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(103, 34);
@@ -91,7 +92,7 @@ namespace GardenGroupUI
             // 
             this.cmbTypeOfPriority.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTypeOfPriority.FormattingEnabled = true;
-            this.cmbTypeOfPriority.Location = new System.Drawing.Point(267, 292);
+            this.cmbTypeOfPriority.Location = new System.Drawing.Point(269, 326);
             this.cmbTypeOfPriority.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbTypeOfPriority.Name = "cmbTypeOfPriority";
             this.cmbTypeOfPriority.Size = new System.Drawing.Size(213, 24);
@@ -101,7 +102,7 @@ namespace GardenGroupUI
             // 
             this.cmbTypeOfIncident.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTypeOfIncident.FormattingEnabled = true;
-            this.cmbTypeOfIncident.Location = new System.Drawing.Point(267, 206);
+            this.cmbTypeOfIncident.Location = new System.Drawing.Point(269, 240);
             this.cmbTypeOfIncident.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbTypeOfIncident.Name = "cmbTypeOfIncident";
             this.cmbTypeOfIncident.Size = new System.Drawing.Size(213, 24);
@@ -109,7 +110,7 @@ namespace GardenGroupUI
             // 
             // txtSubject
             // 
-            this.txtSubject.Location = new System.Drawing.Point(267, 166);
+            this.txtSubject.Location = new System.Drawing.Point(269, 200);
             this.txtSubject.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSubject.Name = "txtSubject";
             this.txtSubject.Size = new System.Drawing.Size(213, 22);
@@ -117,20 +118,12 @@ namespace GardenGroupUI
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(267, 375);
+            this.txtDescription.Location = new System.Drawing.Point(269, 409);
             this.txtDescription.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(213, 72);
             this.txtDescription.TabIndex = 46;
-            // 
-            // txtPhoneNumber
-            // 
-            this.txtPhoneNumber.Location = new System.Drawing.Point(901, 159);
-            this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtPhoneNumber.Name = "txtPhoneNumber";
-            this.txtPhoneNumber.Size = new System.Drawing.Size(213, 22);
-            this.txtPhoneNumber.TabIndex = 45;
             // 
             // label8
             // 
@@ -144,7 +137,7 @@ namespace GardenGroupUI
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(99, 132);
+            this.label7.Location = new System.Drawing.Point(101, 166);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(130, 17);
             this.label7.TabIndex = 43;
@@ -153,7 +146,7 @@ namespace GardenGroupUI
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(99, 299);
+            this.label6.Location = new System.Drawing.Point(101, 333);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(107, 17);
             this.label6.TabIndex = 42;
@@ -171,7 +164,7 @@ namespace GardenGroupUI
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(99, 212);
+            this.label4.Location = new System.Drawing.Point(101, 246);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(113, 17);
             this.label4.TabIndex = 40;
@@ -180,7 +173,7 @@ namespace GardenGroupUI
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(101, 171);
+            this.label3.Location = new System.Drawing.Point(103, 205);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(128, 17);
             this.label3.TabIndex = 39;
@@ -189,7 +182,7 @@ namespace GardenGroupUI
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(99, 256);
+            this.label2.Location = new System.Drawing.Point(101, 290);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(122, 17);
             this.label2.TabIndex = 38;
@@ -199,7 +192,7 @@ namespace GardenGroupUI
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(98, 84);
+            this.label1.Location = new System.Drawing.Point(100, 118);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(287, 31);
             this.label1.TabIndex = 37;
@@ -208,7 +201,7 @@ namespace GardenGroupUI
             // btnRemove
             // 
             this.btnRemove.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnRemove.Location = new System.Drawing.Point(267, 451);
+            this.btnRemove.Location = new System.Drawing.Point(269, 485);
             this.btnRemove.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(103, 34);
@@ -221,7 +214,7 @@ namespace GardenGroupUI
             // 
             this.btnStatus.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnStatus.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.btnStatus.Location = new System.Drawing.Point(486, 413);
+            this.btnStatus.Location = new System.Drawing.Point(488, 447);
             this.btnStatus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnStatus.Name = "btnStatus";
             this.btnStatus.Size = new System.Drawing.Size(103, 34);
@@ -232,7 +225,7 @@ namespace GardenGroupUI
             // 
             // txtUser
             // 
-            this.txtUser.Location = new System.Drawing.Point(267, 251);
+            this.txtUser.Location = new System.Drawing.Point(269, 285);
             this.txtUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUser.Name = "txtUser";
             this.txtUser.ReadOnly = true;
@@ -241,7 +234,7 @@ namespace GardenGroupUI
             // 
             // txtDateReported
             // 
-            this.txtDateReported.Location = new System.Drawing.Point(267, 132);
+            this.txtDateReported.Location = new System.Drawing.Point(269, 166);
             this.txtDateReported.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDateReported.Name = "txtDateReported";
             this.txtDateReported.Size = new System.Drawing.Size(213, 22);
@@ -250,7 +243,7 @@ namespace GardenGroupUI
             // btnTicketOverview
             // 
             this.btnTicketOverview.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnTicketOverview.Location = new System.Drawing.Point(326, 37);
+            this.btnTicketOverview.Location = new System.Drawing.Point(328, 71);
             this.btnTicketOverview.Name = "btnTicketOverview";
             this.btnTicketOverview.Size = new System.Drawing.Size(200, 44);
             this.btnTicketOverview.TabIndex = 61;
@@ -261,7 +254,7 @@ namespace GardenGroupUI
             // btnDashboard
             // 
             this.btnDashboard.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnDashboard.Location = new System.Drawing.Point(100, 37);
+            this.btnDashboard.Location = new System.Drawing.Point(102, 71);
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.Size = new System.Drawing.Size(200, 44);
             this.btnDashboard.TabIndex = 60;
@@ -272,7 +265,7 @@ namespace GardenGroupUI
             // btnManageUser
             // 
             this.btnManageUser.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnManageUser.Location = new System.Drawing.Point(554, 37);
+            this.btnManageUser.Location = new System.Drawing.Point(556, 71);
             this.btnManageUser.Name = "btnManageUser";
             this.btnManageUser.Size = new System.Drawing.Size(200, 44);
             this.btnManageUser.TabIndex = 59;
@@ -280,12 +273,24 @@ namespace GardenGroupUI
             this.btnManageUser.UseVisualStyleBackColor = false;
             this.btnManageUser.Click += new System.EventHandler(this.btnManageUser_Click);
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::GardenGroupUI.Properties.Resources.nodeskLogo;
+            this.pictureBox3.Location = new System.Drawing.Point(828, 1);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(100, 76);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 62;
+            this.pictureBox3.TabStop = false;
+            // 
             // UpdateTicket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(217)))), ((int)(((byte)(112)))));
-            this.ClientSize = new System.Drawing.Size(865, 501);
+            this.ClientSize = new System.Drawing.Size(927, 531);
+            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.btnTicketOverview);
             this.Controls.Add(this.btnDashboard);
             this.Controls.Add(this.btnManageUser);
@@ -300,7 +305,6 @@ namespace GardenGroupUI
             this.Controls.Add(this.cmbTypeOfIncident);
             this.Controls.Add(this.txtSubject);
             this.Controls.Add(this.txtDescription);
-            this.Controls.Add(this.txtPhoneNumber);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -313,6 +317,7 @@ namespace GardenGroupUI
             this.Name = "UpdateTicket";
             this.Text = "UpdateTicket";
             this.Load += new System.EventHandler(this.UpdateTicket_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -326,7 +331,6 @@ namespace GardenGroupUI
         private System.Windows.Forms.ComboBox cmbTypeOfIncident;
         private System.Windows.Forms.TextBox txtSubject;
         private System.Windows.Forms.TextBox txtDescription;
-        private System.Windows.Forms.TextBox txtPhoneNumber;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -342,5 +346,6 @@ namespace GardenGroupUI
         private System.Windows.Forms.Button btnTicketOverview;
         private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.Button btnManageUser;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

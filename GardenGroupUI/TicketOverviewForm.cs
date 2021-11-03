@@ -37,6 +37,9 @@ namespace GardenGroupUI
             if (user.TypeOfUser == Enums.TypeOfUser.EndUser.ToString())
                 btnManageUser.Hide();
 
+            lblName.Text = user.FirstName + " " + user.LastName;
+            lblRole.Text = user.TypeOfUser;
+
                 DisplayAllTickets();          
         }
 
