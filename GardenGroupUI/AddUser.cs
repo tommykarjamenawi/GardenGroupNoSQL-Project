@@ -48,9 +48,11 @@ namespace GardenGroupUI
             user.Email = txtEmailAddress.Text + "@Gardengroup.nl";
             user.Phone = txtPhoneNumber.Text;
             user.branch = cmbLocationBranch.Text;
-            user.Password = CreatePassword();
-
+            //user.Password = CreatePassword();
             userService = new UserService();
+            HashWithSalt hashWithSalt = new HashWithSalt(txtPassword.Text);
+            user.Password = hashWithSalt.hashedPassword;
+            user.salt = hashWithSalt.salt;
             userService.AddUser(user);
             CleanForm();
         }
