@@ -90,7 +90,7 @@ namespace GardenGroupUI
             {
                 User user = userService.GetUserObjectById((ObjectId)cmbUser.SelectedValue);
                 ticket.ReportedBy = user;
-                ticketService.TransferTicket(this.ticket);
+                ticketService.UpdateTicket(this.ticket);
                 MessageBox.Show($"Ticket {ticket.Id} has been moved to {user.Email}!");
                 this.Close();
             }

@@ -40,13 +40,6 @@ namespace GardenGroupDAO
             var update = Builders<Ticket>.Update.Set("IsSolved", true);
             collection.UpdateOne<Ticket>(Ticket => Ticket.Id == ticket.Id, update);
         }
-
-        public void TransferTicket(Ticket ticket)
-        {
-            var filter = Builders<Ticket>.Filter.Eq("Id", ticket.Id);
-            collection.ReplaceOne(filter, ticket, new ReplaceOptions() { IsUpsert = true });
-        }
-
         
         // Queries for getting all tickets for users and admins
         public List<Ticket> GetAllTicketsForUser(User user)

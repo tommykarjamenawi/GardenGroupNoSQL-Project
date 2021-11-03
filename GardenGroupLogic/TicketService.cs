@@ -38,11 +38,6 @@ namespace GardenGroupLogic
             ticketDAO.ChangeStatus(ticket);
         }
 
-        public void TransferTicket(Ticket ticket)
-        {
-            ticketDAO.TransferTicket(ticket);
-        }
-
         public List<Ticket> GetAllTickets()
         {
             return ticketDAO.GetAllTickets();
