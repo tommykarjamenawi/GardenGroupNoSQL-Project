@@ -45,10 +45,10 @@ namespace GardenGroupUI
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(181, 168);
+            this.txtPassword.Location = new System.Drawing.Point(199, 179);
             this.txtPassword.MaxLength = 10;
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(332, 62);
+            this.txtPassword.Size = new System.Drawing.Size(430, 62);
             this.txtPassword.TabIndex = 0;
             this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
             this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
@@ -57,9 +57,9 @@ namespace GardenGroupUI
             // 
             this.btnLogin.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(100, 275);
+            this.btnLogin.Location = new System.Drawing.Point(118, 286);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(413, 62);
+            this.btnLogin.Size = new System.Drawing.Size(511, 62);
             this.btnLogin.TabIndex = 1;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -68,10 +68,10 @@ namespace GardenGroupUI
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("MS Reference Sans Serif", 33F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(181, 86);
+            this.txtEmail.Location = new System.Drawing.Point(199, 97);
             this.txtEmail.MaxLength = 30;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(332, 61);
+            this.txtEmail.Size = new System.Drawing.Size(430, 61);
             this.txtEmail.TabIndex = 2;
             this.txtEmail.Enter += new System.EventHandler(this.txtUsername_Enter);
             this.txtEmail.Leave += new System.EventHandler(this.txtUsername_Leave);
@@ -80,7 +80,7 @@ namespace GardenGroupUI
             // 
             this.chbRememberMe.AutoSize = true;
             this.chbRememberMe.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbRememberMe.Location = new System.Drawing.Point(181, 236);
+            this.chbRememberMe.Location = new System.Drawing.Point(199, 247);
             this.chbRememberMe.Name = "chbRememberMe";
             this.chbRememberMe.Size = new System.Drawing.Size(195, 33);
             this.chbRememberMe.TabIndex = 8;
@@ -99,9 +99,9 @@ namespace GardenGroupUI
             // pictureBox3
             // 
             this.pictureBox3.Image = global::GardenGroupUI.Properties.Resources.nodeskLogo;
-            this.pictureBox3.Location = new System.Drawing.Point(495, 0);
+            this.pictureBox3.Location = new System.Drawing.Point(629, 1);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(113, 80);
+            this.pictureBox3.Size = new System.Drawing.Size(125, 93);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 10;
             this.pictureBox3.TabStop = false;
@@ -109,7 +109,7 @@ namespace GardenGroupUI
             // pictureBox2
             // 
             this.pictureBox2.Image = global::GardenGroupUI.Properties.Resources.green_circle_orange_house_key_11;
-            this.pictureBox2.Location = new System.Drawing.Point(100, 168);
+            this.pictureBox2.Location = new System.Drawing.Point(118, 179);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(75, 62);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -119,7 +119,7 @@ namespace GardenGroupUI
             // pictureBox1
             // 
             this.pictureBox1.Image = global::GardenGroupUI.Properties.Resources.download;
-            this.pictureBox1.Location = new System.Drawing.Point(100, 86);
+            this.pictureBox1.Location = new System.Drawing.Point(118, 97);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(75, 62);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -131,7 +131,7 @@ namespace GardenGroupUI
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(217)))), ((int)(((byte)(112)))));
-            this.ClientSize = new System.Drawing.Size(609, 441);
+            this.ClientSize = new System.Drawing.Size(753, 441);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.chbRememberMe);
