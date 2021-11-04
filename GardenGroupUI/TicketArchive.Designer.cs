@@ -45,9 +45,7 @@ namespace GardenGroupUI
             this.lblEmailSignedIn = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnLogout = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -166,11 +164,11 @@ namespace GardenGroupUI
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(1122, 9);
+            this.label3.Location = new System.Drawing.Point(1097, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(94, 24);
+            this.label3.Size = new System.Drawing.Size(119, 24);
             this.label3.TabIndex = 21;
-            this.label3.Text = "sign in as:";
+            this.label3.Text = "Signed in as:";
             // 
             // btnLogout
             // 
@@ -181,17 +179,6 @@ namespace GardenGroupUI
             this.btnLogout.TabIndex = 20;
             this.btnLogout.Text = "&Logout";
             this.btnLogout.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::GardenGroupUI.Properties.Resources.nodeskLogo;
-            this.pictureBox1.Location = new System.Drawing.Point(1384, 1);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(151, 98);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 66;
-            this.pictureBox1.TabStop = false;
             // 
             // pictureBox2
             // 
@@ -211,7 +198,6 @@ namespace GardenGroupUI
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(217)))), ((int)(((byte)(112)))));
             this.ClientSize = new System.Drawing.Size(1537, 948);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblEmailSignedIn);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnLogout);
@@ -221,7 +207,6 @@ namespace GardenGroupUI
             this.Controls.Add(this.listViewTickets);
             this.Name = "TicketArchive";
             this.Text = "TicketArchive";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -246,7 +231,6 @@ namespace GardenGroupUI
         private System.Windows.Forms.Label lblEmailSignedIn;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnLogout;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

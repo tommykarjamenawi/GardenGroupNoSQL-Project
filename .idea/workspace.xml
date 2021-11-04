@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="83b48d80-d73f-4233-8a42-962660640025" name="Default Changelist" comment="" />
+    <list default="true" id="83b48d80-d73f-4233-8a42-962660640025" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/GardenGroupUI/AddUser.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GardenGroupUI/AddUser.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GardenGroupUI/AddUser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GardenGroupUI/AddUser.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +20,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="83b48d80-d73f-4233-8a42-962660640025" name="Default Changelist" comment="" />
@@ -24,6 +28,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1633589964420</updated>
+      <workItem from="1635983518828" duration="10000" />
     </task>
     <servers />
   </component>

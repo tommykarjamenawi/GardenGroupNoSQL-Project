@@ -99,6 +99,8 @@ namespace GardenGroupUI
 
         private void AddTicket_Load(object sender, EventArgs e)
         {
+            lblEmailSignedIn.Text = user.Email;
+
             users = userService.GetAllUsers();
 
             if (user.TypeOfUser == Enums.TypeOfUser.EndUser.ToString())
@@ -142,6 +144,12 @@ namespace GardenGroupUI
             this.Hide();
             manageUser.ShowDialog();
         }
-      
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            LoginScreen ls = new LoginScreen();
+            this.Hide();
+            ls.ShowDialog();
+        }
     }
 }

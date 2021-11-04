@@ -34,6 +34,8 @@ namespace GardenGroupUI
 
         private void TicketOverviewStatistics_Load(object sender, EventArgs e)
         {
+            lblEmailSignedIn.Text = user.Email;
+
             allTickets = ticketService.GetAllTickets();
             userTickets = ticketService.GetAllTicketsForUser(user);
 
@@ -100,6 +102,13 @@ namespace GardenGroupUI
             chartIncidentsPastDeadline.Series[0].Points[1].Color = Color.LightGray;
             chartIncidentsPastDeadline.ChartAreas[0].Area3DStyle.Enable3D = true;
             chartIncidentsPastDeadline.Series["Past deadline"].IsValueShownAsLabel = true;
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            LoginScreen ls = new LoginScreen();
+            this.Hide();
+            ls.ShowDialog();
         }
     }
 }
