@@ -265,7 +265,7 @@ namespace GardenGroupUI
             // 
             this.lblEmailSignedIn.AutoSize = true;
             this.lblEmailSignedIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmailSignedIn.Location = new System.Drawing.Point(576, 15);
+            this.lblEmailSignedIn.Location = new System.Drawing.Point(541, 15);
             this.lblEmailSignedIn.Name = "lblEmailSignedIn";
             this.lblEmailSignedIn.Size = new System.Drawing.Size(29, 20);
             this.lblEmailSignedIn.TabIndex = 74;
@@ -275,7 +275,7 @@ namespace GardenGroupUI
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(456, 13);
+            this.label9.Location = new System.Drawing.Point(421, 13);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(114, 24);
             this.label9.TabIndex = 73;

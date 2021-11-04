@@ -131,7 +131,7 @@ namespace GardenGroupUI
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(704, 13);
+            this.label5.Location = new System.Drawing.Point(685, 13);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(119, 24);
@@ -142,7 +142,7 @@ namespace GardenGroupUI
             // 
             this.lblLoggedinUser.AutoSize = true;
             this.lblLoggedinUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLoggedinUser.Location = new System.Drawing.Point(825, 13);
+            this.lblLoggedinUser.Location = new System.Drawing.Point(806, 13);
             this.lblLoggedinUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLoggedinUser.Name = "lblLoggedinUser";
             this.lblLoggedinUser.Size = new System.Drawing.Size(19, 20);
