@@ -41,26 +41,24 @@ namespace GardenGroupUI
 
             List<Ticket> tickets = ticketService.GetAllTickets();
 
-            this. user.FirstName = txtFirstName.Text;
-            this.user.LastName = txtLastName.Text;
-            this.user.TypeOfUser = cmbTypeOfUser.SelectedItem.ToString();
-            this.user.Email = txtEmailAddress.Text;
-            this.user.Phone = txtPhoneNumber.Text;
-            this.user.branch = cmbLocationBranch.Text;
+            this.user1.FirstName = txtFirstName.Text;
+            this.user1.LastName = txtLastName.Text;
+            this.user1.TypeOfUser = cmbTypeOfUser.SelectedItem.ToString();
+            this.user1.Email = txtEmailAddress.Text;
+            this.user1.Phone = txtPhoneNumber.Text;
+            this.user1.branch = cmbLocationBranch.Text;
             if (dialogResult == DialogResult.Yes)
             {
-                userService.UpdateUser(user);
+                userService.UpdateUser(user1);
                 foreach (Ticket t in tickets)
                 {
                     if (user.Id==t.ReportedBy.Id)
                     {
-                        t.ReportedBy = user;
+                        t.ReportedBy = user1;
                         ticketService.UpdateTicket(t);
                     }
 
                 }
-
-
                 showManageUser();
             }
         }
@@ -71,13 +69,10 @@ namespace GardenGroupUI
                                                         MessageBoxButtons.YesNo);
             if (dialogResult==DialogResult.Yes)
             {
-                userService.RemoveUser(user);
+                userService.RemoveUser(user1);
                 MessageBox.Show("User succesfully removed");
                 showManageUser();
             }
-            
-
-           
         }
 
         private void btnArchive_Click(object sender, EventArgs e)
@@ -87,8 +82,8 @@ namespace GardenGroupUI
             if (dialogResult == DialogResult.Yes)
             {
                 //archiveService.AddUser(user);
-                userService.RemoveUser(user);
-                userArchiveService.AddUser(user);
+                userService.RemoveUser(user1);
+                userArchiveService.AddUser(user1);
                 MessageBox.Show("User succesfully archived");
 
                 showManageUser();

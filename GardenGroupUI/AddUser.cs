@@ -90,6 +90,7 @@ namespace GardenGroupUI
             txtFirstName.Clear();
             txtLastName.Clear();
             txtPhoneNumber.Clear();
+            txtPassword.Clear();
             cmbLocationBranch.SelectedIndex = -1;
             cmbTypeOfUser.SelectedIndex = -1;
             btnAdd.Enabled = false;
