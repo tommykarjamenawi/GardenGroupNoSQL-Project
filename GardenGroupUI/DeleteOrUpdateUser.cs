@@ -83,7 +83,7 @@ namespace GardenGroupUI
             {
                 //archiveService.AddUser(user);
                 userService.RemoveUser(user1);
-                userArchiveService.AddUser(user1);
+                userArchiveService.AddUser(user1 );
                 MessageBox.Show("User succesfully archived");
 
                 showManageUser();
