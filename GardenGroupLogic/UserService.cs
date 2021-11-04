@@ -31,9 +31,10 @@ namespace GardenGroupLogic
 
         public User GetUserByEmail(string email, string password)
         {
+            VerifyHashedPassword verifyHashedPassword = new VerifyHashedPassword(); // will verify plain password with the hashed password in the database
             User user = userdao.GetUserByEmail(email);
             if (user == null) { return null;}
-            else if (user.Password == password) { return user; }
+            else if (verifyHashedPassword.VerifyPassword(password, email)) { return user; }
             return null;  
         }
         public User GetUserByEmailHashed(string email)

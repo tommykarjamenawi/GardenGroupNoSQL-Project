@@ -50,7 +50,7 @@ namespace GardenGroupUI
             user.branch = cmbLocationBranch.Text;
             //user.Password = CreatePassword();
             userService = new UserService();
-            HashWithSalt hashWithSalt = new HashWithSalt(txtPassword.Text);
+            HashWithSalt hashWithSalt = new HashWithSalt(txtPassword.Text); // creates hashed password with salt
             user.Password = hashWithSalt.hashedPassword;
             user.salt = hashWithSalt.salt;
             userService.AddUser(user);
