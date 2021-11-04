@@ -103,5 +103,12 @@ namespace GardenGroupUI
             chartIncidentsPastDeadline.ChartAreas[0].Area3DStyle.Enable3D = true;
             chartIncidentsPastDeadline.Series["Past deadline"].IsValueShownAsLabel = true;
         }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            LoginScreen ls = new LoginScreen();
+            this.Hide();
+            ls.ShowDialog();
+        }
     }
 }
