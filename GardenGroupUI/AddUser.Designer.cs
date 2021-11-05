@@ -33,7 +33,6 @@ namespace GardenGroupUI
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -43,7 +42,6 @@ namespace GardenGroupUI
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.cmbTypeOfUser = new System.Windows.Forms.ComboBox();
             this.cmbLocationBranch = new System.Windows.Forms.ComboBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnTicketOverview = new System.Windows.Forms.Button();
@@ -62,116 +60,99 @@ namespace GardenGroupUI
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(57, 179);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(76, 220);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(186, 26);
+            this.label1.Size = new System.Drawing.Size(228, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "Create new user";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(64, 226);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(85, 278);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 13);
+            this.label2.Size = new System.Drawing.Size(78, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "First name:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(63, 255);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(84, 314);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 13);
+            this.label3.Size = new System.Drawing.Size(78, 17);
             this.label3.TabIndex = 2;
             this.label3.Text = "Last name:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(63, 288);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(84, 354);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 13);
+            this.label4.Size = new System.Drawing.Size(92, 17);
             this.label4.TabIndex = 3;
             this.label4.Text = "Type of user:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(264, 192);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(86, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Send password?";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(62, 374);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(83, 460);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(89, 13);
+            this.label6.Size = new System.Drawing.Size(114, 17);
             this.label6.TabIndex = 5;
             this.label6.Text = "Location/branch:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(62, 347);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Location = new System.Drawing.Point(83, 427);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(79, 13);
+            this.label7.Size = new System.Drawing.Size(105, 17);
             this.label7.TabIndex = 6;
             this.label7.Text = "Phone number:";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(63, 317);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Location = new System.Drawing.Point(84, 390);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(78, 13);
+            this.label8.Size = new System.Drawing.Size(106, 17);
             this.label8.TabIndex = 7;
             this.label8.Text = "E-mail address:";
             // 
             // txtFirstName
             // 
-            this.txtFirstName.Location = new System.Drawing.Point(185, 223);
-            this.txtFirstName.Margin = new System.Windows.Forms.Padding(2);
+            this.txtFirstName.Location = new System.Drawing.Point(247, 274);
+            this.txtFirstName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(161, 20);
+            this.txtFirstName.Size = new System.Drawing.Size(213, 22);
             this.txtFirstName.TabIndex = 8;
             this.txtFirstName.TextChanged += new System.EventHandler(this.txtFirstName_TextChanged);
             // 
             // txtPhoneNumber
             // 
-            this.txtPhoneNumber.Location = new System.Drawing.Point(185, 344);
-            this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPhoneNumber.Location = new System.Drawing.Point(247, 423);
+            this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
-            this.txtPhoneNumber.Size = new System.Drawing.Size(161, 20);
+            this.txtPhoneNumber.Size = new System.Drawing.Size(213, 22);
             this.txtPhoneNumber.TabIndex = 9;
             this.txtPhoneNumber.TextChanged += new System.EventHandler(this.txtPhoneNumber_TextChanged);
             // 
             // txtEmailAddress
             // 
-            this.txtEmailAddress.Location = new System.Drawing.Point(185, 314);
-            this.txtEmailAddress.Margin = new System.Windows.Forms.Padding(2);
+            this.txtEmailAddress.Location = new System.Drawing.Point(247, 386);
+            this.txtEmailAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEmailAddress.Name = "txtEmailAddress";
-            this.txtEmailAddress.Size = new System.Drawing.Size(161, 20);
+            this.txtEmailAddress.Size = new System.Drawing.Size(213, 22);
             this.txtEmailAddress.TabIndex = 10;
             this.txtEmailAddress.TextChanged += new System.EventHandler(this.txtEmailAddress_TextChanged);
             // 
             // txtLastName
             // 
-            this.txtLastName.Location = new System.Drawing.Point(184, 252);
-            this.txtLastName.Margin = new System.Windows.Forms.Padding(2);
+            this.txtLastName.Location = new System.Drawing.Point(245, 310);
+            this.txtLastName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(161, 20);
+            this.txtLastName.Size = new System.Drawing.Size(213, 22);
             this.txtLastName.TabIndex = 11;
             this.txtLastName.TextChanged += new System.EventHandler(this.txtLastName_TextChanged);
             // 
@@ -179,10 +160,10 @@ namespace GardenGroupUI
             // 
             this.cmbTypeOfUser.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTypeOfUser.FormattingEnabled = true;
-            this.cmbTypeOfUser.Location = new System.Drawing.Point(185, 280);
-            this.cmbTypeOfUser.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbTypeOfUser.Location = new System.Drawing.Point(247, 345);
+            this.cmbTypeOfUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbTypeOfUser.Name = "cmbTypeOfUser";
-            this.cmbTypeOfUser.Size = new System.Drawing.Size(161, 21);
+            this.cmbTypeOfUser.Size = new System.Drawing.Size(213, 24);
             this.cmbTypeOfUser.TabIndex = 12;
             this.cmbTypeOfUser.SelectedIndexChanged += new System.EventHandler(this.cmbTypeOfUser_SelectedIndexChanged);
             // 
@@ -190,31 +171,20 @@ namespace GardenGroupUI
             // 
             this.cmbLocationBranch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbLocationBranch.FormattingEnabled = true;
-            this.cmbLocationBranch.Location = new System.Drawing.Point(185, 371);
-            this.cmbLocationBranch.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbLocationBranch.Location = new System.Drawing.Point(247, 457);
+            this.cmbLocationBranch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbLocationBranch.Name = "cmbLocationBranch";
-            this.cmbLocationBranch.Size = new System.Drawing.Size(161, 21);
+            this.cmbLocationBranch.Size = new System.Drawing.Size(213, 24);
             this.cmbLocationBranch.TabIndex = 13;
             this.cmbLocationBranch.SelectedIndexChanged += new System.EventHandler(this.cmbLocationBranch_SelectedIndexChanged);
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(358, 188);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(240, 17);
-            this.checkBox1.TabIndex = 14;
-            this.checkBox1.Text = "yes, a password e-mail will be sent to the user";
-            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnCancel.Location = new System.Drawing.Point(185, 431);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCancel.Location = new System.Drawing.Point(247, 530);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(77, 28);
+            this.btnCancel.Size = new System.Drawing.Size(103, 34);
             this.btnCancel.TabIndex = 15;
             this.btnCancel.Text = "&Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -223,10 +193,10 @@ namespace GardenGroupUI
             // btnAdd
             // 
             this.btnAdd.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnAdd.Location = new System.Drawing.Point(267, 431);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAdd.Location = new System.Drawing.Point(356, 530);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(77, 28);
+            this.btnAdd.Size = new System.Drawing.Size(103, 34);
             this.btnAdd.TabIndex = 16;
             this.btnAdd.Text = "&Add user";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -235,10 +205,10 @@ namespace GardenGroupUI
             // btnTicketOverview
             // 
             this.btnTicketOverview.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnTicketOverview.Location = new System.Drawing.Point(231, 132);
-            this.btnTicketOverview.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTicketOverview.Location = new System.Drawing.Point(308, 162);
+            this.btnTicketOverview.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTicketOverview.Name = "btnTicketOverview";
-            this.btnTicketOverview.Size = new System.Drawing.Size(150, 36);
+            this.btnTicketOverview.Size = new System.Drawing.Size(200, 44);
             this.btnTicketOverview.TabIndex = 19;
             this.btnTicketOverview.Text = "&Ticket overview";
             this.btnTicketOverview.UseVisualStyleBackColor = false;
@@ -247,10 +217,10 @@ namespace GardenGroupUI
             // btnDashboard
             // 
             this.btnDashboard.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnDashboard.Location = new System.Drawing.Point(62, 132);
-            this.btnDashboard.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDashboard.Location = new System.Drawing.Point(83, 162);
+            this.btnDashboard.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Size = new System.Drawing.Size(150, 36);
+            this.btnDashboard.Size = new System.Drawing.Size(200, 44);
             this.btnDashboard.TabIndex = 18;
             this.btnDashboard.Text = "&Dashboard";
             this.btnDashboard.UseVisualStyleBackColor = false;
@@ -259,10 +229,10 @@ namespace GardenGroupUI
             // btnManageUser
             // 
             this.btnManageUser.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnManageUser.Location = new System.Drawing.Point(402, 132);
-            this.btnManageUser.Margin = new System.Windows.Forms.Padding(2);
+            this.btnManageUser.Location = new System.Drawing.Point(536, 162);
+            this.btnManageUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnManageUser.Name = "btnManageUser";
-            this.btnManageUser.Size = new System.Drawing.Size(150, 36);
+            this.btnManageUser.Size = new System.Drawing.Size(200, 44);
             this.btnManageUser.TabIndex = 17;
             this.btnManageUser.Text = "Manage user";
             this.btnManageUser.UseVisualStyleBackColor = false;
@@ -272,10 +242,9 @@ namespace GardenGroupUI
             // 
             this.lblEmailSignedIn.AutoSize = true;
             this.lblEmailSignedIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmailSignedIn.Location = new System.Drawing.Point(442, 11);
-            this.lblEmailSignedIn.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblEmailSignedIn.Location = new System.Drawing.Point(589, 14);
             this.lblEmailSignedIn.Name = "lblEmailSignedIn";
-            this.lblEmailSignedIn.Size = new System.Drawing.Size(28, 17);
+            this.lblEmailSignedIn.Size = new System.Drawing.Size(29, 20);
             this.lblEmailSignedIn.TabIndex = 22;
             this.lblEmailSignedIn.Text = ".....";
             // 
@@ -283,20 +252,19 @@ namespace GardenGroupUI
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(346, 11);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Location = new System.Drawing.Point(461, 14);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(92, 18);
+            this.label9.Size = new System.Drawing.Size(119, 24);
             this.label9.TabIndex = 21;
             this.label9.Text = "Signed in as:";
             // 
             // btnLogout
             // 
             this.btnLogout.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnLogout.Location = new System.Drawing.Point(443, 32);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLogout.Location = new System.Drawing.Point(591, 39);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(113, 25);
+            this.btnLogout.Size = new System.Drawing.Size(151, 31);
             this.btnLogout.TabIndex = 20;
             this.btnLogout.Text = "&Logout";
             this.btnLogout.UseVisualStyleBackColor = false;
@@ -305,37 +273,37 @@ namespace GardenGroupUI
             // pictureBox1
             // 
             this.pictureBox1.Image = global::GardenGroupUI.Properties.Resources.nodeskLogo;
-            this.pictureBox1.Location = new System.Drawing.Point(25, 11);
+            this.pictureBox1.Location = new System.Drawing.Point(33, 14);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(152, 92);
+            this.pictureBox1.Size = new System.Drawing.Size(203, 113);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 70;
             this.pictureBox1.TabStop = false;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(185, 396);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPassword.Location = new System.Drawing.Point(247, 487);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(161, 20);
+            this.txtPassword.Size = new System.Drawing.Size(213, 22);
             this.txtPassword.TabIndex = 71;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(62, 399);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Location = new System.Drawing.Point(83, 491);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(56, 13);
+            this.label10.Size = new System.Drawing.Size(73, 17);
             this.label10.TabIndex = 72;
             this.label10.Text = "Password:";
             // 
             // AddUser
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(217)))), ((int)(((byte)(112)))));
-            this.ClientSize = new System.Drawing.Size(609, 479);
+            this.ClientSize = new System.Drawing.Size(812, 590);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.pictureBox1);
@@ -347,7 +315,6 @@ namespace GardenGroupUI
             this.Controls.Add(this.btnManageUser);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.cmbLocationBranch);
             this.Controls.Add(this.cmbTypeOfUser);
             this.Controls.Add(this.txtLastName);
@@ -357,12 +324,11 @@ namespace GardenGroupUI
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "AddUser";
             this.Text = "AddUser";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -377,7 +343,6 @@ namespace GardenGroupUI
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
@@ -387,7 +352,6 @@ namespace GardenGroupUI
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.ComboBox cmbTypeOfUser;
         private System.Windows.Forms.ComboBox cmbLocationBranch;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnTicketOverview;
