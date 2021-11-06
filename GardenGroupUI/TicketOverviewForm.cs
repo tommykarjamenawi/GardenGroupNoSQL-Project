@@ -129,6 +129,7 @@ namespace GardenGroupUI
         private void btnCreateIncident_Click(object sender, EventArgs e)
         {
             AddTicket addTicket = new AddTicket(user);
+            this.Hide();
             addTicket.ShowDialog();
         }
 
@@ -155,6 +156,7 @@ namespace GardenGroupUI
                 Ticket ticket = (Ticket)listViewTickets.SelectedItems[0].Tag;
 
                 UpdateTicket ut = new UpdateTicket(ticket, user);
+                this.Hide();
                 ut.ShowDialog();
             }
         }
@@ -172,6 +174,7 @@ namespace GardenGroupUI
             Ticket ticket = (Ticket)listViewTickets.SelectedItems[0].Tag;
 
             TransferTicket tt = new TransferTicket(user, ticket);
+            this.Hide();
             tt.ShowDialog();
         }
 

@@ -94,7 +94,9 @@ namespace GardenGroupUI
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Close();
+            TicketOverviewForm tof = new TicketOverviewForm(user);
+            this.Hide();
+            tof.ShowDialog();
         }
 
         private void AddTicket_Load(object sender, EventArgs e)
