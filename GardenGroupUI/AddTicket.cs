@@ -44,6 +44,7 @@ namespace GardenGroupUI
 
             ticketService = new TicketService();
             ticketService.AddTicket(ticket);
+            MessageBox.Show("Your ticket has been added!");
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -87,7 +88,6 @@ namespace GardenGroupUI
                 }
 
                 AddingTicket();
-                MessageBox.Show("Your ticket has been added!");
                 this.Hide();
                 TicketOverviewForm tof = new TicketOverviewForm(user);
                 tof.ShowDialog();
