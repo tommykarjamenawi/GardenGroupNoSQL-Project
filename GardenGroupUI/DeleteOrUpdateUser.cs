@@ -50,6 +50,13 @@ namespace GardenGroupUI
             this.user.Email = txtEmailAddress.Text;
             this.user.Phone = txtPhoneNumber.Text;
             this.user.branch = cmbLocationBranch.Text;
+            if (txtChangePassword.Text != "")
+            {
+                HashWithSalt hashWithSalt = new HashWithSalt(txtChangePassword.Text); // creates hashed password with salt
+                user.Password = hashWithSalt.hashedPassword;
+                user.salt = hashWithSalt.salt;
+            }
+            
             if (dialogResult == DialogResult.Yes)
             {
                 userService.UpdateUser(user);

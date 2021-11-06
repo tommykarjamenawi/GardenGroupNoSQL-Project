@@ -52,6 +52,8 @@ namespace GardenGroupUI
             this.label5 = new System.Windows.Forms.Label();
             this.btnLogout = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtChangePassword = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -133,7 +135,7 @@ namespace GardenGroupUI
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(80, 371);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 17);
+            this.label4.Size = new System.Drawing.Size(131, 17);
             this.label4.TabIndex = 16;
             this.label4.Text = "Type of signinUser:";
             // 
@@ -158,7 +160,7 @@ namespace GardenGroupUI
             // btnUpdate
             // 
             this.btnUpdate.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnUpdate.Location = new System.Drawing.Point(196, 538);
+            this.btnUpdate.Location = new System.Drawing.Point(196, 566);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(106, 37);
             this.btnUpdate.TabIndex = 26;
@@ -169,7 +171,7 @@ namespace GardenGroupUI
             // btnRemove
             // 
             this.btnRemove.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnRemove.Location = new System.Drawing.Point(303, 538);
+            this.btnRemove.Location = new System.Drawing.Point(303, 566);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(106, 37);
             this.btnRemove.TabIndex = 27;
@@ -190,7 +192,7 @@ namespace GardenGroupUI
             // btnArchive
             // 
             this.btnArchive.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnArchive.Location = new System.Drawing.Point(415, 538);
+            this.btnArchive.Location = new System.Drawing.Point(415, 566);
             this.btnArchive.Name = "btnArchive";
             this.btnArchive.Size = new System.Drawing.Size(106, 37);
             this.btnArchive.TabIndex = 29;
@@ -273,12 +275,30 @@ namespace GardenGroupUI
             this.pictureBox1.TabIndex = 69;
             this.pictureBox1.TabStop = false;
             // 
+            // txtChangePassword
+            // 
+            this.txtChangePassword.Location = new System.Drawing.Point(247, 510);
+            this.txtChangePassword.Name = "txtChangePassword";
+            this.txtChangePassword.Size = new System.Drawing.Size(213, 22);
+            this.txtChangePassword.TabIndex = 71;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(82, 516);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(121, 17);
+            this.label9.TabIndex = 70;
+            this.label9.Text = "Change password";
+            // 
             // DeleteOrUpdateUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(217)))), ((int)(((byte)(112)))));
             this.ClientSize = new System.Drawing.Size(812, 615);
+            this.Controls.Add(this.txtChangePassword);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblEmailSignedIn);
             this.Controls.Add(this.label5);
@@ -335,5 +355,7 @@ namespace GardenGroupUI
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox txtChangePassword;
+        private System.Windows.Forms.Label label9;
     }
 }
