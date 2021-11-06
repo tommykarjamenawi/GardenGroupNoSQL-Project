@@ -39,7 +39,7 @@ namespace GardenGroupUI
         private void btnUpdate_Click(object sender, EventArgs e)
         {
 
-            DialogResult dialogResult = MessageBox.Show("Are you sure\n you want to Update this signinUser", "Confirmation",
+            DialogResult dialogResult = MessageBox.Show("Are you sure\n you want to Update this user", "Confirmation",
                                                            MessageBoxButtons.YesNo);
 
             List<Ticket> tickets = ticketService.GetAllTickets();
@@ -75,7 +75,7 @@ namespace GardenGroupUI
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Are you sure\n you want to remove this signinUser","!Important",
+            DialogResult dialogResult = MessageBox.Show("Are you sure\n you want to remove this user","!Important",
                                                         MessageBoxButtons.YesNo);
             if (dialogResult==DialogResult.Yes)
             {
@@ -87,7 +87,7 @@ namespace GardenGroupUI
 
         private void btnArchive_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Are you sure\n you want to archive this signinUser", "!Important",
+            DialogResult dialogResult = MessageBox.Show("Are you sure\n you want to archive this user", "!Important",
                                                       MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
@@ -132,7 +132,5 @@ namespace GardenGroupUI
             this.Hide();
             loginScreen.ShowDialog();
         }
-
-       
     }
 }
