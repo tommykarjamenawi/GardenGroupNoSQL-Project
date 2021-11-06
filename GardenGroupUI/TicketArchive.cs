@@ -28,7 +28,12 @@ namespace GardenGroupUI
         void FillForm()
         {
             if (user.TypeOfUser == Enums.TypeOfUser.EndUser.ToString())
+            {
                 tickets = ticketArchiveService.GetAllArchivedTicketsForUser(user);
+                btnManageUser.Visible = false;
+            }
+               
+
             else
                 tickets = ticketArchiveService.GetAllArchivedTickets();
 
