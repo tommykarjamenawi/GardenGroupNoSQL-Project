@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using GardenGroupLogic;
 using MongoDB.Bson;
@@ -69,7 +64,6 @@ namespace GardenGroupUI
                 txtPassword.ForeColor = Color.DarkGray;
                 txtPassword.UseSystemPasswordChar = false;
             }
-            //txtPassword.UseSystemPasswordChar = false;
             txtPassword.TabStop = false; // Prevent application to enter the password field on startup
             chbRememberMe.Checked = false;
         }

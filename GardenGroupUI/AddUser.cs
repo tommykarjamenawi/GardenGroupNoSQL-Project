@@ -49,7 +49,6 @@ namespace GardenGroupUI
             user.Email = txtEmailAddress.Text;
             user.Phone = txtPhoneNumber.Text;
             user.branch = cmbLocationBranch.Text;
-            userService = new UserService();
             HashWithSalt hashWithSalt = new HashWithSalt(txtPassword.Text); // creates hashed password with salt
             user.Password = hashWithSalt.hashedPassword;
             user.salt = hashWithSalt.salt;
