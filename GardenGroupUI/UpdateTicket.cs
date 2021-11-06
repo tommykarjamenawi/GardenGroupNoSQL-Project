@@ -71,7 +71,9 @@ namespace GardenGroupUI
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
+            TicketOverviewForm tof = new TicketOverviewForm(user);
+            tof.ShowDialog();
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
@@ -80,7 +82,9 @@ namespace GardenGroupUI
             {
                 ticketService.RemoveTicket(this.ticket);
                 MessageBox.Show($"Ticket {ticket.Id} has been removed!");
-                this.Close();
+                this.Hide();
+                TicketOverviewForm tof = new TicketOverviewForm(user);
+                tof.ShowDialog();
             }
         }
 
@@ -132,7 +136,9 @@ namespace GardenGroupUI
 
             ticketService.UpdateTicket(this.ticket);
             MessageBox.Show($"Ticket {ticket.Id} has been updated!");
-            this.Close();
+            this.Hide();
+            TicketOverviewForm tof = new TicketOverviewForm(user);
+            tof.ShowDialog();
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)

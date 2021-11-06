@@ -88,7 +88,9 @@ namespace GardenGroupUI
 
                 AddingTicket();
                 MessageBox.Show("Your ticket has been added!");
-                this.Close();
+                this.Hide();
+                TicketOverviewForm tof = new TicketOverviewForm(user);
+                tof.ShowDialog();
             }
         }
 
