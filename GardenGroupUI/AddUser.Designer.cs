@@ -93,9 +93,9 @@ namespace GardenGroupUI
             this.label4.Location = new System.Drawing.Point(63, 288);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(98, 13);
+            this.label4.Size = new System.Drawing.Size(69, 13);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Type of signinUser:";
+            this.label4.Text = "Type of user:";
             // 
             // label6
             // 

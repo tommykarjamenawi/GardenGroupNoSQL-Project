@@ -73,9 +73,9 @@ namespace GardenGroupUI
             this.label2.Location = new System.Drawing.Point(82, 311);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(120, 13);
+            this.label2.Size = new System.Drawing.Size(91, 13);
             this.label2.TabIndex = 18;
-            this.label2.Text = "Reported by signinUser:";
+            this.label2.Text = "Reported by user:";
             // 
             // label3
             // 

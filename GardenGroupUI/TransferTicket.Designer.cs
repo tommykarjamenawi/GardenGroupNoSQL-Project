@@ -50,7 +50,7 @@ namespace GardenGroupUI
             // cmbUser
             // 
             this.cmbUser.FormattingEnabled = true;
-            this.cmbUser.Location = new System.Drawing.Point(316, 366);
+            this.cmbUser.Location = new System.Drawing.Point(314, 366);
             this.cmbUser.Name = "cmbUser";
             this.cmbUser.Size = new System.Drawing.Size(185, 21);
             this.cmbUser.TabIndex = 0;
@@ -66,7 +66,7 @@ namespace GardenGroupUI
             // btnTransfer
             // 
             this.btnTransfer.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnTransfer.Location = new System.Drawing.Point(352, 408);
+            this.btnTransfer.Location = new System.Drawing.Point(341, 403);
             this.btnTransfer.Name = "btnTransfer";
             this.btnTransfer.Size = new System.Drawing.Size(121, 33);
             this.btnTransfer.TabIndex = 2;
@@ -77,7 +77,7 @@ namespace GardenGroupUI
             // cmbTicket
             // 
             this.cmbTicket.FormattingEnabled = true;
-            this.cmbTicket.Location = new System.Drawing.Point(316, 313);
+            this.cmbTicket.Location = new System.Drawing.Point(314, 313);
             this.cmbTicket.Name = "cmbTicket";
             this.cmbTicket.Size = new System.Drawing.Size(185, 21);
             this.cmbTicket.TabIndex = 3;
@@ -94,16 +94,16 @@ namespace GardenGroupUI
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(360, 351);
+            this.label2.Location = new System.Drawing.Point(358, 351);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 13);
+            this.label2.Size = new System.Drawing.Size(84, 13);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Transfer to signinUser:";
+            this.label2.Text = "Transfer to user:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(372, 297);
+            this.label3.Location = new System.Drawing.Point(370, 297);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 13);
             this.label3.TabIndex = 6;
@@ -115,9 +115,9 @@ namespace GardenGroupUI
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(206, 189);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(490, 31);
+            this.label4.Size = new System.Drawing.Size(408, 31);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Transfer ticket to another signinUser";
+            this.label4.Text = "Transfer ticket to another user";
             // 
             // label5
             // 
