@@ -24,5 +24,10 @@ namespace GardenGroupLogic
         {
             tickettArchiveDAO.RemoveTicket(ticket);
         }
+
+        public List<Ticket> GetAllArchivedTicketsForUser(User user)
+        {
+            return tickettArchiveDAO.GetAllArchivedTicketsForUser(user);
+        }
     }
 }

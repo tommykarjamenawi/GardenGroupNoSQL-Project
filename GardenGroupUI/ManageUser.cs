@@ -92,7 +92,7 @@ namespace GardenGroupUI
                     li.SubItems.Add(user.Email.ToString());
                     li.SubItems.Add(user.FirstName.ToString());
                     li.SubItems.Add(user.LastName.ToString());
-
+                    li.Tag = user;
                     lstUsers.Items.Add(li);
                 }
             }

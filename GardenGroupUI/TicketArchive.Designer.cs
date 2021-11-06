@@ -65,10 +65,10 @@ namespace GardenGroupUI
             this.listViewTickets.FullRowSelect = true;
             this.listViewTickets.GridLines = true;
             this.listViewTickets.HideSelection = false;
-            this.listViewTickets.Location = new System.Drawing.Point(14, 313);
-            this.listViewTickets.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.listViewTickets.Location = new System.Drawing.Point(10, 254);
+            this.listViewTickets.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listViewTickets.Name = "listViewTickets";
-            this.listViewTickets.Size = new System.Drawing.Size(1477, 590);
+            this.listViewTickets.Size = new System.Drawing.Size(1109, 480);
             this.listViewTickets.TabIndex = 9;
             this.listViewTickets.UseCompatibleStateImageBehavior = false;
             this.listViewTickets.View = System.Windows.Forms.View.Details;
@@ -122,18 +122,20 @@ namespace GardenGroupUI
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(4, 235);
+            this.label1.Location = new System.Drawing.Point(3, 191);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(364, 59);
+            this.label1.Size = new System.Drawing.Size(285, 46);
             this.label1.TabIndex = 10;
             this.label1.Text = "Ticket Archive";
             // 
             // btnDashboard
             // 
             this.btnDashboard.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnDashboard.Location = new System.Drawing.Point(14, 173);
+            this.btnDashboard.Location = new System.Drawing.Point(10, 141);
+            this.btnDashboard.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Size = new System.Drawing.Size(393, 44);
+            this.btnDashboard.Size = new System.Drawing.Size(295, 36);
             this.btnDashboard.TabIndex = 12;
             this.btnDashboard.Text = "&Dashboard";
             this.btnDashboard.UseVisualStyleBackColor = false;
@@ -142,9 +144,10 @@ namespace GardenGroupUI
             // btnTicketOverview
             // 
             this.btnTicketOverview.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnTicketOverview.Location = new System.Drawing.Point(423, 173);
+            this.btnTicketOverview.Location = new System.Drawing.Point(317, 141);
+            this.btnTicketOverview.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnTicketOverview.Name = "btnTicketOverview";
-            this.btnTicketOverview.Size = new System.Drawing.Size(393, 44);
+            this.btnTicketOverview.Size = new System.Drawing.Size(295, 36);
             this.btnTicketOverview.TabIndex = 13;
             this.btnTicketOverview.Text = "&Ticket Overview";
             this.btnTicketOverview.UseVisualStyleBackColor = false;
@@ -154,9 +157,10 @@ namespace GardenGroupUI
             // 
             this.lblEmailSignedIn.AutoSize = true;
             this.lblEmailSignedIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmailSignedIn.Location = new System.Drawing.Point(1222, 11);
+            this.lblEmailSignedIn.Location = new System.Drawing.Point(916, 9);
+            this.lblEmailSignedIn.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEmailSignedIn.Name = "lblEmailSignedIn";
-            this.lblEmailSignedIn.Size = new System.Drawing.Size(29, 20);
+            this.lblEmailSignedIn.Size = new System.Drawing.Size(28, 17);
             this.lblEmailSignedIn.TabIndex = 22;
             this.lblEmailSignedIn.Text = ".....";
             // 
@@ -164,39 +168,41 @@ namespace GardenGroupUI
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(1097, 9);
+            this.label3.Location = new System.Drawing.Point(823, 7);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(119, 24);
+            this.label3.Size = new System.Drawing.Size(92, 18);
             this.label3.TabIndex = 21;
             this.label3.Text = "Signed in as:";
             // 
             // btnLogout
             // 
             this.btnLogout.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnLogout.Location = new System.Drawing.Point(1224, 37);
+            this.btnLogout.Location = new System.Drawing.Point(918, 30);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(151, 31);
+            this.btnLogout.Size = new System.Drawing.Size(113, 25);
             this.btnLogout.TabIndex = 20;
             this.btnLogout.Text = "&Logout";
             this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::GardenGroupUI.Properties.Resources.nodeskLogo;
-            this.pictureBox2.Location = new System.Drawing.Point(24, 13);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Location = new System.Drawing.Point(18, 11);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(202, 113);
+            this.pictureBox2.Size = new System.Drawing.Size(152, 92);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 70;
             this.pictureBox2.TabStop = false;
             // 
             // TicketArchive
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(217)))), ((int)(((byte)(112)))));
-            this.ClientSize = new System.Drawing.Size(1537, 948);
+            this.ClientSize = new System.Drawing.Size(1153, 770);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.lblEmailSignedIn);
             this.Controls.Add(this.label3);
@@ -205,6 +211,7 @@ namespace GardenGroupUI
             this.Controls.Add(this.btnDashboard);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listViewTickets);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "TicketArchive";
             this.Text = "TicketArchive";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

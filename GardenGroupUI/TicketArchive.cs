@@ -27,7 +27,10 @@ namespace GardenGroupUI
 
         void FillForm()
         {
-            tickets = ticketArchiveService.GetAllArchivedTickets();
+            if (user.TypeOfUser == Enums.TypeOfUser.EndUser.ToString())
+                tickets = ticketArchiveService.GetAllArchivedTicketsForUser(user);
+            else
+                tickets = ticketArchiveService.GetAllArchivedTickets();
 
             foreach (Ticket t in tickets)
             {
@@ -43,8 +46,6 @@ namespace GardenGroupUI
                 li.Tag = t;
                 listViewTickets.Items.Add(li);
             }
-
-
         }
 
         private void btnTicketOverview_Click_1(object sender, EventArgs e)
@@ -59,6 +60,13 @@ namespace GardenGroupUI
             TicketOverviewStatistics ticketOverviewStatistics = new TicketOverviewStatistics(user);
             this.Hide();
             ticketOverviewStatistics.ShowDialog();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            LoginScreen ls = new LoginScreen();
+            this.Hide();
+            ls.ShowDialog();
         }
     }
 }

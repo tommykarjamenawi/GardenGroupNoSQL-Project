@@ -16,6 +16,12 @@ namespace GardenGroupDAO
             IMongoCollection<Ticket> userCollection = db.GetCollection<Ticket>(COLLECTION_NAME);
             return userCollection.AsQueryable().ToList<Ticket>();
         }
+
+        public List<Ticket> GetAllArchivedTicketsForUser(User user)
+        {
+            IMongoCollection<Ticket> userCollection = db.GetCollection<Ticket>(COLLECTION_NAME);
+            return userCollection.Find<Ticket>(Ticket => Ticket.ReportedBy.Email == user.Email).ToList<Ticket>();
+        }
         public void AddTicketToArchive(Ticket ticket)
         {
             InsertDocument<Ticket>(COLLECTION_NAME, ticket);
