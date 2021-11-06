@@ -8,23 +8,24 @@ namespace GardenGroupUI
 {
     public partial class AddUser : Form
     {
-        User user;
-        User signinUser;
-        UserService userService = new UserService();
+        private User user;
+        private User signinUser;
+        private UserService userService;
         
         public AddUser(User signinUser)
         {
             InitializeComponent();
             InitializeComBox();
             this.signinUser = signinUser;
+            userService = new UserService();
             btnAdd.Enabled=false;
             lblEmailSignedIn.Text = signinUser.Email;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            string SearchBox = txtEmailAddress.Text;
-            User user = userService.SearchUsers(SearchBox);
+            string email = txtEmailAddress.Text;
+            User user = userService.SearchUsers(email);
 
             if (user==null)
             {
@@ -45,10 +46,9 @@ namespace GardenGroupUI
             user.FirstName = txtFirstName.Text;
             user.LastName = txtLastName.Text;
             user.TypeOfUser = cmbTypeOfUser.SelectedItem.ToString();
-            user.Email = txtEmailAddress.Text + "@Gardengroup.nl";
+            user.Email = txtEmailAddress.Text;
             user.Phone = txtPhoneNumber.Text;
             user.branch = cmbLocationBranch.Text;
-            //user.Password = CreatePassword();
             userService = new UserService();
             HashWithSalt hashWithSalt = new HashWithSalt(txtPassword.Text); // creates hashed password with salt
             user.Password = hashWithSalt.hashedPassword;
@@ -57,20 +57,7 @@ namespace GardenGroupUI
             CleanForm();
         }
 
-        public string CreatePassword()
-        {
-            int passwordLength = 8;
-            string password = "";
-            const string valid = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
-           // StringBuilder res = new StringBuilder();
-            Random rnd = new Random();
-            while (0 < passwordLength--)
-            {
-                //res.Append(valid[rnd.Next(valid.Length)]);
-                password += valid[rnd.Next(valid.Length)];
-            }
-            return password;
-        }
+       
         private void btnCancel_Click(object sender, EventArgs e)
         {
             ManageUser manageUser = new ManageUser(signinUser);

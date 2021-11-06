@@ -55,9 +55,9 @@ namespace GardenGroupUI
                 txtCurrentUser.Text = ticket.ReportedBy.Email;
                 lblLoggedinUser.Text = this.user.Email;
 
-                //foreach (User user in users)
+                //foreach (User signinUser in users)
                 //{
-                //    cmbUser.Items.Add(user.Email);
+                //    cmbUser.Items.Add(signinUser.Email);
                 //}
 
                 cmbUser.DisplayMember = "Email";
@@ -81,7 +81,7 @@ namespace GardenGroupUI
 
             if (cmbUser.SelectedIndex <= -1)
             {
-                MessageBox.Show("Please select a user");
+                MessageBox.Show("Please select a signinUser");
                 return;
             }
    

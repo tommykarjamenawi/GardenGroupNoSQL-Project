@@ -249,7 +249,7 @@ namespace GardenGroupUI
             this.btnManageUser.Name = "btnManageUser";
             this.btnManageUser.Size = new System.Drawing.Size(406, 47);
             this.btnManageUser.TabIndex = 30;
-            this.btnManageUser.Text = "&Manage user";
+            this.btnManageUser.Text = "&Manage signinUser";
             this.btnManageUser.UseVisualStyleBackColor = false;
             this.btnManageUser.Click += new System.EventHandler(this.btnManageUser_Click);
             // 

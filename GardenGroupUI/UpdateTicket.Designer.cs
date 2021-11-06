@@ -179,7 +179,7 @@ namespace GardenGroupUI
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(122, 17);
             this.label2.TabIndex = 38;
-            this.label2.Text = "Reported by user:";
+            this.label2.Text = "Reported by signinUser:";
             // 
             // label1
             // 
@@ -262,7 +262,7 @@ namespace GardenGroupUI
             this.btnManageUser.Name = "btnManageUser";
             this.btnManageUser.Size = new System.Drawing.Size(200, 44);
             this.btnManageUser.TabIndex = 59;
-            this.btnManageUser.Text = "Manage user";
+            this.btnManageUser.Text = "Manage signinUser";
             this.btnManageUser.UseVisualStyleBackColor = false;
             this.btnManageUser.Click += new System.EventHandler(this.btnManageUser_Click);
             // 

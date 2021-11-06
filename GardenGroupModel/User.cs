@@ -31,40 +31,7 @@ namespace GardenGroupModel
 
         }
 
-        [BsonConstructor]
-        public User(string FirstName, string LastName, string Email, string Branch, string Phone, string Password, string TypeOfUser)
-        {
-            this.FirstName = FirstName;
-            this.LastName = LastName;
-            this.Email = Email;
-            this.branch = Branch;
-            this.Phone = Phone;
-            this.Password = Password;
-            this.TypeOfUser = TypeOfUser;
-        }
-
-        [BsonConstructor]
-        public User(string FirstName, string LastName, string Email, string Branch, string Phone, string TypeOfUser)
-        {
-            this.FirstName = FirstName;
-            this.LastName = LastName;
-            this.Email = Email;
-            this.branch = Branch;
-            this.Phone = Phone;
-            this.TypeOfUser = TypeOfUser;
-        }
-
-        [BsonConstructor]
-        public User(string FirstName, string LastName, string Email, string Branch, string Phone, string Password, string TypeOfUser, string salt)
-        {
-            this.FirstName = FirstName;
-            this.LastName = LastName;
-            this.Email = Email;
-            this.branch = Branch;
-            this.Phone = Phone;
-            this.Password = Password;
-            this.TypeOfUser = TypeOfUser;
-            this.salt = salt;
-        }
+        
+       
     }
 }

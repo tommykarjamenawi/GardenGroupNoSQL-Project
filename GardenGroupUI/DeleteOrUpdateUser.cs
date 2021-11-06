@@ -8,53 +8,56 @@ namespace GardenGroupUI
 {
     public partial class DeleteOrUpdateUser : Form
     {
-        User user = new User();
-        User user1 = new User();
-        UserService userService = new UserService();
-        UserArchiveService userArchiveService = new UserArchiveService();
-        TicketService ticketService = new TicketService();
-        public DeleteOrUpdateUser(User user1,User user)
+        private User signinUser;
+        private User user ;
+        private UserService userService ;
+        private UserArchiveService userArchiveService ;
+        private TicketService ticketService ;
+        public DeleteOrUpdateUser(User user,User signinUser)
         {
             InitializeComponent();
+            this.signinUser = signinUser;
             this.user = user;
-            this.user1 = user1;
+            userService = new UserService();
+            userArchiveService = new UserArchiveService();
+            ticketService = new TicketService();
             FillForm();
         }
 
         void FillForm()
         {
-            txtFirstName.Text = user1.FirstName;
-            txtLastName.Text = user1.LastName;
-            txtPhoneNumber.Text = user1.Phone;
-            txtEmailAddress.Text = user1.Email;
+            txtFirstName.Text = user.FirstName;
+            txtLastName.Text = user.LastName;
+            txtPhoneNumber.Text = user.Phone;
+            txtEmailAddress.Text = user.Email;
             cmbLocationBranch.DataSource = Enum.GetValues(typeof(Enums.Branch));
-            cmbLocationBranch.Text = user1.branch;
+            cmbLocationBranch.Text = user.branch;
             cmbTypeOfUser.DataSource = Enum.GetValues(typeof(Enums.TypeOfUser));
-            cmbTypeOfUser.Text = user1.TypeOfUser;
+            cmbTypeOfUser.Text = user.TypeOfUser;
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
 
-            DialogResult dialogResult = MessageBox.Show("Are you sure\n you want to Update this user", "Confirmation",
+            DialogResult dialogResult = MessageBox.Show("Are you sure\n you want to Update this signinUser", "Confirmation",
                                                            MessageBoxButtons.YesNo);
 
             List<Ticket> tickets = ticketService.GetAllTickets();
 
-            this.user1.FirstName = txtFirstName.Text;
-            this.user1.LastName = txtLastName.Text;
-            this.user1.TypeOfUser = cmbTypeOfUser.SelectedItem.ToString();
-            this.user1.Email = txtEmailAddress.Text;
-            this.user1.Phone = txtPhoneNumber.Text;
-            this.user1.branch = cmbLocationBranch.Text;
+            this.user.FirstName = txtFirstName.Text;
+            this.user.LastName = txtLastName.Text;
+            this.user.TypeOfUser = cmbTypeOfUser.SelectedItem.ToString();
+            this.user.Email = txtEmailAddress.Text;
+            this.user.Phone = txtPhoneNumber.Text;
+            this.user.branch = cmbLocationBranch.Text;
             if (dialogResult == DialogResult.Yes)
             {
-                userService.UpdateUser(user1);
+                userService.UpdateUser(user);
                 foreach (Ticket t in tickets)
                 {
-                    if (user.Id==t.ReportedBy.Id)
+                    if (signinUser.Id==t.ReportedBy.Id)
                     {
-                        t.ReportedBy = user1;
+                        t.ReportedBy = user;
                         ticketService.UpdateTicket(t);
                     }
 
@@ -65,11 +68,11 @@ namespace GardenGroupUI
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Are you sure\n you want to remove this user","!Important",
+            DialogResult dialogResult = MessageBox.Show("Are you sure\n you want to remove this signinUser","!Important",
                                                         MessageBoxButtons.YesNo);
             if (dialogResult==DialogResult.Yes)
             {
-                userService.RemoveUser(user1);
+                userService.RemoveUser(user);
                 MessageBox.Show("User succesfully removed");
                 showManageUser();
             }
@@ -77,13 +80,13 @@ namespace GardenGroupUI
 
         private void btnArchive_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Are you sure\n you want to archive this user", "!Important",
+            DialogResult dialogResult = MessageBox.Show("Are you sure\n you want to archive this signinUser", "!Important",
                                                       MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                //archiveService.AddUser(user);
-                userService.RemoveUser(user1);
-                userArchiveService.AddUser(user1 );
+                //archiveService.AddUser(signinUser);
+                userService.RemoveUser(user);
+                userArchiveService.AddUser(user );
                 MessageBox.Show("User succesfully archived");
 
                 showManageUser();
@@ -97,21 +100,21 @@ namespace GardenGroupUI
 
         private void btnTicketOverview_Click(object sender, EventArgs e)
         {
-            TicketOverviewForm ticketOverviewForm = new TicketOverviewForm(user);
+            TicketOverviewForm ticketOverviewForm = new TicketOverviewForm(signinUser);
             this.Hide();
             ticketOverviewForm.ShowDialog();
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            TicketOverviewStatistics ticketOverviewStatistics = new TicketOverviewStatistics(user);
+            TicketOverviewStatistics ticketOverviewStatistics = new TicketOverviewStatistics(signinUser);
             this.Hide();
             ticketOverviewStatistics.ShowDialog();
         }
 
         void showManageUser()
         {
-            ManageUser manageUser = new ManageUser(user);
+            ManageUser manageUser = new ManageUser(signinUser);
             this.Hide();
             manageUser.ShowDialog();
         }

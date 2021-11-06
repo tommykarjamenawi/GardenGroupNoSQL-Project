@@ -64,7 +64,7 @@ namespace GardenGroupUI
 
                 if (cmbUser.SelectedIndex <= -1)
                 {
-                    MessageBox.Show("Please fill out the user");
+                    MessageBox.Show("Please fill out the signinUser");
                     return;
                 }
 

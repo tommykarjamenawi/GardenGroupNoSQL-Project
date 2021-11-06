@@ -78,7 +78,7 @@ namespace GardenGroupUI
             this.btnAddNewUser.Name = "btnAddNewUser";
             this.btnAddNewUser.Size = new System.Drawing.Size(155, 42);
             this.btnAddNewUser.TabIndex = 2;
-            this.btnAddNewUser.Text = "&Add new user";
+            this.btnAddNewUser.Text = "&Add new User";
             this.btnAddNewUser.UseVisualStyleBackColor = false;
             this.btnAddNewUser.Click += new System.EventHandler(this.btnAddNewUser_Click);
             // 
@@ -191,7 +191,7 @@ namespace GardenGroupUI
             this.btnManageUser.Name = "btnManageUser";
             this.btnManageUser.Size = new System.Drawing.Size(304, 44);
             this.btnManageUser.TabIndex = 14;
-            this.btnManageUser.Text = "Manage user";
+            this.btnManageUser.Text = "Manage signinUser";
             this.btnManageUser.UseVisualStyleBackColor = false;
             // 
             // btnLogout

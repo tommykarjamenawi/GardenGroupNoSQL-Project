@@ -104,7 +104,7 @@ namespace GardenGroupUI
                  }
             }
 
-            // if (user.TypeOfUser == Enums.TypeOfUser.EndUser.ToString()) // Enum.GetName(typeof(Enums.TypeOfUser),Enums.TypeOfUser.EndUser) // note: need == and NOT Equals!
+            // if (signinUser.TypeOfUser == Enums.TypeOfUser.EndUser.ToString()) // Enum.GetName(typeof(Enums.TypeOfUser),Enums.TypeOfUser.EndUser) // note: need == and NOT Equals!
 
  
             listViewTickets.Items.Clear();
@@ -191,8 +191,11 @@ namespace GardenGroupUI
             
         }
 
+        // Biniam done this
+        // by getting all the ticket this methode will regurarly check for theire reported date
         void CheckTicketyearForArchive()
         {
+           
             tickets = ticketService.GetAllTickets();
             foreach (Ticket t in tickets)
             {

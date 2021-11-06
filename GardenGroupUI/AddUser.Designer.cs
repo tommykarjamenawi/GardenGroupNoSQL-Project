@@ -64,7 +64,7 @@ namespace GardenGroupUI
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(228, 31);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Create new user";
+            this.label1.Text = "Create new signinUser";
             // 
             // label2
             // 
@@ -91,7 +91,7 @@ namespace GardenGroupUI
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(92, 17);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Type of user:";
+            this.label4.Text = "Type of signinUser:";
             // 
             // label6
             // 
@@ -198,7 +198,7 @@ namespace GardenGroupUI
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(103, 34);
             this.btnAdd.TabIndex = 16;
-            this.btnAdd.Text = "&Add user";
+            this.btnAdd.Text = "&Add signinUser";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -234,7 +234,7 @@ namespace GardenGroupUI
             this.btnManageUser.Name = "btnManageUser";
             this.btnManageUser.Size = new System.Drawing.Size(200, 44);
             this.btnManageUser.TabIndex = 17;
-            this.btnManageUser.Text = "Manage user";
+            this.btnManageUser.Text = "Manage signinUser";
             this.btnManageUser.UseVisualStyleBackColor = false;
             this.btnManageUser.Click += new System.EventHandler(this.btnManageUser_Click);
             // 

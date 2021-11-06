@@ -104,7 +104,7 @@ namespace GardenGroupUI
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(114, 17);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Transfer to user:";
+            this.label2.Text = "Transfer to signinUser:";
             // 
             // label3
             // 
@@ -125,7 +125,7 @@ namespace GardenGroupUI
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(498, 39);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Transfer ticket to another user";
+            this.label4.Text = "Transfer ticket to another signinUser";
             // 
             // label5
             // 
@@ -178,7 +178,7 @@ namespace GardenGroupUI
             this.btnManageUser.Name = "btnManageUser";
             this.btnManageUser.Size = new System.Drawing.Size(200, 44);
             this.btnManageUser.TabIndex = 62;
-            this.btnManageUser.Text = "Manage user";
+            this.btnManageUser.Text = "Manage signinUser";
             this.btnManageUser.UseVisualStyleBackColor = false;
             this.btnManageUser.Click += new System.EventHandler(this.btnManageUser_Click);
             // 

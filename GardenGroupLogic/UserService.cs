@@ -12,7 +12,11 @@ namespace GardenGroupLogic
     
     public class UserService 
     {
-        UserDAO userdao = new UserDAO();
+        private UserDAO userdao;
+        public UserService()
+        {
+            userdao = new UserDAO();
+        }
 
         public void AddUser(User user)
         {
@@ -24,9 +28,9 @@ namespace GardenGroupLogic
             return userdao.GetAllUsers();
         }
 
-        public User SearchUsers(String searchBox)
+        public User SearchUsers(String email)
         {
-            return userdao.SearchUsers(searchBox);
+            return userdao.GetUserByEmail(email);
         }
 
         public User GetUserByEmail(string email, string password)

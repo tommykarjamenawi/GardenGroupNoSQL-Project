@@ -10,7 +10,7 @@ namespace GardenGroupUI
     public partial class ManageUser : Form
     {
         private UserService userService ;
-        TicketService ticketService ;
+        private TicketService ticketService ;
         private User signinUser;
 
         public ManageUser(User signinUser)
@@ -19,6 +19,8 @@ namespace GardenGroupUI
             userService = new UserService();
             ticketService = new TicketService();
             this.signinUser = signinUser;
+
+            // this will make the size of the searchbox
             this.txtSearchBox.AutoSize = false;
             this.txtSearchBox.Size = new System.Drawing.Size(261, 25);
             lblEmailSignedIn.Text = signinUser.Email;
@@ -34,8 +36,7 @@ namespace GardenGroupUI
         private void ManageUser_Load(object sender, EventArgs e)
         {
             try
-            {
-              
+            { 
                 FillForm();
             }
             catch (Exception exp)
@@ -75,6 +76,8 @@ namespace GardenGroupUI
             }
         }
 
+
+        // this methode will check a signinUser by the giving starting letters
         private void Search()
         {
             string SearchBox = txtSearchBox.Text.ToString();
@@ -103,12 +106,12 @@ namespace GardenGroupUI
             if (lstUsers.SelectedIndices.Count>0)
             {
                 User user1 = (User)lstUsers.SelectedItems[0].Tag;
-               DeleteOrUpdateUser deleteOrUpdateUser = new DeleteOrUpdateUser(user1, signinUser);
+                DeleteOrUpdateUser deleteOrUpdateUser = new DeleteOrUpdateUser(user1, signinUser);
                 this.Hide();
                 deleteOrUpdateUser.ShowDialog();
                
             }
-            //FillForm();
+           
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
